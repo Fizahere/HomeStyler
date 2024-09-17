@@ -1,0 +1,556 @@
+{
+  "homeStyler": [
+    {
+      "category": "Living Room",
+      "products": [
+        {
+          "productId": 101,
+          "name": "Modern Sofa",
+          "description": "A comfortable modern sofa with a sleek design.",
+          "price": 700,
+          "image": "modern_sofa.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 102,
+          "name": "Glass Coffee Table",
+          "description": "A stylish glass coffee table.",
+          "price": 250,
+          "image": "glass_coffee_table.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 103,
+          "name": "Leather Armchair",
+          "description": "A luxurious leather armchair.",
+          "price": 600,
+          "image": "leather_armchair.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 104,
+          "name": "Entertainment Unit",
+          "description": "A spacious entertainment unit for your living room.",
+          "price": 1200,
+          "image": "entertainment_unit.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 105,
+          "name": "Curtains",
+          "description": "Elegant living room curtains.",
+          "price": 150,
+          "image": "curtains.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 106,
+          "name": "Wall Art",
+          "description": "Abstract wall art for modern living rooms.",
+          "price": 300,
+          "image": "wall_art.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 107,
+          "name": "Recliner Chair",
+          "description": "Comfortable recliner chair with multiple positions.",
+          "price": 850,
+          "image": "recliner_chair.jpg",
+          "category": "Living Room"
+        },
+        {
+          "productId": 108,
+          "name": "Floor Lamp",
+          "description": "A decorative floor lamp.",
+          "price": 220,
+          "image": "floor_lamp.jpg",
+          "category": "Living Room"
+        }
+      ]
+    },
+    {
+      "category": "Bedroom",
+      "products": [
+        {
+          "productId": 201,
+          "name": "King-sized Bed",
+          "description": "A spacious king-sized bed with a wooden frame.",
+          "price": 1500,
+          "image": "king_bed.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 202,
+          "name": "Dresser",
+          "description": "A modern dresser with ample storage.",
+          "price": 700,
+          "image": "dresser.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 203,
+          "name": "Nightstand",
+          "description": "A compact nightstand with drawers.",
+          "price": 250,
+          "image": "nightstand.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 204,
+          "name": "Wardrobe",
+          "description": "A large wardrobe for bedroom storage.",
+          "price": 1200,
+          "image": "wardrobe.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 205,
+          "name": "Vanity Mirror",
+          "description": "A mirror with built-in lighting for the vanity.",
+          "price": 350,
+          "image": "vanity_mirror.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 206,
+          "name": "Mattress",
+          "description": "Comfortable memory foam mattress.",
+          "price": 1000,
+          "image": "mattress.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 207,
+          "name": "Table Lamp",
+          "description": "A small lamp for the nightstand.",
+          "price": 120,
+          "image": "table_lamp.jpg",
+          "category": "Bedroom"
+        },
+        {
+          "productId": 208,
+          "name": "Rug",
+          "description": "A cozy rug for the bedroom floor.",
+          "price": 400,
+          "image": "rug.jpg",
+          "category": "Bedroom"
+        }
+      ]
+    },
+    {
+      "category": "Kitchen",
+      "products": [
+        {
+          "productId": 301,
+          "name": "Kitchen Island",
+          "description": "A marble kitchen island with storage.",
+          "price": 1800,
+          "image": "kitchen_island.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 302,
+          "name": "Pantry Cabinet",
+          "description": "A tall cabinet for kitchen pantry storage.",
+          "price": 950,
+          "image": "pantry_cabinet.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 303,
+          "name": "Dining Table",
+          "description": "A wooden dining table with seating for six.",
+          "price": 1500,
+          "image": "dining_table.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 304,
+          "name": "Stainless Steel Sink",
+          "description": "A modern kitchen sink made of stainless steel.",
+          "price": 600,
+          "image": "stainless_steel_sink.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 305,
+          "name": "Countertop",
+          "description": "Granite countertop for kitchen preparation area.",
+          "price": 2200,
+          "image": "countertop.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 306,
+          "name": "Bar Stools",
+          "description": "Modern bar stools for kitchen islands.",
+          "price": 300,
+          "image": "bar_stools.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 307,
+          "name": "Backsplash Tiles",
+          "description": "Decorative tiles for kitchen backsplash.",
+          "price": 450,
+          "image": "backsplash_tiles.jpg",
+          "category": "Kitchen"
+        },
+        {
+          "productId": 308,
+          "name": "Kitchen Faucet",
+          "description": "A high-end kitchen faucet with spray function.",
+          "price": 320,
+          "image": "kitchen_faucet.jpg",
+          "category": "Kitchen"
+        }
+      ]
+    },
+    {
+      "category": "Bathroom",
+      "products": [
+        {
+          "productId": 401,
+          "name": "Shower",
+          "description": "A modern glass shower enclosure.",
+          "price": 2000,
+          "image": "shower.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 402,
+          "name": "Bathtub",
+          "description": "A luxurious freestanding bathtub.",
+          "price": 2500,
+          "image": "bathtub.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 403,
+          "name": "Bathroom Sink",
+          "description": "A stylish bathroom sink with a marble top.",
+          "price": 800,
+          "image": "bathroom_sink.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 404,
+          "name": "Toilet",
+          "description": "A modern toilet with dual flush.",
+          "price": 500,
+          "image": "toilet.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 405,
+          "name": "Vanity Cabinet",
+          "description": "A cabinet for bathroom vanity storage.",
+          "price": 1200,
+          "image": "vanity_cabinet.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 406,
+          "name": "Bathroom Mirror",
+          "description": "A mirror with built-in lighting.",
+          "price": 350,
+          "image": "bathroom_mirror.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 407,
+          "name": "Medicine Cabinet",
+          "description": "A cabinet for storing bathroom essentials.",
+          "price": 400,
+          "image": "medicine_cabinet.jpg",
+          "category": "Bathroom"
+        },
+        {
+          "productId": 408,
+          "name": "Bathroom Rug",
+          "description": "A plush bathroom rug for added comfort.",
+          "price": 100,
+          "image": "bathroom_rug.jpg",
+          "category": "Bathroom"
+        }
+      ]
+    },
+    {
+      "category": "Lighting",
+      "products": [
+        {
+          "productId": 501,
+          "name": "Chandelier",
+          "description": "A decorative chandelier for the living room.",
+          "price": 1200,
+          "image": "chandelier.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 502,
+          "name": "Pendant Light",
+          "description": "A hanging pendant light for the kitchen.",
+          "price": 450,
+          "image": "pendant_light.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 503,
+          "name": "Table Lamp",
+          "description": "A modern table lamp for the bedroom.",
+          "price": 150,
+          "image": "table_lamp.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 504,
+          "name": "Floor Lamp",
+          "description": "A decorative floor lamp for the living room.",
+          "price": 220,
+          "image": "floor_lamp.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 505,
+          "name": "Wall Sconce",
+          "description": "A modern wall sconce for ambient lighting.",
+          "price": 180,
+          "image": "wall_sconce.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 506,
+          "name": "Outdoor Light",
+          "description": "A waterproof outdoor light for the patio.",
+          "price": 320,
+          "image": "outdoor_light.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 507,
+          "name": "Recessed Lighting",
+          "description": "Recessed lighting for the ceiling.",
+          "price": 100,
+          "image": "recessed_lighting.jpg",
+          "category": "Lighting"
+        },
+        {
+          "productId": 508,
+          "name": "Ceiling Fan with Light",
+          "description": "A ceiling fan with built-in lighting.",
+          "price": 600,
+          "image": "ceiling_fan_light.jpg",
+          "category": "Lighting"
+        }
+      ]
+    },
+    {
+      "category": "Decor",
+      "products": [
+        {
+          "productId": 601,
+          "name": "Wall Art",
+          "description": "A modern abstract painting for the living room.",
+          "price": 450,
+          "image": "wall_art.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 602,
+          "name": "Rug",
+          "description": "A plush rug for the bedroom.",
+          "price": 400,
+          "image": "rug.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 603,
+          "name": "Curtains",
+          "description": "Elegant curtains for the living room.",
+          "price": 300,
+          "image": "curtains.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 604,
+          "name": "Cushions",
+          "description": "Decorative cushions for the sofa.",
+          "price": 80,
+          "image": "cushions.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 605,
+          "name": "Mirror",
+          "description": "A large decorative mirror.",
+          "price": 350,
+          "image": "mirror.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 606,
+          "name": "Vases",
+          "description": "A set of decorative vases for the table.",
+          "price": 120,
+          "image": "vases.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 607,
+          "name": "Throw Blanket",
+          "description": "A cozy throw blanket for the living room.",
+          "price": 100,
+          "image": "throw_blanket.jpg",
+          "category": "Decor"
+        },
+        {
+          "productId": 608,
+          "name": "Candles",
+          "description": "Scented candles for decoration.",
+          "price": 50,
+          "image": "candles.jpg",
+          "category": "Decor"
+        }
+      ]
+    },
+    {
+      "category": "Outdoor",
+      "products": [
+        {
+          "productId": 701,
+          "name": "Patio Set",
+          "description": "A modern outdoor patio set with table and chairs.",
+          "price": 1500,
+          "image": "patio_set.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 702,
+          "name": "Outdoor Sofa",
+          "description": "A comfortable outdoor sofa.",
+          "price": 900,
+          "image": "outdoor_sofa.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 703,
+          "name": "Outdoor Rug",
+          "description": "A durable outdoor rug.",
+          "price": 300,
+          "image": "outdoor_rug.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 704,
+          "name": "Fire Pit",
+          "description": "A modern outdoor fire pit.",
+          "price": 800,
+          "image": "fire_pit.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 705,
+          "name": "Garden Chairs",
+          "description": "Comfortable garden chairs for the patio.",
+          "price": 400,
+          "image": "garden_chairs.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 706,
+          "name": "Hammock",
+          "description": "A relaxing outdoor hammock.",
+          "price": 250,
+          "image": "hammock.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 707,
+          "name": "Grill",
+          "description": "A stainless steel outdoor grill.",
+          "price": 1000,
+          "image": "grill.jpg",
+          "category": "Outdoor"
+        },
+        {
+          "productId": 708,
+          "name": "Outdoor Lighting",
+          "description": "String lights for outdoor decoration.",
+          "price": 200,
+          "image": "outdoor_lighting.jpg",
+          "category": "Outdoor"
+        }
+      ]
+    },
+    {
+      "category": "Office",
+      "products": [
+        {
+          "productId": 801,
+          "name": "Office Desk",
+          "description": "A modern office desk with ample space.",
+          "price": 850,
+          "image": "office_desk.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 802,
+          "name": "Ergonomic Chair",
+          "description": "An ergonomic chair for office use.",
+          "price": 600,
+          "image": "ergonomic_chair.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 803,
+          "name": "Bookshelf",
+          "description": "A tall bookshelf with multiple shelves.",
+          "price": 500,
+          "image": "bookshelf.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 804,
+          "name": "Desk Lamp",
+          "description": "A modern desk lamp for office lighting.",
+          "price": 120,
+          "image": "desk_lamp.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 805,
+          "name": "File Cabinet",
+          "description": "A compact file cabinet for office storage.",
+          "price": 300,
+          "image": "file_cabinet.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 806,
+          "name": "Office Chair Mat",
+          "description": "A floor mat for office chairs.",
+          "price": 100,
+          "image": "office_chair_mat.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 807,
+          "name": "Whiteboard",
+          "description": "A large whiteboard for office brainstorming.",
+          "price": 250,
+          "image": "whiteboard.jpg",
+          "category": "Office"
+        },
+        {
+          "productId": 808,
+          "name": "Printer Stand",
+          "description": "A mobile stand for office printers.",
+          "price": 200,
+          "image": "printer_stand.jpg",
+          "category": "Office"
+        }
+      ]
+    }
+  ]
+}

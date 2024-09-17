@@ -1,0 +1,347 @@
+import React, { useState } from "react";
+import {
+  Box,
+  Button,
+  useDisclosure,
+  useColorModeValue,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  Flex,
+  InputGroup,
+  InputLeftElement,
+  Input,
+  Icon,
+  Avatar,
+  Collapse,
+  Text,
+  useColorMode,
+} from "@chakra-ui/react";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { AuthenticatedRouteNames } from "../../utilities/util.constant";
+import APP_ICONS from "../../constants/icons";
+import { Colors } from "../../constants/colors";
+
+function MainLayout() {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const sidebar = useDisclosure();
+  const integrations = useDisclosure();
+  const color = useColorModeValue("gray.600", "gray.300");
+  const storedUser = localStorage.getItem("currentUser");
+  const loggedInUser = storedUser ? JSON.parse(storedUser) : null;
+  const [searchKey, setSearchKey] = useState("");
+  const navigate = useNavigate();
+  const categoriedData = [
+    "Living Room",
+    "Bedroom",
+    "Kitchen",
+    "Bathroom",
+    "Lighting",
+    "Decor",
+    "Outdoor",
+    "Office",
+  ];
+
+  const NavItem = (props) => {
+    const { icon, children, ...rest } = props;
+    return (
+      <Flex
+        align="center"
+        px="4"
+        pl="4"
+        py="3"
+        cursor="pointer"
+        color="white"
+        _dark={{
+          color: Colors.WHITE,
+        }}
+        _hover={{
+          bg: "black",
+          _dark: {
+            bg: "black",
+            color: "white",
+          },
+          color: "white",
+        }}
+        role="group"
+        fontWeight="semibold"
+        transition=".15s ease"
+        {...rest}
+      >
+        {icon && (
+          <Icon
+            mx="2"
+            boxSize="4"
+            _groupHover={{
+              color: color,
+            }}
+            as={icon}
+          />
+        )}
+        {children}
+      </Flex>
+    );
+  };
+
+  const SidebarContent = (props) => (
+    <Box
+      as="nav"
+      pos="fixed"
+      top="0"
+      left="0"
+      zIndex="sticky"
+      h="full"
+      pb="10"
+      overflowX="hidden"
+      overflowY="auto"
+      bg={Colors.DASHBOARDTHEME}
+      _dark={{
+        bg: Colors.DASHBOARDTHEME,
+        // color:Colors.WHITE
+      }}
+      border
+      color={Colors.White}
+      borderRightWidth="1px"
+      w="60"
+      {...props}
+    >
+      <Flex
+        borderBottom={{
+          base: "1px solid white",
+          md: "none",
+        }}
+        px="4"
+        py="4"
+        mb="2"
+        color={Colors.WHITE}
+        justifyContent={"space-between"}
+      >
+        <Flex>
+          <APP_ICONS.DASHBOARD fontSize={"1.8rem"} />
+          <Text
+            fontSize="2xl"
+            ml="2"
+            color="brand.500"
+            _dark={{
+              color: "white",
+            }}
+            fontWeight="semibold"
+          >
+            Dashboard
+          </Text>
+        </Flex>
+        <Icon
+          as={APP_ICONS.CLOSE}
+          fontSize={"25px"}
+          onClick={sidebar.onClose}
+          display={{
+            base: "inline-flex",
+            md: "none",
+          }}
+        />
+      </Flex>
+      <Flex
+        direction="column"
+        as="nav"
+        fontSize="sm"
+        color={Colors.WHITE}
+        aria-label="Main Navigation"
+      >
+        <Link to={AuthenticatedRouteNames.Dashboard}>
+          <NavItem>
+            <Icon
+              fontSize={"1.2rem"}
+              ml={"7px"}
+              mr={"6px"}
+              // color={'white'}
+              as={APP_ICONS.HOME}
+            />
+            Home
+          </NavItem>
+        </Link>
+
+        <Link to={AuthenticatedRouteNames.USERS}>
+          <NavItem>
+            <Icon
+              fontSize={"1.2rem"}
+              ml={"7px"}
+              mr={"6px"}
+              as={APP_ICONS.USERS}
+            />
+            Users
+          </NavItem>
+        </Link>
+
+        <NavItem icon={APP_ICONS.SHOWS} onClick={integrations.onToggle}>
+          Categories
+          <Icon
+            as={APP_ICONS.TOGGLE}
+            ml="auto"
+            transform={integrations.isOpen && "rotate(180deg)"}
+          />
+        </NavItem>
+        <Collapse in={integrations.isOpen}>
+          {categoriedData.map((singleCategory, index) => (
+            <Box
+              key={index}
+              onClick={() =>
+                navigate(
+                  AuthenticatedRouteNames.PRODUCTS.replace(
+                    ":category",
+                    singleCategory
+                  )
+                )
+              }
+            >
+              <NavItem pl="12" py="2">
+                {singleCategory}
+              </NavItem>
+            </Box>
+          ))}
+        </Collapse>
+        <Link to={AuthenticatedRouteNames.SETTING}>
+          <NavItem>
+            <Icon
+              fontSize={"1.2rem"}
+              ml={"7px"}
+              mr={"6px"}
+              as={APP_ICONS.SETTING}
+            />
+            Setting
+          </NavItem>
+        </Link>
+        <Link to={AuthenticatedRouteNames.LOGOUT}>
+          <NavItem>
+            <Icon
+              transform={"rotate(180deg)"}
+              fontSize={"1.4rem"}
+              ml={"4px"}
+              mr={"6px"}
+              as={APP_ICONS.LOGOUT}
+            />
+            Logout
+          </NavItem>
+        </Link>
+      </Flex>
+    </Box>
+  );
+
+  return (
+    <Box
+      as="section"
+      bg="gray.50"
+      _dark={{
+        bg: "#262626",
+      }}
+      minH="100vh"
+    >
+      <SidebarContent
+        display={{
+          base: "none",
+          md: "unset",
+        }}
+      />
+      <Drawer
+        isOpen={sidebar.isOpen}
+        onClose={sidebar.onClose}
+        placement="left"
+      >
+        <DrawerOverlay />
+        <DrawerContent>
+          <SidebarContent w="full" borderRight="none" />
+        </DrawerContent>
+      </Drawer>
+      <Box
+        ml={{
+          base: 0,
+          md: 60,
+        }}
+        transition=".3s ease"
+      >
+        <Flex
+          as="header"
+          align="center"
+          justify="space-between"
+          w="full"
+          px="4"
+          bg={Colors.DASHBOARDTHEME}
+          _dark={{
+            bg: Colors.DASHBOARDTHEME,
+          }}
+          borderBottomWidth="1px"
+          color="inherit"
+          h="14"
+        >
+          <Icon
+            as={APP_ICONS.THREEBARS}
+            fontSize={"25px"}
+            display={{
+              base: "inline-flex",
+              md: "none",
+            }}
+            color={Colors.WHITE}
+            aria-label="Menu"
+            onClick={sidebar.onOpen}
+          />
+          <form
+            method="post"
+            onSubmit={(event) => {
+              event.preventDefault();
+              navigate(
+                AuthenticatedRouteNames.SEARCH.replace(":pageno", searchKey)
+              );
+            }}
+          >
+            <InputGroup
+              w="96"
+              display={{
+                base: "none",
+                md: "flex",
+              }}
+            >
+              <Input
+                color={Colors.WHITE}
+                onChange={(e) => setSearchKey(e.target.value)}
+                value={searchKey}
+                type="number"
+                placeholder="Search page number..."
+              />
+              <InputLeftElement color="inherit">
+                <APP_ICONS.SEARCH color={Colors.WHITE} />
+              </InputLeftElement>
+            </InputGroup>
+          </form>
+
+          <Flex align="center">
+            <Button
+              bg={"transparent"}
+              fontSize={"1.7rem"}
+              onClick={toggleColorMode}
+            >
+              <Icon
+                color={Colors.WHITE}
+                as={colorMode == "light" ? APP_ICONS.MOON : APP_ICONS.SUN}
+                cursor="pointer"
+              />
+            </Button>
+            <Avatar ml="4" size="sm" name={"Fiza"} cursor="pointer" />
+          </Flex>
+        </Flex>
+
+        <Box as="main" p="4">
+          <Box
+            borderWidth="4px"
+            p={"1rem"}
+            borderStyle="dashed"
+            rounded="md"
+            // h="96"
+          >
+            <Outlet />
+          </Box>
+        </Box>
+      </Box>
+    </Box>
+  );
+}
+
+export default MainLayout;
