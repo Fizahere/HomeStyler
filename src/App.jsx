@@ -9,15 +9,14 @@ const theme = extendTheme({
 });
 
 function App() {
-  const [user,setUser] = useState(true);
+  const [user,setUser] = useState(false);
 
   return (
     <ChakraProvider theme={theme}>
       <>
         <BrowserRouter>
-        {/* <AuthenticatedRoutes /> */}
-<UnAuthenticatedRoutes/>
-          {/* {user ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />} */}
+      
+          {user ? <AuthenticatedRoutes /> : <UnAuthenticatedRoutes />}
         </BrowserRouter>
       </>
     </ChakraProvider>

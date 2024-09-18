@@ -21,27 +21,40 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import { AuthenticatedRouteNames } from "../../utilities/util.constant";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
+import productsData from "../../data/products-data.json";
 
 function MainLayout() {
   const { colorMode, toggleColorMode } = useColorMode();
   const sidebar = useDisclosure();
-  const integrations = useDisclosure();
   const color = useColorModeValue("gray.600", "gray.300");
-  const storedUser = localStorage.getItem("currentUser");
-  const loggedInUser = storedUser ? JSON.parse(storedUser) : null;
   const [searchKey, setSearchKey] = useState("");
   const navigate = useNavigate();
-  const categoriedData = [
-    "Living Room",
-    "Bedroom",
-    "Kitchen",
-    "Bathroom",
-    "Lighting",
-    "Decor",
-    "Outdoor",
-    "Office",
-  ];
+  const integrations = useDisclosure();
+const [openSubCat, setOpenSubCat] = useState(null);
 
+const handleSubCategoryToggle = (index) => {
+  setOpenSubCat(openSubCat === index ? null : index); // Toggle subcategories for each category
+};
+
+
+const categories = [
+  "Living Room",
+  "Office",
+  "Kitchen",
+  "Bedroom",
+  "Bathroom",
+];
+
+const subCategories = [
+  "Cozy",
+  "Elegant",
+  "Classic",
+  "Minimalist",
+];
+
+  const categoriedData = productsData.homeStyler.map((designs) =>
+    console.log(designs.designs)
+  );
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
     return (
@@ -172,33 +185,50 @@ function MainLayout() {
           </NavItem>
         </Link>
 
-        <NavItem icon={APP_ICONS.SHOWS} onClick={integrations.onToggle}>
-          Categories
-          <Icon
-            as={APP_ICONS.TOGGLE}
-            ml="auto"
-            transform={integrations.isOpen && "rotate(180deg)"}
-          />
-        </NavItem>
-        <Collapse in={integrations.isOpen}>
-          {categoriedData.map((singleCategory, index) => (
-            <Box
-              key={index}
+        <NavItem icon={APP_ICONS.CATEGORY} _hover={{color:'inherit'}} onClick={integrations.onToggle}>
+  Categories
+  <Icon
+    as={APP_ICONS.TOGGLE}
+    ml="auto"
+    transform={integrations.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+  />
+</NavItem>
+
+<Collapse in={integrations.isOpen}>
+  {categories.map((singleCategory, index) => (
+    <Box key={index}>
+      <NavItem
+        onClick={() => handleSubCategoryToggle(index)}
+      >
+        {singleCategory}
+        <Icon
+          as={APP_ICONS.TOGGLE}
+          ml="auto"
+          transform={openSubCat === index ? "rotate(180deg)" : "rotate(0deg)"}
+        />
+      </NavItem>
+      <Collapse in={openSubCat === index}>
+        {subCategories.map((singleSubCategory, subIndex) => (
+          <Box key={`${index}-${subIndex}`}>
+            <NavItem
               onClick={() =>
                 navigate(
                   AuthenticatedRouteNames.PRODUCTS.replace(
-                    ":category",
-                    singleCategory
+                    ":category/:subcategory",
+                    `${singleCategory}/${singleSubCategory}`
                   )
                 )
               }
             >
-              <NavItem pl="12" py="2">
-                {singleCategory}
-              </NavItem>
-            </Box>
-          ))}
-        </Collapse>
+              {singleSubCategory}
+            </NavItem>
+          </Box>
+        ))}
+      </Collapse>
+    </Box>
+  ))}
+</Collapse>
+
         <Link to={AuthenticatedRouteNames.SETTING}>
           <NavItem>
             <Icon

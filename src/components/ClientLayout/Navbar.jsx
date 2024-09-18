@@ -25,7 +25,7 @@ function Navbar() {
 
   return (
     <>
-      <Box>
+      <Box zIndex={1}>
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"

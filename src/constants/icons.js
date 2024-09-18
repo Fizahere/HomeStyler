@@ -16,10 +16,14 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { CiStar } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogIn } from "react-icons/io5";
-import { MdQuestionAnswer } from "react-icons/md";
-import { LiaTvSolid } from "react-icons/lia";
+import { TbCategory } from "react-icons/tb";
 import { TbBrandGithubFilled } from "react-icons/tb";
 import { GrLinkedinOption } from "react-icons/gr";
+import { TfiRulerPencil } from "react-icons/tfi";
+import { BsBuildings } from "react-icons/bs";
+import { RiCompassesLine } from "react-icons/ri";
+import { GiHammerNails } from "react-icons/gi";
+import { FaArrowRight } from "react-icons/fa6";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -31,7 +35,13 @@ const APP_ICONS = {
     INTEGRATION: MdIntegrationInstructions,
     USERS: IoMdContacts,
     SETTING: IoSettingsSharp,
-    SHOWS:LiaTvSolid,
+    CATEGORY:TbCategory,
+
+    //service section icons
+    PENCILSCALE:TfiRulerPencil,
+    BUILDINGS:BsBuildings,
+    COMPASS:RiCompassesLine,
+    HAMMER:GiHammerNails,
 
     //Actions
     MOON: IoMdMoon,
@@ -44,6 +54,7 @@ const APP_ICONS = {
     ADD: IoMdAdd,
     GOOGLE: FcGoogle,
     LOGIN:IoLogIn,
+    RIGHTARROW:FaArrowRight,
 
     //Footer
 GITHUB:TbBrandGithubFilled,

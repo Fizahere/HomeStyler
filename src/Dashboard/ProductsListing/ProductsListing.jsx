@@ -10,15 +10,18 @@ import CustomDataTable from "../../components/Mist/DataTable";
 
 function ProductsListing() {
   const addDrawer = useDisclosure();
-  const { category: categoryName } = useParams();
-  const categoryData = productsData.homeStyler.find(
-    (category) =>  category.category === categoryName
-  );
+  const { category: categoryName, subcategory: subCategoryName } = useParams();
 
+  const filteredProducts = productsData.homeStyler.filter(
+    (product) => product.category === categoryName && product.design === subCategoryName
+  );
+  
   return (
     <>
       <Flex justify={"space-between"}>
-        <Heading size={{ base: "md", md: "lg" }}>Products of {categoryData.category}</Heading>
+        <Heading size={{ base: "md", md: "lg" }}>
+          Products of {filteredProducts.category}
+        </Heading>
         <CustomButton
           onClickHandler={addDrawer.onOpen}
           buttonText={"Add Show"}
@@ -27,7 +30,7 @@ function ProductsListing() {
         />
       </Flex>
       <Box py={"2rem"}>
-      <CustomDataTable showDataMemo={categoryData.products} />
+        <CustomDataTable showDataMemo={filteredProducts} />
       </Box>
       <AddDrawer disclosure={addDrawer} headingName={"Add Show"} />
     </>

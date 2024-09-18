@@ -8,13 +8,13 @@ import {
   Tr,
   Td,
   Image,
-  Button,
 } from "@chakra-ui/react";
 import { Colors } from "../../constants/colors";
 import CustomButton from "./Button";
 
 function CustomDataTable(props) {
   const { showDataMemo: showDataMemoMap } = props;
+  console.log(showDataMemoMap,'map')
   return (
     <Box overflow={"auto"}>
       <Table>
