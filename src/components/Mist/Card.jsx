@@ -33,6 +33,7 @@ function CustomCard({ singleProduct, isLoading }) {
   }
 
   const {
+    id,
     name,
     description,
     price,
@@ -81,7 +82,7 @@ function CustomCard({ singleProduct, isLoading }) {
               color: "",
             }}
             fontSize={{ base: "12px", md: "1xl" }}
-            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design', category)}`)}
+            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design', id)}`)}
           >
             Show more
           </Button>

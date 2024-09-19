@@ -14,7 +14,7 @@ import CustomCard from "./Card";
 
 const TabbedSections = ({ categoryName }) => {
   const [selectedDesign, setSelectedDesign] = useState("All");
-  console.log(categoryName, "");
+  // console.log(categoryName, "");
   // console.log(selectedDesign,'selectedDesign');
 
   const filteredProducts = useMemo(() => {
@@ -31,7 +31,7 @@ const TabbedSections = ({ categoryName }) => {
       );
     });
   }, [categoryName, selectedDesign]);
-  console.log(filteredProducts, "filteredProducts");
+  // console.log(filteredProducts, "filteredProducts");
 
   const renderContent = () => {
     switch (selectedDesign) {

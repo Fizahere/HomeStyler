@@ -7,7 +7,8 @@
       "price": 850,
       "image": "soft_plush_sofa.jpg",
       "category": "Living Room",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 3
     },
     {
       "productId": 102,
@@ -16,7 +17,8 @@
       "price": 100,
       "image": "cozy_throw_blanket.jpg",
       "category": "Living Room",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 3
     },
     {
       "productId": 103,
@@ -25,7 +27,8 @@
       "price": 1500,
       "image": "leather_sectional_sofa.jpg",
       "category": "Living Room",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 5
     },
     {
       "productId": 104,
@@ -34,7 +37,8 @@
       "price": 2000,
       "image": "crystal_chandelier.jpg",
       "category": "Living Room",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 5
     },
     {
       "productId": 105,
@@ -43,7 +47,8 @@
       "price": 1200,
       "image": "modern_sofa.jpg",
       "category": "Living Room",
-      "design": "Minimalist"
+      "design": "Minimalist",
+      "designID": 18
     },
     {
       "productId": 106,
@@ -52,7 +57,8 @@
       "price": 500,
       "image": "glass_coffee_table.jpg",
       "category": "Living Room",
-      "design": "Minimalist"
+      "design": "Minimalist",
+      "designID": 4
     },
     {
       "productId": 107,
@@ -61,7 +67,8 @@
       "price": 1100,
       "image": "antique_armchair.jpg",
       "category": "Living Room",
-      "design": "Classic"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 108,
@@ -70,7 +77,8 @@
       "price": 700,
       "image": "persian_rug.jpg",
       "category": "Living Room",
-      "design": "Classic"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 201,
@@ -79,7 +87,8 @@
       "price": 400,
       "image": "ergonomic_office_chair.jpg",
       "category": "Office",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 1
     },
     {
       "productId": 202,
@@ -88,7 +97,8 @@
       "price": 700,
       "image": "wooden_desk.jpg",
       "category": "Office",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 1
     },
     {
       "productId": 203,
@@ -97,7 +107,8 @@
       "price": 1200,
       "image": "executive_leather_chair.jpg",
       "category": "Office",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 2
     },
     {
       "productId": 204,
@@ -106,43 +117,8 @@
       "price": 1000,
       "image": "glass_desk.jpg",
       "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 2
     },
     {
       "productId": 301,
@@ -151,7 +127,8 @@
       "price": 900,
       "image": "plush_bed.jpg",
       "category": "Bedroom",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 1
     },
     {
       "productId": 302,
@@ -160,7 +137,8 @@
       "price": 150,
       "image": "soft_bedside_rug.jpg",
       "category": "Bedroom",
-      "design": "Cozy"
+      "design": "Cozy",
+      "designID": 1
     },
     {
       "productId": 303,
@@ -169,25 +147,8 @@
       "price": 1100,
       "image": "simple_platform_bed.jpg",
       "category": "Bedroom",
-      "design": "Minimalist"
-    },
-    {
-      "productId": 302,
-      "name": "Soft Bedside Rug",
-      "description": "A soft rug to add coziness to the room.",
-      "price": 150,
-      "image": "soft_bedside_rug.jpg",
-      "category": "Bedroom",
-      "design": "Elegant"
-    },
-    {
-      "productId": 303,
-      "name": "Simple Platform Bed",
-      "description": "A minimalist platform bed with a modern touch.",
-      "price": 1100,
-      "image": "simple_platform_bed.jpg",
-      "category": "Bedroom",
-      "design": "Elegant"
+      "design": "Minimalist",
+      "designID": 3
     },
     {
       "productId": 304,
@@ -196,7 +157,8 @@
       "price": 300,
       "image": "minimalist_nightstand.jpg",
       "category": "Bedroom",
-      "design": "Minimalist"
+      "design": "Minimalist",
+      "designID": 3
     },
     {
       "productId": 305,
@@ -205,7 +167,8 @@
       "price": 2000,
       "image": "canopy_bed.jpg",
       "category": "Bedroom",
-      "design": "Classic"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 306,
@@ -214,25 +177,8 @@
       "price": 1200,
       "image": "antique_dresser.jpg",
       "category": "Bedroom",
-      "design": "Classic"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 401,
@@ -241,7 +187,8 @@
       "price": 3000,
       "image": "marble_countertops.jpg",
       "category": "Kitchen",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 2
     },
     {
       "productId": 402,
@@ -250,7 +197,8 @@
       "price": 5000,
       "image": "stainless_steel_appliances.jpg",
       "category": "Kitchen",
-      "design": "Elegant"
+      "design": "Elegant",
+      "designID": 2
     },
     {
       "productId": 403,
@@ -259,7 +207,8 @@
       "price": 1800,
       "image": "wooden_kitchen_island.jpg",
       "category": "Kitchen",
-      "design": "Classic"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 404,
@@ -268,106 +217,8 @@
       "price": 400,
       "image": "iron_pot_rack.jpg",
       "category": "Kitchen",
-      "design": "Classic"
-    },
-    {
-      "productId": 403,
-      "name": "Wooden Kitchen Island",
-      "description": "A rustic kitchen island with reclaimed wood.",
-      "price": 1800,
-      "image": "wooden_kitchen_island.jpg",
-      "category": "Kitchen",
-      "design": "Minimalist"
-    },
-    {
-      "productId": 403,
-      "name": "Wooden Kitchen Island",
-      "description": "A rustic kitchen island with reclaimed wood.",
-      "price": 1800,
-      "image": "wooden_kitchen_island.jpg",
-      "category": "Kitchen",
-      "design": "Minimalist"
-    },
-    {
-      "productId": 404,
-      "name": "Iron Pot Rack",
-      "description": "An iron pot rack for hanging rustic cookware.",
-      "price": 400,
-      "image": "iron_pot_rack.jpg",
-      "category": "Kitchen",
-      "design": "Cozy"
-    },
-    {
-      "productId": 403,
-      "name": "Wooden Kitchen Island",
-      "description": "A rustic kitchen island with reclaimed wood.",
-      "price": 1800,
-      "image": "wooden_kitchen_island.jpg",
-      "category": "Kitchen",
-      "design": "Cozy"
-    },
-    {
-      "productId": 404,
-      "name": "Iron Pot Rack",
-      "description": "An iron pot rack for hanging rustic cookware.",
-      "price": 400,
-      "image": "iron_pot_rack.jpg",
-      "category": "Kitchen",
-      "design": "Classic"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Classic"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Classic"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Minimalist"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Minimalist"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 501,
@@ -376,25 +227,8 @@
       "price": 900,
       "image": "wall_mounted_sink.jpg",
       "category": "Bathroom",
-      "design": "Minimalist"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Cozy"
-    },
-    {
-      "productId": 501,
-      "name": "Wall-mounted Sink",
-      "description": "A sleek, minimalist wall-mounted sink.",
-      "price": 900,
-      "image": "wall_mounted_sink.jpg",
-      "category": "Bathroom",
-      "design": "Cozy"
+      "design": "Minimalist",
+      "designID": 3
     },
     {
       "productId": 502,
@@ -403,7 +237,8 @@
       "price": 2500,
       "image": "glass_shower_enclosure.jpg",
       "category": "Bathroom",
-      "design": "Minimalist"
+      "design": "Minimalist",
+      "designID": 3
     },
     {
       "productId": 503,
@@ -412,70 +247,18 @@
       "price": 2300,
       "image": "clawfoot_bathtub.jpg",
       "category": "Bathroom",
-      "design": "Classic"
+      "design": "Classic",
+      "designID": 4
     },
     {
       "productId": 504,
-      "name": "Antique Brass Faucet",
-      "description": "An antique-style brass faucet for a classic bathroom.",
-      "price": 700,
-      "image": "antique_brass_faucet.jpg",
+      "name": "Vintage Vanity Mirror",
+      "description": "An ornate vintage vanity mirror with gold detailing.",
+      "price": 800,
+      "image": "vintage_vanity_mirror.jpg",
       "category": "Bathroom",
-      "design": "Classic"
-    },
-    {
-      "productId": 503,
-      "name": "Clawfoot Bathtub",
-      "description": "A classic clawfoot bathtub for a vintage look.",
-      "price": 2300,
-      "image": "clawfoot_bathtub.jpg",
-      "category": "Bathroom",
-      "design": "Elegant"
-    },
-    {
-      "productId": 504,
-      "name": "Antique Brass Faucet",
-      "description": "An antique-style brass faucet for a classic bathroom.",
-      "price": 700,
-      "image": "antique_brass_faucet.jpg",
-      "category": "Bathroom",
-      "design": "Elegant"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 203,
-      "name": "Executive Leather Chair",
-      "description": "A sleek leather chair for the executive office.",
-      "price": 1200,
-      "image": "executive_leather_chair.jpg",
-      "category": "Office",
-      "design": "Elegant"
-    },
-    {
-      "productId": 204,
-      "name": "Glass Desk",
-      "description": "A modern glass desk with an elegant finish.",
-      "price": 1000,
-      "image": "glass_desk.jpg",
-      "category": "Office",
-      "design": "Elegant"
+      "design": "Classic",
+      "designID": 4
     }
   ]
 }
