@@ -1,0 +1,29 @@
+{
+    "Designs": [
+        {
+            "name": "Cozy",
+            "image": "cozy-design.jpg",
+            "description": "A warm and inviting space featuring soft textiles and earthy tones."
+        },
+        {
+            "name": "Elegant",
+            "image": "elegant-design.jpg",
+            "description": "A sophisticated design with luxurious materials and refined color palettes."
+        },
+        {
+            "name": "Minimalist",
+            "image": "minimalist-design.jpg",
+            "description": "A clean and uncluttered space emphasizing simplicity and functionality."
+        },
+        {
+            "name": "Classic",
+            "image": "classic-design.jpg",
+            "description": "Timeless elegance with traditional furniture and rich fabrics."
+        },
+        {
+            "name": "Contemporary",
+            "image": "contemporary-design.jpg",
+            "description": "A modern design featuring sleek lines and innovative materials."
+        }
+    ]
+}
