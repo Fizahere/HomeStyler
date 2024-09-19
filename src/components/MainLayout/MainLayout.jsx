@@ -216,7 +216,7 @@ const subCategories = [
                   AuthenticatedRouteNames.PRODUCTS.replace(
                     ":category/:subcategory",
                     `${singleCategory}/${singleSubCategory}`
-                  )
+                  ).toLocaleLowerCase()
                 )
               }
             >
