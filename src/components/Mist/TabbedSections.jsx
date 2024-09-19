@@ -7,6 +7,7 @@ import {
   Flex,
   SimpleGrid,
   Text,
+  Box,
 } from "@chakra-ui/react";
 import productsData from "../../data/products-data.json";
 import CustomCard from "./Card";
@@ -76,9 +77,9 @@ const TabbedSections = ({ categoryName }) => {
         </Tabs>
 
       </Flex>
-        <Flex
+        <Box
           p={4}
-        >{renderContent()}</Flex>
+        >{renderContent()}</Box>
     </ChakraProvider>
   );
 };
