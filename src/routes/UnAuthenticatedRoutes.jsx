@@ -9,6 +9,9 @@ import Sitemap from "../ClientSite/Sitemap";
 import SignIn from "../Auth/Login";
 import SignUp from "../Auth/Register";
 import Detail from "../ClientSite/Detail";
+import Contact from '../ClientSite/Contact'
+import Feedback from '../ClientSite/Feedback'
+import About from "../ClientSite/About";
 
 function UnAuthenticatedRoutes() {
   return (
@@ -18,6 +21,9 @@ function UnAuthenticatedRoutes() {
         <Route path={UnAuthenticatedRoutesNames.SHOP} element={<Shop />} />
         <Route path={UnAuthenticatedRoutesNames.SITEMAP} element={<Sitemap />} />
         <Route path={UnAuthenticatedRoutesNames.DETAIL} element={<Detail />} />
+        <Route path={UnAuthenticatedRoutesNames.CONTACT} element={<Contact />} />
+        <Route path={UnAuthenticatedRoutesNames.FEEDBACK} element={<Feedback />} />
+        <Route path={UnAuthenticatedRoutesNames.ABOUT} element={<About />} />
       </Route>
         <Route path={UnAuthenticatedRoutesNames.LOGIN} element={<SignIn />} />
         <Route path={UnAuthenticatedRoutesNames.SIGNUP} element={<SignUp />} />

@@ -15,6 +15,8 @@ export const UnAuthenticatedRoutesNames = {
     HOME: '/',
     ABOUT: '/home-styler/about',
     SHOP:'/home-styler/category/:category',
+    CONTACT:'/home-styler/contact-us',
+    FEEDBACK:'/home-styler/feedback',
     SITEMAP:'/home-styler/sitemap',
     DETAIL: '/home-styler/detail/design/:design',
     LOGIN: '/home-styler/login',

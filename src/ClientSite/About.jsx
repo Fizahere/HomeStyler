@@ -1,13 +1,6 @@
 import React from "react";
 import { Box, Flex, Heading, Text, Container, Image } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-// import Chair from "../assets/images/chair.png";
-// import ClothRack from "../assets/images/clothRack.png";
-// import Mirror from "../assets/images/mirror.png";
-// import SideTable from "../assets/images/sideTable.png";
-// import Sofa from "../assets/images/sofa.png";
-// import Stool from "../assets/images/stool.png";
-// import SwingChair from "../assets/images/swingChair.png";
 import { h2, h3 } from "framer-motion/client";
 
 const MotionBox = motion(Box);

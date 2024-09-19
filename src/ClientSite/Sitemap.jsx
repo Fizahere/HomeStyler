@@ -51,7 +51,7 @@ const Sitemap = () => {
           </Box>
           <Box display={'flex'} mb={2}>
             <Text display={'flex'} fontSize={'14px'} fontWeight={'bold'}>
-            <Icon mr={1} mt={1} color={'#66ff66'} fontSize={15} as={APP_ICONS.PHONE}/>
+            <Icon mr={1} mt={1} color={'#00cc7a'} fontSize={15} as={APP_ICONS.PHONE}/>
               Contact:</Text>
             <Link to={'/plant-palace/contact-us'}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
