@@ -15,7 +15,9 @@ function ClientLayout() {
         }}
       >
         <Navbar />
+        <Box p={4}>
         <Outlet />
+        </Box>
         <Footer/>
       </Box>
     </>

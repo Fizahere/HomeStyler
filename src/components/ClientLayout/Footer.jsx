@@ -77,22 +77,22 @@ function Footer() {
           <DomLink to={"/"}>
             <Text>Home</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/about-us"}>
+          <DomLink to={"/home-styler/about-us"}>
             <Text>About</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/contact-us"}>
+          <DomLink to={"/home-styler/contact-us"}>
             <Text>Contact</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/explore-plants"}>
+          <DomLink to={"/home-styler/explore-plants"}>
             <Text>Shop</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/feedback"}>
+          <DomLink to={"/home-styler/feedback"}>
             <Text>Feedback</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/login"}>
+          <DomLink to={"/home-styler/login"}>
             <Text>Login</Text>
           </DomLink>
-          <DomLink to={"/plant-palace/site-map"}>
+          <DomLink to={"/home-styler/sitemap"}>
             <Text>Sitemap</Text>
           </DomLink>
         </Flex>

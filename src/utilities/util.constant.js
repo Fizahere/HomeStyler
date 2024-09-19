@@ -13,9 +13,10 @@ export const AuthenticatedRouteNames = {
 
 export const UnAuthenticatedRoutesNames = {
     HOME: '/',
-    ABOUT: '/HomeStyler/about',
-    SHOP:'/HomeStyler/category/:category',
-    DETAIL: '/HomeStyler/detail/design/:design',
-    LOGIN: '/HomeStyler/login',
-    REGISTER: '/HomeStyler/register',
+    ABOUT: '/home-styler/about',
+    SHOP:'/home-styler/category/:category',
+    SITEMAP:'/home-styler/sitemap',
+    DETAIL: '/home-styler/detail/design/:design',
+    LOGIN: '/home-styler/login',
+    SIGNUP: '/home-styler/create-new-account',
 }

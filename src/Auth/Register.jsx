@@ -1,94 +1,156 @@
 import React, { useState } from "react";
 import {
-  FormControl,
-  Input,
-  FormLabel,
   Box,
-  Button,
-  Heading,
-  Text,
-  Spinner,
   Flex,
+  HStack,
+  Heading,
+  Icon,
+  VStack,
+  Button,
+  Text,
 } from "@chakra-ui/react";
-import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
+import CustomInputFeild from "../components/Mist/InputFeild";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
-const SignUp = () => {
+function SignUp() {
+  const [isShowPassword, setShowPassword] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const passwordRegex = /^\d{5,}$/;
+
+  const handleLogin = () => {
+    if(!email||!password){
+      setError('fill the fields!')
+      return
+    }
+    if (!emailRegex.test(email)) {
+      setError("Invalid email!");
+      return;
+    }
+    if (!passwordRegex.test(password)) {
+      setError("use strong password!");
+      return;
+    }
+    let user = {
+      email: email,
+      password: password,
+    };
+    setError("");
+    localStorage.setItem("user", JSON.stringify(user));
+    navigate("/");
+  };
 
   return (
     <>
-      <Box
-        bg="white"
-        _dark={{
-          bg: "#262626",
-          color: Colors.WHITE,
-        }}
-        width={"100%"}
+      <HStack
+        spacing={0}
+        position="relative"
+        zIndex={1}
+        height="100vh"
+        alignItems="stretch"
+        color={Colors.font}
       >
         <Box
-          width={"80"}
-          py={"40"}
-          margin={"0 auto"}
+          width={{
+            base: "100%",
+            md: "40%",
+          }}
+          _dark={{
+            bg: Colors.DARKTHEME,
+          }}
           display={"flex"}
-          flexDirection={"column"}
           justifyContent={"center"}
+          alignItems={"center"}
         >
-          <Heading mb={"5"} ml={"1"}>
-            Sign Up
-          </Heading>
-          {/* <form onSubmit={handleSignUp}> */}
-            <FormControl m={"2"}>
-              <FormLabel>Email address</FormLabel>
-              <Input
-                border={"1px solid grey"}
-                type="email"
-                value={_email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </FormControl>
-
-            <FormControl m={"2"}>
-              <FormLabel>Password</FormLabel>
-              <Input
-                border={"1px solid grey"}
-                type="password"
-                value={_password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </FormControl>
-            <Box color={"red"} m={"2"}>
-              {_error ? <Box>{_error}</Box> : null}
-            </Box>
-            <Button
-              backgroundColor={Colors.THEME}
-              m={"2"}
-              w={"320px"}
-              type="submit"
-              _hover={{ bg: "" }}
-              color={Colors.WHITE}
-              _dark={{
-                color: Colors.Black,
-              }}
-            >
-              signup
-              {/* {loading ? <Spinner size="sm" /> : "Sign Up"} */}
-            </Button>
-          {/* </form> */}
-          <Flex ml={"10px"}>
-            <Text>Already have an account? </Text>
-            <Link to={UnAuthenticatedRoutesNames.LOGIN}>
-              <Text ml={"2"} color={Colors.PRIMARYBLUE}>
+          <Box>
+            <Box py={0} px={4}>
+              <Heading
+                color={Colors.BLACK}
+                _dark={{ color: Colors.WHITE }}
+                size={"lg"}
+                fontWeight={"bold"}
+              >
                 Login
+              </Heading>
+            </Box>
+            <VStack spacing={5} w={300} py={8} px={4} bg={Colors.white}>
+              <CustomInputFeild
+                onChangeHandler={(e) => {
+                  setEmail(e.target.value);
+                }}
+                ivalue={email}
+                text={"Email**"}
+                icon={APP_ICONS.MAIL}
+              />
+              <CustomInputFeild
+                text={"Password**"}
+                ivalue={password}
+                onChangeHandler={(e) => {
+                  setPassword(e.target.value);
+                }}
+                icon={isShowPassword ? APP_ICONS.CLOSEDEYE : APP_ICONS.OPENEYE}
+                type={isShowPassword ? "password" : "text"}
+                onClickHandler={() =>
+                  isShowPassword
+                    ? setShowPassword(false)
+                    : setShowPassword(true)
+                }
+              />
+              <Text mr={7} color={"red"}>
+                {error && error}
               </Text>
-            </Link>
-          </Flex>
+              <Box>
+                <Button
+                  bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
+                  color={Colors.BLACK}
+                  _hover={{ bg: Colors.THEMEBUTTON }}
+                  w={270}
+                  p={3}
+                  borderRadius={8}
+                  fontWeight={"bold"}
+                  onClick={handleLogin}
+                >
+                  Sign up
+                </Button>
+                <Text display={'flex'} mt={3} ml={2}>Don't have an account? <Link to={UnAuthenticatedRoutesNames.LOGIN}><Text color={Colors.PRIMARYBLUE} ml={2}>Sign up</Text></Link></Text>
+              </Box>
+            </VStack>
+          </Box>
         </Box>
-      </Box>
+        <Box
+          width={{
+            base: "0%",
+            md: "60%",
+          }}
+          bgGradient="linear(to-b, gray.800, gray.100)"
+          display={{
+            base: "none",
+            md: "inline-flex",
+          }}
+          justifyContent={"center"}
+          alignItems={"center"}
+        >
+          <Icon as={APP_ICONS.BUILDINGS} color={Colors.WHITE} fontSize={100} />
+          <Text
+            color={Colors.WHITE}
+            mt={6}
+            ml={1}
+            fontSize={{ base: 25, md: 30 }}
+            fontWeight="bold"
+          >
+            Home Styler
+          </Text>
+        </Box>
+      </HStack>
     </>
   );
-};
+}
 
 export default SignUp;

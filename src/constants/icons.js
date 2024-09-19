@@ -27,6 +27,10 @@ import { FaArrowRight } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { LuFacebook } from "react-icons/lu";
 import { MdMailOutline } from "react-icons/md";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { VscFeedback } from "react-icons/vsc";
+import { IoEyeSharp } from "react-icons/io5";
+import { IoEyeOffSharp } from "react-icons/io5";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -39,6 +43,8 @@ const APP_ICONS = {
     USERS: IoMdContacts,
     SETTING: IoSettingsSharp,
     CATEGORY:TbCategory,
+    PHONE:MdOutlineLocalPhone,
+    FEEDBACK:VscFeedback,
 
     //service section icons
     PENCILSCALE:TfiRulerPencil,
@@ -58,6 +64,8 @@ const APP_ICONS = {
     GOOGLE: FcGoogle,
     LOGIN:IoLogIn,
     RIGHTARROW:FaArrowRight,
+    OPENEYE:IoEyeSharp,
+    CLOSEDEYE:IoEyeOffSharp,
 
     //Footer
 GITHUB:TbBrandGithubFilled,
