@@ -110,7 +110,6 @@ const subCategories = [
       bg={Colors.DASHBOARDTHEME}
       _dark={{
         bg: Colors.DASHBOARDTHEME,
-        // color:Colors.WHITE
       }}
       border
       color={Colors.White}

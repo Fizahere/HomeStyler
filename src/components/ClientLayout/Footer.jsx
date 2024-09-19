@@ -1,86 +1,118 @@
 import React from "react";
 import { Box, Flex, Text, Icon, Link } from "@chakra-ui/react";
+import { Link as DomLink } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
-import {
-  UnAuthenticatedRoutesNames,
-} from "../../utilities/util.constant";
-import { Link as DomLink } from "react-router-dom";
 
 function Footer() {
   return (
     <>
-      <Box h={"250"} borderTop={"1px solid grey"} position="relative">
-        <Flex p={4}>
-          <APP_ICONS.WEBSITE fontSize={"1.8rem"} />
-          <Text
-            fontSize="2xl"
-            ml="2"
-            color="brand.500"
-            _dark={{
-              color: "white",
-            }}
-            fontWeight="semibold"
-          >
-            TVVerse
-          </Text>
-        </Flex>
+      <Box h={"auto"} borderTop={"1px solid grey"} >
+        <DomLink to={"/"}>
+          <Flex mt={4}>
+            {/* <Icon as={APP_ICONS.} fontSize={{ base: 20, md: 25 }} />{" "} */}
+            <Text
+              mt={1}
+              ml={1}
+              fontSize={{ base: 15, md: 20 }}
+              fontWeight="bold"
+            >
+              Home Styler
+            </Text>
+          </Flex>
+        </DomLink>
         <Flex justifyContent={"center"} gap={"20px"} mt={4}>
-          <Link href="https://github.com/Fizahere" isExternal>
+        <Link href="https://www.instagram.com/" isExternal>
             <Icon
               border={"2px solid grey"}
               borderRadius={"50%"}
               p={"8px"}
               fontSize={"40px"}
+              color={'#884dff'}
               as={APP_ICONS.GITHUB}
             />
           </Link>
-          <Link href="https://www.linkedin.com/in/fizabatool027/" isExternal>
+          <Link href="https://www.instagram.com/" isExternal>
             <Icon
               border={"2px solid grey"}
               borderRadius={"50%"}
               p={"8px"}
               fontSize={"40px"}
+              color={'#4da6ff'}
               as={APP_ICONS.LINKEDIN}
             />
           </Link>
-          <Link href="https://chakra-ui-navy.vercel.app/" isExternal>
+          <Link href="https://www.instagram.com/" isExternal>
+            <Icon
+              border={"2px solid grey"}
+              borderRadius={"50%"}
+              p={"8px"}
+              fontSize={"40px"}
+              color={'#ff66ff'}
+              as={APP_ICONS.INSTAGRAM}
+            />
+          </Link>
+          <Link href="https://www.facebook.com/" isExternal>
+            <Icon
+              border={"2px solid grey"}
+              borderRadius={"50%"}
+              p={"8px"}
+              fontSize={"40px"}
+              color={' #4da6ff'}
+              as={APP_ICONS.FACEBOOK}
+            />
+          </Link>
+          <Link href="https://mail.google.com/mail/u/0/" isExternal>
             <Icon
               border={"2px solid grey"}
               borderRadius={"50%"}
               p={"6px"}
               fontSize={"40px"}
-              as={APP_ICONS.WEBSITE}
+              color={'#ff5050'}
+              as={APP_ICONS.MAIL}
             />
           </Link>
         </Flex>
-        <Flex justifyContent={"center"} gap={"30px"} mt={"10px"}>
-          <DomLink to={UnAuthenticatedRoutesNames.HOME}>
+        <Flex flexDirection={{base:'column',md:'row'}} mb={10} justifyContent={"center"} gap={"30px"} mt={"10px"}>
+          <DomLink to={"/"}>
             <Text>Home</Text>
           </DomLink>
-          <DomLink to={UnAuthenticatedRoutesNames.ABOUT}>
+          <DomLink to={"/plant-palace/about-us"}>
             <Text>About</Text>
           </DomLink>
-          <DomLink to={UnAuthenticatedRoutesNames.LOGIN}>
+          <DomLink to={"/plant-palace/contact-us"}>
+            <Text>Contact</Text>
+          </DomLink>
+          <DomLink to={"/plant-palace/explore-plants"}>
+            <Text>Shop</Text>
+          </DomLink>
+          <DomLink to={"/plant-palace/feedback"}>
+            <Text>Feedback</Text>
+          </DomLink>
+          <DomLink to={"/plant-palace/login"}>
             <Text>Login</Text>
           </DomLink>
-          <DomLink to={UnAuthenticatedRoutesNames.REGISTER}>
-            <Text>Singup</Text>
+          <DomLink to={"/plant-palace/site-map"}>
+            <Text>Sitemap</Text>
           </DomLink>
         </Flex>
-        <Box position="absolute" bottom="0" width="100%">
+        <Box width="100%">
           <Text
             p={2}
             display={"flex"}
             fontSize={{
-              base: "12px",
+              base: "10px",
               md: "14px",
             }}
             justifyContent={"center"}
             color={Colors.GREY}
             borderTop={"1px solid grey"}
           >
-            © 2024 TVVerse. All Rights Reserved. | Developed By <Link ml={1} color={'#0080ff'} href="https://fiza-portfolio.vercel.app/" isExternal>Fiza</Link>.
+            © 2024 Home Styler. All Rights Reserved. | Developed By
+            <Text ml={2}>
+              SFC-Callback
+            </Text>
+            .
           </Text>
         </Box>
       </Box>
@@ -89,4 +121,3 @@ function Footer() {
 }
 
 export default Footer;
-

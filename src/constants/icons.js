@@ -24,6 +24,9 @@ import { BsBuildings } from "react-icons/bs";
 import { RiCompassesLine } from "react-icons/ri";
 import { GiHammerNails } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { LuFacebook } from "react-icons/lu";
+import { MdMailOutline } from "react-icons/md";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -59,6 +62,9 @@ const APP_ICONS = {
     //Footer
 GITHUB:TbBrandGithubFilled,
 LINKEDIN:GrLinkedinOption,
+INSTAGRAM: FaInstagram,
+FACEBOOK: LuFacebook,
+MAIL: MdMailOutline,
 
     //Avatar
     PROFILE: FaUserCircle,
