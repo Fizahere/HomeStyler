@@ -4,7 +4,7 @@
         "id": 1,
         "name": "Cozy Office Space",
         "category": "Office",
-        "designCategory": "Comfort",
+        "designCategory": "Cozy",
         "description": "A warm and inviting office space designed for comfort and productivity with soft lighting and ergonomic furniture.",
         "image": "cozy_office_space.jpg"
       },
@@ -12,7 +12,7 @@
         "id": 2,
         "name": "Elegant Executive Office",
         "category": "Office",
-        "designCategory": "Luxury",
+        "designCategory": "Elegant",
         "description": "A sophisticated executive office with high-end furniture, refined finishes, and a touch of class.",
         "image": "elegant_executive_office.jpg"
       },
@@ -20,7 +20,7 @@
         "id": 3,
         "name": "Cozy Living Room Retreat",
         "category": "Living Room",
-        "designCategory": "Comfort",
+        "designCategory": "Cozy",
         "description": "A cozy living room designed to provide a relaxed and inviting atmosphere with plush seating and soft textiles.",
         "image": "cozy_living_room_retreat.jpg"
       },
@@ -28,7 +28,7 @@
         "id": 4,
         "name": "Minimalist Modern Living Room",
         "category": "Living Room",
-        "designCategory": "Modern",
+        "designCategory": "Minimalist",
         "description": "A minimalist living room with clean lines, neutral tones, and functional design elements.",
         "image": "minimalist_modern_living_room.jpg"
       },
@@ -36,7 +36,7 @@
         "id": 5,
         "name": "Elegant Luxury Living Room",
         "category": "Living Room",
-        "designCategory": "Luxury",
+        "designCategory": "Elegant",
         "description": "An elegant living room design featuring luxurious materials, refined style, and attention to detail.",
         "image": "elegant_luxury_living_room.jpg"
       },
@@ -44,7 +44,7 @@
         "id": 6,
         "name": "Cozy Bedroom Sanctuary",
         "category": "Bedroom",
-        "designCategory": "Comfort",
+        "designCategory": "Cozy",
         "description": "A cozy bedroom design with a focus on warmth and relaxation, featuring soft bedding and soothing colors.",
         "image": "cozy_bedroom_sanctuary.jpg"
       },
@@ -52,7 +52,7 @@
         "id": 7,
         "name": "Minimalist Sleek Bedroom",
         "category": "Bedroom",
-        "designCategory": "Modern",
+        "designCategory": "Minimalist",
         "description": "A sleek and minimalist bedroom featuring clean lines, functional furniture, and a simple color scheme.",
         "image": "minimalist_sleek_bedroom.jpg"
       },
@@ -60,7 +60,7 @@
         "id": 8,
         "name": "Elegant Glam Bedroom",
         "category": "Bedroom",
-        "designCategory": "Luxury",
+        "designCategory": "Elegant",
         "description": "An elegant and glamorous bedroom design with luxurious details, opulent furnishings, and a sophisticated atmosphere.",
         "image": "elegant_glam_bedroom.jpg"
       },
@@ -68,7 +68,7 @@
         "id": 9,
         "name": "Cozy Reading Nook",
         "category": "Living Room",
-        "designCategory": "Comfort",
+        "designCategory": "Cozy",
         "description": "A cozy reading nook designed for relaxation, featuring a comfortable armchair and warm, inviting colors.",
         "image": "cozy_reading_nook.jpg"
       },
@@ -76,7 +76,7 @@
         "id": 10,
         "name": "Elegant Home Office",
         "category": "Office",
-        "designCategory": "Luxury",
+        "designCategory": "Elegant",
         "description": "An elegant home office with luxurious finishes, including a high-end desk and stylish decor.",
         "image": "elegant_home_office.jpg"
       },
@@ -84,7 +84,7 @@
         "id": 11,
         "name": "Modern Kitchen Delight",
         "category": "Kitchen",
-        "designCategory": "Modern",
+        "designCategory": "Minimalist",
         "description": "A contemporary kitchen design with sleek cabinetry, state-of-the-art appliances, and clean lines.",
         "image": "modern_kitchen_delight.jpg"
       },
@@ -92,7 +92,7 @@
         "id": 12,
         "name": "Rustic Farmhouse Kitchen",
         "category": "Kitchen",
-        "designCategory": "Comfort",
+        "designCategory": "Cozy",
         "description": "A rustic farmhouse kitchen with warm wood tones, vintage elements, and a welcoming atmosphere.",
         "image": "rustic_farmhouse_kitchen.jpg"
       },
@@ -108,7 +108,7 @@
         "id": 14,
         "name": "Spa-Like Bathroom Oasis",
         "category": "Bathroom",
-        "designCategory": "Luxury",
+        "designCategory": "Elegant",
         "description": "A luxurious bathroom design inspired by spa aesthetics, with high-end materials, soothing lighting, and a focus on relaxation.",
         "image": "spa_like_bathroom_oasis.jpg"
       },
@@ -132,7 +132,7 @@
         "id": 17,
         "name": "Modern Minimalist Dining",
         "category": "Dining Room",
-        "designCategory": "Modern",
+        "designCategory": "Minimalist",
         "description": "A modern minimalist dining room with clean lines, simple furnishings, and a focus on functionality.",
         "image": "modern_minimalist_dining.jpg"
       },
@@ -140,7 +140,7 @@
         "id": 18,
         "name": "Scandinavian Style Living Room",
         "category": "Living Room",
-        "designCategory": "Modern",
+        "designCategory": "Minimalist",
         "description": "A Scandinavian-inspired living room with a light, airy feel, featuring natural materials and a neutral color palette.",
         "image": "scandinavian_style_living_room.jpg"
       },
