@@ -166,7 +166,7 @@ function Navbar() {
             ) : (
               <Link
                 to={UnAuthenticatedRoutesNames.LOGIN}
-                colorScheme="teal"
+                color="teal"
                 variant=""
                 size="sm"
               >

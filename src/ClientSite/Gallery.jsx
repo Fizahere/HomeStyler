@@ -41,10 +41,11 @@ function Gallery() {
 
     return (
         <>
+        <Box mt={{base:170,md:0}}>
             <Text fontSize={'2rem'} fontWeight={'bold'} borderBottom={'1px solid grey'}>
                 Gallery
             </Text>
-            <Box py={8} className="collection">
+            <Box py={8} display={'flex'} justifyContent={'center'} className="collection">
                 <SimpleGrid
                     columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
                     spacing={6}
@@ -53,6 +54,7 @@ function Gallery() {
                         <GalleryCard key={index} cardData={singleDesign} />
                     ))}
                 </SimpleGrid>
+            </Box>
             </Box>
         </>
     );
