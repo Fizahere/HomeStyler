@@ -17,4 +17,5 @@ export const UnAuthenticatedRoutesNames = {
     DETAIL: '/website/detail/show/:id',
     LOGIN: '/website/login',
     REGISTER: '/website/register',
+    Designs:"/website/:id/designs",
 }
