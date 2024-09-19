@@ -12,13 +12,11 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
+import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 // import { imageMap } from "../../assets/constants/images";
 
 function CustomCard({ singleProduct }) {
-  if(!singleProduct){
-    console.log('product not found');
-  }
-  console.log(singleProduct, 'singleProduct');
+  // console.log(singleProduct, 'singleProduct');
   const {
     name,
     description,
@@ -27,7 +25,6 @@ function CustomCard({ singleProduct }) {
     design,
     image,
   } = singleProduct;
-  console.log(name, 'name');
 
   const navigate = useNavigate();
   return (
@@ -59,7 +56,7 @@ function CustomCard({ singleProduct }) {
                 {name}
               </Heading>
               <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
-                {/* $ {price} */}$ 500
+                $ {price}
               </Text>
             </Flex>
             <Text fontSize={{ base: "12px", md: "1xl" }}>{category}</Text>
@@ -72,7 +69,7 @@ function CustomCard({ singleProduct }) {
                 color: "",
               }}
               fontSize={{ base: "12px", md: "1xl" }}
-            // onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
+            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design',category)}`)}
             >
               Show more
             </Button>

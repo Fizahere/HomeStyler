@@ -7,6 +7,7 @@ import Home from "../ClientSite/Home";
 // import SignUp from "../Auth/Register";
 import NotFound from "../Dashboard/NotFound";
 import Shop from '../ClientSite/Shop'
+import Detail from "../ClientSite/Detail";
 
 function UnAuthenticatedRoutes() {
   return (
@@ -14,6 +15,7 @@ function UnAuthenticatedRoutes() {
       <Route element={<ClientLayout />}>
         <Route path={UnAuthenticatedRoutesNames.HOME} element={<Home />} />
         <Route path={UnAuthenticatedRoutesNames.SHOP} element={<Shop />} />
+        <Route path={UnAuthenticatedRoutesNames.DETAIL} element={<Detail />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
