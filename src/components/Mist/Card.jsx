@@ -7,53 +7,67 @@ import {
   Heading,
   Text,
   Button,
+  Divider,
+  Flex,
 } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
-import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
+import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
+// import { imageMap } from "../../assets/constants/images";
 
-function CustomCard(props) {
-  // console.log(singleCardData,'singleCardData');
-  const {singleProduct}=props;
-  console.log(singleProduct,'sindhy')
-  // const { name } = singleCardData;
-  // const { image_thumbnail_path } = singleCardData;
-  // const { network } = singleCardData;
-  // const { status } = singleCardData;
-  // const { id } = singleCardData;
-  // const { start_date } = singleCardData;
-  // const { end_date } = singleCardData;
-  // const { country } = singleCardData;
+function CustomCard({ singleCardData }) {
+  const { name } = singleCardData;
+  const { image_thumbnail_path } = singleCardData;
+  const { network } = singleCardData;
+  const { status } = singleCardData;
+  const { id } = singleCardData;
+  const { start_date } = singleCardData;
+  const { end_date } = singleCardData;
+  const { country } = singleCardData;
 
   const navigate = useNavigate();
   return (
     <>
-      <Card maxW={{base:'md',md:'sm'}}>
+      <Card
+        boxShadow={
+          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        }
+        _dark={{ bg: "transparent" }}
+        maxW={{ base: "xs", md: "xs" }}
+      >
         <CardBody>
           <Image
-            src={image_thumbnail_path}
-            alt={image_thumbnail_path}
+            // src={imageSrc}
+            alt={"image_thumbnail_path"}
             borderRadius="md"
             width={"100%"}
-            height={{base:'400',md:'300'}}
+            height={{ base: "250px", md: "250px" }}
           />
-          <Stack mt="6" spacing={{base:'1',md:'3'}}>
-            <Heading size={{base:'sm',md:'md'}} h={'35px'}>{name}</Heading>
-            <Text fontSize={{base:'12px',md:'1xl'}}>{network}</Text>
-            <Text color="blue.600" fontSize={{base:'12px',md:'1xl'}}>
-              {status}
-            </Text>
+          <Divider
+            orientation="horizontal"
+            borderColor="inherit"
+            borderWidth="1px"
+            mr={3}
+          />
+          <Stack mt="6" spacing={{ base: "1", md: "3" }}>
+            <Flex justifyContent={"space-between"}>
+              <Heading size={{ base: "sm", md: "md" }}>
+                {/* {name} */}
+Fiza              </Heading>
+              <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
+                {/* $ {price} */}$ 500
+              </Text>
+            </Flex>
+            <Text fontSize={{ base: "12px", md: "1xl" }}>category</Text>
+
             <Button
-            mt={{base:'1',md:'0'}}
-            bg={Colors.THEME}
-            color={Colors.WHITE}
-            _hover={{
-              color:''
-            }}
-            fontSize={{base:'12px',md:'1xl'}}
-              onClick={() => {
-                navigate(UnAuthenticatedRoutesNames.DETAIL.replace(":id", id));
+              mt={{ base: "1", md: "0" }}
+              bgGradient="linear(to-r, #30362f, #4d5c3e)"
+              color={Colors.WHITE}
+              _hover={{
+                color: "",
               }}
+              fontSize={{ base: "12px", md: "1xl" }}
+              // onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
             >
               Show more
             </Button>

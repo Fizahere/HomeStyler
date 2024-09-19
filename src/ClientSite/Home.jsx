@@ -12,6 +12,7 @@ import mainimage from "../assets/images/mainimage.png";
 import { Colors } from "../constants/colors";
 import APP_ICONS from "../constants/icons";
 import Services from "./Services";
+import Gallery from "./Gallery";
 
 function Home() {
   const plantsCategories = {
@@ -24,7 +25,7 @@ function Home() {
   };
 
   return (
-    <Box p={10} overflow="hidden">
+    <Box pt={10} pb={0} px={10} overflow="hidden">
       <Flex
         justifyContent="space-between"
         flexDirection={{ base: "column", sm: "row" }}
@@ -148,6 +149,7 @@ function Home() {
         <Box></Box>
       </Flex>
 
+      <Gallery/>
       <Services/>
     </Box>
   );
