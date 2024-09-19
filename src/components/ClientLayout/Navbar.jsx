@@ -11,24 +11,26 @@ import {
   useColorMode,
   Divider,
   Text,
-  Collapse,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
-import UnAuthenticatedRoutes from "../../routes/UnAuthenticatedRoutes";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const [user, setUser] = useState(localStorage.getItem("user"));
-  const categoriesDisclosure = useDisclosure()
-  const navigate = useNavigate()
 
   const categories = [
     "Living Room",
@@ -53,11 +55,10 @@ function Navbar() {
             }
             aria-label="Open Menu"
             display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
+            onClick={onOpen}
           />
-          <Link to={"/"}>
+          <Link to={UnAuthenticatedRoutesNames.HOME}>
             <Flex>
-              {/* <Icon as={APP_ICONS.WEBSITE} fontSize={{ base: 20, md: 25 }} />{" "} */}
               <Text
                 mt={1}
                 ml={1}
@@ -68,84 +69,55 @@ function Navbar() {
               </Text>
             </Flex>
           </Link>
-          <HStack spacing={8} alignItems="center">
-            <HStack
-              fontSize={15}
-              fontWeight={"400"}
-              as="nav"
-              spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
-              <Link
-                px={2}
-                py={1}
-                rounded="md"
-                _hover={{ textDecoration: "none" }}
-                to="/"
-              >
-                Home
-              </Link>
-              <Menu>
-                {({ isOpen }) => (
-                  <>
-                    <MenuButton
-                      fontWeight="400"
-                      _hover={{ bg: 'transparent' }}
-                      isActive={isOpen}
-                      as={Button}
-                      rightIcon={
-                        <Box
-                          transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
-                          transition="transform 0.2s ease"
-                        >
-                          <APP_ICONS.TOGGLE />
-                        </Box>
-                      }
-                    >
-                      Categories
-                    </MenuButton>
-                    <MenuList>
-                      {categories.map((singleCategory, index) => (
-                        <Box key={index} py={2}>
-                          <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category', singleCategory).toLocaleLowerCase()}>
-                            <MenuItem>{singleCategory}</MenuItem>
-                          </Link>
-                        </Box>
-                      ))}
-                    </MenuList>
-                  </>
-                )}
-              </Menu>
 
-              <Link
-                px={2}
-                py={1}
-                rounded="md"
-                _hover={{ textDecoration: "none" }}
-              to={UnAuthenticatedRoutesNames.ABOUT}
-              >
-                About
-              </Link>
-              <Link
-                px={2}
-                py={1}
-                rounded="md"
-                _hover={{ textDecoration: "none" }}
-              // to={"/plant-palace/feedback"}
-              >
-                Feedback
-              </Link>
-              <Link
-                px={2}
-                py={1}
-                rounded="md"
-                _hover={{ textDecoration: "none" }}
-              // to="/plant-palace/contact-us"
-              >
-                Contact
-              </Link>
-            </HStack>
+          <HStack
+            spacing={8}
+            alignItems="center"
+            display={{ base: "none", md: "flex" }}
+          >
+            <Link to={UnAuthenticatedRoutesNames.HOME}>Home</Link>
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    mt={1}
+                    fontWeight="400"
+                    _hover={{ bg: "transparent" }}
+                    isActive={isOpen}
+                    as={Button}
+                    rightIcon={
+                      <Box
+                        transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                        transition="transform 0.2s ease"
+                      >
+                        <APP_ICONS.TOGGLE />
+                      </Box>
+                    }
+                  >
+                    Categories
+                  </MenuButton>
+                  <MenuList>
+                    {categories.map((singleCategory, index) => (
+                      <Box key={index} py={2}>
+                        <Link
+                          to={UnAuthenticatedRoutesNames.SHOP.replace(
+                            ":category",
+                            singleCategory
+                          ).toLocaleLowerCase()}
+                        >
+                          <MenuItem>{singleCategory}</MenuItem>
+                        </Link>
+                      </Box>
+                    ))}
+                  </MenuList>
+                </>
+              )}
+            </Menu>
+            <Link to={UnAuthenticatedRoutesNames.ABOUT}>About</Link>
+            <Link to={UnAuthenticatedRoutesNames.FEEDBACK}>Feedback</Link>
+            <Link to={UnAuthenticatedRoutesNames.CONTACT}>Contact</Link>
           </HStack>
+
           <Flex alignItems="center">
             {user ? (
               <Button
@@ -155,7 +127,7 @@ function Navbar() {
                 fontSize={"15px"}
                 fontWeight={"bold"}
                 onClick={() => {
-                  if (confirm("are you sure?")) {
+                  if (confirm("Are you sure?")) {
                     localStorage.removeItem("user");
                     location.href = "/";
                   }
@@ -164,28 +136,22 @@ function Navbar() {
                 Logout
               </Button>
             ) : (
-              <Link
-                to={UnAuthenticatedRoutesNames.LOGIN}
-                color="teal"
-                variant=""
-                size="sm"
-              >
+              <Link to={UnAuthenticatedRoutesNames.LOGIN}>
                 <Text fontWeight={"bold"} mr={2}>
                   Login
                 </Text>
               </Link>
             )}
-            {/* <IconButton
-              icon={<Icon as={App_Icons.CART} fontSize={22} />}
-              onClick={cartDrawer.onOpen}
+            <IconButton
+              icon={<Icon as={APP_ICONS.WISHLIST} fontSize={22} />}
               bg={"transparent"}
             />
-            <Divider */}
-            {/* orientation="vertical"
+            <Divider
+              orientation="vertical"
               borderColor="inherit"
               height={"20px"}
               borderWidth="0.5px"
-            /> */}
+            />
             <IconButton
               ml={3}
               bg={"transparent"}
@@ -197,31 +163,40 @@ function Navbar() {
                     color={Colors.BLACK}
                   />
                 ) : (
-                  <Icon
-                    as={APP_ICONS.SUN}
-                    color={Colors.WHITE}
-                    fontSize={26}
-                    fontWeight={"bold"}
-                  />
+                  <Icon as={APP_ICONS.SUN} fontSize={26} color={Colors.WHITE} />
                 )
               }
               onClick={toggleColorMode}
             />
           </Flex>
         </Flex>
-
-        {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as="nav" spacing={4}>
-              <Link to={"/"}>Home</Link>
-              <Link to={"/plant-palace/about-us"}>About</Link>
-              <Link to={"/plant-palace/feedback"}>Feedback</Link>
-              <Link to={"/plant-palace/contact-us"}>Contact</Link>
-            </Stack>
-          </Box>
-        ) : null}
+        <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerCloseButton />
+            <DrawerHeader>Menu</DrawerHeader>
+            <DrawerBody>
+              <Stack as="nav" spacing={4}>
+                <Link to={UnAuthenticatedRoutesNames.HOME} onClick={onClose}>
+                  Home
+                </Link>
+                <Link to={UnAuthenticatedRoutesNames.ABOUT} onClick={onClose}>
+                  About
+                </Link>
+                <Link
+                  to={UnAuthenticatedRoutesNames.FEEDBACK}
+                  onClick={onClose}
+                >
+                  Feedback
+                </Link>
+                <Link to={UnAuthenticatedRoutesNames.CONTACT} onClick={onClose}>
+                  Contact
+                </Link>
+              </Stack>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
       </Box>
-      {/* <Cart disclosure={cartDrawer} /> */}
     </>
   );
 }

@@ -31,6 +31,15 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 import { VscFeedback } from "react-icons/vsc";
 import { IoEyeSharp } from "react-icons/io5";
 import { IoEyeOffSharp } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa6";
+import { FaRegSmileBeam } from "react-icons/fa";
+import { PiSmileySadDuotone } from "react-icons/pi";
+import { TfiFaceSad } from "react-icons/tfi";
+import { BiHappyHeartEyes } from "react-icons/bi";
+import { BsEmojiSmileUpsideDown } from "react-icons/bs";
+import { TbMessageChatbot } from "react-icons/tb";
+import { TiBusinessCard } from "react-icons/ti";
+import { BiSupport } from "react-icons/bi";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -66,6 +75,15 @@ const APP_ICONS = {
     RIGHTARROW:FaArrowRight,
     OPENEYE:IoEyeSharp,
     CLOSEDEYE:IoEyeOffSharp,
+    WISHLIST:FaRegHeart,
+    SAD:TfiFaceSad,
+    UNHAPPY:PiSmileySadDuotone,
+    SATISFY:BsEmojiSmileUpsideDown,
+    HAPPY:FaRegSmileBeam,
+    GOOD:BiHappyHeartEyes,
+    MESSAGE:TbMessageChatbot,
+    MEDIA:TiBusinessCard,
+    SUPPORT:BiSupport,
 
     //Footer
 GITHUB:TbBrandGithubFilled,
