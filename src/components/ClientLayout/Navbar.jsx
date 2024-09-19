@@ -26,6 +26,7 @@ import { Link } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
+import ProductSelection from '../../data/product-new-data.json';
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -39,6 +40,9 @@ function Navbar() {
     "Bedroom",
     "Bathroom",
   ];
+
+ const productCategories = ProductSelection.productSelection.filters.categories;
+//  console.log(productCategories,'productCategories');
 
   return (
     <>
@@ -106,6 +110,43 @@ function Navbar() {
                           ).toLocaleLowerCase()}
                         >
                           <MenuItem>{singleCategory}</MenuItem>
+                        </Link>
+                      </Box>
+                    ))}
+                  </MenuList>
+                </>
+              )}
+            </Menu>
+            <Menu>
+              {({ isOpen }) => (
+                <>
+                  <MenuButton
+                    mt={1}
+                    fontWeight="400"
+                    _hover={{ bg: "transparent" }}
+                    isActive={isOpen}
+                    as={Button}
+                    rightIcon={
+                      <Box
+                        transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                        transition="transform 0.2s ease"
+                      >
+                        <APP_ICONS.TOGGLE />
+                      </Box>
+                    }
+                  >
+                    Products
+                  </MenuButton>
+                  <MenuList>
+                    {productCategories.map((singleProdCategory, index) => (
+                      <Box key={index} py={2}>
+                        <Link
+                          to={UnAuthenticatedRoutesNames.PRODUCTS.replace(
+                            ":prodCategory",
+                            singleProdCategory
+                          ).toLocaleLowerCase()}
+                        >
+                          <MenuItem>{singleProdCategory}</MenuItem>
                         </Link>
                       </Box>
                     ))}

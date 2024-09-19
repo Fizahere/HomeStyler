@@ -21,16 +21,14 @@ import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import TabbedSections from "../components/Mist/TabbedSections";
-import Products from '../data/products-data.json';
 
-const Shop = () => {
+const Products = () => {
   const dropdown = useDisclosure();
   const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
- const { category: categoryName } = useParams();
-  // console.log(prodCategory, 'prodCategory');
-  // console.log(categoryName, 'categoryName');
+ const { prodCategory: categoryName } = useParams();
+  console.log(categoryName, 'categoryName');
 
   return (
     <>
@@ -99,11 +97,11 @@ const Shop = () => {
         </Flex>
 
         <Box py={8} >
-          <TabbedSections categoryName={categoryName} />
+          <TabbedSections prodCategoryName={categoryName} />
         </Box>
       </Box>
     </>
   );
 };
 
-export default Shop;
+export default Products;

@@ -14,6 +14,7 @@ import CustomCard from "./Card";
 
 const TabbedSections = ({ categoryName }) => {
   const [selectedDesign, setSelectedDesign] = useState("All");
+  console.log(categoryName, "");
   // console.log(categoryName, "");
   // console.log(selectedDesign,'selectedDesign');
 

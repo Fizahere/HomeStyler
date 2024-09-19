@@ -11,6 +11,7 @@ import Detail from "../ClientSite/Detail";
 import Contact from '../ClientSite/Contact'
 import Feedback from '../ClientSite/Feedback'
 import About from "../ClientSite/About";
+import Products from "../ClientSite/Products";
 
 function UnAuthenticatedRoutes() {
   return (
@@ -18,6 +19,7 @@ function UnAuthenticatedRoutes() {
       <Route element={<ClientLayout />}>
         <Route path={UnAuthenticatedRoutesNames.HOME} element={<Home />} />
         <Route path={UnAuthenticatedRoutesNames.SHOP} element={<Shop />} />
+        <Route path={UnAuthenticatedRoutesNames.PRODUCTS} element={<Products />} />
         <Route path={UnAuthenticatedRoutesNames.SITEMAP} element={<Sitemap />} />
         <Route path={UnAuthenticatedRoutesNames.DETAIL} element={<Detail />} />
         <Route path={UnAuthenticatedRoutesNames.CONTACT} element={<Contact />} />

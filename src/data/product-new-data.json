@@ -1,0 +1,271 @@
+{
+    "browsingProducts": {
+      "categories": [
+        {
+          "category": "Furniture",
+          "subcategories": [
+            {
+              "name": "Sofas and Couches",
+              "products": [
+                {
+                  "id": 1,
+                  "name": "Modern Velvet Sofa",
+                  "image": "modern_velvet_sofa.jpg",
+                  "description": "A sleek and luxurious velvet sofa with plush seating.",
+                  "price": 799.99,
+                  "reviews": [
+                    {
+                      "user": "JohnD",
+                      "rating": 4.5,
+                      "comment": "Very comfortable and stylish!"
+                    },
+                    {
+                      "user": "EmmaL",
+                      "rating": 4.0,
+                      "comment": "Great quality but delivery was slow."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Chairs and Recliners",
+              "products": [
+                {
+                  "id": 2,
+                  "name": "Leather Recliner",
+                  "image": "leather_recliner.jpg",
+                  "description": "A comfortable leather recliner with adjustable backrest.",
+                  "price": 499.99,
+                  "reviews": [
+                    {
+                      "user": "MikeR",
+                      "rating": 4.7,
+                      "comment": "Super comfortable!"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Tables",
+              "products": [
+                {
+                  "id": 3,
+                  "name": "Wooden Coffee Table",
+                  "image": "wooden_coffee_table.jpg",
+                  "description": "A rustic coffee table made from reclaimed wood.",
+                  "price": 299.99,
+                  "reviews": [
+                    {
+                      "user": "SarahW",
+                      "rating": 5.0,
+                      "comment": "Beautiful and durable."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Lighting",
+          "subcategories": [
+            {
+              "name": "Ceiling Lights",
+              "products": [
+                {
+                  "id": 4,
+                  "name": "Chandelier",
+                  "image": "chandelier.jpg",
+                  "description": "A crystal chandelier for elegant lighting.",
+                  "price": 999.99,
+                  "reviews": [
+                    {
+                      "user": "LindaK",
+                      "rating": 4.8,
+                      "comment": "Adds so much elegance to my living room."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Wall Lights",
+              "products": [
+                {
+                  "id": 5,
+                  "name": "Modern Wall Sconce",
+                  "image": "modern_wall_sconce.jpg",
+                  "description": "A sleek and modern wall sconce for soft lighting.",
+                  "price": 149.99,
+                  "reviews": [
+                    {
+                      "user": "JakeP",
+                      "rating": 4.2,
+                      "comment": "Good value for money."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Decor",
+          "subcategories": [
+            {
+              "name": "Rugs and Carpets",
+              "products": [
+                {
+                  "id": 6,
+                  "name": "Persian Rug",
+                  "image": "persian_rug.jpg",
+                  "description": "A handmade Persian rug with intricate patterns.",
+                  "price": 599.99,
+                  "reviews": [
+                    {
+                      "user": "NancyM",
+                      "rating": 4.9,
+                      "comment": "Absolutely gorgeous!"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Wall Art and Mirrors",
+              "products": [
+                {
+                  "id": 7,
+                  "name": "Abstract Wall Art",
+                  "image": "abstract_wall_art.jpg",
+                  "description": "A colorful abstract painting to brighten up any room.",
+                  "price": 199.99,
+                  "reviews": [
+                    {
+                      "user": "KevinD",
+                      "rating": 4.3,
+                      "comment": "Vibrant and eye-catching."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Kitchen",
+          "subcategories": [
+            {
+              "name": "Cabinets and Pantries",
+              "products": [
+                {
+                  "id": 8,
+                  "name": "Modern Kitchen Cabinets",
+                  "image": "modern_kitchen_cabinets.jpg",
+                  "description": "Stylish kitchen cabinets with ample storage space.",
+                  "price": 1499.99,
+                  "reviews": [
+                    {
+                      "user": "LauraS",
+                      "rating": 4.6,
+                      "comment": "High-quality finish and very functional."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Sinks and Faucets",
+              "products": [
+                {
+                  "id": 9,
+                  "name": "Stainless Steel Sink",
+                  "image": "stainless_steel_sink.jpg",
+                  "description": "Durable and spacious sink for a modern kitchen.",
+                  "price": 299.99,
+                  "reviews": [
+                    {
+                      "user": "SamW",
+                      "rating": 4.4,
+                      "comment": "Great addition to my kitchen."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Bathroom",
+          "subcategories": [
+            {
+              "name": "Vanities and Cabinets",
+              "products": [
+                {
+                  "id": 10,
+                  "name": "Modern Bathroom Vanity",
+                  "image": "modern_bathroom_vanity.jpg",
+                  "description": "A sleek bathroom vanity with plenty of storage.",
+                  "price": 799.99,
+                  "reviews": [
+                    {
+                      "user": "JessicaR",
+                      "rating": 4.7,
+                      "comment": "Looks great and very practical."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Showers and Bathtubs",
+              "products": [
+                {
+                  "id": 11,
+                  "name": "Freestanding Bathtub",
+                  "image": "freestanding_bathtub.jpg",
+                  "description": "A luxurious freestanding bathtub for relaxation.",
+                  "price": 1299.99,
+                  "reviews": [
+                    {
+                      "user": "TomC",
+                      "rating": 4.9,
+                      "comment": "Perfect for a spa-like experience at home."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "productSelection": {
+      "filters": {
+        "categories": ["Furniture", "Lighting", "Decor", "Kitchen", "Bathroom"],
+        "subcategories": ["Sofas and Couches", "Chairs and Recliners", "Tables", "Ceiling Lights", "Wall Lights"],
+        "priceRange": [100, 2000],
+        "rating": [1, 5]
+      },
+      "wishlist": []
+    },
+    "userReviewsAndRatings": {
+      "totalReviews": 120,
+      "averageRating": 4.5,
+      "userReviews": [
+        {
+          "user": "JohnD",
+          "rating": 4.5,
+          "comment": "Very comfortable and stylish!"
+        },
+        {
+          "user": "EmmaL",
+          "rating": 4.0,
+          "comment": "Great quality but delivery was slow."
+        }
+      ]
+    }
+  }
+  
