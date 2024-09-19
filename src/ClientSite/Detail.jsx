@@ -38,6 +38,7 @@ function Detail() {
 
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
+    // console.log(selectedImage,'selectedImage');
   };
 
   if (!getDesignById) {

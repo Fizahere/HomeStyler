@@ -94,7 +94,7 @@ function Navbar() {
                       </Box>
                     }
                   >
-                    Categories
+                    Designs
                   </MenuButton>
                   <MenuList>
                     {categories.map((singleCategory, index) => (
