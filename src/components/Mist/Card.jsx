@@ -17,11 +17,12 @@ import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 function CustomCard({ singleProduct }) {
   // console.log(singleProduct, 'singleProduct');
   const {
+    id,
     name,
     description,
     price,
     category,
-    design,
+    designCategory,
     image,
   } = singleProduct;
 
@@ -68,7 +69,7 @@ function CustomCard({ singleProduct }) {
                 color: "",
               }}
               fontSize={{ base: "12px", md: "1xl" }}
-            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design',category)}`)}
+            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design',id)}`)}
             >
               Show more
             </Button>
