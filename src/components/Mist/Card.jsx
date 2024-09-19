@@ -12,15 +12,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import { Colors } from "../../constants/colors";
 
-function CustomCard({ singleCardData }) {
-  const { name } = singleCardData;
-  const { image_thumbnail_path } = singleCardData;
-  const { network } = singleCardData;
-  const { status } = singleCardData;
-  const { id } = singleCardData;
-  const { start_date } = singleCardData;
-  const { end_date } = singleCardData;
-  const { country } = singleCardData;
+function CustomCard(props) {
+  // console.log(singleCardData,'singleCardData');
+  const {singleProduct}=props;
+  console.log(singleProduct,'sindhy')
+  // const { name } = singleCardData;
+  // const { image_thumbnail_path } = singleCardData;
+  // const { network } = singleCardData;
+  // const { status } = singleCardData;
+  // const { id } = singleCardData;
+  // const { start_date } = singleCardData;
+  // const { end_date } = singleCardData;
+  // const { country } = singleCardData;
 
   const navigate = useNavigate();
   return (
