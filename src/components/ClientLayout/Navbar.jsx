@@ -11,17 +11,28 @@ import {
   useColorMode,
   Divider,
   Text,
+  Collapse,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
+import UnAuthenticatedRoutes from "../../routes/UnAuthenticatedRoutes";
+import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const cartDrawer = useDisclosure();
   const [user, setUser] = useState(localStorage.getItem("user"));
-  // const navigate=useNavigate()
+  const categoriesDisclosure = useDisclosure()
+  const navigate=useNavigate()
+
+  const categories = [
+    "Living Room",
+    "Office",
+    "Kitchen",
+    "Bedroom",
+    "Bathroom",
+  ];
 
   return (
     <>
@@ -71,11 +82,45 @@ function Navbar() {
                 Home
               </Link>
               <Link
+  icon={APP_ICONS.CATEGORY}
+  _hover={{ color: 'inherit' }}
+  onClick={categoriesDisclosure.onToggle}
+  position="relative" 
+>
+  Categories
+  <Icon
+    as={APP_ICONS.TOGGLE}
+    ml={2}
+    transform={categoriesDisclosure.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+  />
+</Link>
+<Collapse in={categoriesDisclosure.isOpen}>
+  <Box
+    zIndex={1}
+    mt={4} 
+    bg={Colors.BODYLIGHT}
+    borderRadius="md"
+    boxShadow="lg"
+    px={4}
+    py={3}
+    position="absolute" 
+    left={500} 
+    width="200px"
+  >
+    {categories.map((singleCategory, index) => (
+      <Box key={index} py={2}> 
+        <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category',singleCategory)}>{singleCategory}</Link>
+      </Box>
+    ))}
+  </Box>
+</Collapse>
+
+              <Link
                 px={2}
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                // to="/plant-palace/about-us"
+              // to="/plant-palace/about-us"
               >
                 About
               </Link>
@@ -84,7 +129,7 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                // to={"/plant-palace/feedback"}
+              // to={"/plant-palace/feedback"}
               >
                 Feedback
               </Link>
@@ -93,7 +138,7 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-                // to="/plant-palace/contact-us"
+              // to="/plant-palace/contact-us"
               >
                 Contact
               </Link>
@@ -134,7 +179,7 @@ function Navbar() {
               bg={"transparent"}
             />
             <Divider */}
-              {/* orientation="vertical"
+            {/* orientation="vertical"
               borderColor="inherit"
               height={"20px"}
               borderWidth="0.5px"

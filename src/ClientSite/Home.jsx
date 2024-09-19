@@ -96,7 +96,7 @@ function Home() {
               width={{ base: "310px", sm: "420px", md: "425px" }}
               mb={{ base: 20, lg: 0 }}
             >
-              <Flex flexWrap="wrap">
+              <Flex flexWrap="wrap" mt={{base:0,sm:120,md:0}}>
                 {Object.entries(plantsCategories).map(([key, value], index) => (
                   <Button
                     key={index}
@@ -124,7 +124,7 @@ function Home() {
             top={{ base: 10, sm: 0, md: -40 }}
             height={{ base: "250px", sm: "350px", md: "700px" }}
             width={{ base: "250px", sm: "300px", md: "600px" }}
-            bg="gray.800"
+            bg={Colors.THEME}
             borderRadius={{ base: "50% 0% 0% 50%", md: "50% 00% 00% 50%" }}
             overflow="hidden"
           ></Box>

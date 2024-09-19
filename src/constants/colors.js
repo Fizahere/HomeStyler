@@ -1,6 +1,7 @@
 
 export const Colors={
-    THEME:'#990000',
+    THEME:'gray.800',
+    BODYLIGHT:'gray.100',
     DASHBOARDTHEME:'#1C1C1C',
     BUTTON:'#ff4d4d',
     PRIMARY:'#47d147',
