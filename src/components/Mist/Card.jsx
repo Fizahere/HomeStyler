@@ -14,15 +14,20 @@ import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 // import { imageMap } from "../../assets/constants/images";
 
-function CustomCard({ singleCardData }) {
-  const { name } = singleCardData;
-  const { image_thumbnail_path } = singleCardData;
-  const { network } = singleCardData;
-  const { status } = singleCardData;
-  const { id } = singleCardData;
-  const { start_date } = singleCardData;
-  const { end_date } = singleCardData;
-  const { country } = singleCardData;
+function CustomCard({ singleProduct }) {
+  if(!singleProduct){
+    console.log('product not found');
+  }
+  console.log(singleProduct, 'singleProduct');
+  const {
+    name,
+    description,
+    price,
+    category,
+    design,
+    image,
+  } = singleProduct;
+  console.log(name, 'name');
 
   const navigate = useNavigate();
   return (
@@ -36,7 +41,7 @@ function CustomCard({ singleCardData }) {
       >
         <CardBody>
           <Image
-            // src={imageSrc}
+            src={image}
             alt={"image_thumbnail_path"}
             borderRadius="md"
             width={"100%"}
@@ -51,13 +56,13 @@ function CustomCard({ singleCardData }) {
           <Stack mt="6" spacing={{ base: "1", md: "3" }}>
             <Flex justifyContent={"space-between"}>
               <Heading size={{ base: "sm", md: "md" }}>
-                {/* {name} */}
-Fiza              </Heading>
+                {name}
+              </Heading>
               <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
                 {/* $ {price} */}$ 500
               </Text>
             </Flex>
-            <Text fontSize={{ base: "12px", md: "1xl" }}>category</Text>
+            <Text fontSize={{ base: "12px", md: "1xl" }}>{category}</Text>
 
             <Button
               mt={{ base: "1", md: "0" }}
@@ -67,7 +72,7 @@ Fiza              </Heading>
                 color: "",
               }}
               fontSize={{ base: "12px", md: "1xl" }}
-              // onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
+            // onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
             >
               Show more
             </Button>

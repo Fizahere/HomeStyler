@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChakraProvider,
   Box,
@@ -9,19 +9,30 @@ import {
   Tabs,
   Text,
   Flex,
-} from '@chakra-ui/react';
-import productsData from '../../data/products-data.json';
+  SimpleGrid,
+} from "@chakra-ui/react";
+import productsData from "../../data/products-data.json";
 import CustomCard from "./Card";
 
-const TabbedSections = (categoryName) => {
-  // console.log(categoryName, 'category');
-  const filteredProducts = productsData.homeStyler.filter(
-    (product) => product.category === categoryName 
+const TabbedSections = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const filteredProducts = productsData.homeStyler.filter((product) =>
+    selectedCategory === "All"
+      ? true
+      : product.category === selectedCategory
   );
+
   return (
     <ChakraProvider>
-      <Flex p={4} justifyContent={'center'}>
-        <Tabs variant="enclosed">
+      <Flex p={4} justifyContent={"center"}>
+        <Tabs
+          variant="enclosed"
+          onChange={(index) => {
+            const categories = ["All", "Cozy", "Elegant", "Minimalist", "Classic", "Contemporary"];
+            setSelectedCategory(categories[index]);
+          }}
+        >
           <TabList>
             <Tab>All</Tab>
             <Tab>Cozy</Tab>
@@ -33,24 +44,14 @@ const TabbedSections = (categoryName) => {
 
           <TabPanels>
             <TabPanel>
-              {filteredProducts.map((singleItem, index) => {
-                <CustomCard
-                  key={index}
-                  singleProduct={singleItem}
-                />
-              })}
-            </TabPanel>
-            <TabPanel>
-              <Text fontSize="lg">A sophisticated design with luxurious materials and refined color palettes.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text fontSize="lg">A clean and uncluttered space emphasizing simplicity and functionality.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text fontSize="lg">Timeless elegance with traditional furniture and rich fabrics.</Text>
-            </TabPanel>
-            <TabPanel>
-              <Text fontSize="lg">A modern design featuring sleek lines and innovative materials.</Text>
+              <Flex wrap="wrap" justifyContent="center">
+                <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+                  spacing={6}>
+                  {filteredProducts.map((singleItem, index) => (
+                    <CustomCard key={index} singleProduct={singleItem} />
+                  ))}
+                </SimpleGrid>
+              </Flex>
             </TabPanel>
           </TabPanels>
         </Tabs>
