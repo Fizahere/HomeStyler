@@ -109,7 +109,7 @@ function Navbar() {
   >
     {categories.map((singleCategory, index) => (
       <Box key={index} py={2}> 
-        <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category',singleCategory)}>{singleCategory}</Link>
+        <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category',singleCategory).toLocaleLowerCase()}>{singleCategory}</Link>
       </Box>
     ))}
   </Box>
