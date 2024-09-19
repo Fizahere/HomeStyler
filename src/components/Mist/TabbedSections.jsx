@@ -7,17 +7,22 @@ import {
   Flex,
   SimpleGrid,
   Text,
+  Box,
 } from "@chakra-ui/react";
-import productsData from "../../data/products-data.json";
+import designsData from "../../data/designs-data.json";
 import CustomCard from "./Card";
 
 const TabbedSections = ({ categoryName }) => {
   const [selectedDesign, setSelectedDesign] = useState("All");
+  console.log(categoryName, "");
+  // console.log(selectedDesign,'selectedDesign');
 
   const filteredProducts = useMemo(() => {
-    return productsData.homeStyler.filter((product) => {
+    return designsData.designs.filter((product) => {
+      // console.log(product,'product');
       const normalizedCategory = product.category.toLowerCase();
-      const normalizedDesign = product.design.toLowerCase();
+      const normalizedDesign = product.designCategory.toLowerCase();
+      // console.log(normalizedDesign,'normalizedDesign');
 
       return (
         normalizedCategory === categoryName.toLowerCase() &&
@@ -26,6 +31,7 @@ const TabbedSections = ({ categoryName }) => {
       );
     });
   }, [categoryName, selectedDesign]);
+  console.log(filteredProducts, "filteredProducts");
 
   const renderContent = () => {
     switch (selectedDesign) {
@@ -34,6 +40,9 @@ const TabbedSections = ({ categoryName }) => {
       case "Elegant":
       case "Minimalist":
       case "Classic":
+      case "Industrial":
+      case "Eclectic":
+      case "Tropical":
         return (
           <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
             {filteredProducts.length > 0 ? (
@@ -62,6 +71,9 @@ const TabbedSections = ({ categoryName }) => {
               "Elegant",
               "Minimalist",
               "Classic",
+              "Industrial",
+              "Eclectic",
+              "Tropical",
             ];
             setSelectedDesign(categories[index]);
           }}
@@ -72,13 +84,13 @@ const TabbedSections = ({ categoryName }) => {
             <Tab>Elegant</Tab>
             <Tab>Minimalist</Tab>
             <Tab>Classic</Tab>
+            <Tab>Industrial</Tab>
+            <Tab>Eclectic</Tab>
+            <Tab>Tropical</Tab>
           </TabList>
         </Tabs>
-
       </Flex>
-        <Flex
-          p={4}
-        >{renderContent()}</Flex>
+      <Box p={4}>{renderContent()}</Box>
     </ChakraProvider>
   );
 };

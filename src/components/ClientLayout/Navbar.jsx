@@ -122,7 +122,7 @@ function Navbar() {
                 py={1}
                 rounded="md"
                 _hover={{ textDecoration: "none" }}
-              // to="/plant-palace/about-us"
+              to={UnAuthenticatedRoutesNames.ABOUT}
               >
                 About
               </Link>
