@@ -165,7 +165,7 @@ function Navbar() {
               </Button>
             ) : (
               <Link
-                // to={"/plant-palace/login"}
+                to={UnAuthenticatedRoutesNames.LOGIN}
                 colorScheme="teal"
                 variant=""
                 size="sm"
