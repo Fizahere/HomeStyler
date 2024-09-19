@@ -12,18 +12,19 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
+import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 // import { imageMap } from "../../assets/constants/images";
 
-function CustomCard() {
- 
-  // const {category:categoryName}=props
-  // const { singlePlant } = props;
-  // const { id } = singlePlant;
-  // const { name } = singlePlant;
-  // const { price } = singlePlant;
-  // const { category } = singlePlant;
-  // const { image } = singlePlant;
-  // const imageSrc = imageMap[image];
+function CustomCard({ singleProduct }) {
+  // console.log(singleProduct, 'singleProduct');
+  const {
+    name,
+    description,
+    price,
+    category,
+    design,
+    image,
+  } = singleProduct;
 
   const navigate = useNavigate();
   return (
@@ -37,7 +38,7 @@ function CustomCard() {
       >
         <CardBody>
           <Image
-            // src={imageSrc}
+            src={image}
             alt={"image_thumbnail_path"}
             borderRadius="md"
             width={"100%"}
@@ -52,13 +53,13 @@ function CustomCard() {
           <Stack mt="6" spacing={{ base: "1", md: "3" }}>
             <Flex justifyContent={"space-between"}>
               <Heading size={{ base: "sm", md: "md" }}>
-                {/* {name} */}
-Fiza              </Heading>
+                {name}
+              </Heading>
               <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
-                {/* $ {price} */}$ 500
+                $ {price}
               </Text>
             </Flex>
-            <Text fontSize={{ base: "12px", md: "1xl" }}>category</Text>
+            <Text fontSize={{ base: "12px", md: "1xl" }}>{category}</Text>
 
             <Button
               mt={{ base: "1", md: "0" }}
@@ -68,7 +69,7 @@ Fiza              </Heading>
                 color: "",
               }}
               fontSize={{ base: "12px", md: "1xl" }}
-              // onClick={() => navigate(`/plant-palace/detail/${categoryName||category}/${id}`)}
+            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design',category)}`)}
             >
               Show more
             </Button>
