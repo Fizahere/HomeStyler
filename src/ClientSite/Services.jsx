@@ -29,7 +29,7 @@ function Services() {
             />
           </Box>
           <Box width={"40%"}>
-            <SimpleGrid p={"10px"} columns={{ base: 1, sm: 2 }} spacing={4}>
+            <SimpleGrid color={Colors.BLACK} p={"10px"} columns={{ base: 1, sm: 2 }} spacing={4}>
               <Box
                 display={"flex"}
                 flexDirection={"column"}

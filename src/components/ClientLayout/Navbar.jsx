@@ -12,6 +12,10 @@ import {
   Divider,
   Text,
   Collapse,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
@@ -24,7 +28,7 @@ function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
   const [user, setUser] = useState(localStorage.getItem("user"));
   const categoriesDisclosure = useDisclosure()
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
   const categories = [
     "Living Room",
@@ -81,39 +85,37 @@ function Navbar() {
               >
                 Home
               </Link>
-              <Link
-  icon={APP_ICONS.CATEGORY}
-  _hover={{ color: 'inherit' }}
-  onClick={categoriesDisclosure.onToggle}
-  position="relative" 
->
-  Categories
-  <Icon
-    as={APP_ICONS.TOGGLE}
-    ml={2}
-    transform={categoriesDisclosure.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
-  />
-</Link>
-<Collapse in={categoriesDisclosure.isOpen}>
-  <Box
-    zIndex={1}
-    mt={4} 
-    bg={Colors.BODYLIGHT}
-    borderRadius="md"
-    boxShadow="lg"
-    px={4}
-    py={3}
-    position="absolute" 
-    left={500} 
-    width="200px"
-  >
-    {categories.map((singleCategory, index) => (
-      <Box key={index} py={2}> 
-        <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category',singleCategory).toLocaleLowerCase()}>{singleCategory}</Link>
-      </Box>
-    ))}
-  </Box>
-</Collapse>
+              <Menu>
+                {({ isOpen }) => (
+                  <>
+                    <MenuButton
+                      fontWeight="400"
+                      _hover={{ bg: 'transparent' }}
+                      isActive={isOpen}
+                      as={Button}
+                      rightIcon={
+                        <Box
+                          transform={isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                          transition="transform 0.2s ease"
+                        >
+                          <APP_ICONS.TOGGLE />
+                        </Box>
+                      }
+                    >
+                      Categories
+                    </MenuButton>
+                    <MenuList>
+                      {categories.map((singleCategory, index) => (
+                        <Box key={index} py={2}>
+                          <Link to={UnAuthenticatedRoutesNames.SHOP.replace(':category', singleCategory).toLocaleLowerCase()}>
+                            <MenuItem>{singleCategory}</MenuItem>
+                          </Link>
+                        </Box>
+                      ))}
+                    </MenuList>
+                  </>
+                )}
+              </Menu>
 
               <Link
                 px={2}

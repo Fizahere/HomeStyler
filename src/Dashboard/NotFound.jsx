@@ -1,6 +1,6 @@
 import React from "react";
-import { Heading, Box, Image } from "@chakra-ui/react";
 import notfound from "../assets/images/notfound.png";
+import { Box, Image, Text } from "@chakra-ui/react";
 
 function NotFound() {
   return (
@@ -8,15 +8,27 @@ function NotFound() {
       <Box
         display={"flex"}
         justifyContent={"center"}
-        py={"60"}
-        px={"20px"}
-        flexDirection={{
-          base: "column",
-          md: "row",
-        }}
+        alignItems={"center"}
+        height={"100vh"}
       >
-        <Heading>404 Not Found!</Heading>
-        {/* <Image src={notfound} alt="Error 404" height={200} /> */}
+        <Box>
+          <Text
+            fontSize={{ base: "25px", md: "30px", }}
+            fontFamily={"monospace"}
+            textAlign={"center"}
+            borderBottom={'1px solid grey'}
+          >
+            404 Not Found!
+          </Text>
+          <Image
+            src={notfound}
+            height={{
+              base: "200",
+              md: "400",
+            }}
+            maxWidth={"100%"}
+          />
+        </Box>
       </Box>
     </>
   );

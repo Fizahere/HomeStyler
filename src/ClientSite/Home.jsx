@@ -126,6 +126,7 @@ function Home() {
             height={{ base: "250px", sm: "350px", md: "700px" }}
             width={{ base: "250px", sm: "300px", md: "600px" }}
             bg={Colors.THEME}
+            display={{base:'none',lg:'block'}}
             borderRadius={{ base: "50% 0% 0% 50%", md: "50% 00% 00% 50%" }}
             overflow="hidden"
           ></Box>
