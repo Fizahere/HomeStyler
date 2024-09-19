@@ -13,8 +13,9 @@ export const AuthenticatedRouteNames = {
 
 export const UnAuthenticatedRoutesNames = {
     HOME: '/',
-    ABOUT: '/website/about',
-    DETAIL: '/website/detail/show/:id',
-    LOGIN: '/website/login',
-    REGISTER: '/website/register',
+    ABOUT: '/HomeStyler/about',
+    SHOP:'/HomeStyler/category/:category',
+    // DETAIL: '/HomeStyler/detail/design/:design',
+    LOGIN: '/HomeStyler/login',
+    REGISTER: '/HomeStyler/register',
 }
