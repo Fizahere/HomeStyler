@@ -3,6 +3,7 @@ import { Box, Flex, Text, Icon, Link } from "@chakra-ui/react";
 import { Link as DomLink } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
+import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 
 function Footer() {
   return (
@@ -74,25 +75,25 @@ function Footer() {
           </Link>
         </Flex>
         <Flex flexDirection={{base:'column',md:'row'}} mb={10} justifyContent={"center"} gap={"30px"} mt={"10px"}>
-          <DomLink to={"/"}>
+          <DomLink to={UnAuthenticatedRoutesNames.HOME}>
             <Text>Home</Text>
           </DomLink>
-          <DomLink to={"/home-styler/about-us"}>
+          <DomLink to={UnAuthenticatedRoutesNames.ABOUT}>
             <Text>About</Text>
           </DomLink>
-          <DomLink to={"/home-styler/contact-us"}>
+          <DomLink to={UnAuthenticatedRoutesNames.CONTACT}>
             <Text>Contact</Text>
           </DomLink>
-          <DomLink to={"/home-styler/explore-plants"}>
+          <DomLink to={UnAuthenticatedRoutesNames.SHOP}>
             <Text>Shop</Text>
           </DomLink>
-          <DomLink to={"/home-styler/feedback"}>
+          <DomLink to={UnAuthenticatedRoutesNames.FEEDBACK}>
             <Text>Feedback</Text>
           </DomLink>
-          <DomLink to={"/home-styler/login"}>
+          <DomLink to={UnAuthenticatedRoutesNames.LOGIN}>
             <Text>Login</Text>
           </DomLink>
-          <DomLink to={"/home-styler/sitemap"}>
+          <DomLink to={UnAuthenticatedRoutesNames.SITEMAP}>
             <Text>Sitemap</Text>
           </DomLink>
         </Flex>

@@ -20,5 +20,4 @@ export const UnAuthenticatedRoutesNames = {
     SITEMAP:'/home-styler/sitemap',
     DETAIL: '/home-styler/detail/design/:design',
     LOGIN: '/home-styler/login',
-    SIGNUP: '/home-styler/create-new-account',
 }

@@ -9,7 +9,8 @@ const theme = extendTheme({
 });
 
 function App() {
-  const [user,setUser] = useState(false);
+  const [user,setUser] = useState(localStorage.getItem('user'));
+
 
   return (
     <ChakraProvider theme={theme}>

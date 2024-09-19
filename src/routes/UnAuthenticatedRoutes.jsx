@@ -7,7 +7,6 @@ import NotFound from "../Dashboard/NotFound";
 import Shop from '../ClientSite/Shop'
 import Sitemap from "../ClientSite/Sitemap";
 import SignIn from "../Auth/Login";
-import SignUp from "../Auth/Register";
 import Detail from "../ClientSite/Detail";
 import Contact from '../ClientSite/Contact'
 import Feedback from '../ClientSite/Feedback'
@@ -26,7 +25,6 @@ function UnAuthenticatedRoutes() {
         <Route path={UnAuthenticatedRoutesNames.ABOUT} element={<About />} />
       </Route>
         <Route path={UnAuthenticatedRoutesNames.LOGIN} element={<SignIn />} />
-        <Route path={UnAuthenticatedRoutesNames.SIGNUP} element={<SignUp />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

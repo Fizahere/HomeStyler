@@ -18,6 +18,7 @@ function CustomInputFeild(props) {
       <Input
         type={type ? type : text}
         color={Colors.BLACK}
+        _dark={{color:Colors.WHITE}}
         p={3}
         w={270}
         value={ivalue}

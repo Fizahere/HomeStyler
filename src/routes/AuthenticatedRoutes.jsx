@@ -7,9 +7,8 @@ import Setting from "../Dashboard/Setting";
 import Users from "../Dashboard/Users";
 import ProductsListing from "../Dashboard/ProductsListing/ProductsListing";
 import NotFound from "../Dashboard/NotFound";
-import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
-import SignUp from "../Auth/Register";
 import CustomSearch from "../components/Search/Search";
+import SignOut from "../Auth/SignOut";
 
 function AuthenticatedRoutes() {
   return (
@@ -24,7 +23,7 @@ function AuthenticatedRoutes() {
         <Route path={AuthenticatedRouteNames.PRODUCTS} element={<ProductsListing />} />
         <Route path={AuthenticatedRouteNames.SEARCH} element={<CustomSearch />}   />
       </Route>
-      <Route path={UnAuthenticatedRoutesNames.REGISTER} element={<SignUp />} />
+      <Route path={AuthenticatedRouteNames.LOGOUT} element={<SignOut />}   />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
