@@ -28,19 +28,23 @@ import ProductsData from "../data/product-new-data.json";
 
 const Products = () => {
   const dropdown = useDisclosure();
-  const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
+  const [items] = useState([
+    "Sort by Style",
+    "Sort Alphabetically",
+    "Sort by Price",
+  ]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
-
+  const [searchQuery, setSearchQuery] = useState("");
   const { prodCategory: categoryName } = useParams();
+
+  const handleSortSelection = (item) => {
+    setSelectedItem(item);
+  };
 
   return (
     <>
       <Box mt={4}>
-        <Flex
-          p={2}
-          borderBottom={"1px solid grey"}
-          justifyContent={"space-between"}
-        >
+        <Flex p={2} borderBottom={"1px solid grey"} justifyContent={"space-between"}>
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
             {categoryName.toUpperCase()}
           </Heading>
@@ -49,7 +53,8 @@ const Products = () => {
               <Input
                 borderRadius={10}
                 p={2}
-                // onChange={filterInputHandler}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder={"Search"}
                 _placeholder={{ fontSize: "15px" }}
               />
@@ -58,41 +63,32 @@ const Products = () => {
               </InputRightElement>
             </InputGroup>
             <Box ml={4} mt={{ base: 2, md: 0 }}>
-              <Menu>
+              <Menu isOpen={dropdown.isOpen}>
                 <MenuButton
                   as={Button}
+                  onClick={dropdown.onToggle}
                   _dark={{ bg: Colors.DARKTHEME }}
                   border={"1px solid #e2e8f0"}
-                  // onClick={dropdown.onToggle}
                 >
                   <Flex>
-                    <Text
-                      color={Colors.GREY}
-                      fontWeight={"400"}
-                      fontSize={"15px"}
-                      mt={0.5}
-                    >
+                    <Text color={Colors.GREY} fontWeight={"400"} fontSize={"15px"} mt={0.5}>
                       {selectedItem}
                     </Text>
                     <Icon
-                      as={APP_ICONS.THREEBARS}
-                      transform={
-                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
-                      }
-                      fontSize={"25px"}
+                      as={APP_ICONS.TOGGLE}
+                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                      transition="transform 0.3s ease"
+                      ml={2}
+                      fontSize={"20px"}
                     />
                   </Flex>
                 </MenuButton>
                 <MenuList _dark={{ bg: Colors.DARKTHEME }}>
-                  {/* {items.map((item) => (
-                    <MenuItem
-                      _dark={{ bg: Colors.DARKTHEME }}
-                      key={item}
-                      onClick={() => handleSelect(item)}
-                    >
+                  {items.map((item) => (
+                    <MenuItem key={item} onClick={() => handleSortSelection(item)}>
                       {item}
                     </MenuItem>
-                  ))} */}
+                  ))}
                 </MenuList>
               </Menu>
             </Box>
@@ -100,7 +96,13 @@ const Products = () => {
         </Flex>
 
         <Box py={8}>
-          <TabbedSections prodCategoryName={categoryName} />
+          {categoryName && (
+            <TabbedSections
+              prodCategoryName={categoryName}
+              searchQuery={searchQuery}
+              selectedItem={selectedItem}
+            />
+          )}
         </Box>
       </Box>
     </>
@@ -109,32 +111,41 @@ const Products = () => {
 
 export default Products;
 
-const TabbedSections = ({ prodCategoryName }) => {
-  // console.log(prodCategoryName, 'prodcategoryName');
+const TabbedSections = ({ prodCategoryName, searchQuery, selectedItem }) => {
   const [selectedSubCategory, setSelectedSubCategory] = useState("All");
+
   const filteredProducts = useMemo(() => {
-    const testingProductData = ProductsData?.browsingProducts?.categories;
-    // console.log(testingProductData,'testingProductData');
     const matchingCategory = ProductsData?.browsingProducts?.categories.find(
       (cat) => cat?.category?.toLowerCase() === prodCategoryName?.toLowerCase()
     );
+
     if (!matchingCategory) return [];
-    // console.log(matchingCategory,'matchingCategory');
 
     const filteredSubcategories = matchingCategory.subcategories.filter(
       (subcategory) =>
         selectedSubCategory?.toLowerCase() === "all" ||
         subcategory?.name?.toLowerCase() === selectedSubCategory?.toLowerCase()
     );
-    // console.log(filteredSubcategories,'filteredSubcategories');
 
     const products = filteredSubcategories?.flatMap(
       (subcategory) => subcategory?.products
     );
-    // console.log(products,'products');
 
-    return products;
-  }, [prodCategoryName, selectedSubCategory]);
+    // Filter by search query
+    const searchedProducts = products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    // Sort the filtered products based on selectedItem
+    return searchedProducts.sort((a, b) => {
+      if (selectedItem === "Sort by Price") {
+        return a.price - b.price;
+      } else if (selectedItem === "Sort Alphabetically") {
+        return a.name.localeCompare(b.name);
+      }
+      return 0;
+    });
+  }, [prodCategoryName, selectedSubCategory, searchQuery, selectedItem]);
 
   const subcategories = useMemo(() => {
     const category = ProductsData?.browsingProducts?.categories.find(
@@ -150,7 +161,7 @@ const TabbedSections = ({ prodCategoryName }) => {
       return (
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
           {filteredProducts.length > 0 ? (
-            filteredProducts?.map((singleItem, index) => (
+            filteredProducts.map((singleItem, index) => (
               <CustomCard key={index} singleProduct={singleItem} />
             ))
           ) : (
