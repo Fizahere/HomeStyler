@@ -71,7 +71,7 @@ function Navbar() {
               )
             }
             aria-label="Open Menu"
-            display={{ md: "none" }}
+            display={{ md: "block" }}
             onClick={onOpen}
           />
           <NavLink to={UnAuthenticatedRoutesNames.HOME}>
@@ -91,7 +91,7 @@ function Navbar() {
           <HStack
             spacing={8}
             alignItems="center"
-            display={{ base: "none", md: "flex" }}
+            display={{ base: "none", lg: "flex" }}
           >
             <NavLink
               to={UnAuthenticatedRoutesNames.HOME}

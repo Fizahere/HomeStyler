@@ -15,7 +15,7 @@ import {
   InputRightElement,
   Text,
 } from "@chakra-ui/react";
-import TabbedSections from "../components/Mist/TabbedSections"; // Import the TabbedSections component
+import TabbedSections from "../components/Mist/TabbedSections";
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
@@ -25,16 +25,15 @@ const Shop = () => {
   const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
   
-  // Use category from URL params
   const { category: categoryName } = useParams();
-  const [selectedDesign, setSelectedDesign] = useState("All"); // Add state for selected design category
+  const [selectedDesign, setSelectedDesign] = useState("All"); 
 
   return (
     <>
       <Box mt={4}>
         <Flex p={2} borderBottom={"1px solid grey"} justifyContent={"space-between"}>
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
-            {categoryName?.toUpperCase() || "Shop"} {/* Use categoryName */}
+            {categoryName?.toUpperCase() || "Shop"} 
           </Heading>
 
           <Flex flexDirection={{ base: "column", md: "row" }}>
@@ -74,7 +73,6 @@ const Shop = () => {
         </Flex>
 
         <Box py={8}>
-          {/* Pass selectedDesign and setSelectedDesign to TabbedSections */}
           <TabbedSections categoryName={categoryName} selectedDesign={selectedDesign} setSelectedDesign={setSelectedDesign} />
         </Box>
       </Box>

@@ -12,7 +12,6 @@ function GalleryCard(props) {
  
 const {cardData}=props
 
-  const navigate = useNavigate();
   return (
     <>
       <Card
