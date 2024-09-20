@@ -8,7 +8,7 @@ import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 function Footer() {
   return (
     <>
-      <Box h={"auto"} borderTop={"1px solid grey"} >
+      <Box p={2} h={"auto"} borderTop={"1px solid grey"} >
         <DomLink to={"/"}>
           <Flex mt={4}>
             {/* <Icon as={APP_ICONS.} fontSize={{ base: 20, md: 25 }} />{" "} */}
@@ -83,9 +83,6 @@ function Footer() {
           </DomLink>
           <DomLink to={UnAuthenticatedRoutesNames.CONTACT}>
             <Text>Contact</Text>
-          </DomLink>
-          <DomLink to={UnAuthenticatedRoutesNames.SHOP}>
-            <Text>Shop</Text>
           </DomLink>
           <DomLink to={UnAuthenticatedRoutesNames.FEEDBACK}>
             <Text>Feedback</Text>
