@@ -12,7 +12,8 @@
         "Cozy_Office_Space2",
         "Cozy_Office_Space3"
       ],
-      "price": 499.99
+      "price": 499.99,
+      "isDesign":true
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
         "Elegant_Executive_Office2",
         "Elegant_Executive_Office3"
       ],
-      "price": 799.99
+      "price": 799.99,
+      "isDesign":true
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
         "Cozy_Living_Room_Retreat2",
         "Cozy_Living_Room_Retreat3"
       ],
-      "price": 399.99
+      "price": 399.99,
+      "isDesign":true
     },
     {
       "id": 4,
@@ -54,7 +57,8 @@
         "Minimalist_Modern_Living_Room2",
         "Minimalist_Modern_Living_Room3"
       ],
-      "price": 349.99
+      "price": 349.99,
+      "isDesign":true
     },
     {
       "id": 5,
@@ -68,7 +72,8 @@
         "Elegant_Luxury_Living_Room2",
         "Elegant_Luxury_Living_Room3"
       ],
-      "price": 899.99
+      "price": 899.99,
+      "isDesign":true
     },
     {
       "id": 6,
@@ -82,7 +87,8 @@
         "Cozy_Bedroom_Sanctuary2",
         "Cozy_Bedroom_Sanctuary3"
       ],
-      "price": 449.99
+      "price": 449.99,
+      "isDesign":true
     },
     {
       "id": 7,
@@ -96,7 +102,8 @@
         "Minimalist_Sleek_Bedroom2",
         "Minimalist_Sleek_Bedroom3"
       ],
-      "price": 359.99
+      "price": 359.99,
+      "isDesign":true
     },
     {
       "id": 8,
@@ -110,7 +117,8 @@
         "Elegant_Glam_Bedroom2",
         "Elegant_Glam_Bedroom3"
       ],
-      "price": 749.99
+      "price": 749.99,
+      "isDesign":true
     },
     {
       "id": 9,
@@ -124,7 +132,8 @@
         "Cozy_Reading_Nook2",
         "Cozy_Reading_Nook3"
       ],
-      "price": 299.99
+      "price": 299.99,
+      "isDesign":true
     },
     {
       "id": 10,
@@ -138,7 +147,8 @@
         "Elegant_Home_Office5",
         "Elegant_Home_Office6"
       ],
-      "price": 799.99
+      "price": 799.99,
+      "isDesign":true
     },
     {
       "id": 11,
@@ -152,7 +162,8 @@
         "Modern_Kitchen_Delight2",
         "Modern_Kitchen_Delight3"
       ],
-      "price": 549.99
+      "price": 549.99,
+      "isDesign":true
     },
     {
       "id": 12,
@@ -166,7 +177,8 @@
         "Rustic_Farmhouse_Kitchen2",
         "Rustic_Farmhouse_Kitchen3"
       ],
-      "price": 499.99
+      "price": 499.99,
+      "isDesign":true
     },
     {
       "id": 13,
@@ -180,7 +192,8 @@
         "Classic_Bathroom_Retreat2",
         "Classic_Bathroom_Retreat3"
       ],
-      "price": 399.99
+      "price": 399.99,
+      "isDesign":true
     },
     {
       "id": 14,
@@ -194,7 +207,8 @@
         "Spa_Like_Bathroom_Oasis2",
         "Spa_Like_Bathroom_Oasis3"
       ],
-      "price": 649.99
+      "price": 649.99,
+      "isDesign":true
     },
     {
       "id": 15,
@@ -208,7 +222,8 @@
         "Industrial_Loft_Living_Room2",
         "Industrial_Loft_Living_Room3"
       ],
-      "price": 549.99
+      "price": 549.99,
+      "isDesign":true
     },
     {
       "id": 16,
@@ -222,7 +237,8 @@
         "Traditional_Dining_Room2",
         "Traditional_Dining_Room3"
       ],
-      "price": 499.99
+      "price": 499.99,
+      "isDesign":true
     },
     {
       "id": 17,
@@ -236,7 +252,8 @@
         "Modern_Minimalist_Dining2",
         "Modern_Minimalist_Dining3"
       ],
-      "price": 379.99
+      "price": 379.99,
+      "isDesign":true
     },
     {
       "id": 18,
@@ -250,7 +267,8 @@
         "Scandinavian_Style_Living_Room2",
         "Scandinavian_Style_Living_Room3"
       ],
-      "price": 429.99
+      "price": 429.99,
+      "isDesign":true
     },
     {
       "id": 19,
@@ -264,7 +282,8 @@
         "Eclectic_Bedroom_Design2",
         "Eclectic_Bedroom_Design3"
       ],
-      "price": 499.99
+      "price": 499.99,
+      "isDesign":true
     },
     {
       "id": 20,
@@ -278,7 +297,8 @@
         "Tropical_Paradise_Bathroom2",
         "Tropical_Paradise_Bathroom3"
       ],
-      "price": 459.99
+      "price": 459.99,
+      "isDesign":true
     },
     {
       "id": 22,
@@ -292,7 +312,8 @@
         "Modern_Elegance2",
         "Modern_Elegance3"
       ],
-      "price": 499.99
+      "price": 499.99,
+            "isDesign":true
     },
     {
       "id": 23,
@@ -306,7 +327,8 @@
         "Classic_Charm2",
         "Classic_Charm3"
       ],
-      "price": 499.99
+      "price": 499.99,
+      "isDesign":true
     },
     {
       "id": 24,
@@ -320,7 +342,8 @@
         "Industrial_Edge2",
         "Industrial_Edge3"
       ],
-      "price": 399.99
+      "price": 399.99,
+      "isDesign":true
     },
     {
       "id": 25,
@@ -334,7 +357,8 @@
         "Eclectic_Vibes2",
         "Eclectic_Vibes3"
       ],
-      "price": 399.99
+      "price": 399.99,
+      "isDesign":true
     },
     {
       "id": 26,
@@ -348,7 +372,8 @@
         "Tropical_Oasis2",
         "Tropical_Oasis3"
       ],
-      "price": 399.99
+      "price": 399.99,
+      "isDesign":true
     },
     {
       "id": 27,
@@ -362,7 +387,8 @@
         "Minimalist_Workspace5",
         "Minimalist_Workspace6"
       ],
-      "price": 520.00
+      "price": 520.00,
+      "isDesign":true
     },
     {
       "id": 28,
@@ -376,7 +402,8 @@
         "Classic_Home_Library5",
         "Classic_Home_Library6"
       ],
-      "price": 950.00
+      "price": 950.00,
+      "isDesign":true
     },
     {
       "id": 29,
@@ -390,7 +417,8 @@
         "Industrial_Kitchen_Loft2",
         "Industrial_Kitchen_Loft3"
       ],
-      "price": 850.00
+      "price": 850.00,
+      "isDesign":true
     },
     {
       "id": 30,
@@ -404,7 +432,8 @@
         "Eclectic_Art_Studio5",
         "Eclectic_Art_Studio6"
       ],
-      "price": 600.00
+      "price": 600.00,
+      "isDesign":true
     }
   ]
 }
