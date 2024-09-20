@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Image,
   Heading,
@@ -7,22 +7,62 @@ import {
   SimpleGrid,
   Flex,
   Button,
+  Skeleton,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import ProductsData from '../data/product-new-data.json';
+import CustomButton from "../components/Mist/Button";
 
 function ProductDetail() {
   const { product: productID } = useParams();
   const id = Number(productID); // Convert to number
 
-  // Find the product by ID
-  const foundProduct = ProductsData.browsingProducts.categories.flatMap(category =>
-    category.subcategories.flatMap(subcategory => subcategory.products)
-  ).find(product => product.id === id);
+  const [isLoading, setIsLoading] = useState(true);
+  const [foundProduct, setFoundProduct] = useState(null);
+
+  useEffect(() => {
+    // Simulate data fetching
+    const fetchData = () => {
+      const product = ProductsData.browsingProducts.categories.flatMap(category =>
+        category.subcategories.flatMap(subcategory => subcategory.products)
+      ).find(product => product.id === id);
+      
+      setFoundProduct(product);
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [id]);
+
+  if (isLoading) {
+    return (
+      <Box display={"flex"} justifyContent={"space-between"}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
+          <Box display={"flex"} justifyContent={"space-between"} ml={{ base: "0", md: "5" }}>
+            <Box maxW={"600px"}>
+              <Skeleton height="400px" width="800px" borderRadius="md" />
+            </Box>
+          </Box>
+          <Box ml={{ base: "0", md: "80px" }} borderLeft={{ base: "none", md: "1px solid gray" }} p={{ base: "0", md: "3" }}>
+            <Box mb={4} ml={5}>
+              <Skeleton height="40px" width="300px" />
+              <Skeleton height="20px" width="200px" mt={4} />
+              <Skeleton height="20px" width="100%" mt={10} />
+              <Skeleton height="20px" width="100%" mt={4} />
+              <Flex mt={10} justifyContent={"space-between"}>
+                <Skeleton height="20px" width="100px" />
+              </Flex>
+              <Skeleton height="50px" width="100%" mt={8} />
+            </Box>
+          </Box>
+        </SimpleGrid>
+      </Box>
+    );
+  }
 
   if (!foundProduct) {
-    return <Text>Product not found</Text>; // Handle case where product is not found
+    return <Text>Product not found</Text>;
   }
 
   const {
@@ -31,11 +71,10 @@ function ProductDetail() {
     description,
     price,
     reviews,
-    isProduct,
   } = foundProduct;
 
   return (
-    <Box display={"flex"} justifyContent={"space-between"}>
+    <Box display={"flex"} justifyContent={"space-between"}h={520}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
         <Box display={"flex"} justifyContent={"space-between"} ml={{ base: "0", md: "5" }}>
           <Box maxW={"600px"}>
@@ -61,16 +100,7 @@ function ProductDetail() {
                 <Text key={index}>{review.user}: {review.comment} (Rating: {review.rating})</Text>
               ))}
             </Flex>
-            <Button
-              mt={8}
-              width={"100%"}
-              bgGradient="linear(to-r, #30362f, #4d5c3e)"
-              color={Colors.WHITE}
-              _hover={{ bg: Colors.THEMEBUTTON }}
-              onClick={() => console.log('Add to cart')}
-            >
-              Add To Wishlist
-            </Button>
+           <CustomButton title={'Add to Wishlist'} />
           </Box>
         </Box>
       </SimpleGrid>

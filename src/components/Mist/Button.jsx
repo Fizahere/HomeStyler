@@ -1,24 +1,21 @@
 import React from "react";
-import { Button, Icon } from "@chakra-ui/react";
-import APP_ICONS from "../../constants/icons";
+import { Button } from "@chakra-ui/react";
 import { Colors } from "../../constants/colors";
 
 function CustomButton(props) {
-  const { onClickHandler, buttonText, icon, backgroundColor } = props;
+  const { title } = props;
   return (
     <>
       <Button
-        bg={backgroundColor}
-        color={Colors.WHITE}
-        _hover={{ bg: '' }}
-        _dark={{
-          bg: backgroundColor,
-          // color:Colors.WHITE,
-        }}
-        onClick={onClickHandler}
+        bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
+        color={Colors.BLACK}
+        _hover={{ bg: Colors.THEMEBUTTON }}
+        w={270}
+        p={3}
+        borderRadius={8}
+        fontWeight={"bold"}
       >
-        {icon ? <Icon fontSize={"1.2rem"} mr={"6px"} as={icon} /> : null}
-        {buttonText}
+        {title}
       </Button>
     </>
   );
