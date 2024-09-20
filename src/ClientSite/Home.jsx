@@ -15,6 +15,7 @@ import { Colors } from "../constants/colors";
 import mainimage from "../assets/images/mainimage.png";
 import Services from "./Services";
 import Gallery from "./Gallery";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const Home = () => {
   const categories = {
@@ -65,7 +66,7 @@ const Home = () => {
                 borderRadius={"40px"}
                 fontSize={"12px"}
                 _hover={{ color: "white" }}
-                onClick={() => navigate("/plant-palace/explore-plants")}
+                onClick={() => navigate()}
               >
                 <Icon mr={2} as={APP_ICONS.RIGHTARROW} fontSize={"18px"} />
                 Go To Shop
@@ -76,7 +77,7 @@ const Home = () => {
                 _hover={{ bg: "transparent" }}
                 width={"150px"}
                 fontSize={{ base: "18px", sm: "12px", md: "18px" }}
-                onClick={() => navigate("/plant-palace/about-us")}
+                onClick={() => navigate(UnAuthenticatedRoutesNames.ABOUT)}
               >
                 More Details
               </Button>
@@ -109,7 +110,7 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  onClick={() => navigate(`/plant-palace/${key}`)}
+                  // onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP)}
                 >
                   {value}
                 </Button>

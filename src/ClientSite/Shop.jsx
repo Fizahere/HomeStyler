@@ -29,8 +29,7 @@ const Shop = () => {
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
  const { category: categoryName } = useParams();
-  // console.log(prodCategory, 'prodCategory');
-  // console.log(categoryName, 'categoryName');
+;
 
   return (
     <>
@@ -74,7 +73,7 @@ const Shop = () => {
                       {selectedItem}
                     </Text>
                     <Icon
-                      as={APP_ICONS.THREEBARS}
+                      as={APP_ICONS.TOGGLE}
                       transform={
                         dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
                       }

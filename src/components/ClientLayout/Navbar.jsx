@@ -21,12 +21,13 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  useColorModeValue,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
-import ProductSelection from '../../data/product-new-data.json';
+import ProductSelection from "../../data/product-new-data.json";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,13 +42,25 @@ function Navbar() {
     "Bathroom",
   ];
 
- const productCategories = ProductSelection.productSelection.filters.categories;
-//  console.log(productCategories,'productCategories');
+  const productCategories =
+    ProductSelection.productSelection.filters.categories;
+
+  const activeLinkStyle = {
+    borderBottom: "2px solid grey",
+  };
 
   return (
     <>
-      <Box zIndex={1}>
-        <Flex h={16} alignItems="center" justifyContent="space-between">
+      <Box
+        zIndex={1}
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bg={colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME}
+        boxShadow="sm"
+      >
+        <Flex h={16} alignItems="center" justifyContent="space-between" px={4}>
           <IconButton
             size="md"
             icon={
@@ -61,8 +74,9 @@ function Navbar() {
             display={{ md: "none" }}
             onClick={onOpen}
           />
-          <Link to={UnAuthenticatedRoutesNames.HOME}>
-            <Flex>
+          <NavLink to={UnAuthenticatedRoutesNames.HOME}>
+            <Flex px={2}>
+              <Icon as={APP_ICONS.BUILDINGS} fontSize={28} />
               <Text
                 mt={1}
                 ml={1}
@@ -72,14 +86,20 @@ function Navbar() {
                 HomeStyler
               </Text>
             </Flex>
-          </Link>
+          </NavLink>
 
           <HStack
             spacing={8}
             alignItems="center"
             display={{ base: "none", md: "flex" }}
           >
-            <Link to={UnAuthenticatedRoutesNames.HOME}>Home</Link>
+            <NavLink
+              to={UnAuthenticatedRoutesNames.HOME}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+              Home
+            </NavLink>
+
             <Menu>
               {({ isOpen }) => (
                 <>
@@ -87,6 +107,7 @@ function Navbar() {
                     mt={1}
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
+                    bg={"transparent"}
                     isActive={isOpen}
                     as={Button}
                     rightIcon={
@@ -103,20 +124,24 @@ function Navbar() {
                   <MenuList>
                     {categories.map((singleCategory, index) => (
                       <Box key={index} py={2}>
-                        <Link
+                        <NavLink
                           to={UnAuthenticatedRoutesNames.SHOP.replace(
                             ":category",
                             singleCategory
                           ).toLocaleLowerCase()}
+                          style={({ isActive }) =>
+                            isActive ? activeLinkStyle : undefined
+                          }
                         >
                           <MenuItem>{singleCategory}</MenuItem>
-                        </Link>
+                        </NavLink>
                       </Box>
                     ))}
                   </MenuList>
                 </>
               )}
             </Menu>
+
             <Menu>
               {({ isOpen }) => (
                 <>
@@ -125,6 +150,7 @@ function Navbar() {
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
                     isActive={isOpen}
+                    bg={"transparent"}
                     as={Button}
                     rightIcon={
                       <Box
@@ -140,49 +166,50 @@ function Navbar() {
                   <MenuList>
                     {productCategories.map((singleProdCategory, index) => (
                       <Box key={index} py={2}>
-                        <Link
+                        <NavLink
                           to={UnAuthenticatedRoutesNames.PRODUCTS.replace(
                             ":prodCategory",
                             singleProdCategory
                           ).toLocaleLowerCase()}
+                          style={({ isActive }) =>
+                            isActive ? activeLinkStyle : undefined
+                          }
                         >
                           <MenuItem>{singleProdCategory}</MenuItem>
-                        </Link>
+                        </NavLink>
                       </Box>
                     ))}
                   </MenuList>
                 </>
               )}
             </Menu>
-            <Link to={UnAuthenticatedRoutesNames.ABOUT}>About</Link>
-            <Link to={UnAuthenticatedRoutesNames.FEEDBACK}>Feedback</Link>
-            <Link to={UnAuthenticatedRoutesNames.CONTACT}>Contact</Link>
+
+            <NavLink
+              to={UnAuthenticatedRoutesNames.ABOUT}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to={UnAuthenticatedRoutesNames.FEEDBACK}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+              Feedback
+            </NavLink>
+            <NavLink
+              to={UnAuthenticatedRoutesNames.CONTACT}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+              Contact
+            </NavLink>
           </HStack>
 
           <Flex alignItems="center">
-            {user ? (
-              <Button
-                bg={"transparent"}
-                _hover={{ bg: "transparent" }}
-                mr={3}
-                fontSize={"15px"}
-                fontWeight={"bold"}
-                onClick={() => {
-                  if (confirm("Are you sure?")) {
-                    localStorage.removeItem("user");
-                    location.href = "/";
-                  }
-                }}
-              >
-                Logout
-              </Button>
-            ) : (
-              <Link to={UnAuthenticatedRoutesNames.LOGIN}>
-                <Text fontWeight={"bold"} mr={2}>
-                  Login
-                </Text>
-              </Link>
-            )}
+            <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
+              <Text fontWeight={"bold"} mr={2}>
+                Login
+              </Text>
+            </NavLink>
             <IconButton
               icon={<Icon as={APP_ICONS.WISHLIST} fontSize={22} />}
               bg={"transparent"}
@@ -211,6 +238,7 @@ function Navbar() {
             />
           </Flex>
         </Flex>
+
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
           <DrawerOverlay />
           <DrawerContent>
@@ -218,26 +246,33 @@ function Navbar() {
             <DrawerHeader>Menu</DrawerHeader>
             <DrawerBody>
               <Stack as="nav" spacing={4}>
-                <Link to={UnAuthenticatedRoutesNames.HOME} onClick={onClose}>
+                <NavLink to={UnAuthenticatedRoutesNames.HOME} onClick={onClose}>
                   Home
-                </Link>
-                <Link to={UnAuthenticatedRoutesNames.ABOUT} onClick={onClose}>
+                </NavLink>
+                <NavLink
+                  to={UnAuthenticatedRoutesNames.ABOUT}
+                  onClick={onClose}
+                >
                   About
-                </Link>
-                <Link
+                </NavLink>
+                <NavLink
                   to={UnAuthenticatedRoutesNames.FEEDBACK}
                   onClick={onClose}
                 >
                   Feedback
-                </Link>
-                <Link to={UnAuthenticatedRoutesNames.CONTACT} onClick={onClose}>
+                </NavLink>
+                <NavLink
+                  to={UnAuthenticatedRoutesNames.CONTACT}
+                  onClick={onClose}
+                >
                   Contact
-                </Link>
+                </NavLink>
               </Stack>
             </DrawerBody>
           </DrawerContent>
         </Drawer>
       </Box>
+      <Box mt="65px"></Box>
     </>
   );
 }

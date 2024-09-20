@@ -10,7 +10,7 @@
                 {
                   "id": 1,
                   "name": "Modern Velvet Sofa",
-                  "image": "modern_velvet_sofa.jpg",
+                  "image": "modern_velvet_sofa",
                   "description": "A sleek and luxurious velvet sofa with plush seating.",
                   "price": 799.99,
                   "reviews": [
@@ -34,7 +34,7 @@
                 {
                   "id": 2,
                   "name": "Leather Recliner",
-                  "image": "leather_recliner.jpg",
+                  "image": "leather_recliner",
                   "description": "A comfortable leather recliner with adjustable backrest.",
                   "price": 499.99,
                   "reviews": [
@@ -53,7 +53,7 @@
                 {
                   "id": 3,
                   "name": "Wooden Coffee Table",
-                  "image": "wooden_coffee_table.jpg",
+                  "image": "wooden_coffee_table",
                   "description": "A rustic coffee table made from reclaimed wood.",
                   "price": 299.99,
                   "reviews": [
@@ -77,7 +77,7 @@
                 {
                   "id": 4,
                   "name": "Chandelier",
-                  "image": "chandelier.jpg",
+                  "image": "chandelier",
                   "description": "A crystal chandelier for elegant lighting.",
                   "price": 999.99,
                   "reviews": [
@@ -96,7 +96,7 @@
                 {
                   "id": 5,
                   "name": "Modern Wall Sconce",
-                  "image": "modern_wall_sconce.jpg",
+                  "image": "modern_wall_sconce",
                   "description": "A sleek and modern wall sconce for soft lighting.",
                   "price": 149.99,
                   "reviews": [
@@ -120,7 +120,7 @@
                 {
                   "id": 6,
                   "name": "Persian Rug",
-                  "image": "persian_rug.jpg",
+                  "image": "persian_rug",
                   "description": "A handmade Persian rug with intricate patterns.",
                   "price": 599.99,
                   "reviews": [
@@ -139,7 +139,7 @@
                 {
                   "id": 7,
                   "name": "Abstract Wall Art",
-                  "image": "abstract_wall_art.jpg",
+                  "image": "abstract_wall_art",
                   "description": "A colorful abstract painting to brighten up any room.",
                   "price": 199.99,
                   "reviews": [
@@ -163,7 +163,7 @@
                 {
                   "id": 8,
                   "name": "Modern Kitchen Cabinets",
-                  "image": "modern_kitchen_cabinets.jpg",
+                  "image": "modern_kitchen_cabinets",
                   "description": "Stylish kitchen cabinets with ample storage space.",
                   "price": 1499.99,
                   "reviews": [
@@ -182,7 +182,7 @@
                 {
                   "id": 9,
                   "name": "Stainless Steel Sink",
-                  "image": "stainless_steel_sink.jpg",
+                  "image": "stainless_steel_sink",
                   "description": "Durable and spacious sink for a modern kitchen.",
                   "price": 299.99,
                   "reviews": [
@@ -206,7 +206,7 @@
                 {
                   "id": 10,
                   "name": "Modern Bathroom Vanity",
-                  "image": "modern_bathroom_vanity.jpg",
+                  "image": "modern_bathroom_vanity",
                   "description": "A sleek bathroom vanity with plenty of storage.",
                   "price": 799.99,
                   "reviews": [
@@ -225,7 +225,7 @@
                 {
                   "id": 11,
                   "name": "Freestanding Bathtub",
-                  "image": "freestanding_bathtub.jpg",
+                  "image": "freestanding_bathtub",
                   "description": "A luxurious freestanding bathtub for relaxation.",
                   "price": 1299.99,
                   "reviews": [

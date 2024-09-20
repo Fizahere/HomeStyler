@@ -15,12 +15,15 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
+import { designImagesMap } from "../../constants/images";
 
 function CustomCard({ singleProduct, isLoading }) {
   if (isLoading) {
     return (
       <Card
-        boxShadow={"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}
+        boxShadow={
+          "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        }
         _dark={{ bg: "transparent" }}
         maxW={{ base: "xs", md: "xs" }}
       >
@@ -32,26 +35,22 @@ function CustomCard({ singleProduct, isLoading }) {
     );
   }
 
-  const {
-    id,
-    name,
-    description,
-    price,
-    category,
-    image,
-  } = singleProduct;
+  const { id, name, description, price, category, image } = singleProduct;
+  const imageUrl = designImagesMap[image];
 
   const navigate = useNavigate();
 
   return (
     <Card
-      boxShadow={"0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}
+      boxShadow={
+        "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+      }
       _dark={{ bg: "transparent" }}
       maxW={{ base: "xs", md: "xs" }}
     >
       <CardBody>
         <Image
-          src={image}
+          src={imageUrl}
           alt={"image_thumbnail_path"}
           borderRadius="md"
           width={"100%"}
@@ -65,9 +64,7 @@ function CustomCard({ singleProduct, isLoading }) {
         />
         <Stack mt="6" spacing={{ base: "1", md: "3" }}>
           <Flex justifyContent={"space-between"}>
-            <Heading size={{ base: "sm", md: "md" }}>
-              {name}
-            </Heading>
+            <Heading size={{ base: "sm", md: "md" }}>{name}</Heading>
             <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
               $ {price}
             </Text>
@@ -82,7 +79,11 @@ function CustomCard({ singleProduct, isLoading }) {
               color: "",
             }}
             fontSize={{ base: "12px", md: "1xl" }}
-            onClick={() => navigate(`${UnAuthenticatedRoutesNames.DETAIL.replace(':design', id)}`)}
+            onClick={() =>
+              navigate(
+                `${UnAuthenticatedRoutesNames.DETAIL.replace(":design", id)}`
+              )
+            }
           >
             Show more
           </Button>

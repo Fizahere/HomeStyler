@@ -11,8 +11,8 @@ function Footer() {
       <Box p={2} h={"auto"} borderTop={"1px solid grey"} >
         <DomLink to={"/"}>
           <Flex mt={4}>
-            {/* <Icon as={APP_ICONS.} fontSize={{ base: 20, md: 25 }} />{" "} */}
-            <Text
+          <Icon as={APP_ICONS.BUILDINGS} fontSize={28}/>
+          <Text
               mt={1}
               ml={1}
               fontSize={{ base: 15, md: 20 }}

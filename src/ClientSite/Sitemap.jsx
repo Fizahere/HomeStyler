@@ -3,6 +3,7 @@ import { Box, Text, Heading, Flex, Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Colors } from "../constants/colors";
 import APP_ICONS from "../constants/icons";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const Sitemap = () => {
   return (
@@ -22,7 +23,7 @@ const Sitemap = () => {
               />
               Home:
             </Text>
-            <Link to={"/"}>
+            <Link to={UnAuthenticatedRoutesNames.HOME}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/
               </Text>
@@ -39,7 +40,7 @@ const Sitemap = () => {
               />
               About:
             </Text>
-            <Link to={"/plant-palace/about-us"}>
+            <Link to={UnAuthenticatedRoutesNames.ABOUT}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/about
               </Text>
@@ -56,7 +57,7 @@ const Sitemap = () => {
               />
               Contact:
             </Text>
-            <Link to={"/plant-palace/contact-us"}>
+            <Link to={UnAuthenticatedRoutesNames.CONTACT}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/contact-us
               </Text>
@@ -74,7 +75,7 @@ const Sitemap = () => {
               />
               Feedback:
             </Text>
-            <Link to={"/plant-palace/feedback"}>
+            <Link to={UnAuthenticatedRoutesNames.FEEDBACK}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/feedback
               </Text>
@@ -92,7 +93,7 @@ const Sitemap = () => {
               />
               Login:
             </Text>
-            <Link to={"/plant-palace/login"}>
+            <Link to={UnAuthenticatedRoutesNames.LOGIN}>
               <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/login
               </Text>
