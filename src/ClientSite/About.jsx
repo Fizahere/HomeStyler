@@ -65,11 +65,6 @@ function About() {
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          height={"400px"}
-          // width={{
-          //   base:'400px',
-          //   md:'600px'
-          // }}
           margin={"auto"}
           overflow={"hidden"}
         >
@@ -78,8 +73,13 @@ function About() {
               base: "15px",
               md: "20px",
             }}
-            p={{
-              base: "40px",
+            py={{
+              base:20,
+              md:40
+            }}
+            px={{
+              base: "0px",
+              lg:20
             }}
           >
             Home Styler is your ultimate interior design resource, featuring a
@@ -94,15 +94,15 @@ function About() {
           </Text>
         </Box>
 
-        <Box display={"flex"} justifyContent={"center"}>
+        {/* <Box display={"flex"} justifyContent={"center"}>
           {/* <Image src={about} alt="about image" width={"100%"} /> */}
-        </Box>
+        {/* </Box> */}
 
         <Box
           display={"flex"}
           justifyContent={"center"}
           // height={'700px'}
-          py={"100px"}
+          pb={"50px"}
           m={"0 auto"}
           width={"80vw"}
         >
