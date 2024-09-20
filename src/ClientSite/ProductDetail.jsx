@@ -6,7 +6,6 @@ import {
   Box,
   SimpleGrid,
   Flex,
-  Button,
   Skeleton,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";

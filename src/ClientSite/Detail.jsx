@@ -13,20 +13,44 @@ import {
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import Designs from "../data/designs-data.json";
-import Products from "../data/products-data.json";
-import { designImagesMap } from "../constants/images";
+import ProductsData from "../data/product-new-data.json";
+import { designImagesMap, productsImagesMap } from "../constants/images";
+import GalleryCard from "../components/Mist/GalleryCard";
 
 function Detail() {
   const { design: designId } = useParams();
+  const [relatedProducts, setRelatedProducts] = useState([]);
+  console.log(relatedProducts, "");
+
   const getDesignById = Designs.designs.find((singleItem) => {
     return singleItem.id === Number(designId);
   });
+
   const previewerImageUrls =
     getDesignById?.pictures.map((pic) => designImagesMap[pic]) || [];
 
-  const getProductsByDesignID = Products.homeStyler.filter((singleItem) => {
-    return singleItem.designID === Number(designId);
-  });
+  useEffect(() => {
+    const fetchData = () => {
+      const related = ProductsData.browsingProducts.categories
+        .flatMap((category) =>
+          category.subcategories.flatMap((subcategory) => subcategory.products)
+        )
+        .filter((product) => product.designID === Number(designId))
+        .map((product) => {
+          const prodName = product?.name;
+          const imageKey = product.image?.toUpperCase();
+          const productImageSrc = productsImagesMap[imageKey];
+          return {
+            relatedProdName: prodName,
+            relatedProdImage: productImageSrc,
+          };
+        });
+
+      setRelatedProducts(related);
+    };
+
+    fetchData();
+  }, [designId]);
 
   const [showDetailLoading, setShowDetailLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState("");
@@ -42,7 +66,6 @@ function Detail() {
 
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
-    console.log(selectedImage, "selectedImage");
   };
 
   if (!getDesignById) {
@@ -120,7 +143,7 @@ function Detail() {
             </SimpleGrid>
           </Box>
         </Box>
-        <Box borderLeft={{base:'none',md:"1px solid grey"}} pl={6} mt={6}>
+        <Box borderLeft={{ base: "none", md: "1px solid grey" }} pl={6} mt={6}>
           <Box>
             <Heading size="lg">
               {showDetailLoading ? (
@@ -165,53 +188,56 @@ function Detail() {
         </Box>
       </SimpleGrid>
       <Box mt={4}>
-        <Text fontSize={"22px"} fontWeight={"bold"} px={"2"} py={"3"}>
+        <Text
+          fontSize={"22px"}
+          fontWeight={"bold"}
+          px={"2"}
+          py={"3"}
+          borderBottom={"1px solid grey"}
+        >
           {showDetailLoading ? (
             <Skeleton width="120px" height="25px" />
           ) : (
             "Products Used In The Design"
           )}
         </Text>
-        {showDetailLoading
-          ? [...Array(2)].map((_, index) => (
-              <Box
-                key={index}
-                maxW="md"
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                p="4"
-                m={"4"}
-                boxShadow="md"
-              >
-                <SkeletonText noOfLines={1} width="200px" mb="2" />
-                <SkeletonText noOfLines={1} width="50px" />
-                <Box display={"flex"} justifyContent={"space-between"} mt="2">
-                  <Skeleton width="100px" height="20px" />
-                  <Skeleton width="80px" height="20px" />
+        {/* <Flex justifyContent={"space-evenly"} mt={5}> */}
+          <SimpleGrid
+          mt={4}
+              columns={{ base: 1, sm: 1, md: 2, lg: 4 }}
+              spacing={6}
+          >
+          {showDetailLoading
+            ? [...Array(2)].map((_, index) => (
+                <Box
+                  key={index}
+                  maxW="md"
+                  borderWidth="1px"
+                  borderRadius="lg"
+                  overflow="hidden"
+                  p="4"
+                  m={"4"}
+                  boxShadow="md"
+                >
+                  <SkeletonText noOfLines={1} width="200px" mb="2" />
+                  <SkeletonText noOfLines={1} width="50px" />
+                  <Box display={"flex"} justifyContent={"space-between"} mt="2">
+                    <Skeleton width="100px" height="20px" />
+                    <Skeleton width="80px" height="20px" />
+                  </Box>
                 </Box>
-              </Box>
-            ))
-          : getProductsByDesignID?.map((singleProduct, index) => (
-              <Box
-                key={index}
-                maxW="xl"
-                h={200}
-                borderWidth="1px"
-                borderRadius="lg"
-                overflow="hidden"
-                p="4"
-                m={"4"}
-                boxShadow="md"
-              >
-                <Box display={"flex"} justifyContent={"space-between"}>
-                  <Heading as="h3" size="md" mb="2">
-                    {singleProduct?.name}
-                  </Heading>
-                  <Image h={200} src={singleProduct?.image} />
-                </Box>
-              </Box>
-            ))}
+              ))
+            : relatedProducts.map((singleProduct, index) => (
+                  <GalleryCard
+                    key={index}
+                    cardData={{
+                      name: singleProduct?.relatedProdName,
+                      image: singleProduct?.relatedProdImage,
+                    }}
+                  />
+              ))}
+                </SimpleGrid>
+        {/* </Flex> */}
       </Box>
     </Box>
   );
