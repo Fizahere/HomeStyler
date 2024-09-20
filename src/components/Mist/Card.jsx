@@ -84,11 +84,11 @@ function CustomCard({ singleProduct, isLoading }) {
         <Stack mt="6" spacing={{ base: "1", md: "3" }}>
           <Flex justifyContent={"space-between"} h={35}>
             <Heading size={{ base: "sm", md: "md" }}>{name}</Heading>
+          </Flex>
             <Text mt={1} color="green" fontWeight={'bold'} fontSize={{ base: "12px", md: "1xl" }}>
               $ {price}
             </Text>
-          </Flex>
-          <Text fontSize={{ base: "12px", md: "1xl" }}>{category}</Text>
+          {/* <Text fontSize={{ base: "12px", md: "1xl" }}>{category}</Text> */}
 
           <Button
             mt={{ base: "1", md: "0" }}
