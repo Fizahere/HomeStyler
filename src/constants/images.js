@@ -88,6 +88,33 @@ import Industrial_Kitchen_Loft3 from '../assets/images/industrial/kitchen/item3.
 import Eclectic_Art_Studio4 from '../assets/images/eclectic/office/item4.jpeg'
 import Eclectic_Art_Studio5 from '../assets/images/eclectic/office/item5.jpeg'
 import Eclectic_Art_Studio6 from '../assets/images/eclectic/office/item6.jpeg'
+import PROD1 from '../../src/assets/images/productsImages/prod1.jpg'
+// import PROD1 from '../assets/images/productsImages/prod1.jpg'
+import PROD2 from '../assets/images/productsImages/prod2.jpg'
+import PROD3 from '../assets/images/productsImages/prod3.jpg'
+import PROD4 from '../assets/images/productsImages/prod4.jpg'
+import PROD5 from '../assets/images/productsImages/prod5.jpg'
+import PROD6 from '../assets/images/productsImages/prod6.jpg'
+import PROD7 from '../assets/images/productsImages/prod7.jpg'
+import PROD8 from '../assets/images/productsImages/prod8.jpg'
+import PROD9 from '../assets/images/productsImages/prod9.jpg'
+import PROD10 from '../assets/images/productsImages/prod10.jpg'
+import PROD11 from '../assets/images/productsImages/prod11.jpg'
+
+export const productsImagesMap={
+    PROD1:PROD1,
+    PROD2:PROD2,
+    PROD3:PROD3,
+    PROD4:PROD4,
+    PROD5:PROD5,
+    PROD6:PROD6,
+    PROD7:PROD7,
+    PROD8:PROD8,
+    PROD9:PROD9,
+    PROD10:PROD10,
+    PROD11:PROD11,
+}
+console.log(PROD1,'PROD1');
 
 export const designImagesMap = {
     Cozy_Office_Space1: Cozy_Office_Space1,
@@ -181,4 +208,4 @@ export const designImagesMap = {
     Eclectic_Art_Studio5: Eclectic_Art_Studio5,
     Eclectic_Art_Studio6: Eclectic_Art_Studio6,
 
-}
+};

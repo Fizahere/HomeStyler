@@ -144,7 +144,7 @@ const TabbedSections = ({ prodCategoryName }) => {
     return category ? ["All", ...category?.subcategories?.map(sub => sub.name)] : [];
   }, [prodCategoryName]);
   
-  
+    
 
   const renderContent = () => {
     if (subcategories.includes(selectedSubCategory)) {

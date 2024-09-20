@@ -71,7 +71,6 @@ const Shop = () => {
             </Box>
           </Flex>
         </Flex>
-
         <Box py={8}>
           <TabbedSections categoryName={categoryName} selectedDesign={selectedDesign} setSelectedDesign={setSelectedDesign} />
         </Box>
