@@ -114,7 +114,6 @@ export const productsImagesMap={
     PROD10:PROD10,
     PROD11:PROD11,
 }
-console.log(PROD1,'PROD1');
 
 export const designImagesMap = {
     Cozy_Office_Space1: Cozy_Office_Space1,
