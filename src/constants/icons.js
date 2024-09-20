@@ -41,6 +41,7 @@ import { BsEmojiSmileUpsideDown } from "react-icons/bs";
 import { TbMessageChatbot } from "react-icons/tb";
 import { TiBusinessCard } from "react-icons/ti";
 import { BiSupport } from "react-icons/bi";
+import { BsCart3 } from "react-icons/bs";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -85,6 +86,7 @@ const APP_ICONS = {
     MESSAGE:TbMessageChatbot,
     MEDIA:TiBusinessCard,
     SUPPORT:BiSupport,
+    CART:BsCart3,
 
     //Footer
 GITHUB:TbBrandGithubFilled,
