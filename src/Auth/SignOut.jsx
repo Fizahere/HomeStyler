@@ -1,23 +1,39 @@
 import React, { useEffect } from "react";
+import { useToast } from "@chakra-ui/react";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const SignOut = () => {
+  const toast = useToast();
+
   const handleSignOut = async () => {
     try {
       localStorage.removeItem("user");
-      // alert("User signed out successfully!");
+      location.assign(UnAuthenticatedRoutesNames.HOME);
+      toast({
+        title: "Signed Out",
+        description: "User signed out successfully!",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
     } catch (error) {
-      alert(error.message);
+      toast({
+        title: "Error",
+        description: error.message,
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
     }
   };
+
   useEffect(() => {
-    if (confirm("are you sure?")) {
-      handleSignOut();
-    } else {
-      return;
-    }
-    location.assign(`${UnAuthenticatedRoutesNames.HOME}`);
-  }, []);
+    handleSignOut();
+  }, [toast]);
+
+  return null;
 };
 
 export default SignOut;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Button,
@@ -30,27 +30,31 @@ function MainLayout() {
   const [searchKey, setSearchKey] = useState("");
   const navigate = useNavigate();
   const integrations = useDisclosure();
-const [openSubCat, setOpenSubCat] = useState(null);
+  const [openSubCat, setOpenSubCat] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
 
-const handleSubCategoryToggle = (index) => {
-  setOpenSubCat(openSubCat === index ? null : index); // Toggle subcategories for each category
-};
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
+      setUserEmail(user.email);
+    } else {
+      setUserEmail("User");
+    }
+  }, []);
 
+  const handleSubCategoryToggle = (index) => {
+    setOpenSubCat(openSubCat === index ? null : index);
+  };
 
-const categories = [
-  "Living Room",
-  "Office",
-  "Kitchen",
-  "Bedroom",
-  "Bathroom",
-];
+  const categories = [
+    "Living Room",
+    "Office",
+    "Kitchen",
+    "Bedroom",
+    "Bathroom",
+  ];
 
-const subCategories = [
-  "Cozy",
-  "Elegant",
-  "Classic",
-  "Minimalist",
-];
+  const subCategories = ["Cozy", "Elegant", "Classic", "Minimalist"];
 
   const categoriedData = productsData.homeStyler.map((designs) =>
     console.log(designs.designs)
@@ -165,7 +169,6 @@ const subCategories = [
               fontSize={"1.2rem"}
               ml={"7px"}
               mr={"6px"}
-              // color={'white'}
               as={APP_ICONS.HOME}
             />
             Home
@@ -184,49 +187,53 @@ const subCategories = [
           </NavItem>
         </Link>
 
-        <NavItem icon={APP_ICONS.CATEGORY} _hover={{color:'inherit'}} onClick={integrations.onToggle}>
-  Categories
-  <Icon
-    as={APP_ICONS.TOGGLE}
-    ml="auto"
-    transform={integrations.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
-  />
-</NavItem>
+        <NavItem
+          icon={APP_ICONS.CATEGORY}
+          _hover={{ color: "inherit" }}
+          onClick={integrations.onToggle}
+        >
+          Categories
+          <Icon
+            as={APP_ICONS.TOGGLE}
+            ml="auto"
+            transform={integrations.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+          />
+        </NavItem>
 
-<Collapse in={integrations.isOpen}>
-  {categories.map((singleCategory, index) => (
-    <Box key={index}>
-      <NavItem
-        onClick={() => handleSubCategoryToggle(index)}
-      >
-        {singleCategory}
-        <Icon
-          as={APP_ICONS.TOGGLE}
-          ml="auto"
-          transform={openSubCat === index ? "rotate(180deg)" : "rotate(0deg)"}
-        />
-      </NavItem>
-      <Collapse in={openSubCat === index}>
-        {subCategories.map((singleSubCategory, subIndex) => (
-          <Box key={`${index}-${subIndex}`}>
-            <NavItem
-              onClick={() =>
-                navigate(
-                  AuthenticatedRouteNames.PRODUCTS.replace(
-                    ":category/:subcategory",
-                    `${singleCategory}/${singleSubCategory}`
-                  ).toLocaleLowerCase()
-                )
-              }
-            >
-              {singleSubCategory}
-            </NavItem>
-          </Box>
-        ))}
-      </Collapse>
-    </Box>
-  ))}
-</Collapse>
+        <Collapse in={integrations.isOpen}>
+          {categories.map((singleCategory, index) => (
+            <Box key={index}>
+              <NavItem onClick={() => handleSubCategoryToggle(index)}>
+                {singleCategory}
+                <Icon
+                  as={APP_ICONS.TOGGLE}
+                  ml="auto"
+                  transform={
+                    openSubCat === index ? "rotate(180deg)" : "rotate(0deg)"
+                  }
+                />
+              </NavItem>
+              <Collapse in={openSubCat === index}>
+                {subCategories.map((singleSubCategory, subIndex) => (
+                  <Box key={`${index}-${subIndex}`}>
+                    <NavItem
+                      onClick={() =>
+                        navigate(
+                          AuthenticatedRouteNames.PRODUCTS.replace(
+                            ":category/:subcategory",
+                            `${singleCategory}/${singleSubCategory}`
+                          ).toLocaleLowerCase()
+                        )
+                      }
+                    >
+                      {singleSubCategory}
+                    </NavItem>
+                  </Box>
+                ))}
+              </Collapse>
+            </Box>
+          ))}
+        </Collapse>
 
         <Link to={AuthenticatedRouteNames.SETTING}>
           <NavItem>
@@ -239,7 +246,20 @@ const subCategories = [
             Setting
           </NavItem>
         </Link>
-        <Link to={AuthenticatedRouteNames.LOGOUT}>
+        <Box _hover={{ bg: "black" }}
+        >
+        <Button
+        width={121}
+        _hover={{ bg: "transparent" }}
+          bg={"transparent"}
+          onClick={() => {
+            if (confirm("are you sure you want to logout?")) {
+              navigate(AuthenticatedRouteNames.LOGOUT);
+            } else {
+              navigate(AuthenticatedRouteNames.Dashboard);
+            }
+          }}
+        >
           <NavItem>
             <Icon
               transform={"rotate(180deg)"}
@@ -250,7 +270,8 @@ const subCategories = [
             />
             Logout
           </NavItem>
-        </Link>
+        </Button>
+        </Box>
       </Flex>
     </Box>
   );
@@ -353,18 +374,12 @@ const subCategories = [
                 cursor="pointer"
               />
             </Button>
-            <Avatar ml="4" size="sm" name={"Fiza"} cursor="pointer" />
+            <Avatar ml="4" size="sm" name={userEmail} cursor="pointer" />
           </Flex>
         </Flex>
 
         <Box as="main" p="4">
-          <Box
-            borderWidth="4px"
-            p={"1rem"}
-            borderStyle="dashed"
-            rounded="md"
-            // h="96"
-          >
+          <Box borderWidth="4px" p={"1rem"} borderStyle="dashed" rounded="md">
             <Outlet />
           </Box>
         </Box>

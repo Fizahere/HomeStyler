@@ -18,14 +18,14 @@ import Gallery from "./Gallery";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const Home = () => {
-  const categories = {
-    elegent: "ELEGENT",
-    cozy: "COZY",
-    classic: "CLASSIC",
-    minimalist: "MINIMALIST",
-    new_arrival: "NEW ARRIVAL",
-    top_variety: "TOP",
-  };
+  const categories = [
+    "Living Room",
+    "Office",
+    "Bathroom",
+    "Kitchen",
+    "Bedroom",
+  ];
+
 
   const navigate = useNavigate();
   return (
@@ -110,7 +110,7 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  // onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP)}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP.replace(':category',value))}
                 >
                   {value}
                 </Button>
