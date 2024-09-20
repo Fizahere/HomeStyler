@@ -24,13 +24,10 @@ function CustomCard({ singleProduct, isLoading }) {
 
   useEffect(() => {
     if (singleProduct?.isProduct) {
-      const imageKey = singleProduct.image?.toUpperCase(); // Safely handle potential null/undefined
-      console.log("Converted image key:", imageKey); // Debugging
+      const imageKey = singleProduct.image?.toUpperCase();
+      const productImageSrc = productsImagesMap[imageKey];
   
-      const productImageSrc = productsImagesMap[imageKey]; // Lookup the image URL
-      console.log("Fetched product image URL:", productImageSrc); // Debugging
-  
-      setImageUrl(productImageSrc || "fallback-image-url"); // Fallback in case image is not found
+      setImageUrl(productImageSrc || "fallback-image-url");
     } else if (singleProduct?.isDesign) {
       const designImageSrc = designImagesMap[singleProduct.image];
       setImageUrl(designImageSrc || "fallback-image-url");

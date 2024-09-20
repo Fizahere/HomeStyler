@@ -6,7 +6,6 @@ import {
   Box,
   SimpleGrid,
   Flex,
-  Button,
   Skeleton,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
@@ -16,13 +15,12 @@ import CustomButton from "../components/Mist/Button";
 
 function ProductDetail() {
   const { product: productID } = useParams();
-  const id = Number(productID); // Convert to number
+  const id = Number(productID);
 
   const [isLoading, setIsLoading] = useState(true);
   const [foundProduct, setFoundProduct] = useState(null);
 
   useEffect(() => {
-    // Simulate data fetching
     const fetchData = () => {
       const product = ProductsData.browsingProducts.categories.flatMap(category =>
         category.subcategories.flatMap(subcategory => subcategory.products)

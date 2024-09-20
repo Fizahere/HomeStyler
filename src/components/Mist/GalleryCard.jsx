@@ -32,7 +32,8 @@ const {cardData}=props
           />
     <Text 
     position={'absolute'} 
-    top={210}
+    fontSize={25}
+    top={200}
      left={4}
      color={Colors.WHITE}
      sx={{

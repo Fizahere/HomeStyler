@@ -20,12 +20,11 @@ import {
   SimpleGrid,
   ChakraProvider,
 } from "@chakra-ui/react";
-// import ProductCategories from "'../";
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
-import ProductsData from '../data/product-new-data.json';
+import ProductsData from "../data/product-new-data.json";
 
 const Products = () => {
   const dropdown = useDisclosure();
@@ -118,22 +117,22 @@ const TabbedSections = ({ prodCategoryName }) => {
     // console.log(testingProductData,'testingProductData');
     const matchingCategory = ProductsData?.browsingProducts?.categories.find(
       (cat) => cat?.category?.toLowerCase() === prodCategoryName?.toLowerCase()
-    );  
+    );
     if (!matchingCategory) return [];
     // console.log(matchingCategory,'matchingCategory');
-  
+
     const filteredSubcategories = matchingCategory.subcategories.filter(
       (subcategory) =>
         selectedSubCategory?.toLowerCase() === "all" ||
         subcategory?.name?.toLowerCase() === selectedSubCategory?.toLowerCase()
     );
     // console.log(filteredSubcategories,'filteredSubcategories');
-  
-    const products = filteredSubcategories?.flatMap((subcategory) =>
-      subcategory?.products
+
+    const products = filteredSubcategories?.flatMap(
+      (subcategory) => subcategory?.products
     );
     // console.log(products,'products');
-  
+
     return products;
   }, [prodCategoryName, selectedSubCategory]);
 
@@ -141,10 +140,10 @@ const TabbedSections = ({ prodCategoryName }) => {
     const category = ProductsData?.browsingProducts?.categories.find(
       (cat) => cat.category?.toLowerCase() === prodCategoryName?.toLowerCase()
     );
-    return category ? ["All", ...category?.subcategories?.map(sub => sub.name)] : [];
+    return category
+      ? ["All", ...category?.subcategories?.map((sub) => sub.name)]
+      : [];
   }, [prodCategoryName]);
-  
-    
 
   const renderContent = () => {
     if (subcategories.includes(selectedSubCategory)) {
@@ -163,22 +162,21 @@ const TabbedSections = ({ prodCategoryName }) => {
       return <Text>No products available</Text>;
     }
   };
-  
 
   return (
     <ChakraProvider>
       <Flex p={4}>
-      <Tabs
-  variant="enclosed"
-  onChange={(index) => {
-    setSelectedSubCategory(subcategories[index]);
-  }}
->
-  <TabList>
-    {subcategories?.map((sub, index) => (
-      <Tab key={index}>{sub}</Tab>
-    ))}
-  </TabList>
+        <Tabs
+          variant="enclosed"
+          onChange={(index) => {
+            setSelectedSubCategory(subcategories[index]);
+          }}
+        >
+          <TabList>
+            {subcategories?.map((sub, index) => (
+              <Tab key={index}>{sub}</Tab>
+            ))}
+          </TabList>
         </Tabs>
       </Flex>
       <Box p={4}>{renderContent()}</Box>

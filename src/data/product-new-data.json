@@ -10,6 +10,7 @@
               {
                 "id": 1,
                 "name": "Modern Velvet Sofa",
+                "designID": 1,
                 "image": "prod1",
                 "description": "A sleek and luxurious velvet sofa with plush seating.",
                 "price": 799.99,
@@ -35,6 +36,7 @@
               {
                 "id": 2,
                 "name": "Leather Recliner",
+                "designID": 1,
                 "image": "prod2",
                 "description": "A comfortable leather recliner with adjustable backrest.",
                 "price": 499.99,
@@ -55,6 +57,7 @@
               {
                 "id": 3,
                 "name": "Wooden Coffee Table",
+                "designID": 2,
                 "image": "prod3",
                 "description": "A rustic coffee table made from reclaimed wood.",
                 "price": 299.99,
@@ -80,6 +83,7 @@
               {
                 "id": 4,
                 "name": "Chandelier",
+                "designID": 3,
                 "image": "prod4",
                 "description": "A crystal chandelier for elegant lighting.",
                 "price": 999.99,
@@ -100,6 +104,7 @@
               {
                 "id": 5,
                 "name": "Modern Wall Sconce",
+                "designID": 3,
                 "image": "prod5",
                 "description": "A sleek and modern wall sconce for soft lighting.",
                 "price": 149.99,
@@ -125,6 +130,7 @@
               {
                 "id": 6,
                 "name": "Persian Rug",
+                "designID": 4,
                 "image": "prod6",
                 "description": "A handmade Persian rug with intricate patterns.",
                 "price": 599.99,
@@ -145,6 +151,7 @@
               {
                 "id": 7,
                 "name": "Abstract Wall Art",
+                "designID": 4,
                 "image": "prod7",
                 "description": "A colorful abstract painting to brighten up any room.",
                 "price": 199.99,
@@ -170,6 +177,7 @@
               {
                 "id": 8,
                 "name": "Modern Kitchen Cabinets",
+                "designID": 5,
                 "image": "prod8",
                 "description": "Stylish kitchen cabinets with ample storage space.",
                 "price": 1499.99,
@@ -190,6 +198,7 @@
               {
                 "id": 9,
                 "name": "Stainless Steel Sink",
+                "designID": 5,
                 "image": "prod9",
                 "description": "Durable and spacious sink for a modern kitchen.",
                 "price": 299.99,
@@ -215,6 +224,7 @@
               {
                 "id": 10,
                 "name": "Modern Bathroom Vanity",
+                "designID": 6,
                 "image": "prod10",
                 "description": "A sleek bathroom vanity with plenty of storage.",
                 "price": 799.99,
@@ -235,6 +245,7 @@
               {
                 "id": 11,
                 "name": "Freestanding Bathtub",
+                "designID": 7,
                 "image": "prod11",
                 "description": "A luxurious freestanding bathtub for relaxation.",
                 "price": 1299.99,
