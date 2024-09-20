@@ -232,7 +232,7 @@ function Navbar() {
               </Text>
             </NavLink>
             <IconButton
-              icon={<Icon as={APP_ICONS.WISHLIST} fontSize={22} />}
+              icon={<Icon as={APP_ICONS.WISHLIST} fontSize={22} color={Colors.RED} />}
               bg={"transparent"}
             />
             <Divider

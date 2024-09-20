@@ -10,4 +10,5 @@ export const Colors = {
   GREY: "grey",
   PRIMARYBLUE: "#1a8cff",
   YELLOW: "yellow",
+  RED:'#ff1a1a',
 };

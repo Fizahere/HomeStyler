@@ -32,6 +32,7 @@ import { VscFeedback } from "react-icons/vsc";
 import { IoEyeSharp } from "react-icons/io5";
 import { IoEyeOffSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa6";
+import { TiHeartFullOutline } from "react-icons/ti";
 import { FaRegSmileBeam } from "react-icons/fa";
 import { PiSmileySadDuotone } from "react-icons/pi";
 import { TfiFaceSad } from "react-icons/tfi";
@@ -43,7 +44,7 @@ import { BiSupport } from "react-icons/bi";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
-    WEBSITE: CiStar,
+    BUILDINGS:BsBuildings,
 
     //SideBar
     HOME: IoHome,
@@ -57,7 +58,6 @@ const APP_ICONS = {
 
     //service section icons
     PENCILSCALE:TfiRulerPencil,
-    BUILDINGS:BsBuildings,
     COMPASS:RiCompassesLine,
     HAMMER:GiHammerNails,
 
@@ -76,6 +76,7 @@ const APP_ICONS = {
     OPENEYE:IoEyeSharp,
     CLOSEDEYE:IoEyeOffSharp,
     WISHLIST:FaRegHeart,
+    WISHLISTFILLED:TiHeartFullOutline,
     SAD:TfiFaceSad,
     UNHAPPY:PiSmileySadDuotone,
     SATISFY:BsEmojiSmileUpsideDown,
