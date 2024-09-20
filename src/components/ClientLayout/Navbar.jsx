@@ -232,9 +232,26 @@ function Navbar() {
               </Text>
             </NavLink>
             <IconButton
-              icon={<Icon as={APP_ICONS.WISHLIST} fontSize={22} color={Colors.RED} />}
+              icon={
+                <Icon
+                  as={APP_ICONS.WISHLIST}
+                  fontSize={22}
+                  color={Colors.RED}
+                />
+              }
               bg={"transparent"}
             />
+            <Divider
+              orientation="vertical"
+              borderColor="inherit"
+              height={"20px"}
+              borderWidth="0.5px"
+            />
+            <IconButton
+              icon={<Icon as={APP_ICONS.CART} fontSize={22} />}
+              bg={"transparent"}
+            />
+
             <Divider
               orientation="vertical"
               borderColor="inherit"
@@ -292,6 +309,122 @@ function Navbar() {
                 <NavLink to={UnAuthenticatedRoutesNames.HOME} onClick={onClose}>
                   Home
                 </NavLink>
+                <Box mr={600}>
+                  <Menu>
+                    {({ isOpen }) => (
+                      <>
+                        <MenuButton
+                          p={0}
+                          mt={1}
+                          fontWeight="400"
+                          _hover={{ bg: "transparent" }}
+                          bg={"transparent"}
+                          isActive={isOpen}
+                          as={Button}
+                          rightIcon={
+                            <Box
+                              transform={
+                                isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                              }
+                              transition="transform 0.2s ease"
+                            >
+                              <APP_ICONS.TOGGLE />
+                            </Box>
+                          }
+                        >
+                          Designs
+                        </MenuButton>
+                        <MenuList
+                          bg={Colors.WHITE}
+                          _dark={{ bg: Colors.DASHBOARDTHEME }}
+                        >
+                          {categories.map((singleCategory, index) => (
+                            <Box key={index} py={2}>
+                              <NavLink
+                                to={UnAuthenticatedRoutesNames.SHOP.replace(
+                                  ":category",
+                                  singleCategory
+                                ).toLocaleLowerCase()}
+                                style={({ isActive }) =>
+                                  isActive ? activeLinkStyle : undefined
+                                }
+                              >
+                                <MenuItem
+                                  _dark={{
+                                    bg: Colors.DASHBOARDTHEME,
+                                    _hover: {
+                                      bg: "#333333",
+                                    },
+                                  }}
+                                >
+                                  {singleCategory}
+                                </MenuItem>
+                              </NavLink>
+                            </Box>
+                          ))}
+                        </MenuList>
+                      </>
+                    )}
+                  </Menu>
+                </Box>
+                <Box mr={600}>
+                  <Menu>
+                    {({ isOpen }) => (
+                      <>
+                        <MenuButton
+                          p={0}
+                          mr={200}
+                          mt={1}
+                          fontWeight="400"
+                          _hover={{ bg: "transparent" }}
+                          isActive={isOpen}
+                          bg={"transparent"}
+                          as={Button}
+                          rightIcon={
+                            <Box
+                              transform={
+                                isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                              }
+                              transition="transform 0.2s ease"
+                            >
+                              <APP_ICONS.TOGGLE />
+                            </Box>
+                          }
+                        >
+                          Products
+                        </MenuButton>
+                        <MenuList _dark={{ bg: Colors.DASHBOARDTHEME }}>
+                          {productCategories.map(
+                            (singleProdCategory, index) => (
+                              <Box key={index} py={2}>
+                                <NavLink
+                                  to={UnAuthenticatedRoutesNames.PRODUCTS.replace(
+                                    ":prodCategory",
+                                    singleProdCategory
+                                  ).toLocaleLowerCase()}
+                                  style={({ isActive }) =>
+                                    isActive ? activeLinkStyle : undefined
+                                  }
+                                >
+                                  <MenuItem
+                                    _dark={{
+                                      bg: Colors.DASHBOARDTHEME,
+                                      _hover: {
+                                        bg: "#333333",
+                                      },
+                                    }}
+                                  >
+                                    {singleProdCategory}
+                                  </MenuItem>
+                                </NavLink>
+                              </Box>
+                            )
+                          )}
+                        </MenuList>
+                      </>
+                    )}
+                  </Menu>
+                </Box>
                 <NavLink
                   to={UnAuthenticatedRoutesNames.ABOUT}
                   onClick={onClose}
