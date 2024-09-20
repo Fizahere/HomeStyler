@@ -5,142 +5,198 @@ import {
   Text,
   Box,
   SimpleGrid,
-  Flex,
-  Button,
   Skeleton,
+  SkeletonText,
+  Flex,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
-import ProductsData from "../data/product-new-data.json";
+import Designs from '../data/designs-data.json';
+import Products from '../data/products-data.json';
 
-function ProductDetail() {
-  const { product: productID } = useParams();
-  const id = Number(productID); // Convert to number
+function Detail() {
+  const { design: designId } = useParams();
+  const getDesignById = Designs.designs.find((singleItem) => {
+    return singleItem.id === Number(designId);
+  });
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [foundProduct, setFoundProduct] = useState(null);
+  const getProductsByDesignID = Products.homeStyler.filter((singleItem) => {
+    return singleItem.designID === Number(designId);
+  });
+
+  const [showDetailLoading, setShowDetailLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
-    const fetchData = () => {
-      const product = ProductsData.browsingProducts.categories
-        .flatMap((category) =>
-          category.subcategories.flatMap((subcategory) => subcategory.products)
-        )
-        .find((product) => product.id === id);
-
-      setFoundProduct(product);
-    };
-
-    fetchData();
-
-    // Set a timeout for at least 2 seconds
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
+      setShowDetailLoading(false);
+      setSelectedImage(getDesignById?.image || "");
+    }, 3000);
 
-    return () => clearTimeout(timer); // Clean up the timer
-  }, [id]);
+    return () => clearTimeout(timer);
+  }, [getDesignById]);
 
-  if (isLoading) {
+  const handleThumbnailClick = (image) => {
+    setSelectedImage(image);
+    // console.log(selectedImage,'selectedImage');
+  };
+
+  if (!getDesignById) {
     return (
-      <Box display={"flex"} justifyContent={"space-between"}>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
-          <Box
-            display={"flex"}
-            justifyContent={"space-between"}
-            ml={{ base: "0", md: "5" }}
-          >
-            <Box maxW={"600px"}>
-              <Skeleton height="400px" width="800px" borderRadius="md" />
-            </Box>
-          </Box>
-          <Box
-            ml={{ base: "0", md: "80px" }}
-            borderLeft={{ base: "none", md: "1px solid gray" }}
-            p={{ base: "0", md: "3" }}
-          >
-            <Box mb={4} ml={5}>
-              <Skeleton height="40px" width="300px" />
-              <Skeleton height="20px" width="200px" mt={4} />
-              <Skeleton height="20px" width="100%" mt={10} />
-              <Skeleton height="20px" width="100%" mt={4} />
-              <Flex mt={10} justifyContent={"space-between"}>
-                <Skeleton height="20px" width="100px" />
-              </Flex>
-              <Skeleton height="50px" width="100%" mt={8} />
-            </Box>
-          </Box>
-        </SimpleGrid>
+      <Box p={5}>
+        <Heading size="lg" color="red.500">
+          Design not found
+        </Heading>
       </Box>
     );
   }
 
-  if (!foundProduct) {
-    return <Text>Product not found</Text>;
-  }
-
-  const { name, image, description, price, reviews } = foundProduct;
   return (
     <Box display={"flex"} justifyContent={"space-between"}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
-        <Box
-          display={"flex"}
-          justifyContent={"space-between"}
-          ml={{ base: "0", md: "5" }}
-        >
-          <Box maxW={"600px"}>
-            <Image
-              src={image}
-              alt={name}
-              borderRadius="md"
-              width={"800px"}
-              height={{ md: "auto", base: "auto" }}
-              mt={"14px"}
-            />
+        {/* Main Design Image Section */}
+        <Box display={"flex"} justifyContent={"space-between"} ml={{ base: "0", md: "5" }}>
+          <Box maxW={"800px"}>
+            {showDetailLoading ? (
+              <Skeleton
+                borderRadius="md"
+                width={{ md: "400px", base: "300px" }}
+                height={{ md: "400px", base: "300px" }}
+                mt={"14px"}
+              />
+            ) : (
+              <Image
+                src={selectedImage}
+                alt={getDesignById?.name}
+                borderRadius="md"
+                width={{ md: "600px", base: "500px" }}
+                height={{ md: "400px", base: "300px" }}
+                mt={"14px"}
+              />
+            )}
+
+            {/* Design Title and Description */}
+            <Flex mb={4} justifyContent={"space-between"} mt="6" spacing="3">
+              <Box>
+                <Heading size="md">
+                  {showDetailLoading ? (
+                    <SkeletonText noOfLines={1} width="150px" />
+                  ) : (
+                    getDesignById?.name
+                  )}
+                </Heading>
+               
+              </Box>
+              <Box>
+                <Text color={Colors.PRIMARY} fontWeight={'bold'} fontSize="1xl">
+                  <span >Price: $ </span>{getDesignById?.price}
+                </Text>
+
+              </Box>
+            </Flex>
+              <Box>
+                {showDetailLoading ? (
+                  <SkeletonText noOfLines={1} width="150px" />
+                ) : (
+                  <Text fontSize="1xl">
+                    {getDesignById?.description}
+                  </Text>
+                )}
+              </Box>
+
+            {/* Design Images Thumbnails */}
+            <Heading size={"md"} py={"4"} px={"1"}>
+              {showDetailLoading ? (
+                <Skeleton width="100px" height="20px" />
+              ) : (
+                "Images"
+              )}
+            </Heading>
+            <SimpleGrid columns={{ base: 2, md: 3 }} spacing={2}>
+              {showDetailLoading
+                ? [...Array(3)].map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      borderRadius="md"
+                      width={{ md: "150px", base: "150px" }}
+                      height={150}
+                    />
+                  ))
+                : getDesignById?.pictures.map((singlePic, index) => (
+                    <Image
+                      key={index}
+                      src={singlePic}
+                      alt={`Thumbnail ${index}`}
+                      borderRadius="md"
+                      width={{ md: "150px", base: "200px" }}
+                      height={150}
+                      onClick={() => handleThumbnailClick(singlePic)}
+                      cursor="pointer"
+                      border={selectedImage === singlePic ? "4px solid #808080" : "none"}
+                      _hover={{ border: "2px solid gray" }}
+                    />
+                  ))}
+            </SimpleGrid>
           </Box>
         </Box>
+
+        {/* Products used in the design Section */}
         <Box
-          ml={{ base: "0", md: "80px" }}
+          ml={{ base: "0", md: "120px" }}
           borderLeft={{ base: "none", md: "1px solid gray" }}
           p={{ base: "0", md: "3" }}
         >
-          <Box mb={4} ml={5}>
-            <Heading size="xl">{name}</Heading>
-            <Text mt={2} fontSize={"15px"} fontWeight={"400"}>
-              Price: ${price}
-            </Text>
-            <Text fontSize={"15px"} fontWeight={"bold"} mt={10}>
-              Description:
-            </Text>
-            <Text color={Colors.GREY} fontSize={14}>
-              {description}
-            </Text>
-            <Flex mt={10} justifyContent={"space-between"}>
-              <Text fontSize={"15px"} fontWeight={"bold"} m={2}>
-                Reviews:
-              </Text>
-              {reviews.map((review, index) => (
-                <Text key={index}>
-                  {review.user}: {review.comment} (Rating: {review.rating})
-                </Text>
-              ))}
-            </Flex>
-            <Button
-              bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
-              color={Colors.BLACK}
-              _hover={{ bg: Colors.THEMEBUTTON }}
-              w={270}
-              p={3}
-              borderRadius={8}
-              fontWeight={"bold"}
-            >
-              Add to Wishlist
-            </Button>
-          </Box>
+          <Heading size={"lg"} px={"2"} py={"3"}>
+            {showDetailLoading ? (
+              <Skeleton width="120px" height="25px" />
+            ) : (
+              "Products Used In The Design"
+            )}
+          </Heading>
+            {showDetailLoading
+              ? [...Array(2)].map((_, index) => (
+                  <Box
+                    key={index}
+                    maxW="md"
+                    borderWidth="1px"
+                    borderRadius="lg"
+                    overflow="hidden"
+                    p="4"
+                    m={"4"}
+                    boxShadow="md"
+                  >
+                    <SkeletonText noOfLines={1} width="200px" mb="2" />
+                    <SkeletonText noOfLines={1} width="50px" />
+                    <Box display={"flex"} justifyContent={"space-between"} mt="2">
+                      <Skeleton width="100px" height="20px" />
+                      <Skeleton width="80px" height="20px" />
+                    </Box>
+                  </Box>
+                ))
+              : getProductsByDesignID?.map((singleProduct, index) => (
+                <Box
+                key={index}
+                maxW="xl"
+                h={200}
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+                p="4"
+                m={"4"}
+                boxShadow="md"
+              >
+                <Box display={"flex"} justifyContent={"space-between"}>
+                <Heading as="h3" size="md" mb="2">
+                  {singleProduct?.name}
+                </Heading>
+                <Image h={200} src={singleProduct?.image} />
+                </Box>
+              </Box>
+                ))}
         </Box>
       </SimpleGrid>
     </Box>
   );
 }
 
-export default ProductDetail;
+export default Detail;
