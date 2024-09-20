@@ -7,15 +7,18 @@ import {
   SimpleGrid,
   Flex,
   Skeleton,
+  Avatar,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import ProductsData from "../data/product-new-data.json";
 import CustomButton from "../components/Mist/Button";
+import { productsImagesMap } from "../constants/images";
 
 function ProductDetail() {
   const { product: productID } = useParams();
   const id = Number(productID);
+  const [imageUrl, setImageUrl] = useState(null);
 
   const [isLoading, setIsLoading] = useState(true);
   const [foundProduct, setFoundProduct] = useState(null);
@@ -27,6 +30,9 @@ function ProductDetail() {
           category.subcategories.flatMap((subcategory) => subcategory.products)
         )
         .find((product) => product.id === id);
+        const imageKey = product.image?.toUpperCase();
+      const productImageSrc = productsImagesMap[imageKey];
+      setImageUrl(productImageSrc || "fallback-image-url");
 
       setFoundProduct(product);
       setIsLoading(false);
@@ -76,7 +82,7 @@ function ProductDetail() {
   const { name, image, description, price, reviews } = foundProduct;
 
   return (
-    <Box display={"flex"} justifyContent={"space-between"} h={520}>
+    <Box display={"flex"} justifyContent={"space-between"}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
         <Box
           display={"flex"}
@@ -85,7 +91,7 @@ function ProductDetail() {
         >
           <Box maxW={"600px"}>
             <Image
-              src={image}
+              src={imageUrl}
               alt={name}
               borderRadius="md"
               width={"800px"}
@@ -110,16 +116,24 @@ function ProductDetail() {
             <Text color={Colors.GREY} fontSize={14}>
               {description}
             </Text>
-            <Flex mt={10} justifyContent={"space-between"}>
-              <Text fontSize={"15px"} fontWeight={"bold"} m={2}>
-                Reviews:
-              </Text>
-              {reviews.map((review, index) => (
-                <Text key={index}>
-                  {review.user}: {review.comment} (Rating: {review.rating})
-                </Text>
-              ))}
-            </Flex>
+            <Box mt={10} 
+              mb={5}
+            >
+            <Text fontSize={"25px"} fontWeight={"bold"}>
+              Review (3)
+            </Text>
+            {[...Array(3)].map((_, index) => (
+              <Flex key={index} p={1} mt={6} borderBottom={"1px solid grey"}>
+                <Avatar name="Ali" />
+                <Box ml={2}>
+                  <Text ml={"2"} fontWeight={"bold"}>
+                    Ali
+                  </Text>
+                  <Text>very mindful, very demure!! </Text>
+                </Box>
+              </Flex>
+            ))}
+          </Box>
             <CustomButton title={"Add to Wishlist"} />
           </Box>
         </Box>

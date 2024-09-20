@@ -20,7 +20,7 @@ import GalleryCard from "../components/Mist/GalleryCard";
 function Detail() {
   const { design: designId } = useParams();
   const [relatedProducts, setRelatedProducts] = useState([]);
-  console.log(relatedProducts, "");
+  // console.log(relatedProducts, "");
 
   const getDesignById = Designs.designs.find((singleItem) => {
     return singleItem.id === Number(designId);
