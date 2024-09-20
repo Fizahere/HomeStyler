@@ -27,6 +27,7 @@ function UnAuthenticatedRoutes() {
         <Route path={UnAuthenticatedRoutesNames.FEEDBACK} element={<Feedback />} />
         <Route path={UnAuthenticatedRoutesNames.ABOUT} element={<About />} />
         <Route path={UnAuthenticatedRoutesNames.PRODUCTDETAIL} element={<ProductDetail />} />
+        <Route path={UnAuthenticatedRoutesNames.WISHLIST} element={<Shop />} />
       </Route>
         <Route path={UnAuthenticatedRoutesNames.LOGIN} element={<SignIn />} />
       <Route path="*" element={<NotFound />} />

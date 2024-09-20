@@ -27,10 +27,12 @@ import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import ProductSelection from "../../data/product-new-data.json";
+import Cart from "../../ClientSite/Cart";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const cartDrawer = useDisclosure();
 
   const categories = [
     "Living Room",
@@ -231,16 +233,9 @@ function Navbar() {
                 Login
               </Text>
             </NavLink>
-            <IconButton
-              icon={
-                <Icon
-                  as={APP_ICONS.WISHLIST}
-                  fontSize={22}
-                  color={Colors.RED}
-                />
-              }
-              bg={"transparent"}
-            />
+            <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
+              <Icon mt={2} mx={2} as={APP_ICONS.WISHLIST} fontSize={22} color={Colors.RED} />
+            </NavLink>
             <Divider
               orientation="vertical"
               borderColor="inherit"
@@ -249,9 +244,9 @@ function Navbar() {
             />
             <IconButton
               icon={<Icon as={APP_ICONS.CART} fontSize={22} />}
+              onClick={cartDrawer.onOpen}
               bg={"transparent"}
             />
-
             <Divider
               orientation="vertical"
               borderColor="inherit"
@@ -449,6 +444,7 @@ function Navbar() {
         </Drawer>
       </Box>
       <Box mt="65px"></Box>
+      <Cart disclosure={cartDrawer} />
     </>
   );
 }

@@ -4,13 +4,14 @@ import {
   Image,
   Stack,
   CardBody,
-  Heading,
+  Icon,
   Text,
   Button,
   Divider,
   Flex,
   Skeleton,
   SkeletonText,
+  useToast,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
@@ -19,24 +20,56 @@ import { designImagesMap, productsImagesMap } from "../../constants/images";
 import APP_ICONS from "../../constants/icons";
 
 function CustomCard({ singleProduct, isLoading }) {
+  const [isFav, setFav] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
+  const toast = useToast();
+
+  useEffect(() => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    setFav(wishlist.some((item) => item.id === singleProduct.id));
+  }, [singleProduct.id]);
 
   useEffect(() => {
     if (singleProduct?.isProduct) {
-      const imageKey = singleProduct.image?.toUpperCase(); // Safely handle potential null/undefined
-      console.log("Converted image key:", imageKey); // Debugging
-  
-      const productImageSrc = productsImagesMap[imageKey]; // Lookup the image URL
-      console.log("Fetched product image URL:", productImageSrc); // Debugging
-  
-      setImageUrl(productImageSrc || "fallback-image-url"); // Fallback in case image is not found
+      const imageKey = singleProduct.image?.toUpperCase();
+      const productImageSrc = productsImagesMap[imageKey];
+      setImageUrl(productImageSrc || "fallback-image-url");
     } else if (singleProduct?.isDesign) {
       const designImageSrc = designImagesMap[singleProduct.image];
       setImageUrl(designImageSrc || "fallback-image-url");
     }
   }, [singleProduct]);
-  
+
+  const toggleWishlist = () => {
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    if (isFav) {
+      wishlist = wishlist.filter((item) => item.id !== singleProduct.id);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      setFav(false);
+
+      toast({
+        title: "Removed from Wishlist",
+        description: `${singleProduct.name} has been removed from your wishlist.`,
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+      });
+    } else {
+      wishlist.push(singleProduct);
+      localStorage.setItem("wishlist", JSON.stringify(wishlist));
+      setFav(true);
+
+      toast({
+        title: "Added to Wishlist",
+        description: `${singleProduct.name} has been added to your wishlist.`,
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
 
   const handleButtonClick = () => {
     if (singleProduct?.isProduct) {
@@ -48,7 +81,10 @@ function CustomCard({ singleProduct, isLoading }) {
       );
     } else if (singleProduct?.isDesign) {
       navigate(
-        `${UnAuthenticatedRoutesNames.DETAIL.replace(":design", singleProduct.id)}`
+        `${UnAuthenticatedRoutesNames.DETAIL.replace(
+          ":design",
+          singleProduct.id
+        )}`
       );
     }
   };
@@ -93,17 +129,35 @@ function CustomCard({ singleProduct, isLoading }) {
           mr={3}
         />
         <Stack mt="6" spacing={{ base: "1", md: "3" }}>
-          <Flex justifyContent={"space-between"} h={35}>
-            <Heading size={{ base: "sm", md: "md" }}>{singleProduct.name}</Heading>
-          </Flex>
-          <Text
-            mt={1}
-            color="green"
-            fontWeight={"bold"}
-            fontSize={{ base: "12px", md: "1xl" }}
-          >
-            ${singleProduct.price}
+          <Text fontSize={"18px"} fontWeight={"bold"}>
+            {singleProduct.name}
           </Text>
+          <Flex justifyContent={"space-between"}>
+            {singleProduct?.isProduct && (
+              isFav ? (
+                <Icon
+                  as={APP_ICONS.WISHLISTFILLED}
+                  color={Colors.RED}
+                  fontSize={"24px"}
+                  _hover={{ fontSize: "26px" }}
+                  cursor={"pointer"}
+                  onClick={toggleWishlist}
+                />
+              ) : (
+                <Icon
+                  as={APP_ICONS.WISHLIST}
+                  color={Colors.RED}
+                  fontSize={"20px"}
+                  _hover={{ fontSize: "22px" }}
+                  cursor={"pointer"}
+                  onClick={toggleWishlist}
+                />
+              )
+            )}
+            <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
+              ${singleProduct.price}
+            </Text>
+          </Flex>
           <Button
             mt={{ base: "1", md: "0" }}
             bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
@@ -122,5 +176,3 @@ function CustomCard({ singleProduct, isLoading }) {
 }
 
 export default CustomCard;
-
-

@@ -11,23 +11,24 @@ import {
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
-import ProductsData from '../data/product-new-data.json';
+import ProductsData from "../data/product-new-data.json";
 import CustomButton from "../components/Mist/Button";
 
 function ProductDetail() {
   const { product: productID } = useParams();
-  const id = Number(productID); // Convert to number
+  const id = Number(productID);
 
   const [isLoading, setIsLoading] = useState(true);
   const [foundProduct, setFoundProduct] = useState(null);
 
   useEffect(() => {
-    // Simulate data fetching
     const fetchData = () => {
-      const product = ProductsData.browsingProducts.categories.flatMap(category =>
-        category.subcategories.flatMap(subcategory => subcategory.products)
-      ).find(product => product.id === id);
-      
+      const product = ProductsData.browsingProducts.categories
+        .flatMap((category) =>
+          category.subcategories.flatMap((subcategory) => subcategory.products)
+        )
+        .find((product) => product.id === id);
+
       setFoundProduct(product);
       setIsLoading(false);
     };
@@ -39,12 +40,20 @@ function ProductDetail() {
     return (
       <Box display={"flex"} justifyContent={"space-between"}>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
-          <Box display={"flex"} justifyContent={"space-between"} ml={{ base: "0", md: "5" }}>
+          <Box
+            display={"flex"}
+            justifyContent={"space-between"}
+            ml={{ base: "0", md: "5" }}
+          >
             <Box maxW={"600px"}>
               <Skeleton height="400px" width="800px" borderRadius="md" />
             </Box>
           </Box>
-          <Box ml={{ base: "0", md: "80px" }} borderLeft={{ base: "none", md: "1px solid gray" }} p={{ base: "0", md: "3" }}>
+          <Box
+            ml={{ base: "0", md: "80px" }}
+            borderLeft={{ base: "none", md: "1px solid gray" }}
+            p={{ base: "0", md: "3" }}
+          >
             <Box mb={4} ml={5}>
               <Skeleton height="40px" width="300px" />
               <Skeleton height="20px" width="200px" mt={4} />
@@ -65,18 +74,16 @@ function ProductDetail() {
     return <Text>Product not found</Text>;
   }
 
-  const {
-    name,
-    image,
-    description,
-    price,
-    reviews,
-  } = foundProduct;
+  const { name, image, description, price, reviews } = foundProduct;
 
   return (
-    <Box display={"flex"} justifyContent={"space-between"}h={520}>
+    <Box display={"flex"} justifyContent={"space-between"} h={520}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
-        <Box display={"flex"} justifyContent={"space-between"} ml={{ base: "0", md: "5" }}>
+        <Box
+          display={"flex"}
+          justifyContent={"space-between"}
+          ml={{ base: "0", md: "5" }}
+        >
           <Box maxW={"600px"}>
             <Image
               src={image}
@@ -88,19 +95,33 @@ function ProductDetail() {
             />
           </Box>
         </Box>
-        <Box ml={{ base: "0", md: "80px" }} borderLeft={{ base: "none", md: "1px solid gray" }} p={{ base: "0", md: "3" }}>
+        <Box
+          ml={{ base: "0", md: "80px" }}
+          borderLeft={{ base: "none", md: "1px solid gray" }}
+          p={{ base: "0", md: "3" }}
+        >
           <Box mb={4} ml={5}>
             <Heading size="xl">{name}</Heading>
-            <Text mt={2} fontSize={"15px"} fontWeight={"400"}>Price: ${price}</Text>
-            <Text fontSize={"15px"} fontWeight={"bold"} mt={10}>Description:</Text>
-            <Text color={Colors.GREY} fontSize={14}>{description}</Text>
+            <Text mt={2} fontSize={"15px"} fontWeight={"400"}>
+              Price: ${price}
+            </Text>
+            <Text fontSize={"15px"} fontWeight={"bold"} mt={10}>
+              Description:
+            </Text>
+            <Text color={Colors.GREY} fontSize={14}>
+              {description}
+            </Text>
             <Flex mt={10} justifyContent={"space-between"}>
-              <Text fontSize={"15px"} fontWeight={"bold"} m={2}>Reviews:</Text>
+              <Text fontSize={"15px"} fontWeight={"bold"} m={2}>
+                Reviews:
+              </Text>
               {reviews.map((review, index) => (
-                <Text key={index}>{review.user}: {review.comment} (Rating: {review.rating})</Text>
+                <Text key={index}>
+                  {review.user}: {review.comment} (Rating: {review.rating})
+                </Text>
               ))}
             </Flex>
-           <CustomButton title={'Add to Wishlist'} />
+            <CustomButton title={"Add to Wishlist"} />
           </Box>
         </Box>
       </SimpleGrid>

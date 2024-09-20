@@ -12,56 +12,46 @@ import {
 import designsData from "../../data/designs-data.json";
 import CustomCard from "./Card";
 
-const TabbedSections = ({ categoryName }) => {
-  const [selectedDesign, setSelectedDesign] = useState("All");
-  // console.log(prodCategoryName.toLowerCase(), "prodCategoryName");
-    const filteredProducts = useMemo(() => {
-      return designsData.designs.filter((product) => {
-        // console.log(product,'product');
+const TabbedSections = ({
+  categoryName,
+  searchQuery,
+  selectedItem,
+  selectedDesign,
+  setSelectedDesign,
+}) => {
+  const filteredProducts = useMemo(() => {
+    return designsData.designs
+      .filter((product) => {
         const normalizedCategory = product.category.toLowerCase();
         const normalizedDesign = product.designCategory.toLowerCase();
-        return (
+        const matchesCategory =
           normalizedCategory === categoryName.toLowerCase() &&
           (selectedDesign.toLowerCase() === "all" ||
-            normalizedDesign === selectedDesign.toLowerCase())
-        );
+            normalizedDesign === selectedDesign.toLowerCase());
+        const matchesSearch = product.name
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+      })
+      .sort((a, b) => {
+        if (selectedItem === "Sort by Price") {
+          return a.price - b.price;
+        } else if (selectedItem === "Sort Alphabetically") {
+          return a.name.localeCompare(b.name);
+        } else if (selectedItem === "Sort by Style") {
+          return a.designCategory.localeCompare(b.designCategory);
+        }
+        return 0;
       });
-    }, [categoryName, selectedDesign]);
-
-  
-
-  const renderContent = () => {
-    switch (selectedDesign) {
-      case "All":
-      case "Cozy":
-      case "Elegant":
-      case "Minimalist":
-      case "Classic":
-      case "Industrial":
-      case "Eclectic":
-      case "Tropical":
-        return (
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
-            {filteredProducts.length > 0 ? (
-              filteredProducts.map((singleItem, index) => (
-                <CustomCard key={index} singleProduct={singleItem} />
-              ))
-            ) : (
-              <Text>No products available</Text>
-            )}
-          </SimpleGrid>
-        );
-      default:
-        return <Text>No products available</Text>;
-    }
-  };
+  }, [categoryName, selectedDesign, searchQuery, selectedItem]);
 
   return (
     <ChakraProvider>
       <Flex p={4}>
         <Tabs
           variant="enclosed"
-          overflow={'auto'}
+          overflow={"auto"}
           onChange={(index) => {
             const categories = [
               "All",
@@ -88,7 +78,18 @@ const TabbedSections = ({ categoryName }) => {
           </TabList>
         </Tabs>
       </Flex>
-      <Box p={4}>{renderContent()}</Box>
+
+      <Box p={4}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((singleItem, index) => (
+              <CustomCard key={index} singleProduct={singleItem} />
+            ))
+          ) : (
+            <Text>No products available</Text>
+          )}
+        </SimpleGrid>
+      </Box>
     </ChakraProvider>
   );
 };
