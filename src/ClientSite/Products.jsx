@@ -112,23 +112,27 @@ export default Products;
 
 const TabbedSections = ({ prodCategoryName }) => {
   // console.log(prodCategoryName, 'prodcategoryName');
-  const [selectedDesign, setSelectedDesign] = useState("All");
+  const [selectedSubCategory, setSelectedSubCategory] = useState("All");
   const filteredProducts = useMemo(() => {
     const testingProductData = ProductsData?.browsingProducts?.categories;
+    // console.log(testingProductData,'testingProductData');
     const matchingCategory = ProductsData?.browsingProducts?.categories.find(
       (cat) => cat?.category?.toLowerCase() === prodCategoryName?.toLowerCase()
     );  
     if (!matchingCategory) return [];
+    // console.log(matchingCategory,'matchingCategory');
   
     const filteredSubcategories = matchingCategory.subcategories.filter(
       (subcategory) =>
-        selectedDesign?.toLowerCase() === "all" ||
-        subcategory?.name?.toLowerCase() === selectedDesign?.toLowerCase()
+        selectedSubCategory?.toLowerCase() === "all" ||
+        subcategory?.name?.toLowerCase() === selectedSubCategory?.toLowerCase()
     );
+    // console.log(filteredSubcategories,'filteredSubcategories');
   
     const products = filteredSubcategories?.flatMap((subcategory) =>
       subcategory?.products
     );
+    // console.log(products,'products');
   
     return products;
   }, [prodCategoryName, selectedDesign]);
