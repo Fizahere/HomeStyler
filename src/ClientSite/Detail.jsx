@@ -80,7 +80,6 @@ function ProductDetail() {
   }
 
   const { name, image, description, price, reviews } = foundProduct;
-
   return (
     <Box display={"flex"} justifyContent={"space-between"}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
