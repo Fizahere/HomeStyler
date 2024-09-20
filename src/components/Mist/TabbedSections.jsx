@@ -61,6 +61,7 @@ const TabbedSections = ({ categoryName }) => {
       <Flex p={4}>
         <Tabs
           variant="enclosed"
+          overflow={'auto'}
           onChange={(index) => {
             const categories = [
               "All",
