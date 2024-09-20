@@ -104,6 +104,7 @@ function Navbar() {
               {({ isOpen }) => (
                 <>
                   <MenuButton
+                  p={0}
                     mt={1}
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
@@ -146,6 +147,7 @@ function Navbar() {
               {({ isOpen }) => (
                 <>
                   <MenuButton
+                  p={0}
                     mt={1}
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
