@@ -53,8 +53,10 @@ const Shop = () => {
                       {selectedItem}
                     </Text>
                     <Icon
-                      as={APP_ICONS.THREEBARS}
-                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                      as={APP_ICONS.TOGGLE}
+                      transform={
+                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                      }
                       fontSize={"25px"}
                     />
                   </Flex>

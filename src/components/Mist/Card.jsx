@@ -15,6 +15,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
+import { designImagesMap } from "../../constants/images";
 
 function CustomCard({ singleProduct, isLoading }) {
   // console.log(singleProduct?.isProduct,'singleProduct');
@@ -54,6 +55,7 @@ function CustomCard({ singleProduct, isLoading }) {
   }
 
   const { id, name, description, price, category, image } = singleProduct;
+  const imageUrl = designImagesMap[image];
 
   const navigate = useNavigate();
 
@@ -67,7 +69,7 @@ function CustomCard({ singleProduct, isLoading }) {
     >
       <CardBody>
         <Image
-          src={image}
+          src={imageUrl}
           alt={"image_thumbnail_path"}
           borderRadius="md"
           width={"100%"}
