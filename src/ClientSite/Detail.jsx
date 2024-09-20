@@ -201,7 +201,12 @@ function Detail() {
             "Products Used In The Design"
           )}
         </Text>
-        <Flex justifyContent={"space-evenly"} mt={5}>
+        {/* <Flex justifyContent={"space-evenly"} mt={5}> */}
+          <SimpleGrid
+          mt={4}
+              columns={{ base: 1, sm: 1, md: 2, lg: 4 }}
+              spacing={6}
+          >
           {showDetailLoading
             ? [...Array(2)].map((_, index) => (
                 <Box
@@ -223,7 +228,6 @@ function Detail() {
                 </Box>
               ))
             : relatedProducts.map((singleProduct, index) => (
-                <>
                   <GalleryCard
                     key={index}
                     cardData={{
@@ -231,9 +235,9 @@ function Detail() {
                       image: singleProduct?.relatedProdImage,
                     }}
                   />
-                </>
               ))}
-        </Flex>
+                </SimpleGrid>
+        {/* </Flex> */}
       </Box>
     </Box>
   );
