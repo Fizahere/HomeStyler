@@ -13,12 +13,14 @@ import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import Designs from '../data/designs-data.json';
 import Products from '../data/products-data.json';
+import { designImagesMap } from "../constants/images";
 
 function Detail() {
   const { design: designId } = useParams();
   const getDesignById = Designs.designs.find((singleItem) => {
     return singleItem.id === Number(designId);
   });
+  const previewerImageUrls = getDesignById?.pictures.map((pic) => designImagesMap[pic]) || [];
 
   const getProductsByDesignID = Products.homeStyler.filter((singleItem) => {
     return singleItem.designID === Number(designId);
@@ -30,7 +32,7 @@ function Detail() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowDetailLoading(false);
-      setSelectedImage(getDesignById?.image || "");
+      setSelectedImage(designImagesMap[getDesignById?.image]); 
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -38,7 +40,7 @@ function Detail() {
 
   const handleThumbnailClick = (image) => {
     setSelectedImage(image);
-    // console.log(selectedImage,'selectedImage');
+    console.log(selectedImage,'selectedImage');
   };
 
   if (!getDesignById) {
@@ -66,7 +68,7 @@ function Detail() {
               />
             ) : (
               <Image
-                src={selectedImage}
+                src={selectedImage || designImagesMap[getDesignById?.image]} 
                 alt={getDesignById?.name}
                 borderRadius="md"
                 width={{ md: "600px", base: "500px" }}
@@ -74,8 +76,6 @@ function Detail() {
                 mt={"14px"}
               />
             )}
-
-            {/* Design Title and Description */}
             <Flex mb={4} justifyContent={"space-between"} mt="6" spacing="3">
               <Box>
                 <Heading size="md">
@@ -85,26 +85,21 @@ function Detail() {
                     getDesignById?.name
                   )}
                 </Heading>
-               
               </Box>
               <Box>
-                <Text color={Colors.PRIMARY} fontWeight={'bold'} fontSize="1xl">
-                  <span >Price: $ </span>{getDesignById?.price}
+                <Text color={Colors.PRIMARY} fontWeight={"bold"} fontSize="1xl">
+                  <span>Price: $ </span>
+                  {getDesignById?.price}
                 </Text>
-
               </Box>
             </Flex>
-              <Box>
-                {showDetailLoading ? (
-                  <SkeletonText noOfLines={1} width="150px" />
-                ) : (
-                  <Text fontSize="1xl">
-                    {getDesignById?.description}
-                  </Text>
-                )}
-              </Box>
-
-            {/* Design Images Thumbnails */}
+            <Box>
+              {showDetailLoading ? (
+                <SkeletonText noOfLines={1} width="150px" />
+              ) : (
+                <Text fontSize="1xl">{getDesignById?.description}</Text>
+              )}
+            </Box>
             <Heading size={"md"} py={"4"} px={"1"}>
               {showDetailLoading ? (
                 <Skeleton width="100px" height="20px" />
@@ -115,14 +110,9 @@ function Detail() {
             <SimpleGrid columns={{ base: 2, md: 3 }} spacing={2}>
               {showDetailLoading
                 ? [...Array(3)].map((_, index) => (
-                    <Skeleton
-                      key={index}
-                      borderRadius="md"
-                      width={{ md: "150px", base: "150px" }}
-                      height={150}
-                    />
+                    <Skeleton key={index} borderRadius="md" width={{ md: "150px", base: "150px" }} height={150} />
                   ))
-                : getDesignById?.pictures.map((singlePic, index) => (
+                : previewerImageUrls?.map((singlePic, index) => (
                     <Image
                       key={index}
                       src={singlePic}
