@@ -18,6 +18,25 @@ import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import { designImagesMap } from "../../constants/images";
 
 function CustomCard({ singleProduct, isLoading }) {
+  // console.log(singleProduct?.isProduct,'singleProduct');
+  const handleButtonClick = () => {
+    if (singleProduct?.isProduct) {
+      navigate(
+        `${UnAuthenticatedRoutesNames.PRODUCTDETAIL.replace(
+          ":product",
+          singleProduct.id
+        )}`
+      );
+    } else if (singleProduct?.isDesign) {
+      navigate(
+        `${UnAuthenticatedRoutesNames.DETAIL.replace(
+          ":design",
+          singleProduct.id
+        )}`
+      );
+    }
+  };
+
   if (isLoading) {
     return (
       <Card
@@ -63,7 +82,7 @@ function CustomCard({ singleProduct, isLoading }) {
           mr={3}
         />
         <Stack mt="6" spacing={{ base: "1", md: "3" }}>
-          <Flex justifyContent={"space-between"}>
+          <Flex justifyContent={"space-between"} h={35}>
             <Heading size={{ base: "sm", md: "md" }}>{name}</Heading>
             <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
               $ {price}
@@ -73,17 +92,16 @@ function CustomCard({ singleProduct, isLoading }) {
 
           <Button
             mt={{ base: "1", md: "0" }}
-            bgGradient="linear(to-r, #30362f, #4d5c3e)"
-            color={Colors.WHITE}
+            bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
+            color={Colors.BLACK}
+            fontWeight={"bold"}
             _hover={{
               color: "",
             }}
-            fontSize={{ base: "12px", md: "1xl" }}
-            onClick={() =>
-              navigate(
-                `${UnAuthenticatedRoutesNames.DETAIL.replace(":design", id)}`
-              )
-            }
+            fontSize={{ base: "14px", md: "1xl" }}
+            onClick={() => {
+              handleButtonClick(id);
+            }}
           >
             Show more
           </Button>
@@ -92,5 +110,6 @@ function CustomCard({ singleProduct, isLoading }) {
     </Card>
   );
 }
+// handleButtonClick(id);
 
 export default CustomCard;

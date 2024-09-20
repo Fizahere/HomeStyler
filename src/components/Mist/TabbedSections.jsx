@@ -14,25 +14,21 @@ import CustomCard from "./Card";
 
 const TabbedSections = ({ categoryName }) => {
   const [selectedDesign, setSelectedDesign] = useState("All");
-  console.log(categoryName, "");
-  // console.log(categoryName, "");
-  // console.log(selectedDesign,'selectedDesign');
+  // console.log(prodCategoryName.toLowerCase(), "prodCategoryName");
+    const filteredProducts = useMemo(() => {
+      return designsData.designs.filter((product) => {
+        // console.log(product,'product');
+        const normalizedCategory = product.category.toLowerCase();
+        const normalizedDesign = product.designCategory.toLowerCase();
+        return (
+          normalizedCategory === categoryName.toLowerCase() &&
+          (selectedDesign.toLowerCase() === "all" ||
+            normalizedDesign === selectedDesign.toLowerCase())
+        );
+      });
+    }, [categoryName, selectedDesign]);
 
-  const filteredProducts = useMemo(() => {
-    return designsData.designs.filter((product) => {
-      // console.log(product,'product');
-      const normalizedCategory = product.category.toLowerCase();
-      const normalizedDesign = product.designCategory.toLowerCase();
-      // console.log(normalizedDesign,'normalizedDesign');
-
-      return (
-        normalizedCategory === categoryName.toLowerCase() &&
-        (selectedDesign.toLowerCase() === "all" ||
-          normalizedDesign === selectedDesign.toLowerCase())
-      );
-    });
-  }, [categoryName, selectedDesign]);
-  // console.log(filteredProducts, "filteredProducts");
+  
 
   const renderContent = () => {
     switch (selectedDesign) {

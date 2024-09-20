@@ -14,62 +14,42 @@ import {
   useDisclosure,
   InputRightElement,
   Text,
-  SimpleGrid,
 } from "@chakra-ui/react";
-import CustomCard from "../components/Mist/Card";
-import { Colors } from "../constants/colors";
+import TabbedSections from "../components/Mist/TabbedSections"; // Import the TabbedSections component
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
-import TabbedSections from "../components/Mist/TabbedSections";
-import Products from '../data/products-data.json';
+import { Colors } from "../constants/colors";
 
 const Shop = () => {
   const dropdown = useDisclosure();
   const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
-
- const { category: categoryName } = useParams();
-;
+  
+  // Use category from URL params
+  const { category: categoryName } = useParams();
+  const [selectedDesign, setSelectedDesign] = useState("All"); // Add state for selected design category
 
   return (
     <>
       <Box mt={4}>
-        <Flex
-          p={2}
-          borderBottom={"1px solid grey"}
-          justifyContent={"space-between"}
-        >
+        <Flex p={2} borderBottom={"1px solid grey"} justifyContent={"space-between"}>
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
-            {categoryName.toUpperCase()}
+            {categoryName?.toUpperCase() || "Shop"} {/* Use categoryName */}
           </Heading>
+
           <Flex flexDirection={{ base: "column", md: "row" }}>
-            <InputGroup display={"flex"} justifyContent={"space-between"}>
-              <Input
-                borderRadius={10}
-                p={2}
-                // onChange={filterInputHandler}
-                placeholder={"Search"}
-                _placeholder={{ fontSize: "15px" }}
-              />
+            <InputGroup>
+              <Input borderRadius={10} p={2} placeholder={"Search"} _placeholder={{ fontSize: "15px" }} />
               <InputRightElement mr={3}>
                 <Icon as={APP_ICONS.SEARCH} color={"grey"} fontSize={20} />
               </InputRightElement>
             </InputGroup>
+
             <Box ml={4} mt={{ base: 2, md: 0 }}>
               <Menu>
-                <MenuButton
-                  as={Button}
-                  _dark={{ bg: Colors.DARKTHEME }}
-                  border={"1px solid #e2e8f0"}
-                // onClick={dropdown.onToggle}
-                >
+                <MenuButton as={Button} _dark={{ bg: Colors.DARKTHEME }} border={"1px solid #e2e8f0"}>
                   <Flex>
-                    <Text
-                      color={Colors.GREY}
-                      fontWeight={"400"}
-                      fontSize={"15px"}
-                      mt={0.5}
-                    >
+                    <Text color={Colors.GREY} fontWeight={"400"} fontSize={"15px"} mt={0.5}>
                       {selectedItem}
                     </Text>
                     <Icon
@@ -82,23 +62,20 @@ const Shop = () => {
                   </Flex>
                 </MenuButton>
                 <MenuList _dark={{ bg: Colors.DARKTHEME }}>
-                  {/* {items.map((item) => (
-                    <MenuItem
-                      _dark={{ bg: Colors.DARKTHEME }}
-                      key={item}
-                      onClick={() => handleSelect(item)}
-                    >
+                  {items.map((item) => (
+                    <MenuItem key={item} onClick={() => setSelectedItem(item)}>
                       {item}
                     </MenuItem>
-                  ))} */}
+                  ))}
                 </MenuList>
               </Menu>
             </Box>
           </Flex>
         </Flex>
 
-        <Box py={8} >
-          <TabbedSections categoryName={categoryName} />
+        <Box py={8}>
+          {/* Pass selectedDesign and setSelectedDesign to TabbedSections */}
+          <TabbedSections categoryName={categoryName} selectedDesign={selectedDesign} setSelectedDesign={setSelectedDesign} />
         </Box>
       </Box>
     </>
