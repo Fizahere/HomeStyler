@@ -30,7 +30,6 @@ import {
       localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
     };
   
-    // Filter and sort logic
     const filteredItems = wishlistItems.filter(item =>
       item.name.toLowerCase().includes(searchQuery.toLowerCase())
     );

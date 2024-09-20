@@ -28,11 +28,7 @@ import ProductsData from "../data/product-new-data.json";
 
 const Products = () => {
   const dropdown = useDisclosure();
-  const [items] = useState([
-    "Sort by Style",
-    "Sort Alphabetically",
-    "Sort by Price",
-  ]);
+  const [items] = useState(["Default", "Sort Alphabetically", "Sort by Price"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
   const [searchQuery, setSearchQuery] = useState("");
   const { prodCategory: categoryName } = useParams();
@@ -44,7 +40,11 @@ const Products = () => {
   return (
     <>
       <Box mt={4}>
-        <Flex p={2} borderBottom={"1px solid grey"} justifyContent={"space-between"}>
+        <Flex
+          p={2}
+          borderBottom={"1px solid grey"}
+          justifyContent={"space-between"}
+        >
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
             {categoryName.toUpperCase()}
           </Heading>
@@ -71,25 +71,47 @@ const Products = () => {
                   border={"1px solid #e2e8f0"}
                 >
                   <Flex>
-                    <Text color={Colors.GREY} fontWeight={"400"} fontSize={"15px"} mt={0.5}>
+                    <Text
+                      color={Colors.GREY}
+                      fontWeight={"400"}
+                      fontSize={"15px"}
+                      mt={0.5}
+                    >
                       {selectedItem}
                     </Text>
                     <Icon
                       as={APP_ICONS.TOGGLE}
-                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                      transform={
+                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                      }
                       transition="transform 0.3s ease"
                       ml={2}
                       fontSize={"20px"}
                     />
                   </Flex>
                 </MenuButton>
-                <MenuList _dark={{ bg: Colors.DARKTHEME }}>
-                  {items.map((item) => (
-                    <MenuItem key={item} onClick={() => handleSortSelection(item)}>
-                      {item}
-                    </MenuItem>
-                  ))}
-                </MenuList>
+                <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
+                  <MenuList
+                    border={"1px solid grey"}
+                    py={0}
+                    _dark={{ bg: Colors.DARKTHEME }}
+                  >
+                    {items.map((item) => (
+                      <MenuItem
+                        _dark={{
+                          bg: Colors.DASHBOARDTHEME,
+                          _hover: {
+                            bg: "#333333",
+                          },
+                        }}
+                        key={item}
+                        onClick={() => handleSortSelection(item)}
+                      >
+                        {item}
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </Box>
               </Menu>
             </Box>
           </Flex>
@@ -131,12 +153,10 @@ const TabbedSections = ({ prodCategoryName, searchQuery, selectedItem }) => {
       (subcategory) => subcategory?.products
     );
 
-    // Filter by search query
     const searchedProducts = products.filter((product) =>
       product.name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    // Sort the filtered products based on selectedItem
     return searchedProducts.sort((a, b) => {
       if (selectedItem === "Sort by Price") {
         return a.price - b.price;

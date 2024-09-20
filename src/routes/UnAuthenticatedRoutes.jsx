@@ -13,6 +13,7 @@ import Feedback from '../ClientSite/Feedback'
 import About from "../ClientSite/About";
 import Products from "../ClientSite/Products";
 import ProductDetail from "../ClientSite/ProductDetail";
+import Designers from "../ClientSite/Designers";
 
 function UnAuthenticatedRoutes() {
   return (
@@ -28,6 +29,7 @@ function UnAuthenticatedRoutes() {
         <Route path={UnAuthenticatedRoutesNames.ABOUT} element={<About />} />
         <Route path={UnAuthenticatedRoutesNames.PRODUCTDETAIL} element={<ProductDetail />} />
         <Route path={UnAuthenticatedRoutesNames.WISHLIST} element={<Shop />} />
+        <Route path={UnAuthenticatedRoutesNames.DESIGNERS} element={<Designers />} />
       </Route>
         <Route path={UnAuthenticatedRoutesNames.LOGIN} element={<SignIn />} />
       <Route path="*" element={<NotFound />} />

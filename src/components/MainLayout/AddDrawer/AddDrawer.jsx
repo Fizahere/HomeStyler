@@ -31,7 +31,6 @@ function AddDrawer(props) {
         color={Colors.WHITE}
         _dark={{
           bg: Colors.DASHBOARDTHEME,
-          // color: Colors.WHITE,
         }}
       >
         <DrawerCloseButton />
@@ -44,7 +43,6 @@ function AddDrawer(props) {
                 color={Colors.WHITE}
                 border={"1px solid grey"}
                 _dark={{
-                  // color: Colors.WHITE,
                   border: "1px solid grey",
                 }}
                 _placeholder={{ color: Colors.PLACEHOLDER }}
@@ -58,7 +56,6 @@ function AddDrawer(props) {
                 color={Colors.WHITE}
                 border={"1px solid grey"}
                 _dark={{
-                  // color: Colors.WHITE,
                   border: "1px solid grey",
                 }}
                 _placeholder={{ color: Colors.PLACEHOLDER }}

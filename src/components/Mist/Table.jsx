@@ -8,13 +8,13 @@ import {
   Tr,
   Td,
   Image,
-  Button,
 } from "@chakra-ui/react";
 import { Colors } from "../../constants/colors";
 import CustomButton from "./Button";
+import { designersImages } from "../../constants/images";
 
 function CustomTable(props) {
-  const { showDataMemo: showDataMemoMap } = props;
+  const { designerData: showDataMemoMap } = props;
   return (
     <Box overflow={"auto"}>
       <Table>
@@ -22,22 +22,31 @@ function CustomTable(props) {
           <Tr>
             <Th>ID</Th>
             <Th>Name</Th>
-            <Th>Email</Th>
+            <Th>Contact</Th>
+            <Th>Image</Th>
+            <Th>Delete</Th>
           </Tr>
         </Thead>
         <Tbody>
-          {showDataMemoMap.map((singleShow, index) => (
+          {showDataMemoMap?.map((singleDesigner, index) => (
             <Tr key={index}>
-              <Td>{singleShow.id}</Td>
-              <Td>{singleShow.name}</Td>
-              <Td>fiza@gmail.com</Td>
+              <Td>{singleDesigner?.id}</Td>
+              <Td>{singleDesigner?.name}</Td>
+              <Td textAlign={'center'}>
+                {singleDesigner?.contact?.email}
+                <br/>
+                {singleDesigner?.contact?.phone}
+                </Td>
+              <Td>
+                <Image h={150} width={200} src={designersImages[singleDesigner?.profileImage]}/>
+              </Td>
               <Td>
                 <CustomButton
                   onClickHandler={() => {}}
-                  buttonText={"Delete"}
+                  title={"Delete"}
                   icon={""}
                   color={Colors.WHITE}
-                  backgroundColor={Colors.BUTTON}
+                  bg={Colors.RED}
                 />
               </Td>
             </Tr>

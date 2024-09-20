@@ -18,7 +18,6 @@ function Services() {
                 "WHAT KIND OF SERVICES WE PROVIDE TO OUR CLIENTS",
                 1000,
               ]}
-              // wrapper="span" // using 'span' to avoid block-level nesting
               speed={50}
               style={{
                 fontSize: '3rem',

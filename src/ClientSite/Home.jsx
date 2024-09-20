@@ -26,7 +26,6 @@ const Home = () => {
     "Bedroom",
   ];
 
-
   const navigate = useNavigate();
   return (
     <>
@@ -66,10 +65,10 @@ const Home = () => {
                 borderRadius={"40px"}
                 fontSize={"12px"}
                 _hover={{ color: "white" }}
-                onClick={() => navigate()}
+                onClick={() => navigate(UnAuthenticatedRoutesNames.DESIGNERS)}
               >
-                <Icon mr={2} as={APP_ICONS.RIGHTARROW} fontSize={"18px"} />
-                Go To Shop
+                <Icon mr={2} as={APP_ICONS.RIGHTARROW} fontSize={"16px"} />
+                explore
               </Button>
               <Button
                 bg={"transparent"}
@@ -84,7 +83,7 @@ const Home = () => {
             </Flex>
           </Box>
           <Image
-            my={{ base: 6, md: 0 }}
+            my={{ base: 8, md: 0 }}
             src={mainimage}
             width={{ base: "440px", sm: "440px", md: "570px", lg: "560px" }}
             height={{ base: "230px", sm: "250px", md: "280px", lg: "330px" }}
@@ -96,7 +95,7 @@ const Home = () => {
         >
           <Box
             width={{ base: "310px", sm: "420px", md: "425px" }}
-            mb={{ base: 20, lg: 0 }}
+            mb={{ base: 0, lg: 0 }}
           >
             <Flex mt={{ base: 4, lg: 0 }} flexWrap="wrap">
               {Object.entries(categories).map(([key, value], index) => (

@@ -41,7 +41,7 @@ function Gallery() {
 
     return (
         <>
-        <Box mt={{base:170,md:10}}>
+        <Box mt={{base:10,md:10}}>
             <Text fontSize={'2rem'} fontWeight={'bold'} borderBottom={'1px solid grey'}>
                 Gallery
             </Text>

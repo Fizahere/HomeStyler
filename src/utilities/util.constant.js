@@ -4,10 +4,8 @@ export const AuthenticatedRouteNames = {
     QUOTE: '/admin/qoutes',
     SETTING: '/admin/settings',
     USERS: '/admin/users',
-    //Products
     PRODUCTS: '/admin/shows/products-of-category/:category/:subcategory',
     SEARCH: '/admin/shows/search-page/:pageno',
-    //auth
     LOGOUT: '/logout',
 }
 
@@ -19,6 +17,7 @@ export const UnAuthenticatedRoutesNames = {
     CONTACT: '/home-styler/contact-us',
     WISHLIST: '/home-styler/wishlist',
     FEEDBACK: '/home-styler/feedback',
+    DESIGNERS:'/home-styler/designers',
     SITEMAP: '/home-styler/sitemap',
     DETAIL: '/home-styler/detail/design/:design',
     LOGIN: '/home-styler/login',

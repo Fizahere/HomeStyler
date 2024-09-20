@@ -3,14 +3,14 @@
       "designers": [
         {
           "id": 202,
-          "name": "Jane Smith",
-          "experience": 15,
-          "rate": 90,
-          "profileImage": "jane_smith.jpg",
-          "bio": "Expert in elegant and luxury designs, specializing in high-end residential projects.",
+          "name": "Olivia Martinez",
+          "experience": 14,
+          "rate": 88,
+          "profileImage": "olivia_martinez",
+          "bio": "Known for creating cozy and comfortable interiors, with a focus on family-friendly spaces.",
           "contact": {
-            "email": "janesmith@example.com",
-            "phone": "987-654-3210"
+            "email": "oliviamartinez@example.com",
+            "phone": "654-789-3210"
           }
         },
         {
@@ -18,7 +18,7 @@
           "name": "Emily Johnson",
           "experience": 10,
           "rate": 80,
-          "profileImage": "emily_johnson.jpg",
+          "profileImage": "emily_johnson",
           "bio": "Known for creating contemporary spaces with a focus on eco-friendly materials.",
           "contact": {
             "email": "emilyjohnson@example.com",
@@ -28,9 +28,9 @@
         {
           "id": 204,
           "name": "Michael Lee",
-          "experience": 20,
+          "experience": 6,
           "rate": 100,
-          "profileImage": "michael_lee.jpg",
+          "profileImage": "michael_lee",
           "bio": "Specializes in modern minimalist designs with a focus on open spaces and clean lines.",
           "contact": {
             "email": "michaellee@example.com",
@@ -42,7 +42,7 @@
           "name": "Samantha Green",
           "experience": 8,
           "rate": 75,
-          "profileImage": "samantha_green.jpg",
+          "profileImage": "samantha_green",
           "bio": "Interior designer focused on creating vibrant, colorful interiors with a playful twist.",
           "contact": {
             "email": "samanthagreen@example.com",
@@ -54,7 +54,7 @@
           "name": "David Nguyen",
           "experience": 12,
           "rate": 85,
-          "profileImage": "david_nguyen.jpg",
+          "profileImage": "david_nguyen",
           "bio": "Experienced in blending traditional and modern styles for timeless living spaces.",
           "contact": {
             "email": "davidnguyen@example.com",
@@ -66,7 +66,7 @@
           "name": "Isabella Patel",
           "experience": 7,
           "rate": 70,
-          "profileImage": "isabella_patel.jpg",
+          "profileImage": "isabella_patel",
           "bio": "Focused on sustainable, eco-conscious designs with an emphasis on natural light and materials.",
           "contact": {
             "email": "isabellapatel@example.com",
@@ -78,7 +78,7 @@
           "name": "William Rodriguez",
           "experience": 18,
           "rate": 95,
-          "profileImage": "william_rodriguez.jpg",
+          "profileImage": "william_rodriguez",
           "bio": "Expert in luxury home renovations and bespoke interior solutions for high-end clients.",
           "contact": {
             "email": "williamrodriguez@example.com",
@@ -87,16 +87,17 @@
         },
         {
           "id": 209,
-          "name": "Olivia Martinez",
-          "experience": 14,
-          "rate": 88,
-          "profileImage": "olivia_martinez.jpg",
-          "bio": "Known for creating cozy and comfortable interiors, with a focus on family-friendly spaces.",
+          "name": "Jane Smith",
+          "experience": 15,
+          "rate": 90,
+          "profileImage": "jane_smith2",
+          "bio": "Expert in elegant and luxury designs, specializing in high-end residential projects.",
           "contact": {
-            "email": "oliviamartinez@example.com",
-            "phone": "654-789-3210"
+            "email": "janesmith@example.com",
+            "phone": "987-654-3210"
           }
         }
+
       ]
     }
   }

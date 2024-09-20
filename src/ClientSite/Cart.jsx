@@ -16,9 +16,9 @@ import {
   Divider,
   IconButton,
 } from "@chakra-ui/react";
-// import { imageMap } from "../assets/constants/images";
 import { Colors } from "../constants/colors";
 import APP_ICONS from "../constants/icons";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const Cart = ({ disclosure }) => {
   const btnRef = React.useRef();
@@ -31,6 +31,8 @@ const Cart = ({ disclosure }) => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setCartItems(updatedCart);
   };
+
+  console.log("Cart Items: ", cartItems);
 
   return (
     <>
@@ -45,7 +47,7 @@ const Cart = ({ disclosure }) => {
           <DrawerCloseButton />
           <DrawerHeader>Cart</DrawerHeader>
 
-          {/* <DrawerBody>
+          <DrawerBody>
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <Card
@@ -60,13 +62,13 @@ const Cart = ({ disclosure }) => {
                     <IconButton
                       aria-label="Delete item"
                       icon={<APP_ICONS.CLOSE />}
-                    ml={'190px'}
+                      ml={"190px"}
                       bg={"transparent"}
                       onClick={() => deleteItem(item.id)}
                     />
                     <Flex flexDir={"row"} alignItems={"center"}>
                       <Image
-                        src={imageMap[item.image]}
+                        src={item.image}
                         alt={item.name}
                         height={100}
                         width={100}
@@ -91,13 +93,18 @@ const Cart = ({ disclosure }) => {
             ) : (
               <Text>No items in the cart.</Text>
             )}
-          </DrawerBody> */}
+          </DrawerBody>
 
           <DrawerFooter>
             <Button
               width={"100%"}
-              bgGradient="linear(to-r, #30362f, #4d5c3e)"
+              bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
               color={Colors.WHITE}
+              _hover={{bg:'linear(to-r, gray.800, gray.100,gray.800)'}}
+              onClick={() => {
+                localStorage.removeItem("cart");
+                location.assign(UnAuthenticatedRoutesNames.HOME);
+              }}
             >
               Checkout
             </Button>

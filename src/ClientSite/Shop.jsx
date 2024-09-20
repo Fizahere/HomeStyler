@@ -34,7 +34,6 @@ const Shop = () => {
   const [selectedDesign, setSelectedDesign] = useState("All");
   const [sortOption, setSortOption] = useState("");
 
-  // Handle the sorting based on the dropdown selection
   const handleSortSelection = (item) => {
     setSelectedItem(item);
     if (item === "Sort by Alphabetically") {
@@ -42,14 +41,18 @@ const Shop = () => {
     } else if (item === "Sort by Price") {
       setSortOption("price");
     } else {
-      setSortOption(""); // Reset sorting if "Sort by Style" is selected
+      setSortOption("");
     }
   };
 
   return (
     <>
       <Box mt={4}>
-        <Flex p={2} borderBottom={"1px solid grey"} justifyContent={"space-between"}>
+        <Flex
+          p={2}
+          borderBottom={"1px solid grey"}
+          justifyContent={"space-between"}
+        >
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
             {categoryName?.toUpperCase() || "Wishlist"}
           </Heading>
@@ -78,25 +81,43 @@ const Shop = () => {
                   border={"1px solid #e2e8f0"}
                 >
                   <Flex>
-                    <Text color={Colors.GREY} fontWeight={"400"} fontSize={"15px"} mt={0.5}>
+                    <Text
+                      color={Colors.GREY}
+                      fontWeight={"400"}
+                      fontSize={"15px"}
+                      mt={0.5}
+                    >
                       {selectedItem}
                     </Text>
                     <Icon
                       as={APP_ICONS.TOGGLE}
-                      transform={dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"}
+                      transform={
+                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                      }
                       transition="transform 0.3s ease"
                       ml={2}
                       fontSize={"20px"}
                     />
                   </Flex>
                 </MenuButton>
-                <MenuList _dark={{ bg: Colors.DARKTHEME }}>
+                <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
+                <MenuList  border={'1px solid grey'} py={0} _dark={{ bg: Colors.DARKTHEME }}>
                   {items.map((item) => (
-                    <MenuItem key={item} onClick={() => handleSortSelection(item)}>
+                    <MenuItem
+                    _dark={{
+                      bg: Colors.DASHBOARDTHEME,
+                      _hover: {
+                        bg: "#333333",
+                      },
+                    }}
+                      key={item}
+                      onClick={() => handleSortSelection(item)}
+                    >
                       {item}
                     </MenuItem>
                   ))}
                 </MenuList>
+                </Box>
               </Menu>
             </Box>
           </Flex>

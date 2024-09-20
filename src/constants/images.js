@@ -89,7 +89,6 @@ import Eclectic_Art_Studio4 from '../assets/images/eclectic/office/item4.jpeg'
 import Eclectic_Art_Studio5 from '../assets/images/eclectic/office/item5.jpeg'
 import Eclectic_Art_Studio6 from '../assets/images/eclectic/office/item6.jpeg'
 import PROD1 from '../../src/assets/images/productsImages/prod1.jpg'
-// import PROD1 from '../assets/images/productsImages/prod1.jpg'
 import PROD2 from '../assets/images/productsImages/prod2.jpg'
 import PROD3 from '../assets/images/productsImages/prod3.jpg'
 import PROD4 from '../assets/images/productsImages/prod4.jpg'
@@ -100,19 +99,27 @@ import PROD8 from '../assets/images/productsImages/prod8.jpg'
 import PROD9 from '../assets/images/productsImages/prod9.jpg'
 import PROD10 from '../assets/images/productsImages/prod10.jpg'
 import PROD11 from '../assets/images/productsImages/prod11.jpg'
+import samantha_green from '../assets/images/designer1.jpg'
+import emily_johnson from '../assets/images/designer2.jpg'
+import michael_lee from '../assets/images/designer3.jpg'
+import jane_smith2 from '../assets/images/designer4.jpg'
+import david_nguyen from '../assets/images/designer5.jpg'
+import isabella_patel from '../assets/images/designer6.jpg'
+import william_rodriguez from '../assets/images/designer7.jpeg'
+import olivia_martinez from '../assets/images/designer8.jpg'
 
-export const productsImagesMap={
-    PROD1:PROD1,
-    PROD2:PROD2,
-    PROD3:PROD3,
-    PROD4:PROD4,
-    PROD5:PROD5,
-    PROD6:PROD6,
-    PROD7:PROD7,
-    PROD8:PROD8,
-    PROD9:PROD9,
-    PROD10:PROD10,
-    PROD11:PROD11,
+export const productsImagesMap = {
+    PROD1: PROD1,
+    PROD2: PROD2,
+    PROD3: PROD3,
+    PROD4: PROD4,
+    PROD5: PROD5,
+    PROD6: PROD6,
+    PROD7: PROD7,
+    PROD8: PROD8,
+    PROD9: PROD9,
+    PROD10: PROD10,
+    PROD11: PROD11,
 }
 
 export const designImagesMap = {
@@ -208,3 +215,14 @@ export const designImagesMap = {
     Eclectic_Art_Studio6: Eclectic_Art_Studio6,
 
 };
+
+export const designersImages = {
+    jane_smith2: jane_smith2,
+    michael_lee: michael_lee,
+    emily_johnson: emily_johnson,
+    samantha_green: samantha_green,
+    david_nguyen: david_nguyen,
+    isabella_patel: isabella_patel,
+    william_rodriguez: william_rodriguez,
+    olivia_martinez: olivia_martinez
+}

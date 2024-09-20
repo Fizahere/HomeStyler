@@ -42,6 +42,7 @@ import { TbMessageChatbot } from "react-icons/tb";
 import { TiBusinessCard } from "react-icons/ti";
 import { BiSupport } from "react-icons/bi";
 import { BsCart3 } from "react-icons/bs";
+import { FaStar } from "react-icons/fa";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -61,6 +62,7 @@ const APP_ICONS = {
     PENCILSCALE:TfiRulerPencil,
     COMPASS:RiCompassesLine,
     HAMMER:GiHammerNails,
+    FIILEDSTAR:FaStar,
 
     //Actions
     MOON: IoMdMoon,

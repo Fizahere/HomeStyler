@@ -59,7 +59,7 @@ function Detail() {
     const timer = setTimeout(() => {
       setShowDetailLoading(false);
       setSelectedImage(designImagesMap[getDesignById?.image]);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [getDesignById]);

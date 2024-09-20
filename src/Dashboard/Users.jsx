@@ -6,31 +6,35 @@ import CustomButton from "../components/Mist/Button";
 import { Colors } from "../constants/colors";
 import APP_ICONS from "../constants/icons";
 import testImage from "../assets/images/testImage.jpeg";
+import data from '../data/designers-data.json'
 
 function Users() {
-  const showDataMemo = [
-    {
-      id: 1,
-      name: "Fiza",
-      country: "USA",
-      image_thumbnail_path: testImage,
-      status: "active",
-      network: "scsc",
-    },
-  ];
+  const designers = data.homeStyler.designers;
+
+  // const showDataMemo = [
+  //   {
+  //     id: 1,
+  //     name: "Fiza",
+  //     country: "USA",
+  //     image_thumbnail_path: testImage,
+  //     status: "active",
+  //     network: "scsc",
+  //   },
+  // ];
   return (
     <>
       <Flex justify={"space-between"}>
         <Heading size={"lg"}>Users</Heading>
         <CustomButton
+        width={'150px'}
           onClickHandler={()=>{}}
-          buttonText={"Add User"}
+          title={"Add User"}
           icon={APP_ICONS.ADD}
           backgroundColor={Colors.DASHBOARDTHEME}
         />
       </Flex>
       <Box py={"2rem"}>
-        <CustomTable showDataMemo={showDataMemo} />
+        <CustomTable designerData={designers} />
       </Box>
     </>
   );
