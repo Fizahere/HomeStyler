@@ -59,15 +59,6 @@ function CustomCard({ singleProduct, isLoading }) {
   // console.log(image,'image')
   const imageUrl = designImagesMap[image];
   // console.log(imageUrl,'image')
-  const ProductsList = () => {
-    return (
-      <div>
-        {Object.entries(productsImagesMap).map(([key, src]) => (
-          <img key={key} src={src} alt={key} />
-        ))}
-      </div>
-    );
-  };
 
   if (isLoading) {
     return (
