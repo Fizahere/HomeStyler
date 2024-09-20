@@ -17,8 +17,10 @@ import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import { designImagesMap, productsImagesMap } from "../../constants/images";
+import APP_ICONS from "../../constants/icons";
 
 function CustomCard({ singleProduct, isLoading }) {
+  const [isFavorite, setFavorite] = useState(true);
   const [isDesignMode, setIsDesignMode] = useState(false);
   const [isProductMode, setIsProductMode] = useState(false);
   // console.log(singleProduct.image,'singleProduct');
@@ -97,6 +99,7 @@ function CustomCard({ singleProduct, isLoading }) {
       <CardBody>
         {isDesignMode ? (
           <Image
+          position={"relative"}
           src={imageUrl}
             alt={"image_thumbnail_path"}
             borderRadius="md"
@@ -105,12 +108,40 @@ function CustomCard({ singleProduct, isLoading }) {
             />
           ):(
             <Image
+          position={"relative"}
             src={src}
               alt={"image_thumbnail_path"}
               borderRadius="md"
               width={"100%"}
               height={{ base: "250px", md: "250px" }}
               />
+        )}
+         {isFavorite ? (
+          <Icon
+            position={"absolute"}
+            top={"-430px"}
+            left={"230px"}
+            fontSize={26}
+            cursor={"pointer"}
+            _hover={{ fontSize: 28 }}
+            fontWeight={"bold"}
+            as={APP_ICONS.WISHLISTFILLED}
+            color={Colors.RED}
+            onClick={()=>setFavorite(false)}
+          />
+        ) : (
+          <Icon
+            position={"absolute"}
+            top={"-430px"}
+            left={"230px"}
+            fontSize={21}
+            cursor={"pointer"}
+            _hover={{ fontSize: 24 }}
+            fontWeight={"bold"}
+            as={APP_ICONS.WISHLIST}
+            color={Colors.RED}
+            onClick={()=>setFavorite(true)}
+          />
         )}
         <Divider
           orientation="horizontal"
@@ -153,3 +184,5 @@ function CustomCard({ singleProduct, isLoading }) {
 }
 
 export default CustomCard;
+
+
