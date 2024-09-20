@@ -135,7 +135,7 @@ const TabbedSections = ({ prodCategoryName }) => {
     // console.log(products,'products');
   
     return products;
-  }, [prodCategoryName, selectedDesign]);
+  }, [prodCategoryName, selectedSubCategory]);
 
   const subcategories = useMemo(() => {
     const category = ProductsData?.browsingProducts?.categories.find(
@@ -147,30 +147,23 @@ const TabbedSections = ({ prodCategoryName }) => {
   
 
   const renderContent = () => {
-    switch (selectedDesign) {
-      case "All":
-      case "Cozy":
-      case "Elegant":
-      case "Minimalist":
-      case "Classic":
-      case "Industrial":
-      case "Eclectic":
-      case "Tropical":
-        return (
-          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
-            {filteredProducts.length > 0 ? (
-              filteredProducts?.map((singleItem, index) => (
-                <CustomCard key={index} singleProduct={singleItem} />
-              ))
-            ) : (
-              <Text>No products available</Text>
-            )}
-          </SimpleGrid>
-        );
-      default:
-        return <Text>No products available</Text>;
+    if (subcategories.includes(selectedSubCategory)) {
+      return (
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+          {filteredProducts.length > 0 ? (
+            filteredProducts?.map((singleItem, index) => (
+              <CustomCard key={index} singleProduct={singleItem} />
+            ))
+          ) : (
+            <Text>No products available</Text>
+          )}
+        </SimpleGrid>
+      );
+    } else {
+      return <Text>No products available</Text>;
     }
   };
+  
 
   return (
     <ChakraProvider>
@@ -178,7 +171,7 @@ const TabbedSections = ({ prodCategoryName }) => {
       <Tabs
   variant="enclosed"
   onChange={(index) => {
-    setSelectedDesign(subcategories[index]);
+    setSelectedSubCategory(subcategories[index]);
   }}
 >
   <TabList>
