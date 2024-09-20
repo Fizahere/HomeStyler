@@ -16,6 +16,7 @@ import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import { designImagesMap, productsImagesMap } from "../../constants/images";
+import APP_ICONS from "../../constants/icons";
 
 function CustomCard({ singleProduct, isLoading }) {
   const [imageUrl, setImageUrl] = useState(null);
@@ -121,3 +122,5 @@ function CustomCard({ singleProduct, isLoading }) {
 }
 
 export default CustomCard;
+
+
