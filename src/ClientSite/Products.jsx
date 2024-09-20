@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
+  Tab,
+  TabList,
+  Tabs,
   Box,
   Heading,
   Flex,
@@ -15,20 +18,21 @@ import {
   InputRightElement,
   Text,
   SimpleGrid,
+  ChakraProvider,
 } from "@chakra-ui/react";
+// import ProductCategories from "'../";
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
-import TabbedSections from "../components/Mist/TabbedSections";
+import ProductsData from '../data/product-new-data.json';
 
 const Products = () => {
   const dropdown = useDisclosure();
   const [items, setItems] = useState(["sort by price", "sort alphabetically"]);
   const [selectedItem, setSelectedItem] = useState(items[0]);
 
- const { prodCategory: categoryName } = useParams();
-  console.log(categoryName, 'categoryName');
+  const { prodCategory: categoryName } = useParams();
 
   return (
     <>
@@ -60,7 +64,7 @@ const Products = () => {
                   as={Button}
                   _dark={{ bg: Colors.DARKTHEME }}
                   border={"1px solid #e2e8f0"}
-                // onClick={dropdown.onToggle}
+                  // onClick={dropdown.onToggle}
                 >
                   <Flex>
                     <Text
@@ -96,7 +100,7 @@ const Products = () => {
           </Flex>
         </Flex>
 
-        <Box py={8} >
+        <Box py={8}>
           <TabbedSections prodCategoryName={categoryName} />
         </Box>
       </Box>
@@ -105,3 +109,82 @@ const Products = () => {
 };
 
 export default Products;
+
+const TabbedSections = ({ prodCategoryName }) => {
+  // console.log(prodCategoryName, 'prodcategoryName');
+  const [selectedDesign, setSelectedDesign] = useState("All");
+  const filteredProducts = useMemo(() => {
+    const testingProductData = ProductsData?.browsingProducts?.categories;
+    const matchingCategory = ProductsData?.browsingProducts?.categories.find(
+      (cat) => cat?.category?.toLowerCase() === prodCategoryName?.toLowerCase()
+    );  
+    if (!matchingCategory) return [];
+  
+    const filteredSubcategories = matchingCategory.subcategories.filter(
+      (subcategory) =>
+        selectedDesign?.toLowerCase() === "all" ||
+        subcategory?.name?.toLowerCase() === selectedDesign?.toLowerCase()
+    );
+  
+    const products = filteredSubcategories?.flatMap((subcategory) =>
+      subcategory?.products
+    );
+  
+    return products;
+  }, [prodCategoryName, selectedDesign]);
+
+  const subcategories = useMemo(() => {
+    const category = ProductsData?.browsingProducts?.categories.find(
+      (cat) => cat.category?.toLowerCase() === prodCategoryName?.toLowerCase()
+    );
+    return category ? ["All", ...category?.subcategories?.map(sub => sub.name)] : [];
+  }, [prodCategoryName]);
+  
+  
+
+  const renderContent = () => {
+    switch (selectedDesign) {
+      case "All":
+      case "Cozy":
+      case "Elegant":
+      case "Minimalist":
+      case "Classic":
+      case "Industrial":
+      case "Eclectic":
+      case "Tropical":
+        return (
+          <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+            {filteredProducts.length > 0 ? (
+              filteredProducts?.map((singleItem, index) => (
+                <CustomCard key={index} singleProduct={singleItem} />
+              ))
+            ) : (
+              <Text>No products available</Text>
+            )}
+          </SimpleGrid>
+        );
+      default:
+        return <Text>No products available</Text>;
+    }
+  };
+
+  return (
+    <ChakraProvider>
+      <Flex p={4}>
+      <Tabs
+  variant="enclosed"
+  onChange={(index) => {
+    setSelectedDesign(subcategories[index]);
+  }}
+>
+  <TabList>
+    {subcategories?.map((sub, index) => (
+      <Tab key={index}>{sub}</Tab>
+    ))}
+  </TabList>
+        </Tabs>
+      </Flex>
+      <Box p={4}>{renderContent()}</Box>
+    </ChakraProvider>
+  );
+};

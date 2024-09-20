@@ -7,12 +7,9 @@
       "designCategory": "Cozy",
       "description": "A warm and inviting office space designed for comfort and productivity with soft lighting and ergonomic furniture.",
       "image": "./assets/images/office/cozy/item1.jpeg",
-      "pictures": [
-        "item1.jpeg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 499.99
+      "pictures": ["item1.jpeg", "item2.jpg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
     },
     {
       "id": 2,
@@ -21,12 +18,9 @@
       "designCategory": "Elegant",
       "description": "A sophisticated executive office with high-end furniture, refined finishes, and a touch of class.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item1.jpg",
-        "item1.jpg"
-      ],
-      "price": 799.99
+      "pictures": ["item1.jpg", "item1.jpg", "item1.jpg"],
+      "price": 799.99,
+      "isDesign": true
     },
     {
       "id": 3,
@@ -35,12 +29,9 @@
       "designCategory": "Cozy",
       "description": "A cozy living room designed to provide a relaxed and inviting atmosphere with plush seating and soft textiles.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 399.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 399.99,
+      "isDesign": true
     },
     {
       "id": 4,
@@ -49,12 +40,9 @@
       "designCategory": "Minimalist",
       "description": "A minimalist living room with clean lines, neutral tones, and functional design elements.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 349.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 349.99,
+      "isDesign": true
     },
     {
       "id": 5,
@@ -63,12 +51,9 @@
       "designCategory": "Elegant",
       "description": "An elegant living room design featuring luxurious materials, refined style, and attention to detail.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 899.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 899.99,
+      "isDesign": true
     },
     {
       "id": 6,
@@ -77,12 +62,9 @@
       "designCategory": "Cozy",
       "description": "A cozy bedroom design with a focus on warmth and relaxation, featuring soft bedding and soothing colors.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 449.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 449.99,
+      "isDesign": true
     },
     {
       "id": 7,
@@ -91,12 +73,9 @@
       "designCategory": "Minimalist",
       "description": "A sleek and minimalist bedroom featuring clean lines, functional furniture, and a simple color scheme.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 359.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 359.99,
+      "isDesign": true
     },
     {
       "id": 8,
@@ -105,12 +84,9 @@
       "designCategory": "Elegant",
       "description": "An elegant and glamorous bedroom design with luxurious details, opulent furnishings, and a sophisticated atmosphere.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 749.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 749.99,
+      "isDesign": true
     },
     {
       "id": 9,
@@ -118,13 +94,10 @@
       "category": "Living Room",
       "designCategory": "Cozy",
       "description": "A cozy reading nook designed for relaxation, featuring a comfortable armchair and warm, inviting colors.",
-       "image": "item4.png",
-      "pictures": [
-        "item4.png",
-        "item5.jpg",
-        "item6.jpg"
-      ],
-      "price": 299.99
+      "image": "item4.png",
+      "pictures": ["item4.png", "item5.jpg", "item6.jpg"],
+      "price": 299.99,
+      "isDesign": true
     },
     {
       "id": 10,
@@ -133,12 +106,9 @@
       "designCategory": "Elegant",
       "description": "An elegant home office with luxurious finishes, including a high-end desk and stylish decor.",
       "image": "item7.png",
-      "pictures": [
-        "item7.png",
-        "item8.jpg",
-        "item9.jpg"
-      ],
-      "price": 799.99
+      "pictures": ["item7.png", "item8.jpg", "item9.jpg"],
+      "price": 799.99,
+      "isDesign": true
     },
     {
       "id": 11,
@@ -147,12 +117,9 @@
       "designCategory": "Minimalist",
       "description": "A contemporary kitchen design with sleek cabinetry, state-of-the-art appliances, and clean lines.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 549.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 549.99,
+      "isDesign": true
     },
     {
       "id": 12,
@@ -161,12 +128,9 @@
       "designCategory": "Cozy",
       "description": "A rustic farmhouse kitchen with warm wood tones, vintage elements, and a welcoming atmosphere.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 499.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
     },
     {
       "id": 13,
@@ -175,12 +139,9 @@
       "designCategory": "Classic",
       "description": "A classic bathroom design featuring timeless fixtures, elegant tile work, and a serene color palette.",
       "image": "item1.jpeg",
-      "pictures": [
-        "item1.jpeg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 399.99
+      "pictures": ["item1.jpeg", "item2.jpg", "item3.jpg"],
+      "price": 399.99,
+      "isDesign": true
     },
     {
       "id": 14,
@@ -189,12 +150,9 @@
       "designCategory": "Elegant",
       "description": "A luxurious bathroom design inspired by spa aesthetics, with high-end materials, soothing lighting, and a focus on relaxation.",
       "image": "item1.png",
-      "pictures": [
-        "item1.png",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 649.99
+      "pictures": ["item1.png", "item2.jpg", "item3.jpg"],
+      "price": 649.99,
+      "isDesign": true
     },
     {
       "id": 15,
@@ -202,13 +160,10 @@
       "category": "Living Room",
       "designCategory": "Industrial",
       "description": "An industrial-style living room with exposed brick, metal accents, and a raw, urban vibe.",
-    "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 549.99
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 549.99,
+      "isDesign": true
     },
     {
       "id": 16,
@@ -217,12 +172,9 @@
       "designCategory": "Classic",
       "description": "A traditional dining room with classic furnishings, rich colors, and elegant detailing.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpeg",
-        "item3.jpg"
-      ],
-      "price": 499.99
+      "pictures": ["item1.jpg", "item2.jpeg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
     },
     {
       "id": 17,
@@ -231,12 +183,9 @@
       "designCategory": "Minimalist",
       "description": "A modern minimalist dining room with clean lines, simple furnishings, and a focus on functionality.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpeg",
-        "item3.jpg"
-      ],
-      "price": 379.99
+      "pictures": ["item1.jpg", "item2.jpeg", "item3.jpg"],
+      "price": 379.99,
+      "isDesign": true
     },
     {
       "id": 18,
@@ -245,12 +194,9 @@
       "designCategory": "Classic",
       "description": "A Scandinavian-inspired living room with a light, airy feel, featuring natural materials and a neutral color palette.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 429.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 429.99,
+      "isDesign": true
     },
     {
       "id": 19,
@@ -259,12 +205,9 @@
       "designCategory": "Eclectic",
       "description": "An eclectic bedroom featuring a mix of colors, patterns, and textures for a unique and personalized space.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpeg"
-      ],
-      "price": 499.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpeg"],
+      "price": 499.99,
+      "isDesign": true
     },
     {
       "id": 20,
@@ -273,12 +216,9 @@
       "designCategory": "Tropical",
       "description": "A bathroom design inspired by tropical vibes, with vibrant colors, lush plants, and a fresh, vibrant atmosphere.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 459.99
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 459.99,
+      "isDesign": true
     },
     {
       "id": 21,
@@ -287,140 +227,108 @@
       "designCategory": "Cozy",
       "description": "A warm and inviting office space designed for comfort and productivity with soft lighting and ergonomic furniture.",
       "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpeg",
-        "item3.jpg"
-      ],
-      "price": 499.99
+      "pictures": ["item1.jpg", "item2.jpeg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
     },
     {
-          "id": 22,
-          "name": "Modern Elegance",
-          "category": "Office",
-          "designCategory": "Minimalist",
-          "description": "A sleek and modern design with clean lines and minimal décor.",
-          "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 499.99
-
-        },
-        {
-          "id": 23,
-          "name": "Classic Charm",
-          "category": "Office",
-          "designCategory":"Classic",
-          "description": "Timeless elegance with rich wood tones and luxurious fabrics.",
-         "image": "item1.jpg",
-      "pictures": [
-        "item1.jpg",
-        "item2.jpg",
-        "item3.jpg"
-      ],
-      "price": 499.99
-
-        },
-        {
-          "id": 24,
-          "name": "Industrial Edge",
-          "category":"Office",
-          "designCategory": "Industrial",
-          "description": "Urban style with exposed bricks and metal finishes.",
-          "image": "item1.jpg",
-          "pictures": [
-            "item1.jpg",
-            "item2.jpg",
-            "item3.jpg"
-          ],
-          "price": 399.99
-        },
-        {
-          "id": 25,
-          "name": "Eclectic Vibes",
-          "category":"Office",
-          "designCategory": "Eclectic",
-          "description": "A vibrant mix of styles and colors for a unique look.",
-          "image": "item1.jpg",
-          "pictures": [
-            "item1.jpg",
-            "item2.jpg",
-            "item3.jpg"
-          ],
-          "price": 399.99
-        },
-        {
-          "id": 26,
-          "name": "Tropical Oasis",
-          "category":"Office",
-          "designCategory": "Tropical",
-          "description": "Bright and airy design with lush plants and natural materials.",
-          "image": "item1.jpg",
-          "pictures": [
-            "item1.jpg",
-            "item2.jpg",
-            "item3.jpg"
-          ],
-          "price": 399.99
-        },
-        {
-          "id": 27,
-          "name": "Minimalist Workspace",
-          "category": "Office",
-          "designCategory": "Minimalist",
-          "description": "A sleek office design with minimal clutter, featuring clean lines and functional furniture.",
-         "image": "item4.jpg",
-          "pictures": [
-            "item4.jpg",
-            "item5.jpg",
-            "item6.jpg"
-          ],
-          "price": 520.00
-        },
-        {
-          "id": 28,
-          "name": "Classic Home Library",
-          "category": "Living Room",
-          "designCategory": "Classic",
-          "description": "A timeless home library with wooden shelves, leather seating, and warm lighting.",
-          "image": "item4.jpg",
-          "pictures": [
-            "item4.jpg",
-            "item5.jpg",
-            "item6.jpg"
-          ],
-          "price": 950.00
-        },
-        {
-          "id": 29,
-          "name": "Industrial Kitchen Loft",
-          "category": "Kitchen",
-          "designCategory": "Industrial",
-          "description": "An urban kitchen with exposed pipes, brick walls, and stainless steel appliances.",
-          "image": "item1.jpg",
-          "pictures": [
-            "item1.jpg",
-            "item2.jpg",
-            "item3.jpg"
-          ],
-          "price": 850.00
-        },
-        {
-          "id": 30,
-          "name": "Eclectic Art Studio",
-          "category": "Office",
-          "designCategory": "Eclectic",
-          "description": "A vibrant art studio blending various styles, colors, and textures for creative inspiration.",
-          "image": "item4.jpeg",
-          "pictures": [
-            "item4.jpeg",
-            "item5.jpeg",
-            "item6.jpeg"
-          ],
-          "price": 600.00
-        }
-      ]
+      "id": 22,
+      "name": "Modern Elegance",
+      "category": "Office",
+      "designCategory": "Minimalist",
+      "description": "A sleek and modern design with clean lines and minimal décor.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
+    },
+    {
+      "id": 23,
+      "name": "Classic Charm",
+      "category": "Office",
+      "designCategory": "Classic",
+      "description": "Timeless elegance with rich wood tones and luxurious fabrics.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 499.99,
+      "isDesign": true
+    },
+    {
+      "id": 24,
+      "name": "Industrial Edge",
+      "category": "Office",
+      "designCategory": "Industrial",
+      "description": "Urban style with exposed bricks and metal finishes.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 399.99,
+      "isDesign": true
+    },
+    {
+      "id": 25,
+      "name": "Eclectic Vibes",
+      "category": "Office",
+      "designCategory": "Eclectic",
+      "description": "A vibrant mix of styles and colors for a unique look.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 399.99,
+      "isDesign": true
+    },
+    {
+      "id": 26,
+      "name": "Tropical Oasis",
+      "category": "Office",
+      "designCategory": "Tropical",
+      "description": "Bright and airy design with lush plants and natural materials.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 399.99,
+      "isDesign": true
+    },
+    {
+      "id": 27,
+      "name": "Minimalist Workspace",
+      "category": "Office",
+      "designCategory": "Minimalist",
+      "description": "A sleek office design with minimal clutter, featuring clean lines and functional furniture.",
+      "image": "item4.jpg",
+      "pictures": ["item4.jpg", "item5.jpg", "item6.jpg"],
+      "price": 520.0,
+      "isDesign": true
+    },
+    {
+      "id": 28,
+      "name": "Classic Home Library",
+      "category": "Living Room",
+      "designCategory": "Classic",
+      "description": "A timeless home library with wooden shelves, leather seating, and warm lighting.",
+      "image": "item4.jpg",
+      "pictures": ["item4.jpg", "item5.jpg", "item6.jpg"],
+      "price": 950.0,
+      "isDesign": true
+    },
+    {
+      "id": 29,
+      "name": "Industrial Kitchen Loft",
+      "category": "Kitchen",
+      "designCategory": "Industrial",
+      "description": "An urban kitchen with exposed pipes, brick walls, and stainless steel appliances.",
+      "image": "item1.jpg",
+      "pictures": ["item1.jpg", "item2.jpg", "item3.jpg"],
+      "price": 850.0,
+      "isDesign": true
+    },
+    {
+      "id": 30,
+      "name": "Eclectic Art Studio",
+      "category": "Office",
+      "designCategory": "Eclectic",
+      "description": "A vibrant art studio blending various styles, colors, and textures for creative inspiration.",
+      "image": "item4.jpeg",
+      "pictures": ["item4.jpeg", "item5.jpeg", "item6.jpeg"],
+      "price": 600.0,
+      "isDesign": true
     }
+  ]
+}
