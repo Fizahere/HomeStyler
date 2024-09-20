@@ -21,7 +21,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
@@ -32,7 +31,6 @@ import ProductSelection from "../../data/product-new-data.json";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
-  const [user, setUser] = useState(localStorage.getItem("user"));
 
   const categories = [
     "Living Room",
@@ -71,7 +69,7 @@ function Navbar() {
               )
             }
             aria-label="Open Menu"
-            display={{ md: "block" }}
+            display={{ md: "block", lg: "none" }}
             onClick={onOpen}
           />
           <NavLink to={UnAuthenticatedRoutesNames.HOME}>
@@ -104,7 +102,7 @@ function Navbar() {
               {({ isOpen }) => (
                 <>
                   <MenuButton
-                  p={0}
+                    p={0}
                     mt={1}
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
@@ -122,7 +120,10 @@ function Navbar() {
                   >
                     Designs
                   </MenuButton>
-                  <MenuList>
+                  <MenuList
+                    bg={Colors.WHITE}
+                    _dark={{ bg: Colors.DASHBOARDTHEME }}
+                  >
                     {categories.map((singleCategory, index) => (
                       <Box key={index} py={2}>
                         <NavLink
@@ -134,7 +135,16 @@ function Navbar() {
                             isActive ? activeLinkStyle : undefined
                           }
                         >
-                          <MenuItem>{singleCategory}</MenuItem>
+                          <MenuItem
+                            _dark={{
+                              bg: Colors.DASHBOARDTHEME,
+                              _hover: {
+                                bg: "#333333",
+                              },
+                            }}
+                          >
+                            {singleCategory}
+                          </MenuItem>
                         </NavLink>
                       </Box>
                     ))}
@@ -147,7 +157,7 @@ function Navbar() {
               {({ isOpen }) => (
                 <>
                   <MenuButton
-                  p={0}
+                    p={0}
                     mt={1}
                     fontWeight="400"
                     _hover={{ bg: "transparent" }}
@@ -165,7 +175,7 @@ function Navbar() {
                   >
                     Products
                   </MenuButton>
-                  <MenuList>
+                  <MenuList _dark={{ bg: Colors.DASHBOARDTHEME }}>
                     {productCategories.map((singleProdCategory, index) => (
                       <Box key={index} py={2}>
                         <NavLink
@@ -177,7 +187,16 @@ function Navbar() {
                             isActive ? activeLinkStyle : undefined
                           }
                         >
-                          <MenuItem>{singleProdCategory}</MenuItem>
+                          <MenuItem
+                            _dark={{
+                              bg: Colors.DASHBOARDTHEME,
+                              _hover: {
+                                bg: "#333333",
+                              },
+                            }}
+                          >
+                            {singleProdCategory}
+                          </MenuItem>
                         </NavLink>
                       </Box>
                     ))}
@@ -245,8 +264,30 @@ function Navbar() {
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Menu</DrawerHeader>
-            <DrawerBody>
+            <DrawerHeader
+              bg={
+                colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME
+              }
+            >
+              <NavLink to={UnAuthenticatedRoutesNames.HOME}>
+                <Flex px={2}>
+                  <Icon as={APP_ICONS.BUILDINGS} fontSize={28} />
+                  <Text
+                    mt={1}
+                    ml={2}
+                    fontSize={{ base: 15, md: 20 }}
+                    fontWeight="bold"
+                  >
+                    HomeStyler
+                  </Text>
+                </Flex>
+              </NavLink>
+            </DrawerHeader>
+            <DrawerBody
+              bg={
+                colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME
+              }
+            >
               <Stack as="nav" spacing={4}>
                 <NavLink to={UnAuthenticatedRoutesNames.HOME} onClick={onClose}>
                   Home
