@@ -163,7 +163,7 @@ function SignIn() {
           md: "60%",
         }}
         // bg={Colors.THEME}
-        bgGradient="linear(to-b, #734d26,#996633)"
+        bgGradient="linear(to-b, gray.400,gray.100)"
         display={{
           base: "none",
           md: "inline-flex",

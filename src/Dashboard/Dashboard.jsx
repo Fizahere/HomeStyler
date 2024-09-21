@@ -7,7 +7,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const Dashboard = () => {
   const data = {
-    labels: ['Users', 'Products', 'Designers'],
+    labels: ['Designers', 'Products'],
     datasets: [
       {
         label: 'count',
