@@ -4,6 +4,7 @@ import { Colors } from "../constants/colors";
 import about1 from '../assets/images/about1.jpg'
 import about2 from "../assets/images/about2.avif";
 import aboutMain from "../assets/images/aboutMain.jpg";
+import aboutBannerImage from '../assets/images/aboutPageBanner.webp';
 
 function About() {
   return (
@@ -60,6 +61,7 @@ function About() {
             </Text>
           </Box>
         </Box>
+
         <Box
           textAlign={"center"}
           display={"flex"}
@@ -94,9 +96,10 @@ function About() {
           </Text>
         </Box>
 
-        {/* <Box display={"flex"} justifyContent={"center"}>
-          {/* <Image src={about} alt="about image" width={"100%"} /> */}
-        {/* </Box> */}
+        <Box display={"flex"} justifyContent={"center"} mb={10}
+        >
+          <Image src={aboutBannerImage} alt="about image" width={"100%"} />
+        </Box>
 
         <Box
           display={"flex"}
