@@ -154,8 +154,8 @@ const Contact = () => {
               <Button
                 type="submit"
                 width={"100%"}
-                bgGradient="linear(to-r, gray.800, gray.100, gray.800)"
-                color={Colors.BLACK}
+                bg={Colors.THEME}
+                color={Colors.WHITE}
                 _hover={{ bg: Colors.THEMEBUTTON }}
               >
                 Send

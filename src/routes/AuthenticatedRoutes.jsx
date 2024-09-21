@@ -20,7 +20,7 @@ function AuthenticatedRoutes() {
         />
         <Route path={AuthenticatedRouteNames.SETTING} element={<Setting />} />
         <Route path={AuthenticatedRouteNames.USERS} element={<Users />} />
-        <Route path={AuthenticatedRouteNames.PRODUCTS} element={<ProductsListing />} />
+        <Route path={AuthenticatedRouteNames.DESIGNS} element={<ProductsListing />} />
         <Route path={AuthenticatedRouteNames.SEARCH} element={<CustomSearch />}   />
       </Route>
       <Route path={AuthenticatedRouteNames.LOGOUT} element={<SignOut />}   />

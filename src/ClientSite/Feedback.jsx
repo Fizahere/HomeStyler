@@ -146,9 +146,9 @@ const Feedback = () => {
                 </Text>
               )}
               <Button
-              mt={1}
-                bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
-                color={Colors.BLACK}
+                mt={4}
+                bg={Colors.THEME}
+                color={Colors.WHITE}
                 mb={6}
                 _hover={{ bg: Colors.THEMEBUTTON }}
                 width={"100%"}

@@ -5,6 +5,7 @@ export const AuthenticatedRouteNames = {
     SETTING: '/admin/settings',
     USERS: '/admin/users',
     PRODUCTS: '/admin/shows/products-of-category/:category/:subcategory',
+    DESIGNS: '/admin/shows/designs-of-category/:category',
     SEARCH: '/admin/shows/search-page/:pageno',
     LOGOUT: '/logout',
 }

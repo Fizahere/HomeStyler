@@ -11,20 +11,10 @@ import data from '../data/designers-data.json'
 function Users() {
   const designers = data.homeStyler.designers;
 
-  // const showDataMemo = [
-  //   {
-  //     id: 1,
-  //     name: "Fiza",
-  //     country: "USA",
-  //     image_thumbnail_path: testImage,
-  //     status: "active",
-  //     network: "scsc",
-  //   },
-  // ];
   return (
     <>
       <Flex justify={"space-between"}>
-        <Heading size={"lg"}>Users</Heading>
+        <Heading size={"lg"}>Designers</Heading>
         <CustomButton
         width={'150px'}
           onClickHandler={()=>{}}

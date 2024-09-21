@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 import {
   ChakraProvider,
   Tab,
@@ -52,6 +52,7 @@ const TabbedSections = ({
         <Tabs
           variant="enclosed"
           overflow={"auto"}
+          colorScheme="White" 
           onChange={(index) => {
             const categories = [
               "All",

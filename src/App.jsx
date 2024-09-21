@@ -5,8 +5,20 @@ import { BrowserRouter } from "react-router-dom";
 import UnAuthenticatedRoutes from "./routes/UnAuthenticatedRoutes";
 
 const theme = extendTheme({
-  components: {},
-});
+  colors: {
+    cafeAuLait: {
+      50: "#f6eae1",
+      100: "#ead1b8",
+      200: "#ddb88e",
+      300: "#d09e65",
+      400: "#c4853c",
+      500: "#996633", 
+      600: "#7a5229",
+      700: "#5c3e1f",
+      800: "#3d2914",
+      900: "#1f150a",
+    },
+  },});
 
 function App() {
   const [user, setUser] = useState(() => {

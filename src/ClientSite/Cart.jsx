@@ -43,11 +43,11 @@ const Cart = ({ disclosure }) => {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent _dark={{ bg: Colors.DARKTHEME }}>
+        <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Cart</DrawerHeader>
+          <DrawerHeader bg={"inherit"}>Cart</DrawerHeader>
 
-          <DrawerBody>
+          <DrawerBody bg={"inherit"}>
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <Card
@@ -56,6 +56,7 @@ const Cart = ({ disclosure }) => {
                     "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
                   }
                   _dark={{ bg: Colors.DARKTHEME }}
+                  border={"1px solid grey"}
                   mb={4}
                 >
                   <CardBody>
@@ -95,12 +96,12 @@ const Cart = ({ disclosure }) => {
             )}
           </DrawerBody>
 
-          <DrawerFooter>
+          <DrawerFooter bg={"inherit"}>
             <Button
               width={"100%"}
-              bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
               color={Colors.WHITE}
-              _hover={{bg:'linear(to-r, gray.800, gray.100,gray.800)'}}
+              bg={Colors.THEME}
+              _hover={{ bg: Colors.THEME }}
               onClick={() => {
                 localStorage.removeItem("cart");
                 location.assign(UnAuthenticatedRoutesNames.HOME);

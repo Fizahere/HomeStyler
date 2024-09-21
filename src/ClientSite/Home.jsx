@@ -6,7 +6,6 @@ import {
   Image,
   Button,
   Text,
-  useColorMode,
   Icon,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -16,6 +15,7 @@ import mainimage from "../assets/images/mainimage.png";
 import Services from "./Services";
 import Gallery from "./Gallery";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
+import Sitemap from './Sitemap'
 
 const Home = () => {
   const categories = [
@@ -55,11 +55,11 @@ const Home = () => {
             </Text>
             <Flex flexDirection={{ base: "row", sm: "column", md: "row" }}>
               <Button
-                bg={Colors.BLACK}
+                bg={Colors.THEME}
                 color={Colors.WHITE}
                 _dark={{
-                  bg: Colors.WHITE,
-                  color: Colors.BLACK,
+                  bg: Colors.THEME,
+                  color: Colors.WHITE,
                 }}
                 width={"150px"}
                 borderRadius={"40px"}
@@ -109,7 +109,14 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP.replace(':category',value))}
+                  onClick={() =>
+                    navigate(
+                      UnAuthenticatedRoutesNames.SHOP.replace(
+                        ":category",
+                        value
+                      )
+                    )
+                  }
                 >
                   {value}
                 </Button>
@@ -119,6 +126,7 @@ const Home = () => {
         </Flex>
         <Gallery />
         <Services />
+        <Sitemap/>
       </Box>
     </>
   );

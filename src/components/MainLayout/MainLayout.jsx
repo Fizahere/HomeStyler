@@ -21,7 +21,8 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import { AuthenticatedRouteNames } from "../../utilities/util.constant";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
-import productsData from "../../data/products-data.json";
+// import productsData from "../../data/products-data.json";
+import DesignsData from '../../data/designs-data.json';
 
 function MainLayout() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -42,9 +43,9 @@ function MainLayout() {
     }
   }, []);
 
-  const handleSubCategoryToggle = (index) => {
-    setOpenSubCat(openSubCat === index ? null : index);
-  };
+  // const handleSubCategoryToggle = (index) => {
+  //   setOpenSubCat(openSubCat === index ? null : index);
+  // };
 
   const categories = [
     "Living Room",
@@ -53,12 +54,14 @@ function MainLayout() {
     "Bedroom",
     "Bathroom",
   ];
+  // const filteredProducts =  DesignsData?.designs?.category;
+  // console.log(filteredProducts,'filteredProducts')
 
-  const subCategories = ["Cozy", "Elegant", "Classic", "Minimalist"];
+  // const subCategories = ["Cozy", "Elegant", "Classic", "Minimalist"];
 
-  const categoriedData = productsData.homeStyler.map((designs) =>
-    console.log(designs.designs)
-  );
+  // const categoriedData = productsData.homeStyler.map((designs) =>
+  //   console.log(designs.designs)
+  // );
   const NavItem = (props) => {
     const { icon, children, ...rest } = props;
     return (
@@ -183,7 +186,7 @@ function MainLayout() {
               mr={"6px"}
               as={APP_ICONS.USERS}
             />
-            Users
+            Designers
           </NavItem>
         </Link>
 
@@ -203,17 +206,27 @@ function MainLayout() {
         <Collapse in={integrations.isOpen}>
           {categories.map((singleCategory, index) => (
             <Box key={index}>
-              <NavItem onClick={() => handleSubCategoryToggle(index)}>
+              <NavItem
+               onClick={() =>
+                navigate(
+                  AuthenticatedRouteNames?.DESIGNS.replace(
+                    ":category",
+                    `${singleCategory}`
+                  ).toLocaleLowerCase()
+                )
+              }
+              // onClick={() => handleSubCategoryToggle(index)}
+              >
                 {singleCategory}
-                <Icon
+                {/* <Icon
                   as={APP_ICONS.TOGGLE}
                   ml="auto"
-                  transform={
-                    openSubCat === index ? "rotate(180deg)" : "rotate(0deg)"
-                  }
-                />
+                  // transform={
+                  //   openSubCat === index ? "rotate(180deg)" : "rotate(0deg)"
+                  // }
+                /> */}
               </NavItem>
-              <Collapse in={openSubCat === index}>
+              {/* <Collapse in={openSubCat === index}>
                 {subCategories.map((singleSubCategory, subIndex) => (
                   <Box key={`${index}-${subIndex}`}>
                     <NavItem
@@ -230,7 +243,7 @@ function MainLayout() {
                     </NavItem>
                   </Box>
                 ))}
-              </Collapse>
+              </Collapse> */}
             </Box>
           ))}
         </Collapse>

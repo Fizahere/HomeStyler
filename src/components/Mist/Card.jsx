@@ -160,8 +160,8 @@ function CustomCard({ singleProduct, isLoading }) {
           </Flex>
           <Button
             mt={{ base: "1", md: "0" }}
-            bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
-            color={Colors.BLACK}
+            bg={Colors.THEME}
+            color={Colors.WHITE}
             fontWeight={"bold"}
             _hover={{ color: "" }}
             fontSize={{ base: "14px", md: "1xl" }}

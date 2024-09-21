@@ -1,8 +1,8 @@
 export const Colors = {
-  THEME: "gray.800",
+  THEME:'#996633',
   BODYLIGHT: "gray.100",
-  DASHBOARDTHEME: "#1C1C1C",
-  BUTTON: "#ff4d4d",
+  DASHBOARDTHEME: "#1a1a1a",
+  BUTTON: "#232a35",
   PRIMARY: "#47d147",
   BLACK: "black",
   WHITE: "white",

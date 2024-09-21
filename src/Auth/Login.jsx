@@ -57,6 +57,10 @@ function SignIn() {
       height="100vh"
       alignItems="stretch"
       color={Colors.font}
+      bg={Colors.BODYLIGHT}
+      _dark={{
+        bg:Colors.DASHBOARDTHEME
+      }}
     >
       <Box
         width={{
@@ -116,9 +120,9 @@ function SignIn() {
               </Text>
               <Box>
                 <Button
-                  bgGradient="linear(to-r, gray.800, gray.100,gray.800)"
-                  color={Colors.BLACK}
-                  _hover={{ bg: Colors.THEMEBUTTON }}
+                  color={Colors.WHITE}
+                  bg={Colors.THEME}
+                  _hover={{ bg: Colors.THEME }}
                   w={270}
                   p={3}
                   borderRadius={8}
@@ -134,7 +138,10 @@ function SignIn() {
                   p={2}
                   borderRadius={18}
                   fontSize={"0.8rem"}
-                  bg={Colors.BODYLIGHT}
+                  color={Colors.BLACK}
+                  _hover={{bg:Colors.BODYLIGHT}}
+                  bg={Colors.WHITE}
+                  
                 >
                   <Flex justifyContent={"center"} textAlign={"center"}>
                     <Icon
@@ -155,7 +162,8 @@ function SignIn() {
           base: "0%",
           md: "60%",
         }}
-        bgGradient="linear(to-b, gray.800, gray.100)"
+        // bg={Colors.THEME}
+        bgGradient="linear(to-b, #734d26,#996633)"
         display={{
           base: "none",
           md: "inline-flex",
