@@ -46,7 +46,7 @@ function Navbar() {
     ProductSelection.productSelection.filters.categories;
 
   const activeLinkStyle = {
-    borderBottom: "2px solid #996633",
+    borderBottom: "2px solid ",
   };
 
   return (
