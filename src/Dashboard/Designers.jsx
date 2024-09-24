@@ -22,12 +22,12 @@ function Designers() {
     <>
       <Flex justify={"space-between"}>
         <Heading size={"lg"}>Users</Heading>
-        <CustomButton
+        {/* <CustomButton
           onClickHandler={()=>{}}
           buttonText={"Add User"}
           icon={APP_ICONS.ADD}
           backgroundColor={Colors.DASHBOARDTHEME}
-        />
+        /> */}
       </Flex>
       <Box py={"2rem"}>
         <CustomTable showDataMemo={showDataMemo} />

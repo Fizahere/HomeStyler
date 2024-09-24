@@ -24,7 +24,7 @@ function CustomTable(props) {
             <Th>Name</Th>
             <Th>Contact</Th>
             <Th>Image</Th>
-            <Th>Delete</Th>
+            {/* <Th>Delete</Th> */}
           </Tr>
         </Thead>
         <Tbody>
@@ -40,7 +40,7 @@ function CustomTable(props) {
               <Td>
                 <Image h={150} width={200} src={designersImages[singleDesigner?.profileImage]}/>
               </Td>
-              <Td>
+              {/* <Td>
                 <CustomButton
                   onClickHandler={() => {}}
                   title={"Delete"}
@@ -48,7 +48,7 @@ function CustomTable(props) {
                   color={Colors.WHITE}
                   bg={Colors.RED}
                 />
-              </Td>
+              </Td> */}
             </Tr>
           ))}
         </Tbody>

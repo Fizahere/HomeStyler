@@ -3,7 +3,7 @@ export const AuthenticatedRouteNames = {
     Dashboard: '/',
     QUOTE: '/admin/qoutes',
     SETTING: '/admin/settings',
-    USERS: '/admin/users',
+    USERS: '/admin/designers',
     PRODUCTS: '/admin/shows/products-of-category/:category/:subcategory',
     DESIGNS: '/admin/shows/designs-of-category/:category',
     SEARCH: '/admin/shows/search-page/:pageno',

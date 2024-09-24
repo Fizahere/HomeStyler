@@ -15,13 +15,13 @@ function Users() {
     <>
       <Flex justify={"space-between"}>
         <Heading size={"lg"}>Designers</Heading>
-        <CustomButton
+        {/* <CustomButton
         width={'150px'}
           onClickHandler={()=>{}}
           title={"Add User"}
           icon={APP_ICONS.ADD}
           backgroundColor={Colors.DASHBOARDTHEME}
-        />
+        /> */}
       </Flex>
       <Box py={"2rem"}>
         <CustomTable designerData={designers} />

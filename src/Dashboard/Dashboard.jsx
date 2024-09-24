@@ -7,11 +7,11 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const Dashboard = () => {
   const data = {
-    labels: ['Designers', 'Products'],
+    labels: ['Designers', 'Living Room','Office','Kitchen','Bedroom','Bathroom'],
     datasets: [
       {
         label: 'count',
-        data: [12, 19, 15],
+        data: [12, 10, 15,8,6,8],
         backgroundColor: (context) => {
           const chart = context.chart;
           const { ctx, chartArea } = chart;
