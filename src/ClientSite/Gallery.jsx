@@ -1,41 +1,50 @@
 import React from 'react';
 import { SimpleGrid, Text, Box } from '@chakra-ui/react';
 import GalleryCard from '../components/Mist/GalleryCard';
+import Gallery1 from '../assets/images/gallery1.jpg';
+import Gallery2 from '../assets/images/gallery2.jpg';
+import Gallery3 from '../assets/images/gallery3.jpg';
+import Gallery4 from '../assets/images/gallery4.jpg';
+import Gallery5 from '../assets/images/gallery5.jpg';
+import Gallery6 from '../assets/images/gallery6.jpg';
+import Gallery7 from '../assets/images/gallery7.jpg';
+import Gallery8 from '../assets/images/gallery8.jpg';
+
 
 function Gallery() {
     const designs = [
         {
             name: 'Elegant Kitchen Design',
-            image: 'https://www.janelockhart.com/portfolio/images/cottage-core-chic-04.jpg',
+            image: Gallery1,
             height: '250px',
         },
         {
             name: 'Cozy Living Room Design',
-            image: 'https://www.decorilla.com/online-decorating/wp-content/uploads/2022/11/Luxury-interior-design-home-designing-1-scaled.jpeg',
+            image: Gallery2,
         },
         {
             name: 'Cozy Office Space',
-            image: 'https://stealtho.store/wp-content/uploads/2022/07/cozy-working-space-1024x635.webp',
+            image: Gallery3,
         },
         {
             name: 'Cozy Living Room Retreat',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5BVSq53xZ8PNmsMr_9l3hg8qcU4_Jz6Z2vg&s',
+            image: Gallery4,
         },
         {
             name: 'Elegant Glam Bedroom',
-            image: 'https://cdn.shopify.com/s/files/1/0224/3549/6013/files/cozy_glam_bedroom_decor_ideas_1024x1024.jpg?v=1668468867',
+            image: Gallery5,
         },
         {
             name: 'Modern Kitchen Delight',
-            image: 'https://img.freepik.com/premium-photo/elegant-culinary-haven-modern-kitchen-delight_901408-2801.jpg',
+            image: Gallery6,
         },
         {
             name: 'Rustic Farmhouse Kitchen',
-            image: 'https://hips.hearstapps.com/hmg-prod/images/farmhouse-kitchen-green-paint-color-659eebb855988.jpg?crop=0.667xw:0.881xh;0.151xw,0.0531xh&resize=1120:*',
+            image: Gallery7,
         },
         {
             name: 'Industrial Loft Living Room',
-            image: 'https://dropinblog.net/34246798/files/featured/Industrial_Loft_Design-main_image.jpg',
+            image: Gallery8,
         },
     ];
 
