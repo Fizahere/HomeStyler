@@ -355,7 +355,7 @@ function MainLayout() {
               );
             }}
           >
-            <InputGroup
+            {/* <InputGroup
               w="96"
               display={{
                 base: "none",
@@ -372,7 +372,7 @@ function MainLayout() {
               <InputLeftElement color="inherit">
                 <APP_ICONS.SEARCH color={Colors.WHITE} />
               </InputLeftElement>
-            </InputGroup>
+            </InputGroup> */}
           </form>
 
           <Flex align="center">
