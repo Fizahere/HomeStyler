@@ -129,7 +129,7 @@ function CustomCard({ singleProduct, isLoading }) {
           mr={3}
         />
         <Stack mt="6" spacing={{ base: "1", md: "3" }}>
-          <Text fontSize={"18px"} fontWeight={"bold"}>
+          <Text fontSize={"18px"} fontWeight={"bold"} h={50}>
             {singleProduct.name}
           </Text>
           <Flex justifyContent={"space-between"}>

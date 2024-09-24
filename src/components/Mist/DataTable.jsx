@@ -16,7 +16,7 @@ import { designImagesMap } from "../../constants/images";
 function CustomDataTable(props) {
   const { showDataMemo: showDataMemoMap } = props;
   // console.log(showDataMemoMap,'map');
-  const {image:productImage} = showDataMemoMap;
+  // const {image:productImage} = showDataMemoMap;
   // console.log(productImage,'image');
   // const imageUrl = designImagesMap[imageUrl]
   return (
@@ -37,7 +37,7 @@ function CustomDataTable(props) {
         <Tbody>
           {showDataMemoMap.map((singleShow, index) => (
             <Tr key={index}>
-              <Td>{singleShow.productId}</Td>
+              <Td>{singleShow?.id}</Td>
               <Td>{singleShow.name}</Td>
               {/* <Td>{singleShow.category}</Td> */}
               <Td>
