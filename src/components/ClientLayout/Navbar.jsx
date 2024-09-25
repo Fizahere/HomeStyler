@@ -234,7 +234,13 @@ function Navbar() {
               </Text>
             </NavLink>
             <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
-              <Icon mt={2} mx={2} as={APP_ICONS.WISHLIST} fontSize={22} color={Colors.RED} />
+              <Icon
+                mt={2}
+                mx={2}
+                as={APP_ICONS.WISHLIST}
+                fontSize={22}
+                color={Colors.RED}
+              />
             </NavLink>
             <Divider
               orientation="vertical"
@@ -336,6 +342,7 @@ function Navbar() {
                           {categories.map((singleCategory, index) => (
                             <Box key={index} py={2}>
                               <NavLink
+                                onClick={onClose}
                                 to={UnAuthenticatedRoutesNames.SHOP.replace(
                                   ":category",
                                   singleCategory
@@ -393,6 +400,7 @@ function Navbar() {
                             (singleProdCategory, index) => (
                               <Box key={index} py={2}>
                                 <NavLink
+                                  onClick={onClose}
                                   to={UnAuthenticatedRoutesNames.PRODUCTS.replace(
                                     ":prodCategory",
                                     singleProdCategory

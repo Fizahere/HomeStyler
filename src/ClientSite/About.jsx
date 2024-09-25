@@ -34,17 +34,18 @@ function About() {
 
           <Box
             position="absolute"
-            top="50%"
+            top="40%"
             left="50%"
             transform="translate(-50%, -40%)"
             fontWeight={"800"}
             color="white"
-            p={2}
+            p={{base:0,md:2}}
             textAlign="center"
+            width={{base:'250px',md:'auto'}}
           >
             <Text
               fontSize={{
-                base: "18px",
+                base: "16px",
                 md: "30px",
               }}
               fontWeight={"900"}
