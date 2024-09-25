@@ -113,6 +113,8 @@ function CustomCard({ singleProduct, isLoading }) {
       }
       _dark={{ bg: "transparent" }}
       maxW={{ base: "xs", md: "xs" }}
+      onClick={handleButtonClick}
+      cursor={'pointer'}
     >
       <CardBody>
         <Image
@@ -165,7 +167,7 @@ function CustomCard({ singleProduct, isLoading }) {
             fontWeight={"bold"}
             _hover={{ color: "" }}
             fontSize={{ base: "14px", md: "1xl" }}
-            onClick={handleButtonClick}
+            // onClick={handleButtonClick}
           >
             Show more
           </Button>

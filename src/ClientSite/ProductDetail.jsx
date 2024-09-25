@@ -124,7 +124,7 @@ function ProductDetail() {
               alt={name}
               borderRadius="md"
               width={"800px"}
-              height={{ md: "auto", base: "auto" }}
+              height={{ md: "550", base: "300" }}
               mt={"14px"}
             />
           </Box>
