@@ -41,7 +41,8 @@ function CustomCard({ singleProduct, isLoading }) {
     }
   }, [singleProduct]);
 
-  const toggleWishlist = () => {
+  const toggleWishlist = (e) => {
+    e.stopPropagation();
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
     if (isFav) {
