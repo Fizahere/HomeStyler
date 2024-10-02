@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Text,
   Box,
+  Center,
 } from "@chakra-ui/react";
 import designsData from "../../data/designs-data.json";
 import CustomCard from "./Card";
@@ -81,6 +82,7 @@ const TabbedSections = ({
       </Flex>
 
       <Box p={4}>
+        <Center>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((singleItem, index) => (
@@ -90,6 +92,7 @@ const TabbedSections = ({
             <Text>No products available</Text>
           )}
         </SimpleGrid>
+        </Center>
       </Box>
     </ChakraProvider>
   );

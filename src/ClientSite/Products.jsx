@@ -19,6 +19,7 @@ import {
   Text,
   SimpleGrid,
   ChakraProvider,
+  Center,
 } from "@chakra-ui/react";
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../constants/colors";
@@ -179,6 +180,7 @@ const TabbedSections = ({ prodCategoryName, searchQuery, selectedItem }) => {
   const renderContent = () => {
     if (subcategories.includes(selectedSubCategory)) {
       return (
+        <Center>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
           {filteredProducts.length > 0 ? (
             filteredProducts.map((singleItem, index) => (
@@ -188,6 +190,7 @@ const TabbedSections = ({ prodCategoryName, searchQuery, selectedItem }) => {
             <Text>No products available</Text>
           )}
         </SimpleGrid>
+        </Center>
       );
     } else {
       return <Text>No products available</Text>;
