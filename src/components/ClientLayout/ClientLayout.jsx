@@ -1,9 +1,9 @@
-import React from 'react'
-import Navbar from './Navbar'
-import { Outlet } from 'react-router-dom'
-import { Box } from '@chakra-ui/react'
-import { Colors } from '../../constants/colors'
-import Footer from './Footer'
+import React from "react";
+import Navbar from "./Navbar";
+import { Outlet } from "react-router-dom";
+import { Box } from "@chakra-ui/react";
+import { Colors } from "../../constants/colors";
+import Footer from "./Footer";
 
 function ClientLayout() {
   return (
@@ -11,17 +11,19 @@ function ClientLayout() {
       <Box
         bg={Colors.BODYLIGHT}
         _dark={{
-          bg: Colors.DASHBOARDTHEME
+          bg: Colors.DASHBOARDTHEME,
         }}
       >
         <Navbar />
-        <Box p={4}>
-        <Outlet />
+        <Box p={4} 
+        minH="100vh"
+        >
+          <Outlet />
         </Box>
-        <Footer/>
+        <Footer />
       </Box>
     </>
-  )
+  );
 }
 
-export default ClientLayout
+export default ClientLayout;

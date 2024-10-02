@@ -89,7 +89,7 @@ const TabbedSections = ({
               <CustomCard key={index} singleProduct={singleItem} />
             ))
           ) : (
-            <Text>No products available</Text>
+            <Text textAlign={'left'}>No products available</Text>
           )}
         </SimpleGrid>
         </Center>
