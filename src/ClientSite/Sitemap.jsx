@@ -14,87 +14,87 @@ const Sitemap = () => {
         </Heading>
         <Flex py={"10"} flexDirection={"column"}>
           <Box display={"flex"} mb={2}>
-            <Text fontSize={"14px"} fontWeight={"bold"}>
+            <Text fontSize={{base:13,md:14,lg:16}} fontWeight={"bold"}>
               <Icon
                 mr={1}
                 color={"#33ccff"}
-                fontSize={15}
+                fontSize={{base:13,md:15,lg:17}}
                 as={APP_ICONS.HOME}
               />
               Home:
             </Text>
             <Link to={UnAuthenticatedRoutesNames.HOME}>
-              <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
+              <Text fontSize={{base:13,md:14,lg:16}} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/
               </Text>
             </Link>
           </Box>
 
           <Box display={"flex"} mb={2}>
-            <Text display={"flex"} fontSize={"14px"} fontWeight={"bold"}>
+            <Text display={"flex"} fontSize={{base:13,md:14,lg:16}} fontWeight={"bold"}>
               <Icon
                 mr={1}
                 color={"orange"}
-                fontSize={15}
+                fontSize={{base:13,md:15,lg:17}}
                 as={APP_ICONS.ABOUT}
               />
               About:
             </Text>
             <Link to={UnAuthenticatedRoutesNames.ABOUT}>
-              <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
+              <Text fontSize={{base:13,md:14,lg:16}} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/about
               </Text>
             </Link>
           </Box>
           <Box display={"flex"} mb={2}>
-            <Text display={"flex"} fontSize={"14px"} fontWeight={"bold"}>
+            <Text display={"flex"} fontSize={{base:13,md:14,lg:16}} fontWeight={"bold"}>
               <Icon
                 mr={1}
                 mt={1}
                 color={"#00cc7a"}
-                fontSize={15}
+                fontSize={{base:13,md:15,lg:17}}
                 as={APP_ICONS.PHONE}
               />
               Contact:
             </Text>
             <Link to={UnAuthenticatedRoutesNames.CONTACT}>
-              <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
+              <Text fontSize={{base:13,md:14,lg:16}} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/contact-us
               </Text>
             </Link>
           </Box>
 
           <Box display={"flex"} mb={2}>
-            <Text display={"flex"} fontSize={"14px"} fontWeight={"bold"}>
+            <Text display={"flex"} fontSize={{base:13,md:14,lg:16}} fontWeight={"bold"}>
               <Icon
                 mr={1}
                 mt={1}
                 color={"#9966ff"}
-                fontSize={15}
+                fontSize={{base:13,md:15,lg:17}}
                 as={APP_ICONS.FEEDBACK}
               />
               Feedback:
             </Text>
             <Link to={UnAuthenticatedRoutesNames.FEEDBACK}>
-              <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
+              <Text fontSize={{base:13,md:14,lg:16}} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/feedback
               </Text>
             </Link>
           </Box>
 
           <Box display={"flex"} mb={2}>
-            <Text display={"flex"} fontSize={"14px"} fontWeight={"bold"}>
+            <Text display={"flex"} fontSize={{base:13,md:14,lg:16}} fontWeight={"bold"}>
               <Icon
                 mr={1}
                 mt={1}
                 color={"#ff80bf"}
-                fontSize={15}
+                fontSize={{base:13,md:15,lg:17}}
                 as={APP_ICONS.LOGIN}
               />
               Login:
             </Text>
             <Link to={UnAuthenticatedRoutesNames.LOGIN}>
-              <Text fontSize={14} color={Colors.PRIMARYBLUE} ml={2}>
+              <Text fontSize={{base:13,md:14,lg:16}} color={Colors.PRIMARYBLUE} ml={2}>
                 https://home-styler.vercel.app/home-styler/login
               </Text>
             </Link>

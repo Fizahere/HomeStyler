@@ -73,52 +73,60 @@ const Shop = () => {
             </InputGroup>
 
             <Box ml={4} mt={{ base: 2, md: 0 }}>
-              <Menu isOpen={dropdown.isOpen}>
-                <MenuButton
-                  as={Button}
-                  onClick={dropdown.onToggle}
-                  _dark={{ bg: Colors.DARKTHEME }}
-                  border={"1px solid #e2e8f0"}
-                >
-                  <Flex>
-                    <Text
-                      color={Colors.GREY}
-                      fontWeight={"400"}
-                      fontSize={"15px"}
-                      mt={0.5}
-                    >
-                      {selectedItem}
-                    </Text>
-                    <Icon
-                      as={APP_ICONS.TOGGLE}
-                      transform={
-                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
-                      }
-                      transition="transform 0.3s ease"
-                      ml={2}
-                      fontSize={"20px"}
-                    />
-                  </Flex>
-                </MenuButton>
-                <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
-                <MenuList  border={'1px solid grey'} py={0} _dark={{ bg: Colors.DARKTHEME }}>
-                  {items.map((item) => (
-                    <MenuItem
-                    _dark={{
-                      bg: Colors.DASHBOARDTHEME,
-                      _hover: {
-                        bg: "#333333",
-                      },
-                    }}
-                      key={item}
-                      onClick={() => handleSortSelection(item)}
-                    >
-                      {item}
-                    </MenuItem>
-                  ))}
-                </MenuList>
-                </Box>
-              </Menu>
+            <Menu isOpen={dropdown.isOpen}>
+  <MenuButton
+    as={Button}
+    onClick={dropdown.onToggle}
+    _dark={{ bg: Colors.DARKTHEME }}
+    border={"1px solid #e2e8f0"}
+  >
+    <Flex>
+      <Text
+        color={Colors.GREY}
+        fontWeight={"400"}
+        fontSize={"15px"}
+        mt={0.5}
+      >
+        {selectedItem}
+      </Text>
+      <Icon
+        as={APP_ICONS.TOGGLE}
+        transform={
+          dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+        }
+        transition="transform 0.3s ease"
+        ml={2}
+        fontSize={"20px"}
+      />
+    </Flex>
+  </MenuButton>
+  <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
+    <MenuList
+      border={"1px solid grey"}
+      py={0}
+      _dark={{ bg: Colors.DARKTHEME }}
+    >
+      {items.map((item) => (
+        <MenuItem
+          _dark={{
+            bg: Colors.DASHBOARDTHEME,
+            _hover: {
+              bg: "#333333",
+            },
+          }}
+          key={item}
+          onClick={() => {
+            dropdown.onClose(); // Call the onClose function here
+            handleSortSelection(item);
+          }}
+        >
+          {item}
+        </MenuItem>
+      ))}
+    </MenuList>
+  </Box>
+</Menu>
+
             </Box>
           </Flex>
         </Flex>
