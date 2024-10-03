@@ -92,7 +92,7 @@ const Feedback = () => {
           >
             How Are You Feeling?
           </Text>
-          <Text mt={2} color={Colors.TEXTGREY} textAlign={"center"} w={"400px"}>
+          <Text mt={2} color={Colors.TEXTGREY} textAlign={"center"} w={{base:"300px",md:"400px"}}>
             Your input is valuable in helping us better understand your needs
             and tailor our service accordingly.
           </Text>
@@ -103,10 +103,10 @@ const Feedback = () => {
               max={5}
               step={1}
               onChange={(val) => setSliderValue(val)}
-              colorScheme="teal"
+              colorScheme="#4b5669"
             >
               <SliderTrack bg="gray.200">
-                <SliderFilledTrack bg="teal.400" />
+                <SliderFilledTrack bg="#4b5669" />
               </SliderTrack>
               <SliderThumb boxSize={10}>
                 <Box

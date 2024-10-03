@@ -24,7 +24,7 @@ function Services() {
                 fontWeight: "bold",
                 display: "inline-block",
               }}
-              repeat={1}
+              repeat={Infinity}
             />
           </Box>
           <Box width={{ base: "100%", lg: "40%" }}>
