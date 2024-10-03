@@ -104,6 +104,13 @@ const Home = () => {
               <Flex mt={{ base: 4, lg: 0 }} flexWrap="wrap">
                 {Object.entries(categories).map(([key, value], index) => (
                   <Button
+                  _hover={
+                    {
+                      fontSize:{ base: "10px", md: "12px" },
+                      color:Colors.THEME, 
+                       border:"1px solid gray.600"
+                      }
+                  }
                     key={index}
                     flex={{ sm: "calc(20% - 14px)", md: "calc(25% - 18px)" }}
                     margin={2}

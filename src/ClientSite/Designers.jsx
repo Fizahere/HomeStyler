@@ -16,6 +16,7 @@ import {
   Flex,
   Box,
   Icon,
+  Center,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import data from "../data/designers-data.json";
@@ -34,54 +35,54 @@ function Designers() {
 
   return (
     <>
-      <Heading fontSize={30} my={8}>
+      <Heading borderBottom={"1px solid grey"} fontSize={30} my={8}>
         Meet Our Designers,
         <br /> Take Expert Advice for Your Interior.
       </Heading>
-
-      <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
-        {designers.map((singleData) => (
-          <Card
-            cursor={"pointer"}
-            onClick={() => handleCardClick(singleData)}
-            key={singleData.id}
-            bg={"transparent"}
-            _dark={{ bg: "transparent" }}
-            maxW={{ base: "xs", md: "xs" }}
-          >
-            <CardBody bg={"transparent"} p={0}>
-              <Image
-                src={designersImages[singleData.profileImage]}
-                alt={singleData.name}
-                borderRadius="md"
-                border={"1px solid blue"}
-                width={"100%"}
-                height={{ base: "250px", md: "250px" }}
-                objectFit="cover"
-              />
-              <Text
-                fontSize={15}
-                color={Colors.BLACK}
-                _dark={{ color: Colors.WHITE }}
-                m={2}
-                fontWeight={"500"}
-              >
-                {singleData.name}
-              </Text>
-              <Text
-                fontSize={12}
-                color={Colors.BLACK}
-                _dark={{ color: Colors.WHITE }}
-                p={2}
-                fontWeight={"500"}
-              >
-                {singleData.bio}
-              </Text>
-            </CardBody>
-          </Card>
-        ))}
-      </SimpleGrid>
-
+      <Center>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+          {designers.map((singleData) => (
+            <Card
+              cursor={"pointer"}
+              onClick={() => handleCardClick(singleData)}
+              key={singleData.id}
+              bg={"transparent"}
+              _dark={{ bg: "transparent" }}
+              maxW={{ base: "xs", md: "xs" }}
+            >
+              <CardBody bg={"transparent"} p={0}>
+                <Image
+                  src={designersImages[singleData.profileImage]}
+                  alt={singleData.name}
+                  borderRadius="md"
+                  border={"1px solid blue"}
+                  width={"100%"}
+                  height={{ base: "250px", md: "250px" }}
+                  objectFit="cover"
+                />
+                <Text
+                  fontSize={15}
+                  color={Colors.BLACK}
+                  _dark={{ color: Colors.WHITE }}
+                  m={2}
+                  fontWeight={"500"}
+                >
+                  {singleData.name}
+                </Text>
+                <Text
+                  fontSize={12}
+                  color={Colors.BLACK}
+                  _dark={{ color: Colors.WHITE }}
+                  p={2}
+                  fontWeight={"500"}
+                >
+                  {singleData.bio}
+                </Text>
+              </CardBody>
+            </Card>
+          ))}
+        </SimpleGrid>
+      </Center>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -98,7 +99,7 @@ function Designers() {
             <Text fontSize={16} my={2}>
               {selectedDesigner?.bio}
             </Text>
-            <Flex justifyContent={'space-between'}>
+            <Flex justifyContent={"space-between"}>
               <Text>
                 <b>experience:</b> {selectedDesigner?.experience}yrs
               </Text>
