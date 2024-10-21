@@ -13,7 +13,6 @@ import { IoLogOut } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import { IoMdAdd } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
-import { CiStar } from "react-icons/ci";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogIn } from "react-icons/io5";
 import { TbCategory } from "react-icons/tb";
