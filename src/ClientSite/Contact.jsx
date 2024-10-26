@@ -56,7 +56,7 @@ const Contact = () => {
         </Heading>
         <Flex  px={{base:0,md:20}} flexDirection={{ base: "column", md: "row" }}>
           <Box w={{ base: "100%", md: "50%" }}>
-            <Text mt={4} fontSize={"14"}>
+            <Text mt={4} fontSize={{lg:"14px",custom2:"20px"}} >
               We're here to help you transform your space into a masterpiece!
               Whether you have questions about our design services, or want to
               share your HomeStyler experience, we'd love to hear from you.
@@ -172,7 +172,7 @@ const Contact = () => {
           flexDirection={{ base: "column", md: "row" }}
         >
           <Box>
-            <Text fontWeight={"bold"}>
+            <Text fontWeight={"bold"} fontSize={{lg:"20px",custom2:"25px"}}>
               Customer Support{" "}
               <Icon
                 ml={4}
@@ -182,13 +182,13 @@ const Contact = () => {
                 as={APP_ICONS.SUPPORT}
               />
             </Text>
-            <Text mt={2} fontSize={"12px"} color={Colors.GREY}>
+            <Text mt={2} fontSize={{lg:"14px",custom2:"20px"}} color={Colors.GREY}>
               Need assistance with your home or have a question about our
               services? Don’t hesitate to reach out.
             </Text>
           </Box>
           <Box mt={{ base: 4, md: 0 }} px={{ base: 0, md: 10 }}>
-            <Text fontWeight={"bold"}>
+            <Text fontWeight={"bold"} fontSize={{lg:"20px",custom2:"25px"}}>
               Feedback and Suggestions{" "}
               <Icon
                 ml={4}
@@ -198,13 +198,13 @@ const Contact = () => {
                 as={APP_ICONS.FEEDBACK}
               />
             </Text>
-            <Text mt={2} fontSize={"12px"} color={Colors.GREY}>
+            <Text mt={2} fontSize={{lg:"14px",custom2:"20px"}} color={Colors.GREY}>
               At HomeStyler, Your insights help us enhance our services. you
               have feedback about your experience, we’d love to hear from you!{" "}
             </Text>
           </Box>
           <Box mt={{ base: 4, md: 0 }}>
-            <Text fontWeight={"bold"}>
+            <Text fontWeight={"bold"} fontSize={{lg:"20px",custom2:"25px"}}>
               Media Inqueries{" "}
               <Icon
                 ml={4}
@@ -214,7 +214,7 @@ const Contact = () => {
                 as={APP_ICONS.MEDIA}
               />
             </Text>
-            <Text mt={2} fontSize={"12px"} color={Colors.GREY}>
+            <Text mt={2} fontSize={{lg:"14px",custom2:"20px"}} color={Colors.GREY}>
               Are you a blogger interested in HomeStyler? We’d love to
               collaborate! Reach out, and we’ll get back to you soon.
             </Text>
