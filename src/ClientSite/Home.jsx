@@ -17,6 +17,8 @@ import Services from "./Services";
 import Gallery from "./Gallery";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import Sitemap from "./Sitemap";
+import image1 from "../assets/images/image1.png";
+import image2 from "../assets/images/image2.png";
 
 const Home = () => {
   const categories = [
@@ -78,7 +80,9 @@ const Home = () => {
                   _hover={{ bg: "transparent" }}
                   width={"150px"}
                   fontSize={{ base: "18px", sm: "12px", md: "18px" }}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames?.DESIGNERS)}
+                  onClick={() =>
+                    navigate(UnAuthenticatedRoutesNames?.DESIGNERS)
+                  }
                 >
                   Our Designers
                 </Button>
@@ -87,56 +91,40 @@ const Home = () => {
             <Image
               my={{ base: 8, md: 0 }}
               src={mainimage}
-              width={{ base: "440px", sm: "440px", md: "570px", lg: "560px" }}
-              height={{ base: "230px", sm: "250px", md: "280px", lg: "330px" }}
+              width={{ base: "430px", sm: "440px", md: "570px", lg: "560px" }}
+              height={{ base: "220px", sm: "250px", md: "280px", lg: "330px" }}
             />
           </Flex>
         </Center>
-        <Center>
-          <Flex
-            justifyContent={"space-between"}
-            flexDirection={{ base: "column", lg: "row" }}
+       
+        <Flex
+          justifyContent={"space-between"}
+          flexDirection={{ base: "column", lg: "row" }}
+        >
+          <Box
+            width={{ base: "310px", sm: "420px", md: "425px" }}
+            mb={{ base: 20, lg: 0 }}
           >
-            <Box
-              width={{ base: "310px", sm: "420px", md: "425px" }}
-              mb={{ base: 0, lg: 0 }}
-            >
-              <Flex mt={{ base: 4, lg: 0 }} flexWrap="wrap">
-                {Object.entries(categories).map(([key, value], index) => (
-                  <Button
-                  _hover={
-                    {
-                      fontSize:{ base: "10px", md: "12px" },
-                      color:Colors.THEME, 
-                       border:"1px solid gray.600"
-                      }
-                  }
-                    key={index}
-                    flex={{ sm: "calc(20% - 14px)", md: "calc(25% - 18px)" }}
-                    margin={2}
-                    width={"min-content"}
-                    height={"30px"}
-                    fontSize={{ base: "9px", md: "11px" }}
-                    border="1px solid gray"
-                    bg="transparent"
-                    color={Colors.GREY}
-                    onClick={() =>
-                      navigate(
-                        UnAuthenticatedRoutesNames.SHOP.replace(
-                          ":category",
-                          value
-                        )
-                      )
-                    }
-                  >
-                    {value}
-                  </Button>
-                ))}
-              </Flex>
-            </Box>
-            <Box width={{ base: "310px", sm: "450px", md: "755px" }}></Box>
-          </Flex>
-        </Center>
+            <Flex flexWrap="wrap">
+              {Object.entries(categories).map(([key, value], index) => (
+                <Button
+                  key={index}
+                  flex={{ sm: "calc(20% - 14px)", md: "calc(25% - 18px)" }}
+                  margin={2}
+                  width={"min-content"}
+                  height={"30px"}
+                  fontSize={{ base: "9px", md: "11px" }}
+                  border="1px solid gray"
+                  bg="transparent"
+                  color={Colors.GREY}
+                  onClick={() => navigate(`/plant-palace/${key}`)}
+                >
+                  {value}
+                </Button>
+              ))}
+            </Flex>
+          </Box>
+        </Flex>
         <Gallery />
         <Services />
         <Sitemap />

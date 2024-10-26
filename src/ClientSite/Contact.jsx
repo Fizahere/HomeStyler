@@ -54,7 +54,7 @@ const Contact = () => {
         <Heading borderBottom={"1px solid grey"} pb={2} mb={4}>
           Contact
         </Heading>
-        <Flex flexDirection={{ base: "column", md: "row" }}>
+        <Flex  px={{base:0,md:20}} flexDirection={{ base: "column", md: "row" }}>
           <Box w={{ base: "100%", md: "50%" }}>
             <Text mt={4} fontSize={"14"}>
               We're here to help you transform your space into a masterpiece!
@@ -164,6 +164,7 @@ const Contact = () => {
           </Box>
         </Flex>
         <Box
+         px={{base:0,md:20}}
           mt={"40px"}
           mb={8}
           display={"flex"}

@@ -76,10 +76,11 @@ const Feedback = () => {
   return (
     <>
       <Box mt={6}>
-        <Heading borderBottom="1px solid grey" pb={2} mb={4} fontSize={{ base: "2xl", "2xl": "4xl",custom3:"100px" }}>
+        <Heading borderBottom="1px solid grey" pb={2} mb={4} >
           Feedback
         </Heading>
         <Flex
+         px={{base:0,md:20}}
           justifyContent="center"
           alignItems="center"
           flexDirection="column"

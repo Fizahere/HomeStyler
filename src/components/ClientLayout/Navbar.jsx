@@ -62,7 +62,7 @@ function Navbar() {
         bg={colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME}
         boxShadow="sm"
       >
-        <Flex h={16} alignItems="center" justifyContent="space-between" px={1}>
+        <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
             icon={
@@ -73,7 +73,7 @@ function Navbar() {
               )
             }
             aria-label="Open Menu"
-            display={{ lg: "block", customfornav: "none" }}
+            display={{ base: "block", lg: "none" }}
             onClick={onOpen}
           />
           <NavLink to={UnAuthenticatedRoutesNames.HOME}>
@@ -230,17 +230,19 @@ function Navbar() {
           </HStack>
 
           <Flex alignItems="center">
-            <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
+            {/* <Box display={{base:'none',lg:'block'}}> */}
+            <NavLink to={UnAuthenticatedRoutesNames.LOGIN} >
               <Text fontWeight={"bold"} mr={2}>
                 Login
               </Text>
             </NavLink>
+            {/* </Box> */}
             <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
               <Icon
                 mt={2}
                 mx={2}
                 as={APP_ICONS.WISHLIST}
-                fontSize={22}
+                fontSize={{ base: 14, md: 20 }}
                 color={Colors.RED}
               />
             </NavLink>
@@ -255,30 +257,31 @@ function Navbar() {
                 position="absolute"
                 top="-5px"
                 right="-8px"
-                // bg="red"
-                border={'1px solid red'}
+                border={"1px solid red"}
                 px={1.4}
-                fontSize="13px"
+                fontSize={{ base: 8, md: 12 }}
                 color="red"
                 fontWeight="bold"
                 borderRadius="50%"
-                minWidth="20px"
-                textAlign="center"
+                w={{base:4,md:5}}
+                                textAlign="center"
               >
                 {cartCount}
               </Text>
               <IconButton
-                icon={<Icon as={APP_ICONS.CART} fontSize={22} />}
+                icon={
+                  <Icon as={APP_ICONS.CART} fontSize={{ base: 14, md: 20 }} />
+                }
                 onClick={cartDrawer.onOpen}
                 bg="transparent"
                 _hover={{
-                  bg:'transparent'
+                  bg: "transparent",
                 }}
               />
             </Box>
 
             <Divider
-            ml={3}
+              ml={3}
               orientation="vertical"
               borderColor="inherit"
               height={"20px"}
