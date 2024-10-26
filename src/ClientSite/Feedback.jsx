@@ -24,7 +24,7 @@ const Feedback = () => {
   const formHandler = (e) => {
     e.preventDefault();
     if (!message) {
-      setError("fill the fields!");
+      setError("Please fill in the fields!");
       return;
     }
     toast({
@@ -45,58 +45,64 @@ const Feedback = () => {
       icon: APP_ICONS.SAD,
       label: "Very Unhappy",
       e_color: "red",
-      fontsize: "20px",
+      fontsize: { base: "20px", "2xl": "28px" },
     },
     {
       icon: APP_ICONS.UNHAPPY,
       label: "Unhappy",
       e_color: "orange",
-      fontsize: "20px",
+      fontsize: { base: "20px", "2xl": "28px" },
     },
     {
       icon: APP_ICONS.SATISFY,
-      label: "Medium",
+      label: "Neutral",
       e_color: "#999900",
-      fontsize: "20px",
+      fontsize: { base: "20px", "2xl": "28px" },
     },
     {
       icon: APP_ICONS.HAPPY,
       label: "Happy",
       e_color: "green",
-      fontsize: "20px",
+      fontsize: { base: "20px", "2xl": "28px" },
     },
     {
       icon: APP_ICONS.GOOD,
       label: "Very Happy",
       e_color: "blue",
-      fontsize: "20px",
+      fontsize: { base: "20px", "2xl": "28px" },
     },
   ];
 
   return (
     <>
-      <Box mt={6}>
-        <Heading borderBottom={"1px solid grey"} pb={2} mb={4}>
+      <Box mt={6} bg={{custom3:'red'}}>
+        <Heading borderBottom="1px solid grey" pb={2} mb={4} fontSize={{ base: "2xl", "2xl": "4xl",custom3:"100px" }}>
           Feedback
         </Heading>
         <Flex
-          justifyContent={"center"}
-          alignItems={"center"}
-          flexDirection={"column"}
+          justifyContent="center"
+          alignItems="center"
+          flexDirection="column"
         >
           <Text
-            textAlign={"center"}
+            textAlign="center"
             letterSpacing={1}
-            fontSize={"30px"}
-            fontWeight={"bold"}
+            fontSize={{ base: "30px", "2xl": "40px" }}
+            fontWeight="bold"
           >
             How Are You Feeling?
           </Text>
-          <Text mt={2} color={Colors.TEXTGREY} textAlign={"center"} w={{base:"300px",md:"400px"}}>
+          <Text
+            mt={2}
+            color={Colors.TEXTGREY}
+            textAlign="center"
+            w={{ base: "300px", md: "400px", "2xl": "600px" }}
+            fontSize={{ base: "md", "2xl": "lg" }}
+          >
             Your input is valuable in helping us better understand your needs
             and tailor our service accordingly.
           </Text>
-          <Box textAlign="center" width="300px">
+          <Box textAlign="center" width={{ base: "300px", "2xl": "400px" }}>
             <Slider
               defaultValue={3}
               min={1}
@@ -108,7 +114,7 @@ const Feedback = () => {
               <SliderTrack bg="gray.200">
                 <SliderFilledTrack bg="#4b5669" />
               </SliderTrack>
-              <SliderThumb boxSize={10}>
+              <SliderThumb boxSize={{ base: 10, "2xl": 14 }}>
                 <Box
                   as={emojis[sliderValue - 1].icon}
                   color={emojis[sliderValue - 1].e_color}
@@ -118,30 +124,31 @@ const Feedback = () => {
             </Slider>
             <Text
               mt={4}
-              fontSize="sm"
+              fontSize={{ base: "sm", "2xl": "md" }}
               fontWeight="bold"
               bg={Colors.BLACK}
               color="white"
-              width={40}
+              width={{ base: 40, "2xl": 48 }}
               py={2}
               borderRadius="50px"
-              m={"0 auto"}
+              m="0 auto"
             >
               {emojis[sliderValue - 1].label}
             </Text>
             <form onSubmit={formHandler}>
               <Textarea
                 value={message}
-                borderRadius={"10px"}
-                h={140}
+                borderRadius="10px"
+                h={{ base: 140, "2xl": 180 }}
                 mt={5}
+                fontSize={{ base: "md", "2xl": "lg" }}
                 onChange={(e) => {
                   setMessage(e.target.value);
                 }}
                 placeholder="Add a comment..."
               />
               {error && (
-                <Text mr={7} my={1} color={"red"}>
+                <Text mr={7} my={1} color="red" fontSize={{ base: "sm", "2xl": "md" }}>
                   {error}
                 </Text>
               )}
@@ -151,7 +158,9 @@ const Feedback = () => {
                 color={Colors.WHITE}
                 mb={6}
                 _hover={{ bg: Colors.THEMEBUTTON }}
-                width={"100%"}
+                width="100%"
+                fontSize={{ base: "md", "2xl": "lg" }}
+                py={{ base: 6, "2xl": 8 }}
                 type="submit"
               >
                 Submit Now

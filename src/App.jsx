@@ -5,20 +5,31 @@ import { BrowserRouter } from "react-router-dom";
 import UnAuthenticatedRoutes from "./routes/UnAuthenticatedRoutes";
 
 const theme = extendTheme({
-  colors: {
-    cafeAuLait: {
-      50: "#f6eae1",
-      100: "#ead1b8",
-      200: "#ddb88e",
-      300: "#d09e65",
-      400: "#c4853c",
-      500: "#996633", 
-      600: "#7a5229",
-      700: "#5c3e1f",
-      800: "#3d2914",
-      900: "#1f150a",
+    colors: {
+      cafeAuLait: {
+        50: "#f6eae1",
+        100: "#ead1b8",
+        200: "#ddb88e",
+        300: "#d09e65",
+        400: "#c4853c",
+        500: "#996633", 
+        600: "#7a5229",
+        700: "#5c3e1f",
+        800: "#3d2914",
+        900: "#1f150a",
+      },
     },
-  },});
+    breakpoints: {
+      sm: "480px",
+      md: "768px",
+      lg: "992px",
+      xl: "1280px",
+      custom1: "1440px",
+      custom2: "1700px",
+      custom3:"1536px",
+      customfornav:'1050px',
+    },
+  });
 
 function App() {
   const [user, setUser] = useState(() => {

@@ -60,7 +60,7 @@ function Navbar() {
         bg={colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME}
         boxShadow="sm"
       >
-        <Flex h={16} alignItems="center" justifyContent="space-between" px={4}>
+        <Flex h={16} alignItems="center" justifyContent="space-between" px={1}>
           <IconButton
             size="md"
             icon={
@@ -71,7 +71,7 @@ function Navbar() {
               )
             }
             aria-label="Open Menu"
-            display={{ md: "block", lg: "none" }}
+            display={{ lg: "block", customfornav: "none" }}
             onClick={onOpen}
           />
           <NavLink to={UnAuthenticatedRoutesNames.HOME}>

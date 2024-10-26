@@ -14,6 +14,7 @@ import About from "../ClientSite/About";
 import Products from "../ClientSite/Products";
 import ProductDetail from "../ClientSite/ProductDetail";
 import Designers from "../ClientSite/Designers";
+import Gallery from "../ClientSite/Gallery";
 
 function UnAuthenticatedRoutes() {
   return (
@@ -30,6 +31,7 @@ function UnAuthenticatedRoutes() {
         <Route path={UnAuthenticatedRoutesNames.PRODUCTDETAIL} element={<ProductDetail />} />
         <Route path={UnAuthenticatedRoutesNames.WISHLIST} element={<Shop />} />
         <Route path={UnAuthenticatedRoutesNames.DESIGNERS} element={<Designers />} />
+        <Route path={UnAuthenticatedRoutesNames.GALLERY} element={<Gallery />} />
       </Route>
         <Route path={UnAuthenticatedRoutesNames.LOGIN} element={<SignIn />} />
       <Route path="*" element={<NotFound />} />

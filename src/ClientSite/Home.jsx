@@ -67,7 +67,7 @@ const Home = () => {
                   borderRadius={"40px"}
                   fontSize={"12px"}
                   _hover={{ color: "white" }}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames.DESIGNERS)}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames.GALLERY)}
                 >
                   <Icon mr={2} as={APP_ICONS.RIGHTARROW} fontSize={"16px"} />
                   explore
@@ -78,9 +78,9 @@ const Home = () => {
                   _hover={{ bg: "transparent" }}
                   width={"150px"}
                   fontSize={{ base: "18px", sm: "12px", md: "18px" }}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames.ABOUT)}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames?.DESIGNERS)}
                 >
-                  More Details
+                  Our Designers
                 </Button>
               </Flex>
             </Box>
