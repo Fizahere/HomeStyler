@@ -75,7 +75,7 @@ const Feedback = () => {
 
   return (
     <>
-      <Box mt={6} bg={{custom3:'red'}}>
+      <Box mt={6}>
         <Heading borderBottom="1px solid grey" pb={2} mb={4} fontSize={{ base: "2xl", "2xl": "4xl",custom3:"100px" }}>
           Feedback
         </Heading>

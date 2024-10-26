@@ -48,6 +48,8 @@ function Navbar() {
   const activeLinkStyle = {
     borderBottom: "2px solid ",
   };
+  const cart = localStorage.getItem("cart");
+  const cartCount = cart ? JSON.parse(cart).length : 0;
 
   return (
     <>
@@ -248,12 +250,35 @@ function Navbar() {
               height={"20px"}
               borderWidth="0.5px"
             />
-            <IconButton
-              icon={<Icon as={APP_ICONS.CART} fontSize={22} />}
-              onClick={cartDrawer.onOpen}
-              bg={"transparent"}
-            />
+            <Box position="relative" display="inline-block">
+              <Text
+                position="absolute"
+                top="-5px"
+                right="-8px"
+                // bg="red"
+                border={'1px solid red'}
+                px={1.4}
+                fontSize="13px"
+                color="red"
+                fontWeight="bold"
+                borderRadius="50%"
+                minWidth="20px"
+                textAlign="center"
+              >
+                {cartCount}
+              </Text>
+              <IconButton
+                icon={<Icon as={APP_ICONS.CART} fontSize={22} />}
+                onClick={cartDrawer.onOpen}
+                bg="transparent"
+                _hover={{
+                  bg:'transparent'
+                }}
+              />
+            </Box>
+
             <Divider
+            ml={3}
               orientation="vertical"
               borderColor="inherit"
               height={"20px"}
