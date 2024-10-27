@@ -1,32 +1,45 @@
-import React from 'react'
+import React from "react";
 import {
   Heading,
   Table,
   Tbody,
   Thead,
-  Tr, Td, Th,
+  Tr,
+  Td,
+  Th,
   useColorMode,
   TableCaption,
-  Link,
+  Button,
   Switch,
-} from '@chakra-ui/react'
+Text
+} from "@chakra-ui/react";
+import { AuthenticatedRouteNames } from "../utilities/util.constant";
+import { useNavigate } from "react-router-dom";
 
 function Setting() {
   const { colorMode, toggleColorMode } = useColorMode();
-
+  const navigate = useNavigate();
   return (
     <>
-      <Heading size={'lg'}>Settings</Heading>
+      <Heading size={"lg"}>Settings</Heading>
       <Table>
-        <TableCaption color={'red'} mb={'-2rem'}>
-          <Link to={''}>
-            Delete Your Account
-          </Link>
-        </TableCaption>
-        <TableCaption color={'red'}>
-          <Link to={''}>
-            Logout From Your Account
-          </Link>
+        <TableCaption color={"red"}>
+          <Button
+            width={121}
+            _hover={{ bg: "transparent" }}
+            bg={"transparent"}
+            onClick={() => {
+              if (confirm("are you sure you want to logout?")) {
+                navigate(AuthenticatedRouteNames.LOGOUT);
+              } else {
+                navigate(AuthenticatedRouteNames.Dashboard);
+              }
+            }}
+          >
+            <Text color={'red'}>
+              Logout from you account.
+            </Text>
+          </Button>
         </TableCaption>
 
         <Thead>
@@ -45,18 +58,19 @@ function Setting() {
             <Td>fizabatool0278@gmail</Td>
           </Tr>
           <Tr>
-            <Th>{colorMode === 'light' ? 'turn on day light' : 'turn on night light'}</Th>
+            <Th>
+              {colorMode === "light"
+                ? "turn on day light"
+                : "turn on night light"}
+            </Th>
             <Td>
-              <Switch onChange={toggleColorMode}>
-              </Switch>
+              <Switch onChange={toggleColorMode}></Switch>
             </Td>
           </Tr>
         </Tbody>
-
       </Table>
-
     </>
-  )
+  );
 }
 
-export default Setting
+export default Setting;

@@ -8,9 +8,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   Flex,
-  InputGroup,
-  InputLeftElement,
-  Input,
   Icon,
   Avatar,
   Collapse,
@@ -21,7 +18,6 @@ import { Outlet, Link, useNavigate } from "react-router-dom";
 import { AuthenticatedRouteNames } from "../../utilities/util.constant";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
-// import productsData from "../../data/products-data.json";
 import DesignsData from '../../data/designs-data.json';
 
 function MainLayout() {
@@ -355,24 +351,6 @@ function MainLayout() {
               );
             }}
           >
-            {/* <InputGroup
-              w="96"
-              display={{
-                base: "none",
-                md: "flex",
-              }}
-            >
-              <Input
-                color={Colors.WHITE}
-                onChange={(e) => setSearchKey(e.target.value)}
-                value={searchKey}
-                type="number"
-                placeholder="Search page number..."
-              />
-              <InputLeftElement color="inherit">
-                <APP_ICONS.SEARCH color={Colors.WHITE} />
-              </InputLeftElement>
-            </InputGroup> */}
           </form>
 
           <Flex align="center">
@@ -387,7 +365,7 @@ function MainLayout() {
                 cursor="pointer"
               />
             </Button>
-            <Avatar ml="4" size="sm" name={userEmail} cursor="pointer" />
+            <Avatar ml="4" size="sm" name={userEmail}/>
           </Flex>
         </Flex>
 

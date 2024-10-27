@@ -21,8 +21,9 @@ function SignIn() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Updated regex patterns for validation
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex = /^\d{5,}$/;
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -31,18 +32,19 @@ function SignIn() {
       return;
     }
     if (!emailRegex.test(email)) {
-      setError("Invalid email!");
+      setError("Invalid email format!");
       return;
     }
     if (!passwordRegex.test(password)) {
-      setError("Use a strong password!");
+      setError("Password must be at least 8 characters long and include uppercase, lowercase, and a number.");
       return;
     }
+
     let user = {
       email: email,
       password: password,
     };
-  
+
     setError("");
     localStorage.setItem("user", JSON.stringify(user));
 
@@ -59,7 +61,7 @@ function SignIn() {
       color={Colors.font}
       bg={Colors.BODYLIGHT}
       _dark={{
-        bg:Colors.DASHBOARDTHEME
+        bg: Colors.DASHBOARDTHEME,
       }}
     >
       <Box
@@ -91,7 +93,7 @@ function SignIn() {
                 onChangeHandler={(e) => {
                   setEmail(e.target.value);
                   if (!emailRegex.test(e.target.value)) {
-                    setError("Invalid email!");
+                    setError("Invalid email format!");
                   } else {
                     setError("");
                   }
@@ -106,7 +108,7 @@ function SignIn() {
                 onChangeHandler={(e) => {
                   setPassword(e.target.value);
                   if (!passwordRegex.test(e.target.value)) {
-                    setError("Use strong password!");
+                    setError("Password must be at least 8 characters long and include uppercase, lowercase, and a number.");
                   } else {
                     setError("");
                   }
@@ -139,9 +141,8 @@ function SignIn() {
                   borderRadius={18}
                   fontSize={"0.8rem"}
                   color={Colors.BLACK}
-                  _hover={{bg:Colors.BODYLIGHT}}
+                  _hover={{ bg: Colors.BODYLIGHT }}
                   bg={Colors.WHITE}
-                  
                 >
                   <Flex justifyContent={"center"} textAlign={"center"}>
                     <Icon
@@ -156,11 +157,11 @@ function SignIn() {
             </VStack>
           </form>
           <Link to={UnAuthenticatedRoutesNames.HOME}>
-          <Flex mt={20}>
-        <Icon as={APP_ICONS.LEFTARROW} mt={0.6} fontSize={20}/>
-        <Text ml={2}>Back</Text>
-        </Flex>
-        </Link>
+            <Flex mt={20}>
+              <Icon as={APP_ICONS.LEFTARROW} mt={0.6} fontSize={20} />
+              <Text ml={2}>Back</Text>
+            </Flex>
+          </Link>
         </Box>
       </Box>
       <Box
@@ -168,8 +169,7 @@ function SignIn() {
           base: "0%",
           md: "60%",
         }}
-        // bg={Colors.THEME}
-        bgGradient="linear(to-b, gray.600,gray.100)"
+        bgGradient="linear(to-b, gray.600, gray.100)"
         display={{
           base: "none",
           md: "inline-flex",
