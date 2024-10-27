@@ -123,7 +123,9 @@ function CustomCard({ singleProduct, isLoading }) {
           alt={"image_thumbnail_path"}
           borderRadius="md"
           width={"100%"}
-          height={{ base: "250px", md: "250px" }}
+          height={{ base: "250px", 
+            md: "230px" 
+          }}
         />
         <Divider
           orientation="horizontal"
@@ -131,8 +133,11 @@ function CustomCard({ singleProduct, isLoading }) {
           borderWidth="1px"
           mr={3}
         />
-        <Stack mt="6" spacing={{ base: "1", md: "3" }}>
-          <Text fontSize={"18px"} fontWeight={"bold"} h={50}>
+        <Stack mt="4" spacing={{ base: "1", md: "3" }}>
+          <Text fontSize={"18px"} fontWeight={"bold"}
+          //  h={50}
+           h={6}
+           >
             {singleProduct.name}
           </Text>
           <Flex justifyContent={"space-between"}>
