@@ -81,7 +81,9 @@ const TabbedSections = ({
         </Tabs>
       </Flex>
 
-      <Box p={4}>
+      <Box 
+      p={4}
+      >
         <Center>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
           {filteredProducts.length > 0 ? (
