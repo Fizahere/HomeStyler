@@ -39,7 +39,7 @@ function Gallery() {
             image: Gallery6,
         },
         {
-            name: 'Rustic Farmhouse Kitchen',
+            name: 'Rustic Farm Kitchen',
             image: Gallery7,
         },
         {
