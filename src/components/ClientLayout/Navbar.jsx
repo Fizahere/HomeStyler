@@ -230,13 +230,13 @@ function Navbar() {
           </HStack>
 
           <Flex alignItems="center">
-            {/* <Box display={{base:'none',lg:'block'}}> */}
-            <NavLink to={UnAuthenticatedRoutesNames.LOGIN} >
-              <Text fontWeight={"bold"} mr={2}>
-                Login
-              </Text>
-            </NavLink>
-            {/* </Box> */}
+            <Box display={{ base: "none", lg: "block" }}>
+              <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
+                <Text fontWeight={"bold"} mr={2}>
+                  Login
+                </Text>
+              </NavLink>
+            </Box>
             <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
               <Icon
                 mt={2}
@@ -263,8 +263,8 @@ function Navbar() {
                 color="red"
                 fontWeight="bold"
                 borderRadius="50%"
-                w={{base:4,md:5}}
-                                textAlign="center"
+                w={{ base: 4, md: 5 }}
+                textAlign="center"
               >
                 {cartCount}
               </Text>
@@ -473,6 +473,9 @@ function Navbar() {
                   onClick={onClose}
                 >
                   Contact
+                </NavLink>
+                <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
+                    Login
                 </NavLink>
               </Stack>
             </DrawerBody>
