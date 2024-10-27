@@ -134,7 +134,7 @@ function SignIn() {
                 >
                   Login
                 </Button>
-                <Text textAlign={"center"}>or</Text>
+                {/* <Text textAlign={"center"}>or</Text>
                 <Button
                   w={270}
                   p={2}
@@ -152,7 +152,7 @@ function SignIn() {
                     />
                     <Box mt={"2px"}>Continue With Google</Box>
                   </Flex>
-                </Button>
+                </Button> */}
               </Box>
             </VStack>
           </form>
