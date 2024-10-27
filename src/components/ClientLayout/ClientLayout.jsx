@@ -15,7 +15,8 @@ function ClientLayout() {
         }}
       >
         <Navbar />
-        <Box p={4} 
+        <Box 
+        p={4} 
         minH="100vh"
         >
           <Outlet />
