@@ -9,11 +9,11 @@ import {
   Button,
   Text,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
 import CustomInputFeild from "../components/Mist/InputFeild";
-import { AuthenticatedRouteNames } from "../utilities/util.constant";
+import { Link } from "react-router-dom";
+import { AuthenticatedRouteNames, UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 function SignIn() {
   const [isShowPassword, setShowPassword] = useState(true);
@@ -155,6 +155,12 @@ function SignIn() {
               </Box>
             </VStack>
           </form>
+          <Link to={UnAuthenticatedRoutesNames.HOME}>
+          <Flex mt={20}>
+        <Icon as={APP_ICONS.LEFTARROW} mt={0.6} fontSize={20}/>
+        <Text ml={2}>Back</Text>
+        </Flex>
+        </Link>
         </Box>
       </Box>
       <Box

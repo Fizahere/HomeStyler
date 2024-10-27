@@ -42,6 +42,7 @@ import { TiBusinessCard } from "react-icons/ti";
 import { BiSupport } from "react-icons/bi";
 import { BsCart3 } from "react-icons/bs";
 import { FaStar } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa6";
 
 const APP_ICONS = {
     DASHBOARD: LuLayoutDashboard,
@@ -75,6 +76,7 @@ const APP_ICONS = {
     GOOGLE: FcGoogle,
     LOGIN:IoLogIn,
     RIGHTARROW:FaArrowRight,
+    LEFTARROW:FaArrowLeft,
     OPENEYE:IoEyeSharp,
     CLOSEDEYE:IoEyeOffSharp,
     WISHLIST:FaRegHeart,
