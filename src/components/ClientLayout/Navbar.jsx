@@ -43,10 +43,9 @@ function Navbar() {
     if (e.key === "Enter" && searchQuery.trim()) {
       const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(":query", searchQuery.trim());
       navigate(searchPath);
+      setSearchQuery("");
     }
   };
-  
-  
 
   const categories = [
     "Living Room",
