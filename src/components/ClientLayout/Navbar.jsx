@@ -297,9 +297,11 @@ function Navbar() {
                 mx={2}
                 as={APP_ICONS.SEARCH}
                 fontSize={{ base: 14, md: 20 }}
-                color={Colors.GREY}
+                color={Colors.BLACK}
+                _dark={{
+                  color: Colors.WHITE
+                }} 
                 onClick={handleSearchToggle}
-                // onClick={searchDrawer.onOpen}
               />
             )}
             {searchToggle && (
@@ -308,7 +310,10 @@ function Navbar() {
                 mx={2}
                 as={APP_ICONS.CLOSE}
                 fontSize={{ base: 14, md: 22 }}
-                color={Colors.GREY}
+                color={Colors.BLACK}
+                _dark={{
+                  color: Colors.WHITE
+                }}
                 onClick={handleSearchToggle}
               />
             )}
