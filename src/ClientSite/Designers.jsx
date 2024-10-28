@@ -50,12 +50,12 @@ function Designers() {
               _dark={{ bg: "transparent" }}
               maxW={{ base: "xs", md: "xs" }}
             >
-              <CardBody bg={"transparent"} p={0}>
+              <CardBody bg={"transparent"} _dark={{bg:'#252525'}} p={0}>
                 <Image
                   src={designersImages[singleData.profileImage]}
                   alt={singleData.name}
                   borderRadius="md"
-                  border={"1px solid blue"}
+                  border={"1px solid grey"}
                   width={"100%"}
                   height={{ base: "250px", md: "250px" }}
                   objectFit="cover"

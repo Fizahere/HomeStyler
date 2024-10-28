@@ -162,7 +162,7 @@ function CustomCard({ singleProduct, isLoading }) {
               )
             )}
             <Text mt={1} color="green" fontSize={{ base: "12px", md: "1xl" }}>
-              ${singleProduct.price}
+              PKR {singleProduct.price}
             </Text>
           </Flex>
           <Button

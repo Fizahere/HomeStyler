@@ -8,7 +8,7 @@ import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 function Footer() {
   return (
     <>
-      <Box h={"auto"} borderTop={"1px solid grey"}>
+      <Box h={"auto"} borderTop={"1px solid grey"} px={2}>
         <DomLink to={"/"}>
           <Flex mt={4}>
             <Icon as={APP_ICONS.BUILDINGS} fontSize={{ base: 20, md: 25 }} />{" "}
