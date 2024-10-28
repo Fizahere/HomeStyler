@@ -28,7 +28,9 @@ const CustomSearch = () => {
   // };
 
   return (
-    <Box position="relative" bg={Colors.BODYLIGHT}>
+    <Box position="relative"
+     bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}
+     >
       {/* {!isSearchOpen ? (
         <IconButton
           icon={<AiOutlineSearch />}
@@ -39,6 +41,7 @@ const CustomSearch = () => {
       ) : ( */}
       <Box
         bg={Colors.BODYLIGHT}
+        _dark={{bg:Colors.DASHBOARDTHEME}}
         position="absolute"
         top="0"
         right="0"
@@ -50,6 +53,8 @@ const CustomSearch = () => {
       >
         {/* <Flex alignItems="center"> */}
         <Input
+        // color={Colors.BODYLIGHT}
+        // _dark={{color:Colors.DASHBOARDTHEME}}
           border={"1px solid grey"}
           // h="70px"
           h={{ base: "50px", md: "70px" }}
@@ -58,8 +63,9 @@ const CustomSearch = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           onKeyDown={handleSearch}
           autoFocus
-          focusBorderColor={Colors.GREY}
+          focusBorderColor={Colors.THEME}
           bg={Colors.BODYLIGHT}
+          _dark={{bg:Colors.DASHBOARDTHEME}}
         />
         {/* <IconButton
               icon={<AiOutlineClose />}

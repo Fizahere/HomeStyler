@@ -23,7 +23,7 @@ function Gallery() {
             image: Gallery2,
         },
         {
-            name: 'Cozy Office Space',
+            name: 'Office Space',
             image: Gallery3,
         },
         {
@@ -39,7 +39,7 @@ function Gallery() {
             image: Gallery6,
         },
         {
-            name: 'Rustic Farm Kitchen',
+            name: 'Rustic Kitchen',
             image: Gallery7,
         },
         {
