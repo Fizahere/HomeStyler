@@ -31,6 +31,7 @@ function ProductDetail() {
 
   useEffect(() => {
     const fetchData = () => {
+      
       // const AllCategories = ProductsData.browsingProducts.categories.map((singleCategory)=>{
       //   const findCategory = singleCategory?.subcategories?.find((prod)=>{
       //     console.log(prod,'prod')
@@ -39,6 +40,7 @@ function ProductDetail() {
       //   console.log(singleCategory,'singleCategory')
       // })
       // console.log(AllCategories,'fetch')
+      
       const product = ProductsData.browsingProducts.categories
         .flatMap((category) =>
           category.subcategories.flatMap((subcategory) => subcategory.products)

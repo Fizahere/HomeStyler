@@ -27,6 +27,22 @@
                   }
                 ],
                 "isProduct": true
+              },
+              {
+                "id": 12,
+                "name": "Sectional Sofa",
+                "designID": 8,
+                "image": "prod12",
+                "description": "A spacious sectional sofa, perfect for large living rooms.",
+                "price": 899.99,
+                "reviews": [
+                  {
+                    "user": "LiamP",
+                    "rating": 4.8,
+                    "comment": "Very comfortable and stylish."
+                  }
+                ],
+                "isProduct": true
               }
             ]
           },
@@ -45,6 +61,22 @@
                     "user": "MikeR",
                     "rating": 4.7,
                     "comment": "Super comfortable!"
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 13,
+                "name": "Wingback Chair",
+                "designID": 9,
+                "image": "prod13",
+                "description": "A classic wingback chair with modern upholstery.",
+                "price": 349.99,
+                "reviews": [
+                  {
+                    "user": "SophiaG",
+                    "rating": 4.5,
+                    "comment": "Adds elegance to my reading nook."
                   }
                 ],
                 "isProduct": true
@@ -95,6 +127,22 @@
                   }
                 ],
                 "isProduct": true
+              },
+              {
+                "id": 14,
+                "name": "Glass Table Lamp",
+                "designID": 10,
+                "image": "prod14",
+                "description": "A stylish glass table lamp with a soft glow.",
+                "price": 89.99,
+                "reviews": [
+                  {
+                    "user": "ChrisH",
+                    "rating": 4.6,
+                    "comment": "Perfect lighting for my bedroom."
+                  }
+                ],
+                "isProduct": true
               }
             ]
           },
@@ -139,6 +187,22 @@
                     "user": "NancyM",
                     "rating": 4.9,
                     "comment": "Absolutely gorgeous!"
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 16,
+                "name": "Blackout Curtains",
+                "designID": 12,
+                "image": "prod15",
+                "description": "Keep light out and maintain privacy with these blackout curtains.",
+                "price": 59.99,
+                "reviews": [
+                  {
+                    "user": "DavidR",
+                    "rating": 4.3,
+                    "comment": "Good quality, blocks light well."
                   }
                 ],
                 "isProduct": true
@@ -189,6 +253,22 @@
                   }
                 ],
                 "isProduct": true
+              },
+              {
+                "id": 17,
+                "name": "Wooden Kitchen Island",
+                "designID": 13,
+                "image": "prod16",
+                "description": "A functional kitchen island with ample storage.",
+                "price": 899.99,
+                "reviews": [
+                  {
+                    "user": "MeganS",
+                    "rating": 4.6,
+                    "comment": "Adds functionality to my kitchen."
+                  }
+                ],
+                "isProduct": true
               }
             ]
           },
@@ -233,6 +313,22 @@
                     "user": "JessicaR",
                     "rating": 4.7,
                     "comment": "Looks great and very practical."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 18,
+                "name": "Rain Showerhead",
+                "designID": 14,
+                "image": "prod17",
+                "description": "Experience a luxurious rain shower at home.",
+                "price": 129.99,
+                "reviews": [
+                  {
+                    "user": "LucasH",
+                    "rating": 4.8,
+                    "comment": "Feels like a spa shower!"
                   }
                 ],
                 "isProduct": true

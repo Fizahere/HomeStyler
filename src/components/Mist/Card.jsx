@@ -16,7 +16,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
-import { designImagesMap, productsImagesMap } from "../../constants/images";
+import { designImagesMap, productsImagesMap, accessoriesImagesMap } from "../../constants/images";
 import APP_ICONS from "../../constants/icons";
 
 function CustomCard({ singleProduct, isLoading }) {
@@ -38,6 +38,11 @@ function CustomCard({ singleProduct, isLoading }) {
     } else if (singleProduct?.isDesign) {
       const designImageSrc = designImagesMap[singleProduct.image];
       setImageUrl(designImageSrc || "fallback-image-url");
+    } else if(singleProduct?.isAccessory){
+      const imageKey = singleProduct.image?.toUpperCase();
+      const accessoryImageSrc = accessoriesImagesMap[imageKey];
+      setImageUrl(accessoryImageSrc || "fallback-image-url");
+      // console.log(imageUrl,'imageurl')
     }
   }, [singleProduct]);
 
@@ -84,6 +89,13 @@ function CustomCard({ singleProduct, isLoading }) {
       navigate(
         `${UnAuthenticatedRoutesNames.DETAIL.replace(
           ":design",
+          singleProduct.id
+        )}`
+      );
+    }else if (singleProduct?.isAccessory) {
+      navigate(
+        `${UnAuthenticatedRoutesNames.PRODUCTDETAIL.replace(
+          ":product",
           singleProduct.id
         )}`
       );

@@ -276,7 +276,12 @@ function Navbar() {
                 </>
               )}
             </Menu>
-
+            <NavLink
+              to={UnAuthenticatedRoutesNames.ACCESSORIES}
+              style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
+            >
+              Accessories
+            </NavLink>
             <NavLink
               to={UnAuthenticatedRoutesNames.ABOUT}
               style={({ isActive }) => (isActive ? activeLinkStyle : undefined)}
