@@ -7,6 +7,7 @@ import {
   Text,
   Icon,
   Center,
+  Heading,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
@@ -34,7 +35,7 @@ const Home = () => {
         <Center>
           <Flex flexDirection={{ base: "column", md: "row" }}>
             <Box>
-              <Box>
+              {/* <Box>
             <TypeAnimation
               sequence={[
                 "HOME STYLER, WHERE DREAMS TAKE SHAPE",
@@ -48,9 +49,9 @@ const Home = () => {
               }}
               repeat={Infinity}
             />
-            </Box>
-              {/* <Heading
-                fontSize={{ base: "30px", sm: "40px", md: "30px", lg: "50px" }}
+            </Box> */}
+              <Heading
+                fontSize={{ base: "30px", sm: "40px", md: "30px", lg: "60px" }}
                 fontWeight={{ base: "500", sm: "700", md: "600" }}
                 lineHeight={1.1}
                 letterSpacing={"2px"}
@@ -60,7 +61,7 @@ const Home = () => {
                   <Text>WHERE DREAMS</Text>
                 </Box>
                 TAKE SHAPE
-              </Heading> */}
+              </Heading>
               <Text
                 fontSize={{ base: "14px", sm: "20px", md: "14px", lg: "20px" }}
                 py={6}
@@ -104,18 +105,18 @@ const Home = () => {
             <Image
               my={{ base: 8, md: 0 }}
               src={mainimage}
-              width={{ base: "430px", sm: "440px", md: "570px", lg: "560px" }}
-              height={{ base: "220px", sm: "250px", md: "280px", lg: "330px" }}
+              width={{ base: "430px", sm: "440px", md: "560px", lg: "560px" }}
+              height={{ base: "220px", sm: "250px", md: "270px", lg: "330px" }}
             />
           </Flex>
         </Center>
-       
+
         <Flex
           justifyContent={"space-between"}
           flexDirection={{ base: "column", lg: "row" }}
         >
           <Box
-          // mt={2}
+            // mt={2}
             width={{ base: "310px", sm: "420px", md: "425px" }}
             mb={{ base: 20, lg: 0 }}
           >
@@ -131,7 +132,7 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP.replace(':category',value).toLocaleLowerCase())}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP.replace(':category', value).toLocaleLowerCase())}
                 >
                   {value}
                 </Button>
