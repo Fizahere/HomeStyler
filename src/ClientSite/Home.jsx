@@ -51,7 +51,7 @@ const Home = () => {
             />
             </Box> */}
               <Heading
-                fontSize={{ base: "30px", sm: "40px", md: "30px", lg: "50px" }}
+                fontSize={{ base: "30px", sm: "40px", md: "30px", lg: "60px" }}
                 fontWeight={{ base: "500", sm: "700", md: "600" }}
                 lineHeight={1.1}
                 letterSpacing={"2px"}
@@ -105,8 +105,8 @@ const Home = () => {
             <Image
               my={{ base: 8, md: 0 }}
               src={mainimage}
-              width={{ base: "430px", sm: "440px", md: "570px", lg: "560px" }}
-              height={{ base: "220px", sm: "250px", md: "280px", lg: "330px" }}
+              width={{ base: "430px", sm: "440px", md: "560px", lg: "560px" }}
+              height={{ base: "220px", sm: "250px", md: "270px", lg: "330px" }}
             />
           </Flex>
         </Center>
