@@ -3,9 +3,11 @@ import { Box, IconButton, Input, Flex } from "@chakra-ui/react";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 
-const CustomSearch = ({searchToggle,setSearchToggle}) => {
+const CustomSearch = (
+  // {searchToggle,setSearchToggle}
+) => {
   // console.log(searchToggle,'searchToggle');
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  // const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   // const handleCloseClick = () => {
@@ -32,11 +34,11 @@ const CustomSearch = ({searchToggle,setSearchToggle}) => {
           borderRadius="md"
           boxShadow="lg"
           bg="white"
-          w="100vh"
-          maxW="300px"
+          // w="100vh"
+          // maxW="300px"
           zIndex="popover"
         >
-          <Flex alignItems="center">
+          {/* <Flex alignItems="center"> */}
             <Input
               placeholder="Type to search..."
               value={searchQuery}
@@ -50,7 +52,7 @@ const CustomSearch = ({searchToggle,setSearchToggle}) => {
               ml={2}
               variant="ghost"
             /> */}
-          </Flex>
+          {/* </Flex> */}
         </Box>
       {/* )} */}
     </Box>
