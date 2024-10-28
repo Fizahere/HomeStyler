@@ -53,7 +53,7 @@ function Footer() {
               as={APP_ICONS.MAIL}
             />
           </Link>
-          <Link href="https://mail.google.com/mail/u/0/" isExternal>
+          <Link href="https://github.com/Fizahere/" isExternal>
             <Icon
               border={"2px solid grey"}
               borderRadius={"50%"}
@@ -63,7 +63,7 @@ function Footer() {
               as={APP_ICONS.GITHUB}
             />
           </Link>
-          <Link href="https://mail.google.com/mail/u/0/" isExternal>
+          <Link href="https://www.linkedin.com/in/fizabatool027/" isExternal>
             <Icon
               border={"2px solid grey"}
               borderRadius={"50%"}
