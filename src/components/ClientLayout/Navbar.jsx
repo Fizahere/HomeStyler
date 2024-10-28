@@ -32,21 +32,31 @@ import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import ProductSelection from "../../data/product-new-data.json";
 import Cart from "../../ClientSite/Cart";
 import SearchDrawer from "../Search/SearchDrawer";
+import CustomSearch from "../Search/Search";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
-  const searchDrawer = useDisclosure()
+  // const searchDrawer = useDisclosure();
+  const [searchToggle, setSearchToggle] = useState(false);
 
   const cartDrawer = useDisclosure();
   const handleSearch = (e) => {
     if (e.key === "Enter" && searchQuery.trim()) {
-      const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(":query", searchQuery.trim());
+      const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(
+        ":query",
+        searchQuery.trim()
+      );
       navigate(searchPath);
       setSearchQuery("");
     }
+  };
+
+  const handleSearchToggle = () => {
+    setSearchToggle(!searchToggle);
+    // console.log(searchToggle,'searchToggle');
   };
 
   const categories = [
@@ -76,26 +86,27 @@ function Navbar() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
     <>
       <Box
-        position={isFixed ? 'fixed' : 'relative'}
+        position={isFixed ? "fixed" : "relative"}
         top={isFixed ? 0 : 0}
         left={0}
         right={0}
-        boxShadow={isFixed ? 'sm' : 'none'}
+        boxShadow={isFixed ? "sm" : "none"}
         zIndex="1000"
         transition="top 0.2s ease, box-shadow 0.2s ease"
         bg={colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME}
       >
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
-            size="md" ml={1}
+            size="md"
+            ml={1}
             icon={
               isOpen ? (
                 <Icon as={APP_ICONS.CLOSE} />
@@ -283,18 +294,30 @@ function Navbar() {
 
           <Flex alignItems="center">
             {/* <Box display={{base:'none',lg:'block'}}> */}
-
+            {!searchToggle && (
               <Icon
                 mt={1}
                 mx={2}
                 as={APP_ICONS.SEARCH}
                 fontSize={{ base: 14, md: 20 }}
                 color={Colors.GREY}
-                // onClick={handleSearchToggle}
+                onClick={handleSearchToggle}
                 // onClick={searchDrawer.onOpen}
               />
+            )}
+             {searchToggle && (
+              <Icon
+                mt={1}
+                mx={2}
+                as={APP_ICONS.CLOSE}
+                fontSize={{ base: 14, md: 20 }}
+                color={Colors.GREY}
+                onClick={handleSearchToggle}
+                // onClick={searchDrawer.onOpen}
+              />
+            )}
 
-              {/* <SearchDrawer disclosure={searchDrawer} /> */}
+            {/* <SearchDrawer disclosure={searchDrawer} /> */}
             <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
               <Text fontWeight={"bold"} mr={2}>
                 Login
@@ -369,6 +392,12 @@ function Navbar() {
             />
           </Flex>
         </Flex>
+        {searchToggle && (
+          <CustomSearch
+            // searchToggle={searchToggle}
+            // setSearchToggle={setSearchToggle}
+          />
+        )}
 
         <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
           <DrawerOverlay />

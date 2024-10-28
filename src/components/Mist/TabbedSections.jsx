@@ -12,6 +12,7 @@ import {
 } from "@chakra-ui/react";
 import designsData from "../../data/designs-data.json";
 import CustomCard from "./Card";
+import { Colors } from "../../constants/colors";
 
 const TabbedSections = ({
   categoryName,
@@ -52,6 +53,14 @@ const TabbedSections = ({
       <Flex p={4}>
         <Tabs
           variant="enclosed"
+          borderTop={Colors.DASHBOARDTHEME}
+          borderLeft={Colors.DASHBOARDTHEME}
+          borderRight={Colors.DASHBOARDTHEME}
+          _dark={{
+            borderTop:Colors.GREY,
+            borderLeft:Colors.GREY,
+            borderRight:Colors.GREY
+          }}
           overflow={"auto"}
           colorScheme="Grey" 
           onChange={(index) => {
@@ -69,14 +78,14 @@ const TabbedSections = ({
           }}
         >
           <TabList>
-            <Tab>All</Tab>
-            <Tab>Cozy</Tab>
-            <Tab>Elegant</Tab>
-            <Tab>Minimalist</Tab>
-            <Tab>Classic</Tab>
-            <Tab>Industrial</Tab>
-            <Tab>Eclectic</Tab>
-            <Tab>Tropical</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>All</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Cozy</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Elegant</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Minimalist</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Classic</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Industrial</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Eclectic</Tab>
+            <Tab color={'black'} _dark={{color:Colors.WHITE}}>Tropical</Tab>
           </TabList>
         </Tabs>
       </Flex>
