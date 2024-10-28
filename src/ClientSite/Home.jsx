@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Flex,
-  Heading,
   Image,
   Button,
   Text,
@@ -17,8 +16,7 @@ import Services from "./Services";
 import Gallery from "./Gallery";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import Sitemap from "./Sitemap";
-import image1 from "../assets/images/image1.png";
-import image2 from "../assets/images/image2.png";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   const categories = [
@@ -32,11 +30,26 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <>
-      <Box px={{ base: 2, lg: 10 }} py={{ base: 10, md: 20 }}>
+      <Box px={{ base: 2, lg: 10 }}>
         <Center>
           <Flex flexDirection={{ base: "column", md: "row" }}>
             <Box>
-              <Heading
+              <Box>
+            <TypeAnimation
+              sequence={[
+                "HOME STYLER, WHERE DREAMS TAKE SHAPE",
+                1000,
+              ]}
+              speed={50}
+              style={{
+                fontSize: '3rem',
+                fontWeight: "bold",
+                display: "inline-block",
+              }}
+              repeat={Infinity}
+            />
+            </Box>
+              {/* <Heading
                 fontSize={{ base: "30px", sm: "40px", md: "30px", lg: "50px" }}
                 fontWeight={{ base: "500", sm: "700", md: "600" }}
                 lineHeight={1.1}
@@ -47,7 +60,7 @@ const Home = () => {
                   <Text>WHERE DREAMS</Text>
                 </Box>
                 TAKE SHAPE
-              </Heading>
+              </Heading> */}
               <Text
                 fontSize={{ base: "14px", sm: "20px", md: "14px", lg: "20px" }}
                 py={6}
@@ -102,6 +115,7 @@ const Home = () => {
           flexDirection={{ base: "column", lg: "row" }}
         >
           <Box
+          // mt={2}
             width={{ base: "310px", sm: "420px", md: "425px" }}
             mb={{ base: 20, lg: 0 }}
           >

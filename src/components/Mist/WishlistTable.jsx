@@ -45,7 +45,16 @@ import {
   
     return (
       <TableContainer>
-        <Table variant="striped" colorScheme="blue">
+        <Table
+         variant="striped"
+          bg={'#d8e2ec'} 
+          _dark={
+        {
+          bg:"#252525",
+          color:Colors.WHITE
+        }
+            }
+            >
           <TableCaption>
             <Text>Your Wishlist</Text>
             <Icon fontSize={20} mt={2} as={APP_ICONS.WISHLISTFILLED} />
@@ -66,7 +75,14 @@ import {
                   "fallback-image-url";
                 return (
                   <Tr key={item.id}>
-                    <Td>
+                    <Td
+                     bg={'#d8e2ec'} 
+                     _dark={
+                   {
+                     bg:"#252525",
+                     color:Colors.WHITE
+                   }}
+                    >
                       <Image
                         src={imageUrl}
                         alt={item.name}
@@ -74,9 +90,30 @@ import {
                         objectFit="cover"
                       />
                     </Td>
-                    <Td>{item.name}</Td>
-                    <Td isNumeric>PKR {item.price}</Td>
-                    <Td>
+                    <Td
+                     bg={'#d8e2ec'} 
+                     _dark={
+                   {
+                     bg:"#252525",
+                     color:Colors.WHITE
+                   }}
+                    >{item.name}</Td>
+                    <Td
+                     bg={'#d8e2ec'} 
+                     _dark={
+                   {
+                     bg:"#252525",
+                     color:Colors.WHITE
+                   }}
+                    isNumeric>PKR {item.price}</Td>
+                    <Td
+                     bg={'#d8e2ec'} 
+                     _dark={
+                   {
+                     bg:"#252525",
+                     color:Colors.WHITE
+                   }}
+                    >
                       <Icon
                         as={APP_ICONS.CLOSE}
                         onClick={() => removeFromWishlist(item.id)}
@@ -99,6 +136,7 @@ import {
         </Table>
       </TableContainer>
     );
+
   }
   
   export default WishlistTable;
