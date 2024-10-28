@@ -90,9 +90,6 @@ function Footer() {
           <DomLink to={UnAuthenticatedRoutesNames.CONTACT}>
             <Text>Contact</Text>
           </DomLink>
-          <DomLink to={UnAuthenticatedRoutesNames.SHOP}>
-            <Text>Shop</Text>
-          </DomLink>
           <DomLink to={UnAuthenticatedRoutesNames.FEEDBACK}>
             <Text>Feedback</Text>
           </DomLink>

@@ -78,7 +78,7 @@ function Navbar() {
       >
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
-            size="md"
+            size="md" ml={1}
             icon={
               isOpen ? (
                 <Icon as={APP_ICONS.CLOSE} />
