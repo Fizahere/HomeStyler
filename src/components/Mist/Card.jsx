@@ -93,9 +93,6 @@ function CustomCard({ singleProduct, isLoading }) {
   if (isLoading) {
     return (
       <Card
-        // boxShadow={
-        //   "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
-        // }
         _dark={{ bg: "transparent" }}
         maxW={{ base: "xs", md: "xs" }}
       >
@@ -112,7 +109,7 @@ function CustomCard({ singleProduct, isLoading }) {
       boxShadow={
         "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
       }
-      _dark={{ bg: "transparent" }}
+      _dark={{ bg: "#252525" }}
       maxW={{ base: "xs", md: "xs" }}
       onClick={handleButtonClick}
       cursor={'pointer'}
@@ -134,16 +131,17 @@ function CustomCard({ singleProduct, isLoading }) {
           mr={3}
         />
         <Stack mt="4" spacing={{ base: "1", md: "3" }}>
-          <Text fontSize={"18px"} fontWeight={"bold"}
+          <Text fontSize={"16px"} fontWeight={"bold"}
           //  h={50}
-           h={6}
+           h={7}
            >
             {singleProduct.name}
           </Text>
-          <Flex justifyContent={"space-between"}>
+          <Flex mt={2} justifyContent={{base:'flex-end',lg:"space-between"}}>
             {singleProduct?.isProduct && (
               isFav ? (
                 <Icon
+                mr={{base:2,lg:0}}
                   as={APP_ICONS.WISHLISTFILLED}
                   color={Colors.RED}
                   fontSize={"24px"}
@@ -153,6 +151,7 @@ function CustomCard({ singleProduct, isLoading }) {
                 />
               ) : (
                 <Icon
+                mr={{base:2,lg:0}}
                   as={APP_ICONS.WISHLIST}
                   color={Colors.RED}
                   fontSize={"20px"}
