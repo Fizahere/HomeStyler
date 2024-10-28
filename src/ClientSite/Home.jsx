@@ -117,7 +117,7 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  onClick={() => navigate(`/plant-palace/${key}`)}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames.PRODUCTS.replace(':prodCategory',value).toLocaleLowerCase())}
                 >
                   {value}
                 </Button>
