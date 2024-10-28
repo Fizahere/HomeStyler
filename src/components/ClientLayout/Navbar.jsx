@@ -22,7 +22,7 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate, useParams } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
@@ -32,9 +32,18 @@ import SearchDrawer from "../Search/SearchDrawer";
 import CustomSearch from "../Search/Search";
 
 function Navbar() {
+  const { category: categoryName, prodCategory: productName } = useParams();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const location = useLocation();
+  console.log(categoryName,'location')
   const navigate = useNavigate();
+  const hiddenPaths = [
+    UnAuthenticatedRoutesNames.SHOP.replace(':category',categoryName),
+    UnAuthenticatedRoutesNames.PRODUCTS.replace(':prodCategory',productName),
+  ];
+  const showSearch = !hiddenPaths.includes(location.pathname);
+
   // const [searchQuery, setSearchQuery] = useState("");
   // const searchDrawer = useDisclosure();
   const [searchToggle, setSearchToggle] = useState(false);
@@ -291,29 +300,25 @@ function Navbar() {
 
           <Flex alignItems="center">
             {/* <Box display={{base:'none',lg:'block'}}> */}
-            {!searchToggle && (
+            {!searchToggle && showSearch && (
               <Icon
                 mt={1}
                 mx={2}
                 as={APP_ICONS.SEARCH}
                 fontSize={{ base: 14, md: 20 }}
-                color={Colors.BLACK}
-                _dark={{
-                  color: Colors.WHITE
-                }} 
+                color={Colors.GREY}
                 onClick={handleSearchToggle}
+                // onClick={searchDrawer.onOpen}
               />
             )}
+
             {searchToggle && (
               <Icon
                 mt={1}
                 mx={2}
                 as={APP_ICONS.CLOSE}
                 fontSize={{ base: 14, md: 22 }}
-                color={Colors.BLACK}
-                _dark={{
-                  color: Colors.WHITE
-                }}
+                color={Colors.GREY}
                 onClick={handleSearchToggle}
               />
             )}
@@ -532,7 +537,7 @@ function Navbar() {
           </DrawerContent>
         </Drawer>
       </Box>
-      <Box mt="65px"></Box>
+      {/* <Box mt="65px"></Box> */}
       <Cart disclosure={cartDrawer} />
     </>
   );
