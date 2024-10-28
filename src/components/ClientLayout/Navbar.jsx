@@ -28,7 +28,6 @@ import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import ProductSelection from "../../data/product-new-data.json";
 import Cart from "../../ClientSite/Cart";
-import SearchDrawer from "../Search/SearchDrawer";
 import CustomSearch from "../Search/Search";
 
 function Navbar() {
@@ -36,11 +35,11 @@ function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const location = useLocation();
-  console.log(categoryName,'location')
+  // console.log(categoryName,'location')
   const navigate = useNavigate();
   const hiddenPaths = [
-    UnAuthenticatedRoutesNames.SHOP.replace(':category',categoryName),
-    UnAuthenticatedRoutesNames.PRODUCTS.replace(':prodCategory',productName),
+    UnAuthenticatedRoutesNames.SHOP.replace(":category", categoryName),
+    UnAuthenticatedRoutesNames.PRODUCTS.replace(":prodCategory", productName),
   ];
   const showSearch = !hiddenPaths.includes(location.pathname);
 
@@ -359,8 +358,9 @@ function Navbar() {
         </Flex>
         {searchToggle && (
           <CustomSearch
-          // searchToggle={searchToggle}
-          // setSearchToggle={setSearchToggle}
+            handleToggleOfSearch={handleSearchToggle}
+            // searchToggle={searchToggle}
+            // setSearchToggle={setSearchToggle}
           />
         )}
 

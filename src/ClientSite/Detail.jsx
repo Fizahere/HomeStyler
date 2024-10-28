@@ -16,6 +16,8 @@ import Designs from "../data/designs-data.json";
 import ProductsData from "../data/product-new-data.json";
 import { designImagesMap, productsImagesMap } from "../constants/images";
 import GalleryCard from "../components/Mist/GalleryCard";
+import CustomBreadcrumb from "../components/Mist/CustomBreadCrumb";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 function Detail() {
   const { design: designId } = useParams();
@@ -78,8 +80,27 @@ function Detail() {
     );
   }
 
+  const breadcrumbItems = [
+    {
+      label: "Home".toLocaleUpperCase(),
+      href: UnAuthenticatedRoutesNames.HOME,
+    },
+    {
+      label: getDesignById?.category.toLocaleUpperCase(),
+      href: UnAuthenticatedRoutesNames.SHOP.replace(
+        ':category',
+        getDesignById?.category
+      ),
+    },
+    {
+      label: getDesignById?.name.toLocaleUpperCase() || "Shop",
+      isCurrent: true,
+    },
+  ];
+
   return (
     <Box px={{ base: 1, lg: 10 }}>
+      <CustomBreadcrumb items={breadcrumbItems} />
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} p={"0"}>
         <Box
           display={"flex"}
@@ -202,11 +223,11 @@ function Detail() {
           )}
         </Text>
         {/* <Flex justifyContent={"space-evenly"} mt={5}> */}
-          <SimpleGrid
+        <SimpleGrid
           mt={4}
-              columns={{ base: 1, sm: 1, md: 2, lg: 4 }}
-              spacing={6}
-          >
+          columns={{ base: 1, sm: 1, md: 2, lg: 4 }}
+          spacing={6}
+        >
           {showDetailLoading
             ? [...Array(2)].map((_, index) => (
                 <Box
@@ -228,15 +249,15 @@ function Detail() {
                 </Box>
               ))
             : relatedProducts.map((singleProduct, index) => (
-                  <GalleryCard
-                    key={index}
-                    cardData={{
-                      name: singleProduct?.relatedProdName,
-                      image: singleProduct?.relatedProdImage,
-                    }}
-                  />
+                <GalleryCard
+                  key={index}
+                  cardData={{
+                    name: singleProduct?.relatedProdName,
+                    image: singleProduct?.relatedProdImage,
+                  }}
+                />
               ))}
-                </SimpleGrid>
+        </SimpleGrid>
         {/* </Flex> */}
       </Box>
     </Box>
