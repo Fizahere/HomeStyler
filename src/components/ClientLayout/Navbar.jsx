@@ -31,12 +31,14 @@ import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 import ProductSelection from "../../data/product-new-data.json";
 import Cart from "../../ClientSite/Cart";
+import SearchDrawer from "../Search/SearchDrawer";
 
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const searchDrawer = useDisclosure()
 
   const cartDrawer = useDisclosure();
   const handleSearch = (e) => {
@@ -104,7 +106,7 @@ function Navbar() {
           </NavLink>
 
           {/* search bar start */}
-          <InputGroup
+          {/* <InputGroup
             w={230}
             display={{ base: "none", lg: "flex" }}
             justifyContent={"space-between"}
@@ -121,8 +123,8 @@ function Navbar() {
             <InputRightElement mr={3}>
               <Icon as={APP_ICONS.SEARCH} color={"grey"} fontSize={20} />
             </InputRightElement>
-          </InputGroup>
-          {/* search bar start */}
+          </InputGroup> */}
+          {/* search bar end */}
 
           <HStack
             spacing={8}
@@ -265,6 +267,18 @@ function Navbar() {
 
           <Flex alignItems="center">
             {/* <Box display={{base:'none',lg:'block'}}> */}
+
+              <Icon
+                mt={1}
+                mx={2}
+                as={APP_ICONS.SEARCH}
+                fontSize={{ base: 14, md: 20 }}
+                color={Colors.GREY}
+                // onClick={handleSearchToggle}
+                // onClick={searchDrawer.onOpen}
+              />
+
+              {/* <SearchDrawer disclosure={searchDrawer} /> */}
             <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
               <Text fontWeight={"bold"} mr={2}>
                 Login
