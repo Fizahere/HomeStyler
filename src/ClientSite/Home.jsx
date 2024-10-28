@@ -117,7 +117,7 @@ const Home = () => {
                   border="1px solid gray"
                   bg="transparent"
                   color={Colors.GREY}
-                  onClick={() => navigate(UnAuthenticatedRoutesNames.PRODUCTS.replace(':prodCategory',value).toLocaleLowerCase())}
+                  onClick={() => navigate(UnAuthenticatedRoutesNames.SHOP.replace(':category',value).toLocaleLowerCase())}
                 >
                   {value}
                 </Button>
