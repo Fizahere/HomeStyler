@@ -21,9 +21,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Input,
-  InputGroup,
-  InputRightElement,
 } from "@chakra-ui/react";
 import { NavLink, useNavigate } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
@@ -295,78 +292,41 @@ function Navbar() {
               />
 
               {/* <SearchDrawer disclosure={searchDrawer} /> */}
-            <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
-              <Text fontWeight={"bold"} mr={2}>
-                Login
-              </Text>
-            </NavLink>
-            {/* </Box> */}
-            <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
-              <Icon
-                mt={2}
-                mx={2}
-                as={APP_ICONS.WISHLIST}
-                fontSize={{ base: 14, md: 20 }}
-                color={Colors.RED}
-              />
-            </NavLink>
-            <Divider
-              orientation="vertical"
-              borderColor="inherit"
-              height={"20px"}
-              borderWidth="0.5px"
-            />
-            <Box position="relative" display="inline-block">
-              <Text
-                position="absolute"
-                top="-5px"
-                right="-8px"
-                border={"1px solid red"}
-                px={1.4}
-                fontSize={{ base: 8, md: 12 }}
-                color="red"
-                fontWeight="bold"
-                borderRadius="50%"
-                w={{ base: 4, md: 5 }}
-                textAlign="center"
-              >
-                {cartCount}
-              </Text>
-              <IconButton
-                icon={
-                  <Icon as={APP_ICONS.CART} fontSize={{ base: 14, md: 20 }} />
-                }
-                onClick={cartDrawer.onOpen}
-                bg="transparent"
-                _hover={{
-                  bg: "transparent",
-                }}
-              />
-            </Box>
+              <Box position="relative" display="inline-block">
+                            <Text
+                                position="absolute"
+                                top="-2px"
+                                right="-4px"
+                                border={"1px solid red"}
+                                px={1.4}
+                                fontSize={10}
+                                color="red"
+                                fontWeight="bold"
+                                borderRadius="50%"
+                                w={4}
+                                textAlign="center"
+                            >
+                                {cartCount}
+                            </Text>
+                            <IconButton
+                                icon={
+                                    <Icon as={APP_ICONS.CART} fontSize={16} />
+                                }
+                                onClick={cartDrawer.onOpen}
+                                bg="transparent"
+                                _hover={{
+                                    bg: "transparent",
+                                }}
+                            />
+                        </Box>
 
-            <Divider
-              ml={3}
-              orientation="vertical"
-              borderColor="inherit"
-              height={"20px"}
-              borderWidth="0.5px"
-            />
-            <IconButton
-              ml={3}
-              bg={"transparent"}
-              icon={
-                colorMode === "light" ? (
-                  <Icon
-                    as={APP_ICONS.MOON}
-                    fontSize={22}
-                    color={Colors.BLACK}
-                  />
-                ) : (
-                  <Icon as={APP_ICONS.SUN} fontSize={26} color={Colors.WHITE} />
-                )
-              }
-              onClick={toggleColorMode}
-            />
+                        <Divider
+                            ml={3}
+                            orientation="vertical"
+                            borderColor="inherit"
+                            height={"20px"}
+                            borderWidth="0.5px"
+                        />
           </Flex>
         </Flex>
 
