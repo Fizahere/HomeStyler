@@ -35,21 +35,21 @@ function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const navigate = useNavigate();
-  const [searchQuery, setSearchQuery] = useState("");
+  // const [searchQuery, setSearchQuery] = useState("");
   // const searchDrawer = useDisclosure();
   const [searchToggle, setSearchToggle] = useState(false);
 
   const cartDrawer = useDisclosure();
-  const handleSearch = (e) => {
-    if (e.key === "Enter" && searchQuery.trim()) {
-      const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(
-        ":query",
-        searchQuery.trim()
-      );
-      navigate(searchPath);
-      setSearchQuery("");
-    }
-  };
+  // const handleSearch = (e) => {
+  //   if (e.key === "Enter" && searchQuery.trim()) {
+  //     const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(
+  //       ":query",
+  //       searchQuery.trim()
+  //     );
+  //     navigate(searchPath);
+  //     setSearchQuery("");
+  //   }
+  // };
 
   const handleSearchToggle = () => {
     setSearchToggle(!searchToggle);
@@ -302,60 +302,55 @@ function Navbar() {
                 // onClick={searchDrawer.onOpen}
               />
             )}
-             {searchToggle && (
+            {searchToggle && (
               <Icon
                 mt={1}
                 mx={2}
                 as={APP_ICONS.CLOSE}
-                fontSize={{ base: 14, md: 20 }}
+                fontSize={{ base: 14, md: 22 }}
                 color={Colors.GREY}
                 onClick={handleSearchToggle}
-                // onClick={searchDrawer.onOpen}
               />
             )}
+            <Box position="relative" display="inline-block">
+              <Text
+                position="absolute"
+                top="-2px"
+                right="-4px"
+                border={"1px solid red"}
+                px={1.4}
+                fontSize={10}
+                color="red"
+                fontWeight="bold"
+                borderRadius="50%"
+                w={4}
+                textAlign="center"
+              >
+                {cartCount}
+              </Text>
+              <IconButton
+                icon={<Icon as={APP_ICONS.CART} fontSize={16} />}
+                onClick={cartDrawer.onOpen}
+                bg="transparent"
+                _hover={{
+                  bg: "transparent",
+                }}
+              />
+            </Box>
 
-              {/* <SearchDrawer disclosure={searchDrawer} /> */}
-              <Box position="relative" display="inline-block">
-                            <Text
-                                position="absolute"
-                                top="-2px"
-                                right="-4px"
-                                border={"1px solid red"}
-                                px={1.4}
-                                fontSize={10}
-                                color="red"
-                                fontWeight="bold"
-                                borderRadius="50%"
-                                w={4}
-                                textAlign="center"
-                            >
-                                {cartCount}
-                            </Text>
-                            <IconButton
-                                icon={
-                                    <Icon as={APP_ICONS.CART} fontSize={16} />
-                                }
-                                onClick={cartDrawer.onOpen}
-                                bg="transparent"
-                                _hover={{
-                                    bg: "transparent",
-                                }}
-                            />
-                        </Box>
-
-                        <Divider
-                            ml={3}
-                            orientation="vertical"
-                            borderColor="inherit"
-                            height={"20px"}
-                            borderWidth="0.5px"
-                        />
+            <Divider
+              ml={3}
+              orientation="vertical"
+              borderColor="inherit"
+              height={"20px"}
+              borderWidth="0.5px"
+            />
           </Flex>
         </Flex>
         {searchToggle && (
           <CustomSearch
-            // searchToggle={searchToggle}
-            // setSearchToggle={setSearchToggle}
+          // searchToggle={searchToggle}
+          // setSearchToggle={setSearchToggle}
           />
         )}
 
