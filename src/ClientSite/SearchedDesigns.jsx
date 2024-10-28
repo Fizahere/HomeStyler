@@ -31,10 +31,10 @@ const SearchedDesigns = () => {
         justifyContent={"space-between"}
       >
         <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
-          Search Results For{" "}
+          Search Results For:{" "}
           <Text as="span" fontWeight="bold">
-            {query?.toUpperCase() || "YOUR SEARCH"}
-          </Text>
+            "{query?.toUpperCase() || "YOUR SEARCH"}"
+            </Text>
         </Heading>
       </Flex>
       <Box p={4}>

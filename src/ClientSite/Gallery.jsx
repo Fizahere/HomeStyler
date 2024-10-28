@@ -14,12 +14,12 @@ import Gallery8 from '../assets/images/gallery8.jpg';
 function Gallery() {
     const designs = [
         {
-            name: 'Elegant Kitchen Design',
+            name: 'Elegant Kitchen',
             image: Gallery1,
             height: '250px',
         },
         {
-            name: 'Cozy Living Room Design',
+            name: 'Cozy Living Room',
             image: Gallery2,
         },
         {
@@ -27,15 +27,15 @@ function Gallery() {
             image: Gallery3,
         },
         {
-            name: 'Cozy Living Room Retreat',
+            name: 'Cozy Living Room',
             image: Gallery4,
         },
         {
-            name: 'Elegant Glam Bedroom',
+            name: 'Elegant Bedroom',
             image: Gallery5,
         },
         {
-            name: 'Modern Kitchen Delight',
+            name: 'Modern Kitchen',
             image: Gallery6,
         },
         {
@@ -43,7 +43,7 @@ function Gallery() {
             image: Gallery7,
         },
         {
-            name: 'Industrial Loft Living Room',
+            name: 'Loft Living Room',
             image: Gallery8,
         },
     ];
