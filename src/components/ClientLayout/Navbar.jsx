@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Flex,
@@ -63,17 +63,33 @@ function Navbar() {
   };
   const cart = localStorage.getItem("cart");
   const cartCount = cart ? JSON.parse(cart).length : 0;
+  const [isFixed, setIsFixed] = useState(false);
 
+  const handleScroll = () => {
+    if (window.scrollY > 10) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <Box
-        zIndex={1}
-        position="fixed"
-        top={0}
+        position={isFixed ? 'fixed' : 'relative'}
+        top={isFixed ? 0 : 0}
         left={0}
         right={0}
+        boxShadow={isFixed ? 'sm' : 'none'}
+        zIndex="1000"
+        transition="top 0.2s ease, box-shadow 0.2s ease"
         bg={colorMode === "light" ? Colors.BODYLIGHT : Colors.DASHBOARDTHEME}
-        boxShadow="sm"
       >
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton

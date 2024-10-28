@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { Box, Center } from "@chakra-ui/react";
 import { Colors } from "../../constants/colors";
 import Footer from "./Footer";
+import TopHeader from "./TopHeader";
 
 function ClientLayout() {
   return (
@@ -14,6 +15,7 @@ function ClientLayout() {
           bg: Colors.DASHBOARDTHEME,
         }}
       >
+        <TopHeader/>
         <Navbar />
         <Box 
         p={4} 

@@ -75,7 +75,7 @@ import {
                       />
                     </Td>
                     <Td>{item.name}</Td>
-                    <Td isNumeric>${item.price}</Td>
+                    <Td isNumeric>PKR {item.price}</Td>
                     <Td>
                       <Icon
                         as={APP_ICONS.CLOSE}

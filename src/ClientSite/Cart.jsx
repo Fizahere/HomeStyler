@@ -32,8 +32,6 @@ const Cart = ({ disclosure }) => {
     setCartItems(updatedCart);
   };
 
-  // console.log("Cart Items: ", cartItems);
-
   return (
     <>
       <Drawer
@@ -45,9 +43,9 @@ const Cart = ({ disclosure }) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>Cart</DrawerHeader>
+          <DrawerHeader bg={Colors.BODYLIGHT} _dark={{ bg: Colors.DASHBOARDTHEME }}>Cart</DrawerHeader>
 
-          <DrawerBody bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>
+          <DrawerBody bg={Colors.BODYLIGHT} _dark={{ bg: Colors.DASHBOARDTHEME }}>
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <Card
@@ -83,9 +81,9 @@ const Cart = ({ disclosure }) => {
                       />
                       <Flex flexDirection={"column"}>
                         <Text fontSize={10}>Name: {item.name}</Text>
-                        <Text fontSize={10}>Price: ${item.price}</Text>
+                        <Text fontSize={10}>Price: PKR {item.price}</Text>
                         <Text fontSize={10}>Quantity: {item.quantity}</Text>
-                        <Text fontSize={10}>Total: ${item.totalPrice}</Text>
+                        <Text fontSize={10}>Total: PKR {item.totalPrice}</Text>
                       </Flex>
                     </Flex>
                   </CardBody>
@@ -96,7 +94,7 @@ const Cart = ({ disclosure }) => {
             )}
           </DrawerBody>
 
-          <DrawerFooter bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>
+          <DrawerFooter bg={Colors.BODYLIGHT} _dark={{ bg: Colors.DASHBOARDTHEME }}>
             <Button
               width={"100%"}
               color={Colors.WHITE}
@@ -106,7 +104,8 @@ const Cart = ({ disclosure }) => {
                 localStorage.removeItem("cart");
                 location.assign(UnAuthenticatedRoutesNames.HOME);
               }}
-            >
+              isDisabled={cartItems.length === 0}
+              >
               Checkout
             </Button>
           </DrawerFooter>

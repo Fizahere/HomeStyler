@@ -53,7 +53,7 @@ const TabbedSections = ({
         <Tabs
           variant="enclosed"
           overflow={"auto"}
-          colorScheme="White" 
+          colorScheme="Grey" 
           onChange={(index) => {
             const categories = [
               "All",

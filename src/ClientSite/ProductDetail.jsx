@@ -147,11 +147,11 @@ function ProductDetail() {
                 <Text mx={4} my={2}>{quantity}</Text>
                 <Button onClick={() => handleQuantityChange(false)}>-</Button>
               </Flex>
-              <Text color="green">$ {totalPrice.toFixed(2)}</Text>
+              <Text color="green">PKR {totalPrice.toFixed(2)}</Text>
             </Flex>
             <Flex justifyContent={"space-between"} alignItems={"center"}>
               <Text mt={6} fontSize={"15px"} color={"green"} fontWeight={"400"}>
-                Price: ${price}
+                Price: PKR {price}
               </Text>
               <Box>
                 {[...Array(5)].map((_, index) => (

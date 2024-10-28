@@ -165,7 +165,7 @@ function Detail() {
           </Box>
           <Box mt={4}>
             <Text color={"green"} fontSize="1xl">
-              <span>Total Cost: $ </span>
+              <span>Total Cost: PKR </span>
               {getDesignById?.price}
             </Text>
           </Box>

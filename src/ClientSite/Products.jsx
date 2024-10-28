@@ -206,13 +206,22 @@ const TabbedSections = ({ prodCategoryName, searchQuery, selectedItem }) => {
       <Flex p={4}>
         <Tabs
           variant="enclosed"
+          borderTop={Colors.DASHBOARDTHEME}
+          borderLeft={Colors.DASHBOARDTHEME}
+          borderRight={Colors.DASHBOARDTHEME}
+          _dark={{
+            borderTop:Colors.GREY,
+            borderLeft:Colors.GREY,
+            borderRight:Colors.GREY
+          }}
           onChange={(index) => {
             setSelectedSubCategory(subcategories[index]);
           }}
-        >
+          >
           <TabList>
             {subcategories?.map((sub, index) => (
-              <Tab key={index}>{sub}</Tab>
+              
+              <Tab color={'black'} _dark={{color:Colors.WHITE}} key={index}>{sub}</Tab>
             ))}
           </TabList>
         </Tabs>
