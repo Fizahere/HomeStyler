@@ -45,9 +45,9 @@ const Cart = ({ disclosure }) => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader bg={"inherit"}>Cart</DrawerHeader>
+          <DrawerHeader bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>Cart</DrawerHeader>
 
-          <DrawerBody bg={"inherit"}>
+          <DrawerBody bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>
             {cartItems.length > 0 ? (
               cartItems.map((item, index) => (
                 <Card
@@ -55,7 +55,7 @@ const Cart = ({ disclosure }) => {
                   boxShadow={
                     "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
                   }
-                  _dark={{ bg: Colors.DARKTHEME }}
+                  _dark={{ bg: '#252525' }}
                   border={"1px solid grey"}
                   mb={4}
                 >
@@ -96,7 +96,7 @@ const Cart = ({ disclosure }) => {
             )}
           </DrawerBody>
 
-          <DrawerFooter bg={"inherit"}>
+          <DrawerFooter bg={Colors.BODYLIGHT} _dark={{bg:Colors.DASHBOARDTHEME}}>
             <Button
               width={"100%"}
               color={Colors.WHITE}
