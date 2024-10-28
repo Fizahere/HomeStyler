@@ -21,8 +21,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Input,
+  InputGroup,
+  InputRightElement,
 } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import APP_ICONS from "../../constants/icons";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
@@ -32,7 +35,18 @@ import Cart from "../../ClientSite/Cart";
 function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
   const cartDrawer = useDisclosure();
+  const handleSearch = (e) => {
+    if (e.key === "Enter" && searchQuery.trim()) {
+      const searchPath = UnAuthenticatedRoutesNames.SEARCH.replace(":query", searchQuery.trim());
+      navigate(searchPath);
+    }
+  };
+  
+  
 
   const categories = [
     "Living Room",
@@ -89,6 +103,27 @@ function Navbar() {
               </Text>
             </Flex>
           </NavLink>
+
+          {/* search bar start */}
+          <InputGroup
+            w={230}
+            display={{ base: "none", lg: "flex" }}
+            justifyContent={"space-between"}
+          >
+            <Input
+              borderRadius={10}
+              p={2}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyDown={handleSearch}
+              placeholder={"Search"}
+              _placeholder={{ fontSize: "15px" }}
+            />
+            <InputRightElement mr={3}>
+              <Icon as={APP_ICONS.SEARCH} color={"grey"} fontSize={20} />
+            </InputRightElement>
+          </InputGroup>
+          {/* search bar start */}
 
           <HStack
             spacing={8}
@@ -230,13 +265,13 @@ function Navbar() {
           </HStack>
 
           <Flex alignItems="center">
-            <Box display={{ base: "none", lg: "block" }}>
-              <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
-                <Text fontWeight={"bold"} mr={2}>
-                  Login
-                </Text>
-              </NavLink>
-            </Box>
+            {/* <Box display={{base:'none',lg:'block'}}> */}
+            <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
+              <Text fontWeight={"bold"} mr={2}>
+                Login
+              </Text>
+            </NavLink>
+            {/* </Box> */}
             <NavLink to={UnAuthenticatedRoutesNames.WISHLIST}>
               <Icon
                 mt={2}
@@ -473,9 +508,6 @@ function Navbar() {
                   onClick={onClose}
                 >
                   Contact
-                </NavLink>
-                <NavLink to={UnAuthenticatedRoutesNames.LOGIN}>
-                    Login
                 </NavLink>
               </Stack>
             </DrawerBody>

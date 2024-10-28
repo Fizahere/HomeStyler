@@ -32,7 +32,7 @@ const Cart = ({ disclosure }) => {
     setCartItems(updatedCart);
   };
 
-  console.log("Cart Items: ", cartItems);
+  // console.log("Cart Items: ", cartItems);
 
   return (
     <>
