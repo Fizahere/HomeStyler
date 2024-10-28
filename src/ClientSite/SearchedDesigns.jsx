@@ -14,17 +14,21 @@ import {
   useDisclosure,
   InputRightElement,
   Text,
+  Center,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import TabbedSections from "../components/Mist/TabbedSections";
 import { useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
+import CustomCard from "../components/Mist/Card";
 // import WishlistTable from "../components/Mist/WishlistTable";
 
 const SearchedDesigns = () => {
   const { query } = useParams();
-  console.log(query,'searchQuery');
-  const[searchQuery,setSearchQuery] = useState("");
+  console.log(query, "searchQuery");
+
+//   const SearchedData
   return (
     <>
       <Box mt={4}>
@@ -34,10 +38,13 @@ const SearchedDesigns = () => {
           justifyContent={"space-between"}
         >
           <Heading ml={3} fontSize={{ base: "20px", md: "30px" }}>
-            {/* {categoryName?.toUpperCase() || "Wishlist"} */}
+            Search Results For{" "}
+            <Text as="span" fontWeight="bold">
+              {query?.toUpperCase() || "YOUR SEARCH"}
+            </Text>
           </Heading>
 
-          <Flex flexDirection={{ base: "column", md: "row" }}>
+          {/* <Flex flexDirection={{ base: "column", md: "row" }}>
             <InputGroup>
               <Input
                 borderRadius={10}
@@ -50,9 +57,9 @@ const SearchedDesigns = () => {
               <InputRightElement mr={3}>
                 <Icon as={APP_ICONS.SEARCH} color={"grey"} fontSize={20} />
               </InputRightElement>
-            </InputGroup>
+            </InputGroup> */}
 
-            {/* <Box ml={4} mt={{ base: 2, md: 0 }}>
+          {/* <Box ml={4} mt={{ base: 2, md: 0 }}>
               <Menu isOpen={dropdown.isOpen}>
                 <MenuButton
                   as={Button}
@@ -107,9 +114,21 @@ const SearchedDesigns = () => {
                 </Box>
               </Menu>
             </Box> */}
-          </Flex>
         </Flex>
-
+        {/* </Flex> */}
+        <Box p={4}>
+          <Center>
+            <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} spacing={6}>
+              {/* {filteredProducts.length > 0 ? (
+            filteredProducts.map((singleItem, index) => (
+              <CustomCard key={index} singleProduct={singleItem} />
+            ))
+          ) : ( */}
+              <Text textAlign={"left"}>No products available</Text>
+              {/* )} */}
+            </SimpleGrid>
+          </Center>
+        </Box>
         {/* <Box py={8}>
           {
             categoryName && (
