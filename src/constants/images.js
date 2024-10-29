@@ -89,7 +89,7 @@ import Eclectic_Art_Studio4 from "../assets/images/eclectic/office/item4.jpeg";
 import Eclectic_Art_Studio5 from "../assets/images/eclectic/office/item5.jpeg";
 import Eclectic_Art_Studio6 from "../assets/images/eclectic/office/item6.jpeg";
 import PROD1 from "../../src/assets/images/productsImages/prod1.jpg";
-import PROD2 from "../assets/images/productsImages/prod2.jpg";
+import PROD2 from "../assets/images/productsImages/prod2.png";
 import PROD3 from "../assets/images/productsImages/prod3.jpg";
 import PROD4 from "../assets/images/productsImages/prod4.jpg";
 import PROD5 from "../assets/images/productsImages/prod5.jpg";
@@ -105,6 +105,14 @@ import PROD14 from "../assets/images/productsImages/prod14.png";
 import PROD15 from "../assets/images/productsImages/prod15.png";
 import PROD16 from "../assets/images/productsImages/prod16.png";
 import PROD17 from "../assets/images/productsImages/prod17.png";
+import PROD18 from "../assets/images/productsImages/prod18.png";
+import PROD19 from "../assets/images/productsImages/prod19.png";
+import PROD20 from "../assets/images/productsImages/prod20.png";
+import PROD21 from "../assets/images/productsImages/prod21.png";
+import PROD22 from "../assets/images/productsImages/prod22.png";
+import PROD23 from "../assets/images/productsImages/prod23.png";
+import PROD24 from "../assets/images/productsImages/prod24.png";
+
 import samantha_green from "../assets/images/designer1.jpg";
 import emily_johnson from "../assets/images/designer2.jpg";
 import michael_lee from "../assets/images/designer3.jpg";
@@ -143,6 +151,13 @@ export const productsImagesMap = {
   PROD15: PROD15,
   PROD16: PROD16,
   PROD17: PROD17,
+  PROD18: PROD18,
+  PROD19: PROD19,
+  PROD20: PROD20,
+  PROD21: PROD21,
+  PROD22: PROD22,
+  PROD23: PROD23,
+  PROD24: PROD24,
 };
 
 export const designImagesMap = {
