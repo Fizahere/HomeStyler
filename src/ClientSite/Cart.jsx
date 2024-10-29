@@ -166,7 +166,7 @@ const Cart = ({ disclosure }) => {
               width={"100%"}
               color={Colors.WHITE}
               bg={Colors.THEME}
-              _hover={{ bg: Colors.THEME }}
+              _hover={{ bg: Colors.THEME, color: Colors.WHITE }}
               onClick={onOpen}
               isDisabled={cartItems.length === 0}
             >
@@ -226,7 +226,7 @@ const Cart = ({ disclosure }) => {
                     {Object.values(errors)[0]}
                   </Text>
                 )}
-                <Button bg={Colors.BUTTON} type="submit" width="full">
+                <Button bg={Colors.THEME} color={Colors.WHITE} _hover={{ bg: Colors.THEME, color: Colors.WHITE }} type="submit" width="full">
                   Order Now
                 </Button>
               </VStack>
