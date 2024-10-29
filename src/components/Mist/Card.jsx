@@ -61,6 +61,7 @@ function CustomCard({ singleProduct, isLoading }) {
         status: "warning",
         duration: 3000,
         isClosable: true,
+        position: "top-right",
       });
     } else {
       wishlist.push(singleProduct);
@@ -73,6 +74,7 @@ function CustomCard({ singleProduct, isLoading }) {
         status: "success",
         duration: 3000,
         isClosable: true,
+        position: "top-right",
       });
     }
   };

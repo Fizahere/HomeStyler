@@ -119,8 +119,8 @@ const navigate=useNavigate()
                         }}
                         key={item}
                         onClick={() => {
-                          handleSortSelection(item); // Call your selection handler
-                          dropdown.onClose(); // Close the dropdown after selection
+                          handleSortSelection(item);
+                          dropdown.onClose(); 
                         }}
                       >
                         {item}
