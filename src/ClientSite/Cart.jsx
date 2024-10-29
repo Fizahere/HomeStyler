@@ -64,7 +64,7 @@ const Cart = ({ disclosure }) => {
     if (!/^[0-9]{11}$/.test(formData.phone)) {
       newErrors.phone = "invalid phone number";
     }
-    if (!/^(?=.*[a-z])(?=.*\d)[a-zA-Z\d\s]{8,}$/.test(formData.address)) {
+    if (!/^[a-zA-Z]{8,}$/.test(formData.address)) {
       newErrors.address = "invalid address";
     }
     if (formData.paymentMethod === "card" && !/^[a-zA-Z0-9]{5,}$/.test(formData.cardNumber)) {
