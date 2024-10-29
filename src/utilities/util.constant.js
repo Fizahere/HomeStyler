@@ -15,6 +15,7 @@ export const UnAuthenticatedRoutesNames = {
     ABOUT: '/home-styler/about',
     SHOP: '/home-styler/category/:category',
     PRODUCTS: '/home-styler/product-category/:prodCategory',
+    ACCESSORIES: '/home-styler/accessories',
     CONTACT: '/home-styler/contact-us',
     WISHLIST: '/home-styler/wishlist',
     FEEDBACK: '/home-styler/feedback',
@@ -24,5 +25,6 @@ export const UnAuthenticatedRoutesNames = {
     DETAIL: '/home-styler/detail/design/:design',
     LOGIN: '/home-styler/login',
     PRODUCTDETAIL: '/home-styler/detail/product/:product',
+    ACCESSORYDETAIL: '/home-styler/detail/accessory/:accessory',
     SEARCH:'/home-styler/search/:query'
 }

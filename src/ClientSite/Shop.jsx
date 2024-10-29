@@ -16,10 +16,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import TabbedSections from "../components/Mist/TabbedSections";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
 import WishlistTable from "../components/Mist/WishlistTable";
+import CustomBreadCrumb from "../components/Mist/CustomBreadCrumb";
+import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 
 const Shop = () => {
   const dropdown = useDisclosure();
@@ -33,6 +35,7 @@ const Shop = () => {
   const { category: categoryName } = useParams();
   const [selectedDesign, setSelectedDesign] = useState("All");
   const [sortOption, setSortOption] = useState("");
+  const navigate=useNavigate()
 
   const handleSortSelection = (item) => {
     setSelectedItem(item);
@@ -45,9 +48,17 @@ const Shop = () => {
     }
   };
 
+  const breadcrumbItems = [
+    { label: "Home".toUpperCase(), onClick: () => navigate(UnAuthenticatedRoutesNames.HOME) },
+    { label: categoryName.toUpperCase() || "SHOP", isCurrent: true },
+  ];
+  
+
   return (
     <>
       <Box mt={4}>
+        <CustomBreadCrumb items={breadcrumbItems} />
+
         <Flex
           p={2}
           borderBottom={"1px solid grey"}
@@ -73,60 +84,59 @@ const Shop = () => {
             </InputGroup>
 
             <Box ml={4} mt={{ base: 2, md: 0 }}>
-            <Menu isOpen={dropdown.isOpen}>
-  <MenuButton
-    as={Button}
-    onClick={dropdown.onToggle}
-    _dark={{ bg: Colors.DARKTHEME }}
-    border={"1px solid #e2e8f0"}
-  >
-    <Flex>
-      <Text
-        color={Colors.GREY}
-        fontWeight={"400"}
-        fontSize={"15px"}
-        mt={0.5}
-      >
-        {selectedItem}
-      </Text>
-      <Icon
-        as={APP_ICONS.TOGGLE}
-        transform={
-          dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
-        }
-        transition="transform 0.3s ease"
-        ml={2}
-        fontSize={"20px"}
-      />
-    </Flex>
-  </MenuButton>
-  <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
-    <MenuList
-      border={"1px solid grey"}
-      py={0}
-      _dark={{ bg: Colors.DARKTHEME }}
-    >
-      {items.map((item) => (
-        <MenuItem
-          _dark={{
-            bg: Colors.DASHBOARDTHEME,
-            _hover: {
-              bg: "#333333",
-            },
-          }}
-          key={item}
-          onClick={() => {
-            dropdown.onClose(); // Call the onClose function here
-            handleSortSelection(item);
-          }}
-        >
-          {item}
-        </MenuItem>
-      ))}
-    </MenuList>
-  </Box>
-</Menu>
-
+              <Menu isOpen={dropdown.isOpen}>
+                <MenuButton
+                  as={Button}
+                  onClick={dropdown.onToggle}
+                  _dark={{ bg: Colors.DARKTHEME }}
+                  border={"1px solid #e2e8f0"}
+                >
+                  <Flex>
+                    <Text
+                      color={Colors.GREY}
+                      fontWeight={"400"}
+                      fontSize={"15px"}
+                      mt={0.5}
+                    >
+                      {selectedItem}
+                    </Text>
+                    <Icon
+                      as={APP_ICONS.TOGGLE}
+                      transform={
+                        dropdown.isOpen ? "rotate(180deg)" : "rotate(0deg)"
+                      }
+                      transition="transform 0.3s ease"
+                      ml={2}
+                      fontSize={"20px"}
+                    />
+                  </Flex>
+                </MenuButton>
+                <Box p={4} _dark={{ bg: Colors.DARKTHEME }}>
+                  <MenuList
+                    border={"1px solid grey"}
+                    py={0}
+                    _dark={{ bg: Colors.DARKTHEME }}
+                  >
+                    {items.map((item) => (
+                      <MenuItem
+                        _dark={{
+                          bg: Colors.DASHBOARDTHEME,
+                          _hover: {
+                            bg: "#333333",
+                          },
+                        }}
+                        key={item}
+                        onClick={() => {
+                          dropdown.onClose(); 
+                          handleSortSelection(item);
+                        }}
+                      >
+                        {item}
+                      </MenuItem>
+                    ))}
+                  </MenuList>
+                </Box>
+              </Menu>
             </Box>
           </Flex>
         </Flex>

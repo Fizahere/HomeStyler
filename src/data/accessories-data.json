@@ -1,0 +1,94 @@
+{
+  "accessories": [
+    {
+      "id": 1,
+      "name": "Modern Floor Lamp",
+      "description": "A stylish floor lamp with adjustable light settings, perfect for adding a modern touch to your living space.",
+      "price": 150.0,
+      "image": "acc1",
+      "rating": 4.5,
+      "isAccessory": true
+    },
+    {
+      "id": 2,
+      "name": "Decorative Wall Mirror",
+      "description": "A large, round decorative mirror that enhances the ambiance of any room.",
+      "price": 120.0,
+      "image": "acc2",
+      "rating": 4.7,
+      "isAccessory": true
+    },
+    {
+      "id": 3,
+      "name": "Ceramic Vase Set",
+      "description": "A set of three ceramic vases in assorted sizes, ideal for displaying fresh or dried flowers.",
+      "price": 60.0,
+      "image": "acc3",
+      "rating": 4.3,
+      "isAccessory": true
+    },
+    {
+      "id": 4,
+      "name": "Velvet Throw Pillow",
+      "description": "A soft and luxurious throw pillow in a deep blue color to add comfort and style.",
+      "price": 25.0,
+      "image": "acc4",
+      "rating": 4.2,
+      "isAccessory": true
+    },
+    {
+      "id": 5,
+      "name": "Wooden Coffee Table",
+      "description": "A rustic, solid wood coffee table with a natural finish, suitable for any interior style.",
+      "price": 200.0,
+      "image": "acc5",
+      "rating": 4.6,
+      "isAccessory": true
+    },
+    {
+      "id": 6,
+      "name": "Abstract Wall Art",
+      "description": "A large, colorful abstract painting to bring vibrancy to any wall.",
+      "price": 180.0,
+      "image": "acc6",
+      "rating": 4.8,
+      "isAccessory": true
+    },
+    {
+      "id": 7,
+      "name": "Vintage Clock",
+      "description": "A classic wall clock with a vintage design, perfect for adding charm to your home.",
+      "price": 80.0,
+      "image": "acc7",
+      "rating": 4.4,
+      "isAccessory": true
+    },
+    {
+      "id": 8,
+      "name": "Plant Stand",
+      "description": "A metal stand ideal for holding small to medium-sized potted plants indoors.",
+      "price": 40.0,
+      "image": "acc8",
+      "rating": 4.1,
+      "isAccessory": true
+    },
+    {
+      "id": 9,
+      "name": "Scented Candle Set",
+      "description": "A set of three scented candles with calming fragrances to create a relaxing atmosphere.",
+      "price": 30.0,
+      "image": "acc9",
+      "rating": 4.5,
+      "isAccessory": true
+    },
+    {
+      "id": 10,
+      "name": "Decorative Tray",
+      "description": "A gold decorative tray perfect for organizing small items or displaying candles.",
+      "price": 35.0,
+      "image": "acc10",
+      "rating": 4.6,
+      "isAccessory": true
+    }
+  ]
+}

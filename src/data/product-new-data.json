@@ -27,6 +27,38 @@
                   }
                 ],
                 "isProduct": true
+              },
+              {
+                "id": 12,
+                "name": "Sectional Sofa",
+                "designID": 8,
+                "image": "prod12",
+                "description": "A spacious sectional sofa, perfect for large living rooms.",
+                "price": 899.99,
+                "reviews": [
+                  {
+                    "user": "LiamP",
+                    "rating": 4.8,
+                    "comment": "Very comfortable and stylish."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 21,
+                "name": "Convertible Sofa Bed",
+                "designID": 15,
+                "image": "prod18",
+                "description": "A versatile sofa that easily converts into a bed.",
+                "price": 699.99,
+                "reviews": [
+                  {
+                    "user": "AliceT",
+                    "rating": 4.8,
+                    "comment": "Perfect for small spaces."
+                  }
+                ],
+                "isProduct": true
               }
             ]
           },
@@ -36,7 +68,7 @@
               {
                 "id": 2,
                 "name": "Leather Recliner",
-                "designID": 1,
+                "designID": 15,
                 "image": "prod2",
                 "description": "A comfortable leather recliner with adjustable backrest.",
                 "price": 499.99,
@@ -45,6 +77,38 @@
                     "user": "MikeR",
                     "rating": 4.7,
                     "comment": "Super comfortable!"
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 13,
+                "name": "Wingback Chair",
+                "designID": 9,
+                "image": "prod13",
+                "description": "A classic wingback chair with modern upholstery.",
+                "price": 349.99,
+                "reviews": [
+                  {
+                    "user": "SophiaG",
+                    "rating": 4.5,
+                    "comment": "Adds elegance to my reading nook."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 22,
+                "name": "Accent Armchair",
+                "designID": 2,
+                "image": "prod19",
+                "description": "A stylish armchair with a cozy, plush seat.",
+                "price": 299.99,
+                "reviews": [
+                  {
+                    "user": "BenK",
+                    "rating": 4.6,
+                    "comment": "Comfortable and elegant."
                   }
                 ],
                 "isProduct": true
@@ -57,7 +121,7 @@
               {
                 "id": 3,
                 "name": "Wooden Coffee Table",
-                "designID": 2,
+                "designID": 23,
                 "image": "prod3",
                 "description": "A rustic coffee table made from reclaimed wood.",
                 "price": 299.99,
@@ -66,6 +130,38 @@
                     "user": "SarahW",
                     "rating": 5.0,
                     "comment": "Beautiful and durable."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 23,
+                "name": "Glass Top Coffee Table",
+                "designID": 28,
+                "image": "prod20",
+                "description": "A modern coffee table with a glass top and metal frame.",
+                "price": 199.99,
+                "reviews": [
+                  {
+                    "user": "SophieM",
+                    "rating": 4.4,
+                    "comment": "Looks great and easy to clean."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 27,
+                "name": "Breakfast Nook Table",
+                "designID": 28,
+                "image": "prod21",
+                "description": "A compact table perfect for breakfast nooks.",
+                "price": 249.99,
+                "reviews": [
+                  {
+                    "user": "GeorgeP",
+                    "rating": 4.7,
+                    "comment": "Fits perfectly in our kitchen."
                   }
                 ],
                 "isProduct": true
@@ -83,7 +179,7 @@
               {
                 "id": 4,
                 "name": "Chandelier",
-                "designID": 3,
+                "designID": 25,
                 "image": "prod4",
                 "description": "A crystal chandelier for elegant lighting.",
                 "price": 999.99,
@@ -92,6 +188,38 @@
                     "user": "LindaK",
                     "rating": 4.8,
                     "comment": "Adds so much elegance to my living room."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 14,
+                "name": "Glass Table Lamp",
+                "designID": 28,
+                "image": "prod14",
+                "description": "A stylish glass table lamp with a soft glow.",
+                "price": 89.99,
+                "reviews": [
+                  {
+                    "user": "ChrisH",
+                    "rating": 4.6,
+                    "comment": "Perfect lighting for my bedroom."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 24,
+                "name": "Pendant Ceiling Light",
+                "designID": 25,
+                "image": "prod23",
+                "description": "A minimalist pendant light with adjustable height.",
+                "price": 89.99,
+                "reviews": [
+                  {
+                    "user": "LilyS",
+                    "rating": 4.6,
+                    "comment": "Adds a modern touch to my kitchen."
                   }
                 ],
                 "isProduct": true
@@ -104,7 +232,7 @@
               {
                 "id": 5,
                 "name": "Modern Wall Sconce",
-                "designID": 3,
+                "designID": 30,
                 "image": "prod5",
                 "description": "A sleek and modern wall sconce for soft lighting.",
                 "price": 149.99,
@@ -113,6 +241,22 @@
                     "user": "JakeP",
                     "rating": 4.2,
                     "comment": "Good value for money."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 25,
+                "name": "Industrial Wall Light",
+                "designID": 21,
+                "image": "prod22",
+                "description": "An industrial-style wall light with a metal finish.",
+                "price": 119.99,
+                "reviews": [
+                  {
+                    "user": "MarkD",
+                    "rating": 4.5,
+                    "comment": "Great for accent lighting."
                   }
                 ],
                 "isProduct": true
@@ -130,7 +274,7 @@
               {
                 "id": 6,
                 "name": "Persian Rug",
-                "designID": 4,
+                "designID": 5,
                 "image": "prod6",
                 "description": "A handmade Persian rug with intricate patterns.",
                 "price": 599.99,
@@ -139,6 +283,22 @@
                     "user": "NancyM",
                     "rating": 4.9,
                     "comment": "Absolutely gorgeous!"
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 16,
+                "name": "Blackout Curtains",
+                "designID": 18,
+                "image": "prod15",
+                "description": "Keep light out and maintain privacy with these blackout curtains.",
+                "price": 59.99,
+                "reviews": [
+                  {
+                    "user": "DavidR",
+                    "rating": 4.3,
+                    "comment": "Good quality, blocks light well."
                   }
                 ],
                 "isProduct": true
@@ -163,6 +323,22 @@
                   }
                 ],
                 "isProduct": true
+              },
+              {
+                "id": 26,
+                "name": "Round Wall Mirror",
+                "designID": 22,
+                "image": "prod24",
+                "description": "A large round mirror with a wooden frame.",
+                "price": 159.99,
+                "reviews": [
+                  {
+                    "user": "EmmaB",
+                    "rating": 4.9,
+                    "comment": "Brightens up the room beautifully."
+                  }
+                ],
+                "isProduct": true
               }
             ]
           }
@@ -177,7 +353,7 @@
               {
                 "id": 8,
                 "name": "Modern Kitchen Cabinets",
-                "designID": 5,
+                "designID": 12,
                 "image": "prod8",
                 "description": "Stylish kitchen cabinets with ample storage space.",
                 "price": 1499.99,
@@ -186,6 +362,22 @@
                     "user": "LauraS",
                     "rating": 4.6,
                     "comment": "High-quality finish and very functional."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 17,
+                "name": "Wooden Kitchen Island",
+                "designID": 13,
+                "image": "prod16",
+                "description": "A functional kitchen island with ample storage.",
+                "price": 899.99,
+                "reviews": [
+                  {
+                    "user": "MeganS",
+                    "rating": 4.6,
+                    "comment": "Adds functionality to my kitchen."
                   }
                 ],
                 "isProduct": true
@@ -198,7 +390,7 @@
               {
                 "id": 9,
                 "name": "Stainless Steel Sink",
-                "designID": 5,
+                "designID": 12,
                 "image": "prod9",
                 "description": "Durable and spacious sink for a modern kitchen.",
                 "price": 299.99,
@@ -233,6 +425,22 @@
                     "user": "JessicaR",
                     "rating": 4.7,
                     "comment": "Looks great and very practical."
+                  }
+                ],
+                "isProduct": true
+              },
+              {
+                "id": 18,
+                "name": "Rain Showerhead",
+                "designID": 14,
+                "image": "prod17",
+                "description": "Experience a luxurious rain shower at home.",
+                "price": 129.99,
+                "reviews": [
+                  {
+                    "user": "LucasH",
+                    "rating": 4.8,
+                    "comment": "Feels like a spa shower!"
                   }
                 ],
                 "isProduct": true

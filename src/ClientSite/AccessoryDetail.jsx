@@ -10,52 +10,40 @@ import {
   Avatar,
   Icon,
   Button,
+  useToast,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useNavigate, useParams } from "react-router-dom";
-import ProductsData from "../data/product-new-data.json";
 import CustomButton from "../components/Mist/Button";
-import { productsImagesMap } from "../constants/images";
+import { accessoriesImagesMap } from "../constants/images";
 import APP_ICONS from "../constants/icons";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import CustomBreadcrumb from "../components/Mist/CustomBreadCrumb";
-import { useToast } from "@chakra-ui/react";
+import AccessoryData from '../data/accessories-data.json';
 
-function ProductDetail() {
-  const { product: productID } = useParams();
-  const id = Number(productID);
+function AccessoryDetail() {
+  const { accessory: accessoryID } = useParams();
+  const id = Number(accessoryID);
   const [imageUrl, setImageUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [foundProduct, setFoundProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const toast = useToast();
-const navigate=useNavigate()
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = () => {
-      // const AllCategories = ProductsData.browsingProducts.categories.map((singleCategory)=>{
-      //   const findCategory = singleCategory?.subcategories?.find((prod)=>{
-      //     console.log(prod,'prod')
-      //     prod?.name.toLowerCase() ===
-      //   })
-      //   console.log(singleCategory,'singleCategory')
-      // })
-      // console.log(AllCategories,'fetch')
-
-      const product = ProductsData.browsingProducts.categories
-        .flatMap((category) =>
-          category.subcategories.flatMap((subcategory) => subcategory.products)
-        )
-        .find((product) => product.id === id);
+      
+      const product = AccessoryData.accessories.find((singleItem) => singleItem.id === id);
 
       if (product) {
         const imageKey = product.image?.toUpperCase();
-        const productImageSrc = productsImagesMap[imageKey];
+        const productImageSrc = accessoriesImagesMap[imageKey];
         setImageUrl(productImageSrc || "fallback-image-url");
         setFoundProduct(product);
         setTotalPrice(product.price);
       }
-
       setIsLoading(false);
     };
 
@@ -71,7 +59,7 @@ const navigate=useNavigate()
   const addToCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const itemIndex = existingCart.findIndex((item) => item.id === id);
-
+  
     if (itemIndex > -1) {
       toast({
         title: `${foundProduct.name} is already in your cart!`,
@@ -92,7 +80,7 @@ const navigate=useNavigate()
         reviews: foundProduct.reviews,
       });
       localStorage.setItem("cart", JSON.stringify(existingCart));
-
+      
       toast({
         title: `${foundProduct?.name} added to your cart.`,
         description: `Quantity: ${quantity}`,
@@ -101,12 +89,14 @@ const navigate=useNavigate()
         isClosable: true,
         position: "top-right",
       });
-
+  
       setTimeout(() => {
         location.assign(UnAuthenticatedRoutesNames.HOME);
       }, 3000);
     }
   };
+  
+
 
   if (isLoading) {
     return (
@@ -149,14 +139,19 @@ const navigate=useNavigate()
   const { name, description, price, reviews } = foundProduct;
   const breadcrumbItems = [
     {
-      label: "Home".toLocaleUpperCase(),
-      onClick: () => {
-        navigate(UnAuthenticatedRoutesNames.HOME);
-      },
+      label: "HOME",
+      onClick: () => navigate(UnAuthenticatedRoutesNames.HOME),
     },
-    // { label: "SHOP",},
-    { label: name?.toLocaleUpperCase() || "Product", isCurrent: true },
+    {
+      label: "ACCESSORIES",
+      onClick: () => navigate(UnAuthenticatedRoutesNames.ACCESSORIES),
+    },
+    {
+      label: name?.toUpperCase() || "ACCESSORIES",
+      isCurrent: true,
+    },
   ];
+  
   const reviewsArr = reviews?.length || 0;
 
   return (
@@ -261,4 +256,4 @@ const navigate=useNavigate()
   );
 }
 
-export default ProductDetail;
+export default AccessoryDetail;

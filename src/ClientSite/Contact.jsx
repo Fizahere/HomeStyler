@@ -9,6 +9,7 @@ import {
   Icon,
   Button,
   useToast,
+  Center,
 } from "@chakra-ui/react";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
@@ -220,6 +221,24 @@ const Contact = () => {
             </Text>
           </Box>
         </Box>
+        <Box
+  px={{ base: 0, md: 20 }}
+  py={10}
+  textAlign="center"
+  width={{ base: "400px", sm: "1000px" }}
+  height={{ base: "300px", md: "450px" }}
+  maxWidth="100%"
+  mx="auto" 
+>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.017148928814!2d67.07182317437398!3d24.8632638779274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33ea3db108f41%3A0x42acc4507358b160!2sAptech%20Learning%2C%20Shahrah%20e%20Faisal%20Center!5e0!3m2!1sen!2s!4v1730182599602!5m2!1sen!2s"
+    width="100%"
+    height="100%"
+    allowFullScreen=""
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</Box>
       </Box>
     </>
   );

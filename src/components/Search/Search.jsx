@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Box, IconButton, Input, Flex } from "@chakra-ui/react";
-import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
-import { useNavigate, useParams } from "react-router-dom";
+import { Box, Input } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import { Colors } from "../../constants/colors";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 
-const CustomSearch = () => {
+const CustomSearch = ({handleToggleOfSearch}) => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -17,6 +16,7 @@ const CustomSearch = () => {
       );
       navigate(searchPath);
       setSearchQuery("");
+      handleToggleOfSearch();
     }
   };
   // console.log(searchToggle,'searchToggle');

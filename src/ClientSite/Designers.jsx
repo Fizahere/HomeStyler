@@ -119,6 +119,9 @@ function Designers() {
             <Text mt={1}>
               <b>phone:</b> {selectedDesigner?.contact?.phone}
             </Text>
+            <Text mt={1}>
+              <b>Rate/hour:</b> {selectedDesigner?.charges}
+            </Text>
           </ModalBody>
         </ModalContent>
       </Modal>
