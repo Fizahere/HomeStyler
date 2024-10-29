@@ -100,7 +100,7 @@
               {
                 "id": 22,
                 "name": "Accent Armchair",
-                "designID": 23,
+                "designID": 2,
                 "image": "prod19",
                 "description": "A stylish armchair with a cozy, plush seat.",
                 "price": 299.99,
@@ -232,7 +232,7 @@
               {
                 "id": 5,
                 "name": "Modern Wall Sconce",
-                "designID": 3,
+                "designID": 30,
                 "image": "prod5",
                 "description": "A sleek and modern wall sconce for soft lighting.",
                 "price": 149.99,
