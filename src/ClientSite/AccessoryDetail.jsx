@@ -10,6 +10,7 @@ import {
   Avatar,
   Icon,
   Button,
+  useToast,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
 import { useParams } from "react-router-dom";
@@ -28,6 +29,7 @@ function AccessoryDetail() {
   const [foundProduct, setFoundProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
+  const toast = useToast();
 
   useEffect(() => {
     const fetchData = () => {
@@ -56,9 +58,15 @@ function AccessoryDetail() {
   const addToCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const itemIndex = existingCart.findIndex((item) => item.id === id);
-
+  
     if (itemIndex > -1) {
-      alert(`${foundProduct.name} is already in your cart!`);
+      toast({
+        title: `${foundProduct.name} is already in your cart!`,
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
     } else {
       existingCart.push({
         id,
@@ -71,14 +79,23 @@ function AccessoryDetail() {
         reviews: foundProduct.reviews,
       });
       localStorage.setItem("cart", JSON.stringify(existingCart));
-      alert(
-        `${foundProduct.name} has been added to your cart with a quantity of ${quantity}.`
-      );
-      location.assign(UnAuthenticatedRoutesNames.HOME);
+      
+      toast({
+        title: `${foundProduct?.name} added to your cart.`,
+        description: `Quantity: ${quantity}`,
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+  
+      setTimeout(() => {
+        location.assign(UnAuthenticatedRoutesNames.HOME);
+      }, 3000);
     }
-
-    // console.log("Current Cart:", existingCart);
   };
+  
+
 
   if (isLoading) {
     return (

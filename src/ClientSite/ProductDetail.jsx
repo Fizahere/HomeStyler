@@ -19,6 +19,7 @@ import { productsImagesMap } from "../constants/images";
 import APP_ICONS from "../constants/icons";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import CustomBreadcrumb from "../components/Mist/CustomBreadCrumb";
+import { useToast } from "@chakra-ui/react";
 
 function ProductDetail() {
   const { product: productID } = useParams();
@@ -28,6 +29,7 @@ function ProductDetail() {
   const [foundProduct, setFoundProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
+  const toast = useToast();
 
   useEffect(() => {
     const fetchData = () => {
@@ -67,12 +69,19 @@ function ProductDetail() {
     setTotalPrice(foundProduct.price * newQuantity);
   };
 
+
   const addToCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const itemIndex = existingCart.findIndex((item) => item.id === id);
-
+  
     if (itemIndex > -1) {
-      alert(`${foundProduct.name} is already in your cart!`);
+      toast({
+        title: `${foundProduct.name} is already in your cart!`,
+        status: "warning",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
     } else {
       existingCart.push({
         id,
@@ -85,14 +94,49 @@ function ProductDetail() {
         reviews: foundProduct.reviews,
       });
       localStorage.setItem("cart", JSON.stringify(existingCart));
-      alert(
-        `${foundProduct.name} has been added to your cart with a quantity of ${quantity}.`
-      );
-      location.assign(UnAuthenticatedRoutesNames.HOME);
+      
+      toast({
+        title: `${foundProduct?.name} added to your cart.`,
+        description: `Quantity: ${quantity}`,
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "top-right",
+      });
+  
+      setTimeout(() => {
+        location.assign(UnAuthenticatedRoutesNames.HOME);
+      }, 3000);
     }
-
-    // console.log("Current Cart:", existingCart);
   };
+  
+
+  // const addToCart = () => {
+  //   const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+  //   const itemIndex = existingCart.findIndex((item) => item.id === id);
+
+  //   if (itemIndex > -1) {
+  //     alert(`${foundProduct.name} is already in your cart!`);
+  //   } else {
+  //     existingCart.push({
+  //       id,
+  //       name: foundProduct.name,
+  //       price: foundProduct.price,
+  //       quantity,
+  //       totalPrice,
+  //       image: imageUrl,
+  //       description: foundProduct.description,
+  //       reviews: foundProduct.reviews,
+  //     });
+  //     localStorage.setItem("cart", JSON.stringify(existingCart));
+  //     alert(
+  //       `${foundProduct.name} has been added to your cart with a quantity of ${quantity}.`
+  //     );
+  //     location.assign(UnAuthenticatedRoutesNames.HOME);
+  //   }
+
+  //   // console.log("Current Cart:", existingCart);
+  // };
 
   if (isLoading) {
     return (
