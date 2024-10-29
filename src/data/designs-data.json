@@ -13,7 +13,8 @@
         "Cozy_Office_Space3"
       ],
       "price": 499.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Emily Johnson"
     },
     {
       "id": 2,
@@ -28,7 +29,9 @@
         "Elegant_Executive_Office3"
       ],
       "price": 799.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Emily Johnson"
+
     },
     {
       "id": 3,
@@ -43,7 +46,9 @@
         "Cozy_Living_Room_Retreat3"
       ],
       "price": 399.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Samantha Green"
+
     },
     {
       "id": 4,
@@ -58,7 +63,9 @@
         "Minimalist_Modern_Living_Room3"
       ],
       "price": 349.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Samantha Green"
+
     },
     {
       "id": 5,
@@ -73,7 +80,9 @@
         "Elegant_Luxury_Living_Room3"
       ],
       "price": 899.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"David Nguyen"
+
     },
     {
       "id": 6,
@@ -88,7 +97,9 @@
         "Cozy_Bedroom_Sanctuary3"
       ],
       "price": 449.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"David Nguyen"
+
     },
     {
       "id": 7,
@@ -103,7 +114,9 @@
         "Minimalist_Sleek_Bedroom3"
       ],
       "price": 359.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Isabella Patel"
+
     },
     {
       "id": 8,
@@ -118,7 +131,9 @@
         "Elegant_Glam_Bedroom3"
       ],
       "price": 749.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Isabella Patel"
+
     },
     {
       "id": 9,
@@ -133,7 +148,9 @@
         "Cozy_Reading_Nook3"
       ],
       "price": 299.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     },
     {
       "id": 10,
@@ -148,7 +165,9 @@
         "Elegant_Home_Office6"
       ],
       "price": 799.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"William Rodriguez"
+
     },
     {
       "id": 11,
@@ -163,7 +182,9 @@
         "Modern_Kitchen_Delight3"
       ],
       "price": 549.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     },
     {
       "id": 12,
@@ -178,7 +199,9 @@
         "Rustic_Farmhouse_Kitchen3"
       ],
       "price": 499.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"William Rodriguez"
+
     },
     {
       "id": 13,
@@ -193,7 +216,9 @@
         "Classic_Bathroom_Retreat3"
       ],
       "price": 399.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     },
     {
       "id": 14,
@@ -208,7 +233,9 @@
         "Spa_Like_Bathroom_Oasis3"
       ],
       "price": 649.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Jane Smith"
+
     },
     {
       "id": 15,
@@ -223,7 +250,9 @@
         "Industrial_Loft_Living_Room3"
       ],
       "price": 549.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     },
     {
       "id": 16,
@@ -238,7 +267,9 @@
         "Traditional_Dining_Room3"
       ],
       "price": 499.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Jane Smith"
+
     },
     {
       "id": 17,
@@ -253,7 +284,9 @@
         "Modern_Minimalist_Dining3"
       ],
       "price": 379.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Jane Smith"
+
     },
     {
       "id": 18,
@@ -268,7 +301,9 @@
         "Scandinavian_Style_Living_Room3"
       ],
       "price": 429.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     },
     {
       "id": 19,
@@ -283,7 +318,9 @@
         "Eclectic_Bedroom_Design3"
       ],
       "price": 499.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Isabella Patel"
+
     },
     {
       "id": 20,
@@ -298,7 +335,9 @@
         "Tropical_Paradise_Bathroom3"
       ],
       "price": 459.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Isabella Patel"
+
     },
     {
       "id": 22,
@@ -313,7 +352,9 @@
         "Modern_Elegance3"
       ],
       "price": 499.99,
-            "isDesign":true
+            "isDesign":true,
+      "Designer":"David Nguyen"
+
     },
     {
       "id": 23,
@@ -328,7 +369,9 @@
         "Classic_Charm3"
       ],
       "price": 499.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Samantha Green"
+
     },
     {
       "id": 24,
@@ -343,7 +386,9 @@
         "Industrial_Edge3"
       ],
       "price": 399.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"David Nguyen"
+
     },
     {
       "id": 25,
@@ -358,7 +403,9 @@
         "Eclectic_Vibes3"
       ],
       "price": 399.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Samantha Green"
+
     },
     {
       "id": 26,
@@ -373,7 +420,9 @@
         "Tropical_Oasis3"
       ],
       "price": 399.99,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Michael Lee"
+
     },
     {
       "id": 27,
@@ -388,7 +437,9 @@
         "Minimalist_Workspace6"
       ],
       "price": 520.00,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Emily Johnson"
+
     },
     {
       "id": 28,
@@ -403,7 +454,9 @@
         "Classic_Home_Library6"
       ],
       "price": 950.00,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Michael Lee"
+
     },
     {
       "id": 29,
@@ -418,7 +471,9 @@
         "Industrial_Kitchen_Loft3"
       ],
       "price": 850.00,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Emily Johnson"
+
     },
     {
       "id": 30,
@@ -433,7 +488,9 @@
         "Eclectic_Art_Studio6"
       ],
       "price": 600.00,
-      "isDesign":true
+      "isDesign":true,
+      "Designer":"Olivia Martinez"
+
     }
   ]
 }

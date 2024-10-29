@@ -184,6 +184,16 @@ const navigate=useNavigate()
               </Text>
             )}
           </Box>
+          <Box mt={10}>
+            <Text fontWeight={"bold"}>Designer:</Text>
+            {showDetailLoading ? (
+              <SkeletonText noOfLines={1} width="150px" />
+            ) : (
+              <Text color={Colors.GREY} fontSize="1xl">
+                {getDesignById?.Designer}
+              </Text>
+            )}
+          </Box>
           <Box mt={4}>
             <Text color={"green"} fontSize="1xl">
               <span>Total Cost: PKR </span>

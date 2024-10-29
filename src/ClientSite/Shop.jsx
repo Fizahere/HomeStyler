@@ -35,7 +35,8 @@ const Shop = () => {
   const { category: categoryName } = useParams();
   const [selectedDesign, setSelectedDesign] = useState("All");
   const [sortOption, setSortOption] = useState("");
-  const navigate=useNavigate()
+  const navigate = useNavigate()
+  // console.log(categoryName,'category')
 
   const handleSortSelection = (item) => {
     setSelectedItem(item);
@@ -49,15 +50,17 @@ const Shop = () => {
   };
 
   const breadcrumbItems = [
-    { label: "Home".toUpperCase(), onClick: () => navigate(UnAuthenticatedRoutesNames.HOME) },
-    { label: categoryName.toUpperCase() || "SHOP", isCurrent: true },
+    { label: "HOME", onClick: () => navigate(UnAuthenticatedRoutesNames.HOME) },
+    { label: categoryName?.toUpperCase() || "SHOP", isCurrent: true },
   ];
-  
+
 
   return (
     <>
       <Box mt={4}>
-        <CustomBreadCrumb items={breadcrumbItems} />
+        {categoryName &&
+          <CustomBreadCrumb items={breadcrumbItems} />
+        }
 
         <Flex
           p={2}
@@ -127,7 +130,7 @@ const Shop = () => {
                         }}
                         key={item}
                         onClick={() => {
-                          dropdown.onClose(); 
+                          dropdown.onClose();
                           handleSortSelection(item);
                         }}
                       >
