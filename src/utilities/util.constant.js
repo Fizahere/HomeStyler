@@ -25,5 +25,6 @@ export const UnAuthenticatedRoutesNames = {
     DETAIL: '/home-styler/detail/design/:design',
     LOGIN: '/home-styler/login',
     PRODUCTDETAIL: '/home-styler/detail/product/:product',
+    ACCESSORYDETAIL: '/home-styler/detail/accessory/:accessory',
     SEARCH:'/home-styler/search/:query'
 }

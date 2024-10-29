@@ -94,8 +94,8 @@ function CustomCard({ singleProduct, isLoading }) {
       );
     }else if (singleProduct?.isAccessory) {
       navigate(
-        `${UnAuthenticatedRoutesNames.PRODUCTDETAIL.replace(
-          ":product",
+        `${UnAuthenticatedRoutesNames.ACCESSORYDETAIL.replace(
+          ":accessory",
           singleProduct.id
         )}`
       );
