@@ -18,6 +18,7 @@ import Gallery from "./Gallery";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import Sitemap from "./Sitemap";
 import { TypeAnimation } from "react-type-animation";
+import ScrollToTopButton from "../components/Mist/ScrollToTopBtn";
 
 const Home = () => {
   const categories = [
@@ -143,6 +144,7 @@ const Home = () => {
         <Gallery />
         <Services />
         <Sitemap />
+        <ScrollToTopButton />
       </Box>
     </>
   );
