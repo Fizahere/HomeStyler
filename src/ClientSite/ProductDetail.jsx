@@ -12,7 +12,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProductsData from "../data/product-new-data.json";
 import CustomButton from "../components/Mist/Button";
 import { productsImagesMap } from "../constants/images";
@@ -30,10 +30,9 @@ function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const toast = useToast();
-
+const navigate=useNavigate()
   useEffect(() => {
     const fetchData = () => {
-      
       // const AllCategories = ProductsData.browsingProducts.categories.map((singleCategory)=>{
       //   const findCategory = singleCategory?.subcategories?.find((prod)=>{
       //     console.log(prod,'prod')
@@ -42,7 +41,7 @@ function ProductDetail() {
       //   console.log(singleCategory,'singleCategory')
       // })
       // console.log(AllCategories,'fetch')
-      
+
       const product = ProductsData.browsingProducts.categories
         .flatMap((category) =>
           category.subcategories.flatMap((subcategory) => subcategory.products)
@@ -69,11 +68,10 @@ function ProductDetail() {
     setTotalPrice(foundProduct.price * newQuantity);
   };
 
-
   const addToCart = () => {
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     const itemIndex = existingCart.findIndex((item) => item.id === id);
-  
+
     if (itemIndex > -1) {
       toast({
         title: `${foundProduct.name} is already in your cart!`,
@@ -94,7 +92,7 @@ function ProductDetail() {
         reviews: foundProduct.reviews,
       });
       localStorage.setItem("cart", JSON.stringify(existingCart));
-      
+
       toast({
         title: `${foundProduct?.name} added to your cart.`,
         description: `Quantity: ${quantity}`,
@@ -103,40 +101,12 @@ function ProductDetail() {
         isClosable: true,
         position: "top-right",
       });
-  
+
       setTimeout(() => {
         location.assign(UnAuthenticatedRoutesNames.HOME);
       }, 3000);
     }
   };
-  
-
-  // const addToCart = () => {
-  //   const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
-  //   const itemIndex = existingCart.findIndex((item) => item.id === id);
-
-  //   if (itemIndex > -1) {
-  //     alert(`${foundProduct.name} is already in your cart!`);
-  //   } else {
-  //     existingCart.push({
-  //       id,
-  //       name: foundProduct.name,
-  //       price: foundProduct.price,
-  //       quantity,
-  //       totalPrice,
-  //       image: imageUrl,
-  //       description: foundProduct.description,
-  //       reviews: foundProduct.reviews,
-  //     });
-  //     localStorage.setItem("cart", JSON.stringify(existingCart));
-  //     alert(
-  //       `${foundProduct.name} has been added to your cart with a quantity of ${quantity}.`
-  //     );
-  //     location.assign(UnAuthenticatedRoutesNames.HOME);
-  //   }
-
-  //   // console.log("Current Cart:", existingCart);
-  // };
 
   if (isLoading) {
     return (
@@ -180,7 +150,9 @@ function ProductDetail() {
   const breadcrumbItems = [
     {
       label: "Home".toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.HOME,
+      onClick: () => {
+        navigate(UnAuthenticatedRoutesNames.HOME);
+      },
     },
     // { label: "SHOP",},
     { label: name?.toLocaleUpperCase() || "Product", isCurrent: true },

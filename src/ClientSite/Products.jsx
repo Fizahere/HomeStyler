@@ -23,7 +23,7 @@ import {
 } from "@chakra-ui/react";
 import CustomCard from "../components/Mist/Card";
 import { Colors } from "../constants/colors";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import ProductsData from "../data/product-new-data.json";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
@@ -36,14 +36,14 @@ const Products = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { prodCategory: categoryName } = useParams();
   // console.log(categoryName)
-
+const navigate=useNavigate()
   const handleSortSelection = (item) => {
     setSelectedItem(item);
   };
   const breadcrumbItems = [
     {
       label: "Home".toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.HOME,
+      onClick: ()=>{navigate(UnAuthenticatedRoutesNames.HOME)},
     },
     { label: categoryName.toLocaleUpperCase() || "Shop", isCurrent: true },
   ];

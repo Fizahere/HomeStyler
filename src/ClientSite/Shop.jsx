@@ -16,7 +16,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import TabbedSections from "../components/Mist/TabbedSections";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import APP_ICONS from "../constants/icons";
 import { Colors } from "../constants/colors";
 import WishlistTable from "../components/Mist/WishlistTable";
@@ -35,6 +35,7 @@ const Shop = () => {
   const { category: categoryName } = useParams();
   const [selectedDesign, setSelectedDesign] = useState("All");
   const [sortOption, setSortOption] = useState("");
+  const navigate=useNavigate()
 
   const handleSortSelection = (item) => {
     setSelectedItem(item);
@@ -48,9 +49,10 @@ const Shop = () => {
   };
 
   const breadcrumbItems = [
-    { label: "Home".toLocaleUpperCase(), href: UnAuthenticatedRoutesNames.HOME },
-    { label: categoryName.toLocaleUpperCase() || "Shop", isCurrent:true },
+    { label: "Home".toUpperCase(), onClick: () => navigate(UnAuthenticatedRoutesNames.HOME) },
+    { label: categoryName.toUpperCase() || "SHOP", isCurrent: true },
   ];
+  
 
   return (
     <>

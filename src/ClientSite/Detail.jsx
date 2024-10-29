@@ -11,7 +11,7 @@ import {
   Avatar,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Designs from "../data/designs-data.json";
 import ProductsData from "../data/product-new-data.json";
 import { designImagesMap, productsImagesMap } from "../constants/images";
@@ -23,7 +23,7 @@ function Detail() {
   const { design: designId } = useParams();
   const [relatedProducts, setRelatedProducts] = useState([]);
   // console.log(relatedProducts, "");
-
+const navigate=useNavigate()
   const getDesignById = Designs.designs.find((singleItem) => {
     return singleItem.id === Number(designId);
   });
@@ -83,14 +83,14 @@ function Detail() {
   const breadcrumbItems = [
     {
       label: "Home".toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.HOME,
+      onClick: ()=>{navigate(UnAuthenticatedRoutesNames.HOME)},
     },
     {
       label: getDesignById?.category.toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.SHOP.replace(
+      onClick: ()=>{navigate(UnAuthenticatedRoutesNames.SHOP.replace(
         ':category',
         getDesignById?.category
-      ),
+      ),)}
     },
     {
       label: getDesignById?.name.toLocaleUpperCase() || "Shop",

@@ -4,14 +4,15 @@ import CustomBreadCrumb from "../components/Mist/CustomBreadCrumb";
 import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 import CustomCard from "../components/Mist/Card";
 import accessoriesDataFile from "../data/accessories-data.json";
+import { useNavigate } from "react-router-dom";
 
 const Accessories = () => {
     const accessoriesData = accessoriesDataFile.accessories;
-
+const navigate=useNavigate()
   const breadcrumbItems = [
     {
       label: "Home".toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.HOME,
+      onClick:()=>{navigate(UnAuthenticatedRoutesNames.HOME)},
     },
     { label: "ACCESSORIES", isCurrent: true },
   ];

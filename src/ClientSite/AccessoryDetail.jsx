@@ -13,7 +13,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { Colors } from "../constants/colors";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CustomButton from "../components/Mist/Button";
 import { accessoriesImagesMap } from "../constants/images";
 import APP_ICONS from "../constants/icons";
@@ -30,6 +30,7 @@ function AccessoryDetail() {
   const [quantity, setQuantity] = useState(1);
   const [totalPrice, setTotalPrice] = useState(0);
   const toast = useToast();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = () => {
@@ -138,12 +139,19 @@ function AccessoryDetail() {
   const { name, description, price, reviews } = foundProduct;
   const breadcrumbItems = [
     {
-      label: "Home".toLocaleUpperCase(),
-      href: UnAuthenticatedRoutesNames.HOME,
+      label: "HOME",
+      onClick: () => navigate(UnAuthenticatedRoutesNames.HOME),
     },
-    // { label: "SHOP",},
-    { label: name?.toLocaleUpperCase() || "Accessories", isCurrent: true },
+    {
+      label: "ACCESSORIES",
+      onClick: () => navigate(UnAuthenticatedRoutesNames.ACCESSORIES),
+    },
+    {
+      label: name?.toUpperCase() || "ACCESSORIES",
+      isCurrent: true,
+    },
   ];
+  
   const reviewsArr = reviews?.length || 0;
 
   return (
