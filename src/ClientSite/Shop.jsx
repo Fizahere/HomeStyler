@@ -26,7 +26,7 @@ import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
 const Shop = () => {
   const dropdown = useDisclosure();
   const [items] = useState([
-    "Sort by Style",
+    "Default",
     "Sort Alphabetically",
     "Sort by Price",
   ]);
