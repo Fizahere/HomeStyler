@@ -64,8 +64,8 @@ const Cart = ({ disclosure }) => {
     if (!/^[0-9]{11}$/.test(formData.phone)) {
       newErrors.phone = "invalid phone number";
     }
-    if (formData.address.length < 3) {
-      newErrors.address = "address too short";
+    if (!/^(?=.*[a-z])(?=.*\d)[a-zA-Z\d\s]{8,}$/.test(formData.address)) {
+      newErrors.address = "invalid address";
     }
     if (formData.paymentMethod === "card" && !/^[a-zA-Z0-9]{5,}$/.test(formData.cardNumber)) {
       newErrors.cardNumber = "invalid card number";
