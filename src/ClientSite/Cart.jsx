@@ -84,12 +84,12 @@ const Cart = ({ disclosure }) => {
       onClose();
       disclosure.onClose();
       toast({
-        title: "Payment successful",
-        description: "Your order has been placed.",
+        title: `Payment Successfully`,
+        description: `your order has been placed`,
         status: "success",
-        duration: 5000,
+        duration: 1000,
         isClosable: true,
-        position: "right",
+        position: "top-right",
       });
     } else {
       console.log("Form validation failed.");

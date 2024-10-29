@@ -76,7 +76,7 @@ const navigate=useNavigate()
       toast({
         title: `${foundProduct.name} is already in your cart!`,
         status: "warning",
-        duration: 3000,
+        duration: 1000,
         isClosable: true,
         position: "top-right",
       });
@@ -92,19 +92,19 @@ const navigate=useNavigate()
         reviews: foundProduct.reviews,
       });
       localStorage.setItem("cart", JSON.stringify(existingCart));
-
+      setTimeout(() => {
+        location.assign(UnAuthenticatedRoutesNames.HOME);
+      }, 500);
       toast({
         title: `${foundProduct?.name} added to your cart.`,
         description: `Quantity: ${quantity}`,
         status: "success",
-        duration: 3000,
+        duration: 1000,
         isClosable: true,
         position: "top-right",
       });
 
-      setTimeout(() => {
-        location.assign(UnAuthenticatedRoutesNames.HOME);
-      }, 3000);
+     
     }
   };
 
